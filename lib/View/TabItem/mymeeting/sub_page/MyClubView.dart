@@ -67,7 +67,7 @@ class MyClubView extends StatelessWidget{
                 SizedBox(height: 15),
                 Text('진행하는 클럽이 없어요'),
                 SizedBox(height: 15),
-                Text('내가 진행하는 클럽은 여기에서 확인할 수 있어요')
+                Text('내가 진행하는 클럽은 여기에서 확인할 수 있어요'),
               ],
             ),
           ),

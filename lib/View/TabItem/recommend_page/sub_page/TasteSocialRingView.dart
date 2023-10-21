@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Common/MoreButton.dart';
 import 'package:provider/provider.dart';
 import '../../../../ViewModel/Recommend_Page/TasteSocialRing.dart';
 
@@ -129,16 +130,7 @@ class TasteSocialRingView extends StatelessWidget{
                           SizedBox(height: 10),
                         ],
                       ),
-                    SizedBox(
-                        width: 350,
-                        child:ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.white60),
-                              foregroundColor: MaterialStateProperty.all(Colors.black),),
-                            child: Text('더보기 >'))
-                    )
-
+                    MoreButton(350)
                   ],
                 ),
               ),

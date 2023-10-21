@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Common/MoreButton.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../ViewModel//ResolutionProvider.dart';
@@ -157,15 +158,7 @@ class ClubIssue extends StatelessWidget{
                     ]
                 )
             ),
-            SizedBox(
-                width: double.infinity,
-                child:ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white60),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),),
-                    child: Text('더보기 >'))
-            )
+            MoreButton(double.infinity)
           ],
         )
     );

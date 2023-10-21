@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Common/MoreButton.dart';
 
 class RecommendChallenge extends StatelessWidget{
   @override
@@ -125,15 +126,7 @@ class RecommendChallenge extends StatelessWidget{
                   SizedBox(height: 10),
                 ],
               ),
-            SizedBox(
-                width: double.infinity,
-                child:ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white60),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),),
-                    child: Text('더보기 >'))
-            )
+            MoreButton(double.infinity)
           ],
         )
     );

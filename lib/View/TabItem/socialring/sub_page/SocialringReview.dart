@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../Common/MoreButton.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 
 class SocialringReview extends StatelessWidget{
@@ -123,15 +124,7 @@ class SocialringReview extends StatelessWidget{
                     ]
                 )
             ),
-            SizedBox(
-                width: double.infinity,
-                child:ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white60),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),),
-                    child: Text('더보기 >'))
-            )
+            MoreButton(double.infinity)
           ],
         )
     );

@@ -22,15 +22,24 @@ class meetingpage extends StatelessWidget{
         child:Scaffold(
         backgroundColor: Color(0XFFe2e2e2),
         appBar: AppBar(
-          backgroundColor: Colors.white60,
+          backgroundColor: Color(0xfff9f9f9),
           foregroundColor: Colors.black,
+          shadowColor: Color(0xdddcdcdc),
           title: Row(
             children: [
-              Text('${width}, ${height}'),
+              Text(
+                'MUNTO',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 25,
+                ),
+              ),
               Spacer(),
-              Icon(Icons.list),
-              Icon(Icons.search),
-              Icon(Icons.notifications_none)
+              Icon(Icons.list, size: 30,),
+              SizedBox(width: 10, ),
+              Icon(Icons.search, size : 30),
+              SizedBox(width: 10),
+              Icon(Icons.notifications_none, size : 30),
             ],
           ),
           bottom:
@@ -39,18 +48,21 @@ class meetingpage extends StatelessWidget{
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TabBar(
-                      tabs: [
-                        Tab(child: Text('추천', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18))),
-                        Tab(child: Text('소셜링', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18))),
-                        Tab(child: Text('클럽', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18))),
-                        Tab(child: Text('챌린지', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18))),
-                        Tab(child: Text('내 모임', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18))),
+                    padding: EdgeInsets.only(left: 10, right: 15),
+                    labelColor: Colors.black,
+                    unselectedLabelColor: Colors.grey,
+                    tabs: [
+                        Tab(child: Text('추천', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23))),
+                        Tab(child: Text('소셜링', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23))),
+                        Tab(child: Text('클럽', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23))),
+                        Tab(child: Text('챌린지', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23))),
+                        Tab(child: Text('내 모임', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23))),
                       ],
                       isScrollable: true,
                       labelPadding: EdgeInsets.symmetric(horizontal:10.0),
                       indicatorColor: Colors.black,
                   ),
-                ),
+               ),
               )
         ),
         body: TabBarView(

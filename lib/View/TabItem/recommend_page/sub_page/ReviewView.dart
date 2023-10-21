@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Common/MoreButton.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
 import 'package:provider/provider.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
@@ -125,15 +126,7 @@ class ReviewView extends StatelessWidget{
                   ]
               )
           ),
-          SizedBox(
-              width: double.infinity,
-              child:ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white60),
-                    foregroundColor: MaterialStateProperty.all(Colors.black),),
-                  child: Text('더보기 >'))
-          )
+          MoreButton(double.infinity)
         ],
       )
     );

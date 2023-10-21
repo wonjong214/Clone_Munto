@@ -6,14 +6,34 @@ class MoreButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
-        width: _width,
-        child:ElevatedButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.white60),
-              foregroundColor: MaterialStateProperty.all(Colors.black),),
-            child: Text('더보기 >'))
+    return GestureDetector(
+      onTap: () {print('button touch');},
+      child: SizedBox(
+          width: _width,
+          height: 50,
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.white60,
+              borderRadius: BorderRadius.circular(10)
+            ),
+            child: Text(
+              '더보기 >',
+              style: TextStyle(
+                fontSize: 15,
+              ),
+            ),
+          )
+    ) 
+
+        /*ElevatedButton(
+            onPressed: () {print('button touch');},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white60,
+              foregroundColor: Colors.black,
+              shadowColor: Color(0)
+            ),
+            child: Text('더보기 >'))*/
     );
   }
 }

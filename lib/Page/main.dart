@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/meetingpage.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
-import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
-
 import '../homepage.dart';
 import 'package:provider/provider.dart';
 
@@ -30,6 +28,11 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                   useMaterial3: true,
+                  elevatedButtonTheme: ElevatedButtonThemeData(
+                    style: ButtonStyle(
+                      splashFactory:NoSplash.splashFactory
+                    )
+                  )
                 ),
                 initialRoute: '/meetingpage',
                 routes: {

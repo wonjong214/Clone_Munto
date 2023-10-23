@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Common/MoreButton.dart';
+import 'package:loginscreen/Constants/colors.dart';
 import 'package:provider/provider.dart';
 import '../../../../ViewModel/Recommend_Page/TasteSocialRing.dart';
 
@@ -8,7 +9,7 @@ class TasteSocialRingView extends StatelessWidget{
   Widget build(BuildContext context) {
     var provider = Provider.of<TasteSocialRing_Provider>(context);
     return Container(
-      margin: EdgeInsets.only(left:20, bottom: 20),
+      margin: EdgeInsets.only(left:20, bottom: 20,top: 20),
       width: double.infinity,
       child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -27,7 +28,8 @@ class TasteSocialRingView extends StatelessWidget{
                     ),
                     SizedBox(height: 10),
                     Text(
-                        '내 취향에 딱 맞는 원데이 모임'
+                      '내 취향에 딱 맞는 원데이 모임',
+                      style: TextStyle(color: subtitle_color),
                     ),
                     SizedBox(height: 10),
                     for(int num=0; num<provider.tastesocialring.length; num++)
@@ -76,7 +78,7 @@ class TasteSocialRingView extends StatelessWidget{
                                                     Container(
                                                       decoration: BoxDecoration(
                                                           borderRadius: BorderRadius.circular(30),
-                                                          color: Color(0XffDCDCDC)
+                                                          color: tag_color
                                                       ),
                                                       padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
                                                       child: Text(provider.tastesocialring[num].tag[i]),
@@ -146,7 +148,8 @@ class TasteSocialRingView extends StatelessWidget{
                     ),
                     SizedBox(height: 10),
                     Text(
-                        '지속형 모임으로 오래오래 친하게'
+                      '지속형 모임으로 오래오래 친하게',
+                      style: TextStyle(color: subtitle_color),
                     ),
                     SizedBox(height: 10),
                     for(int num=0; num<provider.tasteclub.length; num++)

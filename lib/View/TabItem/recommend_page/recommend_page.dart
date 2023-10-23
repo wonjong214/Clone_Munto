@@ -3,6 +3,7 @@ import 'package:loginscreen/View/TabItem/recommend_page/sub_page/CategoryView.da
 import 'package:loginscreen/View/TabItem/recommend_page/sub_page/ExhibitionsView.dart';
 import 'package:loginscreen/View/TabItem/recommend_page/sub_page/HotClub.dart';
 import 'package:loginscreen/View/TabItem/recommend_page/sub_page/RecommendChallenge.dart';
+import 'package:loginscreen/View/TabItem/recommend_page/sub_page/RecommendMemberView.dart';
 import 'package:loginscreen/View/TabItem/recommend_page/sub_page/ReviewView.dart';
 import 'package:loginscreen/View/TabItem/recommend_page/sub_page/TasteSocialRingView.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Exhibitions.dart';
@@ -27,9 +28,9 @@ class recommend_page extends StatelessWidget{
               create: (context) => Exhibitions_Provider(),
               child: ExhibitionsView(),
             ),
-            /*pageview(),*/
             //카테고리
             CategoryView(),
+            Divider(color: Color(0xff8e8e8e)),
             //추천 스크롤 뷰
             ChangeNotifierProvider(
               create: (context) => TasteSocialRing_Provider(),
@@ -42,6 +43,8 @@ class recommend_page extends StatelessWidget{
             HotClub(),
 
             RecommendChallenge(),
+
+            RecommendMemberView(),
           ],
         )
     );

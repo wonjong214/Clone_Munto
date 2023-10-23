@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Common/MoreButton.dart';
+import 'package:loginscreen/Constants/colors.dart';
 
 class RecommendChallenge extends StatelessWidget{
   @override
@@ -18,7 +19,9 @@ class RecommendChallenge extends StatelessWidget{
             ),
             SizedBox(height: 8),
             Text(
-                '이번 주부터 갓생 시작'
+              '이번 주부터 갓생 시작',
+              style: TextStyle(color: subtitle_color),
+
             ),
             SizedBox(height: 8),
             for(int num=0; num<3; num++)
@@ -64,7 +67,7 @@ class RecommendChallenge extends StatelessWidget{
                                           Container(
                                             decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(30),
-                                                color: Color(0XffDCDCDC)
+                                                color: tag_color
                                             ),
                                             padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
                                             child: Text('클럽'),

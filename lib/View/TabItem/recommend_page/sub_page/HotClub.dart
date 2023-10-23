@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Common/MoreButton.dart';
+import 'package:loginscreen/Constants/colors.dart';
 
 class HotClub extends StatelessWidget{
   @override
@@ -18,7 +19,9 @@ class HotClub extends StatelessWidget{
           ),
           SizedBox(height: 8),
           Text(
-              '지금 멤버들이 몰리고 있는'
+            '지금 멤버들이 몰리고 있는',
+            style: TextStyle(color: subtitle_color),
+
           ),
           SizedBox(height: 8),
           for(int num=0; num<3; num++)
@@ -64,7 +67,7 @@ class HotClub extends StatelessWidget{
                                         Container(
                                           decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(30),
-                                              color: Color(0XffDCDCDC)
+                                              color: tag_color
                                           ),
                                           padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
                                           child: Text('클럽'),

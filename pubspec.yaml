@@ -60,11 +60,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/
-    - images/recommend_page/
-    - images/recommend_page/Exhibitions/
-    - images/recommend_page/TasteSocialRing/
-    - images/recommend_page/Review/
+    - assets/images/
+    - assets/images/recommend_page/
+    - assets/images/recommend_page/Exhibitions/
+    - assets/images/recommend_page/TasteSocialRing/
+    - assets/images/recommend_page/Review/
+    - assets/images/socialring/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -77,17 +78,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: apptitle
+      fonts:
+        - asset: assets/fonts/LINESeedKR-Th.ttf
+          weight : 100
+        - asset: assets/fonts/LINESeedKR-Rg.ttf
+          weight : 200
+        - asset: assets/fonts/LINESeedKR-Bd.ttf
+          weight: 300
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

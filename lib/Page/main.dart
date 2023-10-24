@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/meetingpage.dart';
+import 'package:loginscreen/View/MainView.dart';
+import 'package:loginscreen/View/Meeting/MeetingView.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import '../homepage.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           ],
           builder: (context, child ){
             return MaterialApp(
+                debugShowCheckedModeBanner: false,
                 title: 'Flutter Demo',
                 theme: ThemeData(
                   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -34,10 +36,10 @@ class MyApp extends StatelessWidget {
                     )
                   )
                 ),
-                initialRoute: '/meetingpage',
+                initialRoute: '/main',
                 routes: {
                   '/' : (context) => MyHomePage(),
-                  '/meetingpage' : (context) => meetingpage()
+                  '/main' : (context) => MainView()
                 }
             );
           }

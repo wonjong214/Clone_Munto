@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Chat/ChatView.dart';
-import 'package:loginscreen/View/Lounge/LoungeView.dart';
-import 'package:loginscreen/View/Meeting/MeetingView.dart';
+import 'package:loginscreen/View/Component/page/chat/ChatView.dart';
+import 'package:loginscreen/View/Component/page/lounge/LoungeView.dart';
+import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/View/Profile/ProfileView.dart';
 
-import 'Create/CreateView.dart';
+import 'Component/page/create/CreateView.dart';
 
 class MainView extends StatefulWidget{
   @override

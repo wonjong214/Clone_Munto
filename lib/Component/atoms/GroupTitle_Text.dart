@@ -12,7 +12,7 @@ class GroupTitle_Text extends StatelessWidget{
       _text,
       style: TextStyle(
         fontSize: 22,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       ),
     );
   }

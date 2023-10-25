@@ -74,7 +74,7 @@ class MeetingView extends StatelessWidget{
             Socialring_Page(),
             club_page(),
             challenge_page(),
-            mymeeting_page()
+            MyMeeting_Page()
           ],
          ),
         ),

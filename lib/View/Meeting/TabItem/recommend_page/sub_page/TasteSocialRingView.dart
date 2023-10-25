@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Component/atoms/CommonMeetingTitle_Text.dart';
 import 'package:loginscreen/Component/atoms/Common_IconButton.dart';
 import 'package:loginscreen/Component/atoms/GroupSubTitle_Text.dart';
 import 'package:loginscreen/Component/atoms/GroupTitle_Text.dart';
+import 'package:loginscreen/Component/atoms/KeyWordTag_Container.dart';
 import 'package:loginscreen/Component/atoms/More_Button.dart';
+import 'package:loginscreen/Component/atoms/RecommendTag_Container.dart';
+import 'package:loginscreen/Component/atoms/SocialRingParticipant_Text.dart';
+import 'package:loginscreen/Component/atoms/SocialRingSubTitle_Text.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -73,50 +78,27 @@ class TasteSocialRingView extends StatelessWidget{
                                               children: [
                                                 for(int i=0; i< provider.tastesocialring[num].tag.length;i++)
                                                   if(provider.tastesocialring[num].tag[i] != '추천')
-                                                    Container(
-                                                      decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(30),
-                                                          color: tag_color
-                                                      ),
-                                                      padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
-                                                      child: Text(provider.tastesocialring[num].tag[i]),
-                                                    )
+                                                    KeyWordTag_Container(provider.tastesocialring[num].tag[i])
                                                   else
-                                                    Container(
-                                                      decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(30),
-                                                          color: Color(0XbbFFC0CB)
-                                                      ),
-                                                      padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
-                                                      child: Text(provider.tastesocialring[num].tag[i], style: TextStyle(color: Color(0XffDC143C))),
-                                                    )
+                                                    RecommendTag_Container(provider.tastesocialring[num].tag[i])
                                               ],
                                             ),
-                                            Text(
-                                              provider.tastesocialring[num].title,
-                                              style: TextStyle(
-                                                  overflow: TextOverflow.ellipsis
-                                              ),
-                                            ),
+                                            CommonMeetingTitle_Text(provider.tastesocialring[num].title),
                                             Row(
                                               children: [
-                                                Icon(Icons.location_on),
+                                                Icon(Icons.location_on, size: 15, color: subtitle_color,),
+                                                SizedBox(width: 5,),
                                                 SizedBox(
                                                   width: 200,
-                                                  child: Text(
-                                                    '${provider.tasteclub[num].location} ${provider.tasteclub[num].date}',
-                                                    style: TextStyle(
-                                                      overflow: TextOverflow.ellipsis,
-                                                    ),
-                                                    maxLines: 1,
-                                                  ),
+                                                  child: SocialRingSubTitle_Text(provider.tasteclub[num].location,provider.tasteclub[num].date),
                                                 )
                                               ],
                                             ),
                                             Row(
                                               children: [
-                                                Icon(Icons.people),
-                                                Text('${provider.tastesocialring[num].participants}/${provider.tastesocialring[num].total}'),
+                                                Icon(Icons.people, color: subtitle_color, size: 15,),
+                                                SizedBox(width: 5,),
+                                                SocialRingParticipant(provider.tastesocialring[num].participants, provider.tastesocialring[num].total),
                                               ],
                                             )
                                           ],
@@ -185,23 +167,9 @@ class TasteSocialRingView extends StatelessWidget{
                                               children: [
                                                 for(int i=0; i< provider.tasteclub[num].tag.length;i++)
                                                   if(provider.tasteclub[num].tag[i] != '추천')
-                                                    Container(
-                                                      decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(30),
-                                                          color: Color(0XffDCDCDC)
-                                                      ),
-                                                      padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
-                                                      child: Text(provider.tasteclub[num].tag[i]),
-                                                    )
+                                                    KeyWordTag_Container(provider.tasteclub[num].tag[i])
                                                   else
-                                                    Container(
-                                                      decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(30),
-                                                          color: Color(0XbbFFC0CB)
-                                                      ),
-                                                      padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
-                                                      child: Text(provider.tasteclub[num].tag[i], style: TextStyle(color: Color(0XffDC143C))),
-                                                    )
+                                                    RecommendTag_Container(provider.tasteclub[num].tag[i])
                                               ],
                                             ),
                                             Text(

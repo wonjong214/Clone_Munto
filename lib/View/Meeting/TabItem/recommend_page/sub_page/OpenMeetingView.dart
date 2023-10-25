@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Component/atoms/OpenMeetin_ArrowCircularContainer.dart';
 import 'package:loginscreen/Component/atoms/Common_Container.dart';
+import 'package:loginscreen/Component/atoms/OpenMeeting_SubTitle_Text.dart';
+import 'package:loginscreen/Component/atoms/OpenMeeting_Title_Text.dart';
 
 class OpenMeetingView extends StatelessWidget{
+  String? _title;
+  String? _subtitle;
+  Color? _color;
+  FontWeight? _titlefont;
+  FontWeight? _subtitlefont;
+  double? _arrowsize;
+
+  OpenMeetingView({String? title = '', String? subtitle = '', Color? color = Colors.red, FontWeight? titlefont = FontWeight.w500,
+  FontWeight? subtitlefont = FontWeight.w500, double? arrowsize = 25}){
+    this._title = title;
+    this._subtitle = subtitle;
+    this._color = color;
+    this._titlefont = titlefont;
+    this._subtitlefont = subtitlefont;
+    this._arrowsize = arrowsize;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,34 +36,14 @@ class OpenMeetingView extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Spacer(flex:1),
-                  Text(
-                    '모임 열기',
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.red
-                    ),
-                  ),
+                  OpenMeeting_Title_Text(_title!, _color!, _titlefont!),
                   SizedBox(height: 20,),
-                  Text(
-                    '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?',
-                    maxLines: 2,
-                    style: TextStyle(
-                        fontSize: 16,
-                        height: 1.2
-                    ),
-                  ),
+                  OpenMeeting_SubTitle_Text(_subtitle!, _subtitlefont!),
                   Spacer(flex:1),
                 ],
               ),
               SizedBox(width: 50,),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.red
-                ),
-                child: Icon(Icons.arrow_forward_ios, color: Colors.white, size: 25,)
-              )
+              OpenMeeting_ArrowCircularContainer(_color!, _arrowsize!)
             ],
           )
       ),

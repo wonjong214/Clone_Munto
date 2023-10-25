@@ -35,7 +35,7 @@ class ChallengeHot extends StatelessWidget{
                                 width: 100,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage('images/recommend_page/Exhibitions/airpot.jpeg'),
+                                        image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
                                         fit: BoxFit.cover
                                     ),
                                     borderRadius: BorderRadius.circular(5)

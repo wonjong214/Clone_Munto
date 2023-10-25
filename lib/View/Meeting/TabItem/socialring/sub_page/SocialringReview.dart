@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../Component/atoms/Margin_SizedBox.dart';
+import '../../../../../Component/atoms/MemberReview_Text.dart';
 import '../../../../../Component/atoms/More_Button.dart';
 import '../../../../../ViewModel//ResolutionProvider.dart';
 
@@ -14,7 +16,7 @@ class SocialringReview extends StatelessWidget{
     double img_width = (width - margin) / 2;
 
     return Container(
-        margin: EdgeInsets.only(left: 20, right: 20,bottom: 20),
+        margin: EdgeInsets.only(left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -24,9 +26,8 @@ class SocialringReview extends StatelessWidget{
                   fontSize: 22
               ),
             ),
-            SizedBox(height: 8),
+            title_margin,
             Container(
-                height: (img_width + 40)*2 + 10,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -35,7 +36,7 @@ class SocialringReview extends StatelessWidget{
                           children: [
                             SizedBox(
                               width: img_width,
-                              height: img_width + 40,
+                              height: img_width + 60,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -44,7 +45,7 @@ class SocialringReview extends StatelessWidget{
                                     height: img_width,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage('images/recommend_page/Exhibitions/airpot.jpeg'),
+                                            image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
                                             fit: BoxFit.cover
                                         ),
                                         borderRadius: BorderRadius.circular(5)
@@ -68,19 +69,16 @@ class SocialringReview extends StatelessWidget{
                                         )
                                     ),
                                   ),
-                                  Text(
-                                    '제목',
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 2,
-                                    textAlign: TextAlign.left,
-                                  )
+                                  SizedBox(height: 10,),
+                                  MemberReview_Text('제목'),
+                                  SizedBox(height: 10,),
                                 ],
                               ),
                             ),
                             SizedBox(width: 10),
                             SizedBox(
                                 width: img_width,
-                                height: img_width + 40,
+                                height: img_width + 60,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -89,7 +87,7 @@ class SocialringReview extends StatelessWidget{
                                       height: img_width,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
-                                              image: AssetImage('images/recommend_page/Exhibitions/airpot.jpeg'),
+                                              image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
                                               fit: BoxFit.cover
                                           ),
                                           borderRadius: BorderRadius.circular(5)
@@ -113,11 +111,9 @@ class SocialringReview extends StatelessWidget{
                                           )
                                       ),
                                     ),
-                                    Text(
-                                      '제목',
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 2,
-                                    )
+                                    SizedBox(height: 10,),
+                                    MemberReview_Text('제목'),
+                                    SizedBox(height: 10,),
                                   ],
                                 )
                             ),

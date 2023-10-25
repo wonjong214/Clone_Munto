@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Component/atoms/GroupSubTitle_Text.dart';
+import 'package:loginscreen/Component/atoms/GroupTitle_Text.dart';
 import 'package:loginscreen/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/Component/atoms/More_Button.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/Constants/fontsize.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -25,15 +26,9 @@ class RecommendMemberView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '추천 멤버',
-                style: TextStyle(fontSize: maintitle),
-              ),
+              GroupTitle_Text('추천 멤버'),
               SizedBox(height: 10),
-              Text(
-                '팔로우하고 문토 대표 모임과 트렌드 소식 받아보기',
-                style: TextStyle(color: subtitle_color),
-              ),
+              GroupSubTitle_Text('팔로우하고 문토 대표 모임과 트렌드 소식 받아보기'),
               SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -66,7 +61,7 @@ class RecommendMemberView extends StatelessWidget {
                                                       CircleAvatar(
                                                         radius: 40,
                                                         backgroundImage: AssetImage(
-                                                            'images/recommend_page/Exhibitions/jazz.jpeg'),
+                                                            'assets/images/recommend_page/Exhibitions/jazz.jpeg'),
                                                       ),
                                                       SizedBox(
                                                         width: 10,
@@ -175,7 +170,7 @@ class RecommendMemberView extends StatelessWidget {
                                           Expanded(
                                             flex: 1,
                                             child: Image.asset(
-                                              'images/recommend_page/Exhibitions/nacho.jpeg',
+                                              'assets/images/recommend_page/Exhibitions/nacho.jpeg',
                                               height: (width - 70) / 3,
                                               fit: BoxFit.cover,
                                             ),
@@ -184,7 +179,7 @@ class RecommendMemberView extends StatelessWidget {
                                               flex: 1,
                                               child: Container(
                                                 child: Image.asset(
-                                                  'images/recommend_page/Exhibitions/nacho.jpeg',
+                                                  'assets/images/recommend_page/Exhibitions/nacho.jpeg',
                                                   height: (width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),
@@ -193,7 +188,7 @@ class RecommendMemberView extends StatelessWidget {
                                               flex: 1,
                                               child: Container(
                                                 child: Image.asset(
-                                                  'images/recommend_page/Exhibitions/nacho.jpeg',
+                                                  'assets/images/recommend_page/Exhibitions/nacho.jpeg',
                                                   height: (width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),

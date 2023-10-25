@@ -45,7 +45,7 @@ class ClubIssue extends StatelessWidget{
                                     height: img_width,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage('images/recommend_page/Exhibitions/airpot.jpeg'),
+                                            image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
                                             fit: BoxFit.cover
                                         ),
                                         borderRadius: BorderRadius.circular(5)
@@ -107,7 +107,7 @@ class ClubIssue extends StatelessWidget{
                                       height: img_width,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
-                                              image: AssetImage('images/recommend_page/Exhibitions/airpot.jpeg'),
+                                              image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
                                               fit: BoxFit.cover
                                           ),
                                           borderRadius: BorderRadius.circular(5)

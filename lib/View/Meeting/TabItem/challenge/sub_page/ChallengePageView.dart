@@ -22,7 +22,7 @@ class ChallengePageView extends StatelessWidget{
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('images/recommend_page/Exhibitions/airpot.jpeg'),
+                              image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(20)),
                       child: Align(

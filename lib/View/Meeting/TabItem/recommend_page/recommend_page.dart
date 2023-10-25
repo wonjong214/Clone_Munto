@@ -51,7 +51,7 @@ class recommend_page extends StatelessWidget{
             intergroupmargin,
             RecommendMemberView(),
             intergroupmargin,
-            OpenMeetingView(),
+            OpenMeetingView(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
             SizedBox(height: 80,)
           ],
         )

@@ -67,6 +67,7 @@ flutter:
     - assets/images/recommend_page/TasteSocialRing/
     - assets/images/recommend_page/Review/
     - assets/images/socialring/
+    - assets/images/lounge/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

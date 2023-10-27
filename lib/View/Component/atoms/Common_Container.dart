@@ -4,10 +4,9 @@ import '../../../Constants/colors.dart';
 
 class Common_Container extends StatelessWidget{
   Widget? _widget;
-  double? con_width;
-  double? con_height;
 
-  Common_Container(this._widget,{double? con_width, double, con_height});
+
+  Common_Container(this._widget);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class Common_Container extends StatelessWidget{
           color: container_color,
           borderRadius: BorderRadius.circular(10)
       ),
-      child: _widget
+      child: _widget!
     );
   }
 }

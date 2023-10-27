@@ -35,7 +35,7 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
                         splashFactory: NoSplash.splashFactory,
                         shadowColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)
+                            borderRadius: BorderRadius.circular(30),
                         )
                     ),
                     onPressed: () {

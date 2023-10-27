@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
+import 'package:loginscreen/View/Component/atoms/CircleAvatarProfile.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
@@ -46,28 +47,21 @@ class RecommendMemberView extends StatelessWidget {
                                   width: width - 70,
                                   height: width - 70,
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          margin: EdgeInsets.all(10),
+                                          margin: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 30),
                                           child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                                             children: [
-                                              Container(
-                                                  child: Row(
+                                              Row(
                                                     mainAxisSize: MainAxisSize.max,
                                                     children: [
-                                                      CircleAvatar(
-                                                        radius: 40,
-                                                        backgroundImage: AssetImage(
-                                                            'assets/images/recommend_page/Exhibitions/jazz.jpeg'),
-                                                      ),
+                                                      CircleAvatarProfile(AssetImage('assets/images/recommend_page/Exhibitions/jazz.jpeg')),
                                                       SizedBox(
                                                         width: 10,
                                                       ),
                                                       SizedBox(
-                                                        height: 80,
+                                                        height: 70,
                                                         child: Column(
                                                           mainAxisSize: MainAxisSize.max,
                                                           mainAxisAlignment:
@@ -77,7 +71,8 @@ class RecommendMemberView extends StatelessWidget {
                                                           children: [
                                                             Text(
                                                               '이름',
-                                                              style: TextStyle(fontSize: 20),
+                                                              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+
                                                             ),
                                                             Row(
                                                               children: [
@@ -117,12 +112,14 @@ class RecommendMemberView extends StatelessWidget {
                                                         ),
                                                       ),
                                                     ],
-                                                  )),
+                                                  ),
+                                              SizedBox(height: 30,),
                                               Text(
                                                 '호스트 자기소개 : 그대 내게 오지 말아요 두번다시 이런 사랑하지 마요. 그댈 추억하기보다 기다리는게 부서질듯 마음이 더 아파와 다시 누군가를 만나도',
                                                 maxLines: 2,
                                                 style: TextStyle(height: 1.5, fontSize: 15),
                                               ),
+                                              SizedBox(height: 20,),
                                               Row(
                                                 children: [
                                                   for (int i = 0; i < 4; i++)

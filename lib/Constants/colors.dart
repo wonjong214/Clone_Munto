@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const Color subtitle_color = Color(0xff696969);
 
-const Color tag_color = Color(0XffDCDCDC);
+const Color tag_color = Color(0X99dcdcdc);
 
 const Color background_color = Color(0xfff2f2f2);
 

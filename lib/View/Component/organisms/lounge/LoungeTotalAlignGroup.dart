@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/molecules/RoundedBorderContainer.dart';
 
 class LoungeTotalAlignGroup extends StatelessWidget{
   @override
@@ -7,52 +8,28 @@ class LoungeTotalAlignGroup extends StatelessWidget{
       margin: EdgeInsets.only(left: 15, top: 15),
       child: Row(
         children: [
-          Container(
+          RoundedBorderContainer(
             padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(
-                color: Color(0xcca9a9a9),
-                width: 1
-              )
-            ),
-            child: Text('최신'),
+            bordercolor: Color(0xcca9a9a9),
+            widget: Text('최신'),
           ),
           SizedBox(width: 10,),
-          Container(
+          RoundedBorderContainer(
             padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                    color: Color(0xcca9a9a9),
-                    width: 1
-                )
-            ),
-            child: Text('인기'),
+            bordercolor: Color(0xcca9a9a9),
+            widget: Text('인기'),
           ),
           SizedBox(width: 10,),
-          Container(
+          RoundedBorderContainer(
             padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                    color: Color(0xcca9a9a9),
-                    width: 1
-                )
-            ),
-            child: Text('모임 후기'),
+            bordercolor: Color(0xcca9a9a9),
+            widget: Text('모임 후기'),
           ),
           SizedBox(width: 10,),
-          Container(
+          RoundedBorderContainer(
             padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                    color: Color(0xcca9a9a9),
-                    width: 1
-                )
-            ),
-            child: Text('취향 에디터'),
+            bordercolor: Color(0xcca9a9a9),
+            widget: Text('취향 에디터'),
           ),
 
         ],

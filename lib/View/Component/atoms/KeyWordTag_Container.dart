@@ -15,7 +15,7 @@ class KeyWordTag_Container extends StatelessWidget{
           borderRadius: BorderRadius.circular(30),
           color: tag_color
       ),
-      padding: EdgeInsets.only(left:6, right:6, top: 3, bottom: 3),
+      padding: EdgeInsets.only(left:8, right:8, top: 3, bottom: 3),
       child: Text(text),
     );
   }

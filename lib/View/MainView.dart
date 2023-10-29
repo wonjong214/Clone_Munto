@@ -21,7 +21,6 @@ class MainViewState extends State<MainView>{
     MeetingView(),
     LoungeView(),
     CreateView(),
-    ChatView(),
     ProfileView()
   ];
 
@@ -65,11 +64,6 @@ class MainViewState extends State<MainView>{
                   child: Icon(Icons.add_circle_outline_sharp, size:40,),
                 ),
                 label: ''
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.chat_outlined),
-              activeIcon: Icon(Icons.chat),
-              label: '채팅',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outlined),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/organisms/lounge/LoungeRecommendEditor.dart';
 import 'package:loginscreen/View/Component/organisms/lounge/LoungeReview.dart';
 import 'package:loginscreen/View/Component/organisms/lounge/LoungeTotalAlignGroup.dart';

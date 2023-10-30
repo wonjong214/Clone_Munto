@@ -20,14 +20,14 @@ class TextNum extends StatelessWidget{
             Text(
               '팔로워',
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
             SizedBox(height: 5,),
             Text(
               '$_follower',
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
           ],
@@ -38,14 +38,14 @@ class TextNum extends StatelessWidget{
             Text(
               '팔로잉',
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
             SizedBox(height: 5,),
             Text(
               '$_following',
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
           ],
@@ -56,14 +56,14 @@ class TextNum extends StatelessWidget{
             Text(
               '피드',
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
             SizedBox(height: 5,),
             Text(
               '$_feed',
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
           ],

@@ -14,7 +14,7 @@ class MySocialring extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('좋아요'),
+            MyMeetingGroupTitle_Text('좋아요',17),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -30,7 +30,7 @@ class MySocialring extends StatelessWidget{
               ),
             ),
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('대기'),
+            MyMeetingGroupTitle_Text('대기',17),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -46,7 +46,7 @@ class MySocialring extends StatelessWidget{
               ),
             ),
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('참여'),
+            MyMeetingGroupTitle_Text('참여',17),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -62,7 +62,7 @@ class MySocialring extends StatelessWidget{
               ),
             ),
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('진행'),
+            MyMeetingGroupTitle_Text('진행',17),
             SizedBox(
               width: double.infinity,
               child: Column(

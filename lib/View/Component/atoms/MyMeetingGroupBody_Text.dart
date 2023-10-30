@@ -12,7 +12,7 @@ class MyMeetingGroupBody_Text extends StatelessWidget{
       style: TextStyle(
           fontSize: 17,
           color: Color(0xff707070),
-          fontWeight: FontWeight.w600
+          fontWeight: FontWeight.w500
       ),
     );
   }

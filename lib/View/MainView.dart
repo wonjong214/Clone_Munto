@@ -25,21 +25,19 @@ class MainViewState extends State<MainView>{
   final List<Widget> _widgetOptions = <Widget>[
     MeetingView(),
     LoungeView(),
-    CreateView(),
     ProfileView(),
   ];
 
   void _onItemTapped(int index) { // 탭을 클릭했을떄 지정한 페이지로 이동
     setState(() {
-      /*if(index == 3){
+      if(index == 3){
         _selectedIndex = 2;
       }
       else if(index == 2){
-
+        Navigator.pushNamed(context, '/meetingtype');
       }
       else
-        _selectedIndex = index;*/
-      _selectedIndex = index;
+        _selectedIndex = index;
     });
   }
 

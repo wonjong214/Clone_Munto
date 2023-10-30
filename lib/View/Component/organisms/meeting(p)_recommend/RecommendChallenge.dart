@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
+import '../../molecules/meeting/ChallengeContainer_Container.dart';
 
 class RecommendChallenge extends StatelessWidget{
   @override
@@ -28,108 +29,10 @@ class RecommendChallenge extends StatelessWidget{
             for(int num=0; num<3; num++)
               Column(
                 children: [
-                  GestureDetector(
-                      onTap: () {print('touch');},
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.white60
-                          ),
-                          child:Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
-                                        fit: BoxFit.cover
-                                    ),
-                                    borderRadius: BorderRadius.circular(5)
-                                ),
-                                child: Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: IconButton(
-                                      icon: (Icon(Icons.favorite)),
-                                      color: Colors.white,
-                                      onPressed: () {}
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 100,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(30),
-                                                color: tag_color
-                                            ),
-                                            padding: EdgeInsets.only(left:3, right:3, top: 1, bottom: 1),
-                                            child: Text('클럽'),
-                                          )
-                                        ],
-                                      ),
-                                      Text(
-                                        '제목',
-                                        style: TextStyle(
-                                            overflow: TextOverflow.ellipsis
-                                        ),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text('챌린지·',
-                                            style: TextStyle(
-                                                color: Color(0XFF696969)
-                                            ),),
-                                          Icon(
-                                            Icons.calendar_month,
-                                            color: Color(0XFF696969),
-                                            size: 15,
-                                          ),
-                                          SizedBox(
-                                              child: Text(
-                                                '10월 22(일)· 2주 간',
-                                                style: TextStyle(
-                                                  overflow: TextOverflow.ellipsis,
-                                                ),
-                                                maxLines: 1,
-                                              )
-                                          ),
-                                          Icon(
-                                            Icons.check_circle,
-                                            color: Color(0XFF006400),
-                                            size: 15,
-                                          ),
-                                          Text(
-                                            '주 3회',
-                                            style: TextStyle(
-                                                color: Color(0XFF006400)
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(Icons.people),
-                                          Text('00/99'),
-                                        ],
-                                      )
-                                    ],
-                                  )
-                              ),
-                            ],
-                          )
-                      )
-                  ),
+                  ChallengeContainer(double.infinity),
+                  morebutton_margin,
                 ],
               ),
-            morebutton_margin,
             More_Button(double.infinity)
           ],
         )

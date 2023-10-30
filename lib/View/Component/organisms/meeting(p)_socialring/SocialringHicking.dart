@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
 import '../../../../../Constants/colors.dart';
 import '../../atoms/CommonMeetingTitle_Text.dart';
 import '../../atoms/Common_Container.dart';
@@ -62,18 +63,18 @@ class SocialringHicking extends StatelessWidget{
                                     CommonMeetingTitle_Text('같이 관악산 국기봉 정복하러 가요'),
                                     Row(
                                       children: [
-                                        Icon(Icons.location_on, size: 15, color: subtitle_color,),
-                                        SizedBox(width: 5,),
+                                        Text(
+                                          '소셜링 ·',
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: subtitle_color
+                                          ),
+                                        ),
+                                        SizedBox(width: 2,),
                                         SizedBox(
                                             child: Row(
                                               children: [
-                                                Text(
-                                                  '소셜링·',
-                                                  style: TextStyle(
-                                                      fontSize: 15,
-                                                      color: subtitle_color
-                                                  ),
-                                                ),
+                                                CommonGreyIcon(Icons.location_on),
                                                 SocialRingSubTitle_Text('관악구', '10.28(토) 오후 4:00')
                                               ],
                                             )
@@ -82,7 +83,7 @@ class SocialringHicking extends StatelessWidget{
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.people, color: subtitle_color, size: 15,),
+                                        CommonGreyIcon(Icons.people),
                                         SizedBox(width: 5,),
                                         SocialRingParticipant(1, 8),
                                       ],

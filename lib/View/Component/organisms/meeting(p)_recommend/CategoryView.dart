@@ -20,7 +20,7 @@ class CategoryView extends StatelessWidget{
     );
 
     return Container(
-        margin: EdgeInsets.only(left:20, right: 20, bottom: 20),
+        margin: EdgeInsets.only(left:20, right: 20),
         height: 200,
         width: double.infinity,
         child:Column(

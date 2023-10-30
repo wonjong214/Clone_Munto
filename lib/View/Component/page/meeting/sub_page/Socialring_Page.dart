@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/molecules/socialring/TagScroll_ScrollView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringCalender.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringHostView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringRecommend.dart';
@@ -17,7 +18,9 @@ class Socialring_Page extends StatelessWidget{
         mainAxisSize: MainAxisSize.max,
         children: [
           Socialring_PageView(),
-          SizedBox(height: 30),
+          SizedBox(height: 20,),
+          TagScroll_ScrollView(),
+          intergroupmargin,
           SocialringRecommend(),
           intergroupmargin,
           SocialringReview(),

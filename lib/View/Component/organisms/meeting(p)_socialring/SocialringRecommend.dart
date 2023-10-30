@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
+import 'package:loginscreen/View/Component/atoms/CommonMeetingTitle_Text.dart';
 import '../../atoms/More_Button.dart';
 
 
@@ -79,16 +81,11 @@ class SocialringRecommend extends StatelessWidget{
                                         )
                                       ],
                                     ),
-                                    Text(
-                                      '제목',
-                                      style: TextStyle(
-                                          overflow: TextOverflow.ellipsis
-                                      ),
-                                    ),
+                                    CommonMeetingTitle_Text('제목'),
                                     Row(
                                       children: [
                                         Text('소셜·'),
-                                        Icon(Icons.location_on),
+                                        CommonGreyIcon(Icons.location_on),
                                         SizedBox(
                                           width: 200,
                                           child: Text(
@@ -103,7 +100,7 @@ class SocialringRecommend extends StatelessWidget{
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.people),
+                                        CommonGreyIcon(Icons.people),
                                         Text('00/total'),
                                       ],
                                     )

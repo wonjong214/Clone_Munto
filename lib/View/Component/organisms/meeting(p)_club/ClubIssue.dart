@@ -73,6 +73,7 @@ class ClubIssue extends StatelessWidget{
                                       Icon(
                                         Icons.stars_rounded,
                                         color: Color(0XFF006400),
+                                        size: 15,
                                       ),
                                       Text(
                                         '모임설명.....',
@@ -135,6 +136,7 @@ class ClubIssue extends StatelessWidget{
                                         Icon(
                                           Icons.stars_rounded,
                                           color: Color(0XFF006400),
+                                          size: 15,
                                         ),
                                         Text(
                                           '모임설명.....',

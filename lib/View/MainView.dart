@@ -16,16 +16,29 @@ class MainView extends StatefulWidget{
 
 class MainViewState extends State<MainView>{
   int _selectedIndex = 0;
+  Widget _currentwidget;
+
+  MainViewState(): _currentwidget = MeetingView(){
+
+  }
 
   final List<Widget> _widgetOptions = <Widget>[
     MeetingView(),
     LoungeView(),
     CreateView(),
-    ProfileView()
+    ProfileView(),
   ];
 
   void _onItemTapped(int index) { // 탭을 클릭했을떄 지정한 페이지로 이동
     setState(() {
+      /*if(index == 3){
+        _selectedIndex = 2;
+      }
+      else if(index == 2){
+
+      }
+      else
+        _selectedIndex = index;*/
       _selectedIndex = index;
     });
   }

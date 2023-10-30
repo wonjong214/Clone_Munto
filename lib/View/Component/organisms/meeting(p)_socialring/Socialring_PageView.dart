@@ -12,7 +12,7 @@ class Socialring_PageView extends StatelessWidget{
         Container(
             height: 350,
             width: double.infinity,
-            margin: EdgeInsets.all(20),
+            margin: EdgeInsets.only(left: 20, right: 20, top: 20),
             child: PageView(
               controller: controller,
               onPageChanged: (num){ },

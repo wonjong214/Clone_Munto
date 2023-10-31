@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/page/create/CreateView.dart';
+import 'package:loginscreen/View/Component/page/create/ChooseMeetingType.dart';
+import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
 import 'package:loginscreen/View/MainView.dart';
 import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
                 initialRoute: '/main',
                 routes: {
                   '/main' : (context) => MainView(),
-                  '/meetingtype' : (context) => CreateView()
+                  '/meetingtype' : (context) => ChooseMeetingType(),
+                  '/categoryview' : (context) => CategoryView(),
                 }
             );
           }

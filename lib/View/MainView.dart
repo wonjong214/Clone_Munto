@@ -5,7 +5,7 @@ import 'package:loginscreen/View/Component/page/lounge/LoungeView.dart';
 import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/View/Component/page/profile/ProfileView.dart';
 
-import 'Component/page/create/CreateView.dart';
+import 'Component/page/create/ChooseMeetingType.dart';
 
 class MainView extends StatefulWidget{
   @override

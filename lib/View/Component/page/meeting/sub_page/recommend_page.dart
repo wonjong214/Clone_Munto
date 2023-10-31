@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/CategoryView.dart';
+import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/CategoryGrid.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/HotTag.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Exhibitions.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
@@ -32,7 +32,7 @@ class recommend_page extends StatelessWidget{
               child: ExhibitionsView(),
             ),
             //카테고리
-            CategoryView(),
+            CategoryGrid(),
             SizedBox(height: 20,),
             Divider(color: Color(0xff8e8e8e)),
             SizedBox(height: 20,),

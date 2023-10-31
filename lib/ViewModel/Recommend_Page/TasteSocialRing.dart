@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../Model/recommend_page_Model.dart';
+import '../../Model/meeting/recommend/recommend_page_Model.dart';
 
 class TasteSocialRing_Provider extends ChangeNotifier{
   List<TasteSocialRing> _tastesocialring;

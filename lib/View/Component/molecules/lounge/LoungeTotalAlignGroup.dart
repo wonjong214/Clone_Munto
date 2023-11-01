@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/RoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
 
 class LoungeTotalAlignGroup extends StatelessWidget{
   @override

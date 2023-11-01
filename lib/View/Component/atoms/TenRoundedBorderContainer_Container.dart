@@ -8,7 +8,8 @@ class TenRoundedBorderContainer extends StatelessWidget{
   Color? _backcolor;
 
 
-  TenRoundedBorderContainer({double? width, double? height, Widget? widget, Color? bordercolor, Color? backcolor}){
+  TenRoundedBorderContainer({double? width, double? height, Widget? widget,
+    Color? bordercolor = const Color(0xffa9a9a9), Color? backcolor = Colors.white}){
     this._width = width;
     this._height = height;
     this._widget = widget;

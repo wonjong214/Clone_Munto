@@ -4,7 +4,9 @@ import 'package:loginscreen/View/Component/page/chat/ChatView.dart';
 import 'package:loginscreen/View/Component/page/lounge/LoungeView.dart';
 import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/View/Component/page/profile/ProfileView.dart';
+import 'package:provider/provider.dart';
 
+import '../ViewModel//ResolutionProvider.dart';
 import 'Component/page/create/ChooseMeetingType.dart';
 
 class MainView extends StatefulWidget{
@@ -43,6 +45,10 @@ class MainViewState extends State<MainView>{
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    Provider.of<ResolutionProvider>(context, listen: false).width_set(width);
+    Provider.of<ResolutionProvider>(context, listen: false).height_set(height);
     return Scaffold(
       body: SafeArea(
         child: _widgetOptions.elementAt(_selectedIndex),

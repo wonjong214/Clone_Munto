@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
 import '../../atoms/Category_Button.dart';
 
 
@@ -32,7 +33,14 @@ class CategoryGrid extends StatelessWidget{
                     Expanded(
                         flex: 9,
                         child: GestureDetector(
-                          onTap: () {/*Navigator.pushNamed(context, '/categoryview');*/},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                builder: (context) => new CategoryView(),
+                              ),
+                            );
+                            },
                           child: Category_Button(Icons.format_paint_outlined,'문화·예술'),
                         )
                     ),

@@ -5,6 +5,7 @@ import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Container.dart';
 import 'package:loginscreen/Model/create/ChooseMeetingType_Model.dart';
 import 'package:loginscreen/Model/meeting/recommend/recommend_page_Model.dart';
+import 'package:loginscreen/View/Component/atoms/ThirtyRoundedInfinity_Container.dart';
 
 import '../../../../Constants/colors.dart';
 
@@ -266,23 +267,10 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 ),
               ),
               Spacer(),
-              Container(
-                margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                width: double.infinity,
-                height: 50,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: _buttoncolor!
-                ),
-                child: Text(
-                  '다음',
-                  style: TextStyle(
-                    fontSize: 17,
-                    color: _buttontextcolor!,
-                  ),
-                ),
-              )
+              ThirtyRoundedInfinity_Container(
+                  text: '다음',
+                  buttoncolor: _buttoncolor,
+                  buttontextcolor: _buttontextcolor)
             ],
           ),
         )

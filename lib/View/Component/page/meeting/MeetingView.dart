@@ -4,6 +4,7 @@ import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/challenge_page.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/club_page.dart';
+import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/FilterModalView.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/mymeeting_page.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/recommend_page.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/Socialring_Page.dart';
@@ -15,10 +16,7 @@ import '../../atoms/AppBarTab_Tab.dart';
 class MeetingView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    Provider.of<ResolutionProvider>(context, listen: false).width_set(width);
-    Provider.of<ResolutionProvider>(context, listen: false).height_set(height);
+    double height = Provider.of<ResolutionProvider>(context).height_get;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -35,7 +33,24 @@ class MeetingView extends StatelessWidget{
             children: [
               AppBarTitle('MUNTO'),
               Spacer(),
-              Icon(Icons.list, size: appbariconsize,),
+              IconButton(
+                  onPressed: (){
+                    showModalBottomSheet(
+                      isScrollControlled: true,
+                      context: context,
+                      builder: (BuildContext context){
+                          return SizedBox(
+                              height: height * 0.84,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                                child: FilterModalView(),
+                              )
+                          );
+                        },
+                    );
+                  },
+                  icon: Icon(Icons.list, size: appbariconsize,)
+              ),
               SizedBox(width: 10, ),
               Icon(Icons.search, size : appbariconsize),
               SizedBox(width: 10),

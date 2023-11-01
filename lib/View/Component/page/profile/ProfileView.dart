@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/fontsize.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
 import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
-import 'package:loginscreen/View/Component/atoms/RoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
 import 'package:loginscreen/View/Component/molecules/profile/Profile_Image.dart';
 import 'package:loginscreen/View/Component/molecules/profile/TextNum_Column.dart';
 import 'package:loginscreen/View/Component/organisms/profile/Feed.dart';

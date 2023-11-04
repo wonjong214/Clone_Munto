@@ -8,8 +8,8 @@ enum Category {
   travel("여행·동행"),
   study("자기계발"),
   friend("동네·친목"),
-  investment("31~60명"),
-  language("31~60명");
+  investment("재테크"),
+  language("외국어");
 
 
   final String korean;

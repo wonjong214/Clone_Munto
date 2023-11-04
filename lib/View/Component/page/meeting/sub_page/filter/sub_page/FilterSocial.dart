@@ -9,6 +9,41 @@ import 'package:loginscreen/View/Component/molecules/meeting/CustomRadioListile.
 import '../../../../../../../Model/meeting/filter/SocialCategory_Model.dart';
 import '../../../../../../../Model/meeting/filter/SocialQuota_Model.dart';
 
+enum Quota {
+  three("3~10명"),
+  eleven("11~30명"),
+  thirtyone("31~60명");
+
+  final String korean;
+  const Quota(this.korean);
+}
+
+enum Category {
+  culture("문화·예술"),
+  activity("액티비티"),
+  food("푸드·드링크"),
+  hoby("취미"),
+  party("파티·소개팅"),
+  travel("여행·동행"),
+  study("자기계발"),
+  friend("동네·친목"),
+  investment("재테크"),
+  language("외국어");
+
+
+  final String korean;
+  const Category(this.korean);
+}
+
+enum Type {
+  normal("일반 소셜링"),
+  club("클럽 소셜링");
+
+  final String korean;
+  const Type(this.korean);
+}
+
+
 class FilterSocial extends StatefulWidget {
   @override
   State<FilterSocial> createState() => _FilterSocialState();
@@ -16,12 +51,11 @@ class FilterSocial extends StatefulWidget {
 
 class _FilterSocialState extends State<FilterSocial> {
   List<String> daylist = ['월', '화', '수', '목', '금', '토', '일'];
-  SocialQuota_Model socialquota;
-  SocialCategory_Model socialcategory;
 
-  _FilterSocialState(): socialquota = new SocialQuota_Model(), socialcategory = new SocialCategory_Model(){
+  int? quotagroupvalue;
+  int? categorygroupvalue;
+  int? typegroupvalue;
 
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,6 +156,7 @@ class _FilterSocialState extends State<FilterSocial> {
               ],
             ),
             SizedBox(height: 15,),
+            //지역 grid
             SizedBox(height: 35,),
             AppBarTitle('정원'),
             /*SizedBox(
@@ -154,47 +189,47 @@ class _FilterSocialState extends State<FilterSocial> {
               children: [
                 Row(
                   children: [
-                    GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          socialquota.threebutton_touchevent();
-                        });
-                      },
-                      child: CustomRadioListtile(
-                          bordercolor:socialquota.threeborder,
-                          incirclecolor:socialquota.threein,
-                          label: Quota.three.korean,
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: CustomRadioListtile(
+                            value: Quota.three.index,
+                            groupvalue: quotagroupvalue,
+                            label: Quota.three.korean,
+                            onChanged: (value){
+                              setState(() {
+                                quotagroupvalue = value;
+                              });
+                            },
+                        ),
                       ),
                     ),
-                    Spacer(),
-                    GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          socialquota.elevenbutton_touchevent();
-                        });
-                      },
-                      child: CustomRadioListtile(
-                          bordercolor: socialquota.elevenborder,
-                          incirclecolor: socialquota.elevenin,
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: CustomRadioListtile(
+                          value: Quota.eleven.index,
+                          groupvalue: quotagroupvalue,
                           label: Quota.eleven.korean,
+                          onChanged: (value){
+                            setState(() {
+                              quotagroupvalue = value;
+                            });                      },
+                        ),
                       ),
                     ),
-                    Spacer()
                   ],
                 ),
                 SizedBox(height: 20,),
-                GestureDetector(
-                  onTap: (){
+                CustomRadioListtile(
+                  value: Quota.thirtyone.index,
+                  groupvalue: quotagroupvalue,
+                  label: Quota.thirtyone.korean,
+                  onChanged: (value){
                     setState(() {
-                      socialquota.thirtyonebutton_touchevent();
-                    });
-                  },
-                  child: CustomRadioListtile(
-                      bordercolor: socialquota.thirtyoneborder,
-                      incirclecolor: socialquota.thirtyonein,
-                      label: Quota.thirtyone.korean
-                  ),
-                )
+                      quotagroupvalue = value;
+                    });                  },
+                ),
               ],
             ),
 
@@ -206,39 +241,83 @@ class _FilterSocialState extends State<FilterSocial> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          socialcategory.culture_touchevent();
-                        });
-                      },
-                      child: CustomRadioListtile(
-                        bordercolor:socialcategory.cultureborder,
-                        incirclecolor:socialcategory.culturein,
-                        label: Category.culture.korean,
+                for(int num = 0; num < 9; num+=2)
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.centerLeft,
+                          child: CustomRadioListtile(
+                            value: Category.values[num].index,
+                            groupvalue: categorygroupvalue,
+                            label: Category.values[num].korean,
+                            onChanged: (value){
+                              setState(() {
+                                categorygroupvalue = value;
+                              });
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                    Spacer(),
-                    GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          socialcategory.activity_touchevent();
-                        });
-                      },
-                      child: CustomRadioListtile(
-                        bordercolor: socialcategory.activityborder,
-                        incirclecolor: socialcategory.activityin,
-                        label: Category.activity.korean,
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.centerLeft,
+                          child: CustomRadioListtile(
+                            value: Category.values[num + 1].index,
+                            groupvalue: categorygroupvalue,
+                            label: Category.values[num + 1].korean,
+                            onChanged: (value){
+                              setState(() {
+                                categorygroupvalue = value;
+                              });
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                    Spacer()
-                  ],
+                    ],
+                  ),
                 ),
               ],
-            )
-
+            ),
+            SizedBox(height: 35,),
+            AppBarTitle('유형'),
+            SizedBox(height: 15,),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: CustomRadioListtile(
+                      value: Type.normal.index,
+                      groupvalue: typegroupvalue,
+                      label: Type.normal.korean,
+                      onChanged: (value){
+                        setState(() {
+                          typegroupvalue = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: CustomRadioListtile(
+                      value: Type.club.index,
+                      groupvalue: typegroupvalue,
+                      label: Type.club.korean,
+                      onChanged: (value){
+                        setState(() {
+                          typegroupvalue = value;
+                        });                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 200,)
           ],
         ),
       ),

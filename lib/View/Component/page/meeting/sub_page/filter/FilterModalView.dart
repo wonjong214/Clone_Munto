@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/ThirtyRoundedInfinity_Container.dart';
+import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterSocial.dart';
 
 import '../../../../atoms/AppBarTab_Tab.dart';
 
@@ -55,7 +56,7 @@ class _FilterModalViewState extends State<FilterModalView> {
           ],
           bottom: TabBar(
             labelColor: Colors.black,
-            unselectedLabelColor: Colors.grey,
+            unselectedLabelColor: Color(0xffa9a9a9),
             indicatorColor: Colors.black,
             indicatorSize: TabBarIndicatorSize.tab,
             labelPadding: EdgeInsets.only(bottom: 10),
@@ -66,12 +67,14 @@ class _FilterModalViewState extends State<FilterModalView> {
                 '소셜링',
                 style: TextStyle(
                   fontSize: 17,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                   '클럽',
                 style: TextStyle(
                   fontSize: 17,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
@@ -82,7 +85,7 @@ class _FilterModalViewState extends State<FilterModalView> {
             Expanded(
               child: TabBarView(
                 children: [
-                  Text('소셜링'),
+                  FilterSocial(),
                   Text('클럽'),
                 ],
               ),

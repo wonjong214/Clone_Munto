@@ -4,7 +4,7 @@ class AppBarTitle extends StatelessWidget{
   String _text;
   FontWeight? _fontweight;
 
-  AppBarTitle(this._text,{FontWeight? fontweight = FontWeight.w600}){
+  AppBarTitle(this._text,{FontWeight? fontweight = FontWeight.bold}){
     this._fontweight = _fontweight;
   }
 
@@ -15,7 +15,7 @@ class AppBarTitle extends StatelessWidget{
       style: TextStyle(
         fontFamily: 'apptitle',
         fontWeight: _fontweight,
-        fontSize: 25,
+        fontSize: 21,
       ),
     );
   }

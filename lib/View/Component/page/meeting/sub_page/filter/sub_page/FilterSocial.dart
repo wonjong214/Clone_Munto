@@ -1,48 +1,14 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
-import 'package:loginscreen/View/Component/atoms/CustomRadio.dart';
+import 'package:loginscreen/View/Component/atoms/CustomThirtyRoundedRadio.dart';
 import 'package:loginscreen/View/Component/atoms/FilterBody_Text.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/KoreaLocation_Container.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/CustomRadioListile.dart';
-
-import '../../../../../../../Model/meeting/filter/SocialCategory_Model.dart';
-import '../../../../../../../Model/meeting/filter/SocialQuota_Model.dart';
-
-enum Quota {
-  three("3~10명"),
-  eleven("11~30명"),
-  thirtyone("31~60명");
-
-  final String korean;
-  const Quota(this.korean);
-}
-
-enum Category {
-  culture("문화·예술"),
-  activity("액티비티"),
-  food("푸드·드링크"),
-  hoby("취미"),
-  party("파티·소개팅"),
-  travel("여행·동행"),
-  study("자기계발"),
-  friend("동네·친목"),
-  investment("재테크"),
-  language("외국어");
-
-
-  final String korean;
-  const Category(this.korean);
-}
-
-enum Type {
-  normal("일반 소셜링"),
-  club("클럽 소셜링");
-
-  final String korean;
-  const Type(this.korean);
-}
-
+import 'package:provider/provider.dart';
+import '../../../../../../../Constants/list.dart';
+import '../../../../../../../Model/meeting/filter/Enum.dart';
+import '../../../../../../../ViewModel//ResolutionProvider.dart';
 
 class FilterSocial extends StatefulWidget {
   @override
@@ -50,15 +16,44 @@ class FilterSocial extends StatefulWidget {
 }
 
 class _FilterSocialState extends State<FilterSocial> {
-  List<String> daylist = ['월', '화', '수', '목', '금', '토', '일'];
-
+  final List<bool> _selectedduration = <bool>[false, false, false];
+  List<String> locationlist = List.empty(growable: true);
+  int? daygroupvalue;
   int? quotagroupvalue;
   int? categorygroupvalue;
   int? typegroupvalue;
+  int? korealocationgroupvalue;
 
+  _FilterSocialState() {
+    init_locationlist();
+  }
+
+  void init_locationlist(){
+    /*locationlist.addAll(
+      List.generate(
+        KoreaLocation.values.length,
+            (index) {
+          return KoreaLocation_Container(
+            value: KoreaLocation.values[index].index,
+            groupvalue: korealocationgroupvalue,
+            text: KoreaLocation.values[index].korean,
+            onChanged: (value) {
+              setState(
+                    () {
+                  korealocationgroupvalue = value;
+                },
+              );
+            },
+          );
+        },
+      ),
+    );*/
+    locationlist.addAll(korealocation_list);
+  }
 
   @override
   Widget build(BuildContext context) {
+    double width = Provider.of<ResolutionProvider>(context).width_get;
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.only(left: 15, top: 30, right: 15),
@@ -69,79 +64,73 @@ class _FilterSocialState extends State<FilterSocial> {
             SizedBox(
               height: 15,
             ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Color(0x55a9a9a9), width: 1),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          bottomLeft: Radius.circular(10),
-                        )
-                    ),
-                    height: 50,
-                    child: FilterBody_Text(text:'이번 주',),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1, color: Color(0x55a9a9a9)),
-                          bottom: BorderSide(width: 1, color: Color(0x55a9a9a9)),
-                        ),
-                    ),
-                    height: 50,
-                    child: FilterBody_Text(text: '다음 주',),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Color(0x55a9a9a9), width: 1),
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
-                        )
-                    ),
-                    height: 50,
-                    child: FilterBody_Text(text: '직접 입력',),
-                  ),
-                ),
-              ],
+
+            ToggleButtons(
+              children: duration,
+              isSelected: _selectedduration,
+              constraints:
+                  BoxConstraints(minWidth: (width - 34) / 3, minHeight: 50),
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              disabledColor: Colors.grey.shade200,
+              selectedColor: Colors.red,
+              color: Colors.black,
+              fillColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              selectedBorderColor: Colors.red,
+              borderColor: Colors.grey.shade200,
+              onPressed: (int index) {
+                setState(() {
+                  // The button that is tapped is set to true, and the others to false.
+                  for (int i = 0; i < _selectedduration.length; i++) {
+                    _selectedduration[i] = i == index;
+                  }
+                });
+              },
             ),
-            SizedBox(height: 35,),
+            SizedBox(
+              height: 35,
+            ),
 
             AppBarTitle('요일'),
-
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List<ThirtyRoundedBorderContainer>.generate(daylist.length, (index){
-                  return ThirtyRoundedBorderContainer(
-                    padding: EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10,),
-                    bordercolor: Color(0xffa9a9a9),
-                    widget: FilterBody_Text(text: daylist[index],),
-                  );
-                }).toList()
+              children: List.generate(Day.values.length, (index) {
+                return CustomThirtyRoundedRadio(
+                  value: Day.values[index].index,
+                  groupvalue: daygroupvalue,
+                  label: Day.values[index].korean,
+                  onChanged: (value) {
+                    setState(() {
+                      daygroupvalue = value;
+                    });
+                  },
+                );
+              }),
             ),
-            SizedBox(height: 35,),
+            SizedBox(
+              height: 35,
+            ),
             Row(
               children: [
                 AppBarTitle('지역'),
                 Spacer(),
-                FilterBody_Text(text: '온라인', color: Color(0xffa9a9a9),),
-                SizedBox(width: 10,),
+                FilterBody_Text(
+                  text: '온라인',
+                  color: Color(0xffa9a9a9),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
                 Theme(
                   data: ThemeData(
                     useMaterial3: false,
                   ).copyWith(
-                    colorScheme: Theme.of(context).colorScheme.copyWith(outline: Color(0xFFdbdbdb)),
+                    colorScheme: Theme.of(context)
+                        .colorScheme
+                        .copyWith(outline: Color(0xFFdbdbdb)),
                   ),
                   child: Switch(
                     inactiveThumbColor: Color(0xFFfafafa),
@@ -149,41 +138,54 @@ class _FilterSocialState extends State<FilterSocial> {
                     activeColor: Colors.red,
                     activeTrackColor: Color(0xfff99a97),
                     value: false,
-                    onChanged: (value) {
-                    },
+                    onChanged: (value) {},
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             //지역 grid
-            SizedBox(height: 35,),
-            AppBarTitle('정원'),
-            /*SizedBox(
-              height: 100,
-              child: GridView.count(
-                physics: NeverScrollableScrollPhysics(),
-                childAspectRatio: (1 / .2),
-                crossAxisCount: 2,
-                children: List<Widget>.generate(Quota.values.length, (index){
-                  return Transform.scale(
-                    scale: 1.2,
-                    child: RadioListTile(
-                        title: Text(Quota.values[index].korean),
-                        value: Quota.values[index],
-                        groupValue: quota,
-                        onChanged: (value){
-                          setState(() {
-                            quota = value;
-                          });
-                        }
-                    ),
-                  );
-                },
+            Container(
+              padding: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.grey.shade400),
+                  borderRadius: BorderRadius.circular(10)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: GridView.count(
+                  padding: EdgeInsets.zero,
+                  crossAxisCount: 4,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  mainAxisSpacing: 1,
+                  crossAxisSpacing: 1,
+                  childAspectRatio: 1.8 / 1,
+                  children: List.generate(locationlist.length, (index){
+                    return KoreaLocation_Container(
+                      value: index,
+                      groupvalue: korealocationgroupvalue,
+                      text: locationlist[index],
+                      onChanged: (value) {
+                        setState(
+                              () {
+                            korealocationgroupvalue = value;
+                          },
+                        );
+                      },
+                    );
+                  }),
                 ),
               ),
-            )*/
-            SizedBox(height: 15,),
+            ),
+            SizedBox(
+              height: 35,
+            ),
+            AppBarTitle('정원'),
+            SizedBox(
+              height: 15,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -193,14 +195,14 @@ class _FilterSocialState extends State<FilterSocial> {
                       child: Container(
                         alignment: Alignment.centerLeft,
                         child: CustomRadioListtile(
-                            value: Quota.three.index,
-                            groupvalue: quotagroupvalue,
-                            label: Quota.three.korean,
-                            onChanged: (value){
-                              setState(() {
-                                quotagroupvalue = value;
-                              });
-                            },
+                          value: Quota.three.index,
+                          groupvalue: quotagroupvalue,
+                          label: Quota.three.korean,
+                          onChanged: (value) {
+                            setState(() {
+                              quotagroupvalue = value;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -211,79 +213,91 @@ class _FilterSocialState extends State<FilterSocial> {
                           value: Quota.eleven.index,
                           groupvalue: quotagroupvalue,
                           label: Quota.eleven.korean,
-                          onChanged: (value){
+                          onChanged: (value) {
                             setState(() {
                               quotagroupvalue = value;
-                            });                      },
+                            });
+                          },
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 CustomRadioListtile(
                   value: Quota.thirtyone.index,
                   groupvalue: quotagroupvalue,
                   label: Quota.thirtyone.korean,
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
                       quotagroupvalue = value;
-                    });                  },
+                    });
+                  },
                 ),
               ],
             ),
 
-            SizedBox(height: 35,),
+            SizedBox(
+              height: 35,
+            ),
 
             AppBarTitle('카테고리'),
 
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for(int num = 0; num < 9; num+=2)
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: CustomRadioListtile(
-                            value: Category.values[num].index,
-                            groupvalue: categorygroupvalue,
-                            label: Category.values[num].korean,
-                            onChanged: (value){
-                              setState(() {
-                                categorygroupvalue = value;
-                              });
-                            },
+                for (int num = 0; num < 9; num += 2)
+                  Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: CustomRadioListtile(
+                              value: Category.values[num].index,
+                              groupvalue: categorygroupvalue,
+                              label: Category.values[num].korean,
+                              onChanged: (value) {
+                                setState(() {
+                                  categorygroupvalue = value;
+                                });
+                              },
+                            ),
                           ),
                         ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: CustomRadioListtile(
-                            value: Category.values[num + 1].index,
-                            groupvalue: categorygroupvalue,
-                            label: Category.values[num + 1].korean,
-                            onChanged: (value){
-                              setState(() {
-                                categorygroupvalue = value;
-                              });
-                            },
+                        Expanded(
+                          child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: CustomRadioListtile(
+                              value: Category.values[num + 1].index,
+                              groupvalue: categorygroupvalue,
+                              label: Category.values[num + 1].korean,
+                              onChanged: (value) {
+                                setState(() {
+                                  categorygroupvalue = value;
+                                });
+                              },
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
               ],
             ),
-            SizedBox(height: 35,),
+            SizedBox(
+              height: 35,
+            ),
             AppBarTitle('유형'),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Row(
               children: [
                 Expanded(
@@ -293,7 +307,7 @@ class _FilterSocialState extends State<FilterSocial> {
                       value: Type.normal.index,
                       groupvalue: typegroupvalue,
                       label: Type.normal.korean,
-                      onChanged: (value){
+                      onChanged: (value) {
                         setState(() {
                           typegroupvalue = value;
                         });
@@ -308,16 +322,19 @@ class _FilterSocialState extends State<FilterSocial> {
                       value: Type.club.index,
                       groupvalue: typegroupvalue,
                       label: Type.club.korean,
-                      onChanged: (value){
+                      onChanged: (value) {
                         setState(() {
                           typegroupvalue = value;
-                        });                      },
+                        });
+                      },
                     ),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 200,)
+            SizedBox(
+              height: 200,
+            )
           ],
         ),
       ),

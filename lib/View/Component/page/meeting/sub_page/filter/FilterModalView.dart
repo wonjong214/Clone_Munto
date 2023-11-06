@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/ThirtyRoundedInfinity_Container.dart';
+import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterClub.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterSocial.dart';
 
-import '../../../../atoms/AppBarTab_Tab.dart';
+
 
 class FilterModalView extends StatefulWidget {
   @override
@@ -86,7 +87,7 @@ class _FilterModalViewState extends State<FilterModalView> {
               child: TabBarView(
                 children: [
                   FilterSocial(),
-                  Text('클럽'),
+                  FilterClub(),
                 ],
               ),
             ),

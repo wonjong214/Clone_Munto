@@ -38,7 +38,12 @@ class ProfileView extends StatelessWidget{
               Spacer(),
               SizedBox(child: Icon(Icons.ios_share)),
               SizedBox(width: 20,),
-              Icon(Icons.settings_outlined),
+              IconButton(
+                onPressed: (){
+                  Navigator.of(context, rootNavigator: true).pushNamed('/setting');
+                },
+                icon: Icon(Icons.settings_outlined),
+              ),
               SizedBox(width: 20,),
             ],
           ),
@@ -59,42 +64,48 @@ class ProfileView extends StatelessWidget{
                       children: [
                         Profile_Image(AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg')),
                         Spacer(),
-                        Container(
-                          padding: EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: tag_color
-                          ),
-                          child: Row(
-                            children: [
-                              CircleIcon(
-                                icon: Icons.question_mark,
-                                iconsize: 10,
-                                backgroundcolor: Colors.grey,
-                                width: 12,
-                                height: 12,
-                              ),
-                              SizedBox(width: 5,),
-                              Text(
-                                '나의 성향 배지',
-                                style: TextStyle(
-                                  color: Colors.grey.shade600,
-                                  fontSize: 14
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context,rootNavigator: true).pushNamed(
+                                '/propensityreport'
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: tag_color
+                            ),
+                            child: Row(
+                              children: [
+                                CircleIcon(
+                                  icon: Icons.question_mark,
+                                  iconsize: 10,
+                                  backgroundcolor: Colors.grey,
+                                  width: 12,
+                                  height: 12,
                                 ),
-                              )
-                            ],
-                          )
+                                SizedBox(width: 5,),
+                                Text(
+                                  '나의 성향 배지',
+                                  style: TextStyle(
+                                    color: Colors.grey.shade600,
+                                    fontSize: 14
+                                  ),
+                                )
+                              ],
+                            )
+                          ),
                         ),
                         SizedBox(width: 10,),
                         Container(
-                            padding: EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
+                            padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Color(0xffebfbe6)
                             ),
                             child: Row(
                               children: [
-
                                 Text(
                                   '36.9',
                                   style: TextStyle(

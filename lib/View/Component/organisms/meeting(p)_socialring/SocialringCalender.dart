@@ -137,7 +137,7 @@ class SocialringCalender_State
             Column(
               children: [
                 Common_Container(
-                    Row(
+                    widget: Row(
                       children: [
                         GroupImage(
                             IconButton(

@@ -43,7 +43,7 @@ class SocialringHicking extends StatelessWidget{
                 Column(
                   children: [
                     Common_Container(
-                        Row(
+                      widget: Row(
                           children: [
                             GroupImage(
                                 IconButton(

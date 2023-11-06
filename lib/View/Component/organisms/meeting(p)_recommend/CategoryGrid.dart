@@ -35,7 +35,7 @@ class CategoryGrid extends StatelessWidget{
                         flex: 9,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.of(context, rootNavigator: true).pushNamed(
+                            Navigator.of(context,rootNavigator: true).pushNamed(
                               '/categoryview',
                               arguments: Category.culture.index
                             );

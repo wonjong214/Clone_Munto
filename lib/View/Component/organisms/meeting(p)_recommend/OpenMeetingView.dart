@@ -28,7 +28,7 @@ class OpenMeetingView extends StatelessWidget{
       height: 160,
       margin: EdgeInsets.only(left: 20, right: 20),
       child: Common_Container(
-          Row(
+        widget: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

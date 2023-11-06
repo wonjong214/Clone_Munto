@@ -11,7 +11,7 @@ class Profile_Image extends StatelessWidget{
       alignment: AlignmentDirectional.center,
       children: [
         CircleAvatar(
-          radius: 40,
+          radius: 43,
           backgroundImage: _image,
         ),
         Positioned(

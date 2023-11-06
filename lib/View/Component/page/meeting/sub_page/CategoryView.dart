@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Model/meeting/filter/Enum.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 
 import '../../../../../Constants/border.dart';
 import '../../../../../Constants/colors.dart';
-import '../../../atoms/AppBarTab_Tab.dart';
+
 
 class CategoryView extends StatelessWidget {
   late List<Tab> tablist;
   
   CategoryView(){
-    tablist = [
-      Tab(
-          icon: Icon(Icons.format_paint_outlined),
-          child: Text(
-              '문화·예술',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23)
+    tablist = List<Tab>.generate(Category.values.length, (index){
+      return Tab(
+          child: Row(
+            children: [
+              Icon(Category.values[index].icon, size: 18,),
+              SizedBox(width: 10,),
+              Text(
+                  Category.values[index].korean,
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18)
+              ),
+            ],
           )
-      )
-    ];
+      );
+    });
   }
   
   @override
   Widget build(BuildContext context) {
+    int index = ModalRoute.of(context)?.settings.arguments as int;
     return DefaultTabController(
-      length: 1,
+      initialIndex: index,
+      length: 10,
       child: Scaffold(
         backgroundColor: Color(0xfffefefe),
         appBar: AppBar(
@@ -60,9 +68,9 @@ class CategoryView extends StatelessWidget {
               )),
         ),
         body: TabBarView(
-          children: [
-            Text('df')
-          ],
+          children: List.generate(Category.values.length, (index){
+            return Text(Category.values[index].korean);
+          }),
         ),
       ),
     );

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum Quota {
   three("3~10명"),
   eleven("11~30명"),
@@ -8,20 +10,21 @@ enum Quota {
 }
 
 enum Category {
-  culture("문화·예술"),
-  activity("액티비티"),
-  food("푸드·드링크"),
-  hoby("취미"),
-  party("파티·소개팅"),
-  travel("여행·동행"),
-  study("자기계발"),
-  friend("동네·친목"),
-  investment("재테크"),
-  language("외국어");
+  culture("문화·예술", Icons.format_paint_outlined),
+  activity("액티비티", Icons.sports_baseball),
+  food("푸드·드링크", Icons.fastfood),
+  hoby("취미", Icons.star),
+  party("파티·소개팅", Icons.wine_bar),
+  travel("여행·동행", Icons.airplane_ticket),
+  study("자기계발", Icons.menu_book_outlined),
+  friend("동네·친목", Icons.chat),
+  investment("재테크", Icons.wallet),
+  language("외국어", Icons.sort_by_alpha);
 
 
   final String korean;
-  const Category(this.korean);
+  final IconData icon;
+  const Category(this.korean, this.icon);
 }
 
 enum Type {

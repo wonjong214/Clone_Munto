@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Model/meeting/filter/Enum.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
 import '../../atoms/Category_Button.dart';
 
@@ -34,46 +35,64 @@ class CategoryGrid extends StatelessWidget{
                         flex: 9,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              new MaterialPageRoute(
-                                builder: (context) => new CategoryView(),
-                              ),
+                            Navigator.of(context, rootNavigator: true).pushNamed(
+                              '/categoryview',
+                              arguments: Category.culture.index
                             );
                             },
-                          child: Category_Button(Icons.format_paint_outlined,'문화·예술'),
+                          child: Category_Button(Category.culture.icon,Category.culture.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
                     Expanded(
                         flex: 9,
                         child: GestureDetector(
-                          onTap: () {},
-                          child: Category_Button(Icons.sports_baseball,'액티비티'),
+                          onTap: () {
+                            Navigator.of(context, rootNavigator: true).pushNamed(
+                                '/categoryview',
+                                arguments: Category.activity.index
+                            );
+                          },
+                          child: Category_Button(Category.activity.icon,Category.activity.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
                     Expanded(
                         flex: 9,
                         child: GestureDetector(
-                          onTap: () {},
-                          child: Category_Button(Icons.fastfood,'푸드·드링크'),
+                          onTap: () {
+                            Navigator.of(context, rootNavigator: true).pushNamed(
+                                '/categoryview',
+                                arguments: Category.food.index
+                            );
+                          },
+                          child: Category_Button(Category.food.icon, Category.food.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
                     Expanded(
                         flex: 9,
                         child: GestureDetector(
-                          onTap: () {},
-                          child: Category_Button(Icons.star,'취미'),
+                          onTap: () {
+                            Navigator.of(context, rootNavigator: true).pushNamed(
+                                '/categoryview',
+                                arguments: Category.hoby.index
+                            );
+                          },
+                          child: Category_Button(Category.hoby.icon, Category.hoby.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
                     Expanded(
                         flex: 9,
                         child: GestureDetector(
-                          onTap: () {},
-                          child: Category_Button(Icons.wine_bar,'파티·소개팅'),
+                          onTap: () {
+                            Navigator.of(context, rootNavigator: true).pushNamed(
+                                '/categoryview',
+                                arguments: Category.party.index
+                            );
+                          },
+                          child: Category_Button(Category.party.icon, Category.party.korean),
                         )
                     ),
                   ],
@@ -90,40 +109,65 @@ class CategoryGrid extends StatelessWidget{
                       Expanded(
                           flex: 9,
                           child: GestureDetector(
-                            onTap: () {},
-                            child: Category_Button(Icons.airplane_ticket,'여행·동행'),
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).pushNamed(
+                                  '/categoryview',
+                                  arguments: Category.travel.index
+                              );
+                            },
+                            child: Category_Button(Category.travel.icon, Category.travel.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
                       Expanded(
                           flex: 9,
                           child: GestureDetector(
-                            onTap: () {},
-                            child: Category_Button(Icons.menu_book_outlined,'자기계발'),
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).pushNamed(
+                                  '/categoryview',
+                                  arguments: Category.study.index
+                              );
+                            },
+                            child: Category_Button(Category.study.icon, Category.study.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
                       Expanded(
                           flex: 9,
                           child: GestureDetector(
-                            onTap: () {},
-                            child: Category_Button(Icons.chat,'동네·친목'),
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).pushNamed(
+                                  '/categoryview',
+                                  arguments: Category.friend.index
+                              );
+                            },
+                            child: Category_Button(Category.friend.icon, Category.friend.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
                       Expanded(
                           flex: 9,
                           child: GestureDetector(
-                            onTap: () {},
-                            child: Category_Button(Icons.wallet,'재테크'),
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).pushNamed(
+                                  '/categoryview',
+                                  arguments: Category.investment.index
+                              );
+                            },
+                            child: Category_Button(Category.investment.icon, Category.investment.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
                       Expanded(
                           flex: 9,
                           child: GestureDetector(
-                            onTap: () {},
-                            child: Category_Button(Icons.sort_by_alpha,'외국어'),
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).pushNamed(
+                                  '/categoryview',
+                                  arguments: Category.language.index
+                              );
+                            },
+                            child: Category_Button(Category.language.icon, Category.language.korean),
                           )
                       ),
                     ],

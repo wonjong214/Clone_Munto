@@ -1,35 +1,28 @@
 import 'package:flutter/material.dart';
 
 class CircleIcon extends StatelessWidget{
-  double? _width;
-  double? _height;
-  double? _iconsize;
-  Color? _backgroundcolor;
-  Color? _iconcolor;
-  IconData? _icon;
+  double? width;
+  double? height;
+  Widget? icon;
+  Color? backgroundcolor;
+  BoxBorder? border;
 
-  CircleIcon({double? width, double? height, double? iconsize,
-    Color? backgroundcolor, Color? iconcolor = Colors.white, IconData? icon}){
-    this._width = width;
-    this._height = height;
-    this._iconsize = iconsize;
-    this._backgroundcolor = backgroundcolor;
-    this._iconcolor = iconcolor;
-    this._icon = icon;
+  CircleIcon({required this.width, required this.height, required this.icon, this.backgroundcolor, this.border}){
   }
 
   @override
   Widget build(BuildContext context) {
 
     return Container(
-      width: _width!,
-      height: _height!,
+      width: width,
+      height: height,
       alignment: Alignment.center,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: _backgroundcolor!,
+          color: backgroundcolor,
+          border: border
       ),
-      child: Icon(_icon!,size: _iconsize!, color: _iconcolor!,),
+      child: icon,
     );
   }
 }

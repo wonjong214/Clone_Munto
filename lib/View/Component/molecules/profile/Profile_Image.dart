@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Profile_Image extends StatelessWidget{
-  AssetImage _image;
+  AssetImage image;
+  Widget? icon;
 
-  Profile_Image(this._image);
+  Profile_Image({required this.image, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class Profile_Image extends StatelessWidget{
       children: [
         CircleAvatar(
           radius: 43,
-          backgroundImage: _image,
+          backgroundImage: image,
         ),
         Positioned(
             bottom: 0,
@@ -29,7 +30,7 @@ class Profile_Image extends StatelessWidget{
                   width: 1,
                 )
               ),
-              child: Icon(Icons.edit_outlined,size: 18,),
+              child: icon,
             )
         )
       ],

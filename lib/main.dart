@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/page/FeedWrite_Page.dart';
 import 'package:loginscreen/View/Component/page/create/ChooseMeetingType.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
+import 'package:loginscreen/View/Component/page/profile/ProfileEdit.dart';
 import 'package:loginscreen/View/Component/page/profile/PropensityReport_page.dart';
 import 'package:loginscreen/View/Component/page/profile/Setting_page.dart';
 import 'package:loginscreen/View/MainView.dart';
 import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
+
+import 'View/Component/page/profile/Score.dart';
 
 
 
@@ -46,6 +50,9 @@ class MyApp extends StatelessWidget {
                   '/categoryview' : (context) => CategoryView(),
                   '/propensityreport' : (context) => PropensityReport(),
                   '/setting' : (context) => Setting_page(),
+                  '/score' : (context) => Score(),
+                  '/profileedit' : (context) => ProfileEdit(),
+                  '/FeedWrite_Page' : (context) => FeedWrite_Page(),
                 }
             );
           }

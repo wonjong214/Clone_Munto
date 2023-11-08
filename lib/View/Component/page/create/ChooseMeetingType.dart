@@ -128,9 +128,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                         width: 20,
                         height: 20,
                         backgroundcolor: _social!.iconbackcolor,
-                        icon: Icons.bolt,
-                        iconsize: 18,
-                        iconcolor: _social!.iconcolor,
+                        icon: Icon(Icons.bolt, size: 18, color: _social!.iconcolor,),
                       ),
                       SizedBox(width: 20,),
                       Column(
@@ -182,9 +180,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                         width: 20,
                         height: 20,
                         backgroundcolor: _club!.iconbackcolor,
-                        icon: Icons.star,
-                        iconsize: 14,
-                        iconcolor: _club!.iconcolor,
+                        icon: Icon(Icons.star, size: 14, color: _club!.iconcolor,),
                       ),
                       SizedBox(width: 20,),
                       Column(
@@ -236,9 +232,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                         width: 20,
                         height: 20,
                         backgroundcolor: _challenge!.iconbackcolor,
-                        icon: Icons.local_fire_department,
-                        iconsize: 18,
-                        iconcolor: _challenge!.iconcolor,
+                        icon: Icon(Icons.local_fire_department, size: 18, color: _challenge!.iconcolor,),
                       ),
                       SizedBox(width: 20,),
                       Column(

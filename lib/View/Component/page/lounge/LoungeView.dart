@@ -22,7 +22,12 @@ class LoungeView extends StatelessWidget{
               children: [
                 AppBarTitle('라운지'),
                 Spacer(),
-                Icon(Icons.add_box_outlined, size: appbariconsize,),
+                IconButton(
+                  icon:Icon(Icons.add_box_outlined, size: appbariconsize,),
+                  onPressed: (){
+                    Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
+                  },
+                ),
                 SizedBox(width: 10, ),
                 Icon(Icons.bookmark_border_outlined, size : appbariconsize),
                 SizedBox(width: 10),

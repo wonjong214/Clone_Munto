@@ -62,7 +62,15 @@ class ProfileView extends StatelessWidget{
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Profile_Image(AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg')),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context, rootNavigator: true).pushNamed('/profileedit');
+                          },
+                          child: Profile_Image(
+                            image:AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg'),
+                            icon: Icon(Icons.edit_outlined,size: 18,),
+                          ),
+                        ),
                         Spacer(),
                         GestureDetector(
                           onTap: (){
@@ -79,8 +87,7 @@ class ProfileView extends StatelessWidget{
                             child: Row(
                               children: [
                                 CircleIcon(
-                                  icon: Icons.question_mark,
-                                  iconsize: 10,
+                                  icon: Icon(Icons.question_mark, size: 10,),
                                   backgroundcolor: Colors.grey,
                                   width: 12,
                                   height: 12,
@@ -98,31 +105,35 @@ class ProfileView extends StatelessWidget{
                           ),
                         ),
                         SizedBox(width: 10,),
-                        Container(
-                            padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color(0xffebfbe6)
-                            ),
-                            child: Row(
-                              children: [
-                                Text(
-                                  '36.9',
-                                  style: TextStyle(
-                                      color: Color(0xff77e357),
-                                      fontSize: 14
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context, rootNavigator: true).pushNamed('/score');
+                          },
+                          child: Container(
+                              padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Color(0xffebfbe6)
+                              ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '36.9',
+                                    style: TextStyle(
+                                        color: Color(0xff77e357),
+                                        fontSize: 14
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 5,),
-                                CircleIcon(
-                                  icon: Icons.arrow_forward_ios,
-                                  iconsize: 8,
-                                  backgroundcolor: Color(0xff77e357),
-                                  width: 12,
-                                  height: 12,
-                                ),
-                              ],
-                            )
+                                  SizedBox(width: 5,),
+                                  CircleIcon(
+                                    icon: Icon(Icons.arrow_forward_ios, size: 8,),
+                                    backgroundcolor: Color(0xff77e357),
+                                    width: 12,
+                                    height: 12,
+                                  ),
+                                ],
+                              )
+                          ),
                         ),
                       ],
                     ),
@@ -164,20 +175,25 @@ class ProfileView extends StatelessWidget{
                       children: [
                         TextNum(),
                         Spacer(),
-                        ThirtyRoundedBorderContainer(
-                          padding: EdgeInsets.only(left:8, right:8, top: 3, bottom: 3),
-                          bordercolor: Colors.grey,
-                          widget: Row(
-                            children: [
-                              Icon(Icons.add_circle, color: Colors.black, size: 20,),
-                              SizedBox(width: 5,),
-                              Text(
-                                '글쓰기',
-                                style: TextStyle(
-                                  fontSize: 16
-                                ),
-                              )
-                            ],
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
+                          },
+                          child: ThirtyRoundedBorderContainer(
+                            padding: EdgeInsets.only(left:8, right:8, top: 3, bottom: 3),
+                            bordercolor: Colors.grey,
+                            widget: Row(
+                              children: [
+                                Icon(Icons.add_circle, color: Colors.black, size: 20,),
+                                SizedBox(width: 5,),
+                                Text(
+                                  '글쓰기',
+                                  style: TextStyle(
+                                    fontSize: 16
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],

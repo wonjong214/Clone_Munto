@@ -1,33 +1,28 @@
 import 'package:flutter/material.dart';
 
 class ThirtyRoundedBorderContainer extends StatelessWidget{
-  EdgeInsetsGeometry? _padding;
-  Color? _bodercolor;
-  Color? _backcolor;
-  Widget? _widget;
+  EdgeInsetsGeometry? padding;
+  Color? bordercolor;
+  Color? backcolor;
+  Widget? widget;
 
 
-  ThirtyRoundedBorderContainer({EdgeInsetsGeometry? padding, Color? bordercolor, Color? backcolor = Colors.transparent, Widget? widget})
-  {
-    this._padding = padding;
-    this._bodercolor = bordercolor;
-    this._backcolor = backcolor;
-    this._widget = widget;
-  }
+  ThirtyRoundedBorderContainer({required this.padding, required this.bordercolor, this.backcolor = Colors.transparent, required this.widget});
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: _padding!,
+      padding: padding,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: _backcolor,
+          color: backcolor,
           border: Border.all(
-              color: _bodercolor!,
+              color: bordercolor!,
               width: 1
           )
       ),
-      child: _widget!,
+      child: widget,
     );
   }
 }

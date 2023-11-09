@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 
 const List<String> daylist = ['월', '화', '수', '목', '금', '토', '일'];
 
+const List<String> taglist = ['등산', '영', '캠핑', '보드게임', '사진', '여행', '전시', '영어', '페스티벌'];
+
+
 const List<Widget> duration = [
   Text(
       '이번 주',

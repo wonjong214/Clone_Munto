@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Model/meeting/filter/Enum.dart';
+import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/View/Component/molecules/profile/ActivityKeyword_Column.dart';
 import 'package:loginscreen/View/Component/molecules/profile/CultureKeyword_Column.dart';
 import 'package:loginscreen/View/Component/molecules/profile/FoodKeyword_Column.dart';

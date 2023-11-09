@@ -23,6 +23,7 @@ class TagScroll_ScrollView extends StatelessWidget{
                       ),
                     ),
                 padding: EdgeInsets.only(left: 12, right: 12),
+                height: 40,
               ),
           ],
         ),

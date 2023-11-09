@@ -5,6 +5,7 @@ import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.da
 import 'package:loginscreen/View/Component/page/profile/ProfileEdit.dart';
 import 'package:loginscreen/View/Component/page/profile/PropensityReport_page.dart';
 import 'package:loginscreen/View/Component/page/profile/Setting_page.dart';
+import 'package:loginscreen/View/Component/page/searchkeyword/SearchKeyword_page.dart';
 import 'package:loginscreen/View/MainView.dart';
 import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
                   '/score' : (context) => Score(),
                   '/profileedit' : (context) => ProfileEdit(),
                   '/FeedWrite_Page' : (context) => FeedWrite_Page(),
+                  '/SearchKeyword_page' : (context) => SearchKeyword_page()
                 }
             );
           }

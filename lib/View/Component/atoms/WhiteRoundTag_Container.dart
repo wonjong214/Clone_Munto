@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 
 class WhiteRoundTag extends StatelessWidget{
-  Widget? _widget;
-  EdgeInsetsGeometry? _padding;
+  Widget? widget;
+  EdgeInsetsGeometry? padding;
+  double? height;
 
-  WhiteRoundTag({Widget? widget, EdgeInsetsGeometry? padding}){
-    _widget = widget;
-    _padding = padding;
-  }
+  WhiteRoundTag({required this.widget, required this.padding, this.height});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      height: height,
       margin: EdgeInsets.only(right: 10),
-      padding: _padding,
+      padding: padding,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: Colors.white
       ),
-      child: _widget!,
+      child: widget,
     );
   }
 }

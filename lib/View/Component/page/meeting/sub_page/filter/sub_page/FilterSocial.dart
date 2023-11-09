@@ -7,7 +7,7 @@ import 'package:loginscreen/View/Component/atoms/KoreaLocation_Container.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/CustomRadioListile.dart';
 import 'package:provider/provider.dart';
 import '../../../../../../../Constants/list.dart';
-import '../../../../../../../Model/meeting/filter/Enum.dart';
+import '../../../../../../../Constants/Enum.dart';
 import '../../../../../../../ViewModel//ResolutionProvider.dart';
 
 class FilterSocial extends StatefulWidget {

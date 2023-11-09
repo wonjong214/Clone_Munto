@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Model/meeting/filter/Enum.dart';
+import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
 import '../../atoms/Category_Button.dart';
 

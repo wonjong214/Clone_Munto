@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/Diverder_Container.dart';
 import 'package:loginscreen/View/Component/organisms/profile/setting/Account.dart';
 import 'package:loginscreen/View/Component/organisms/profile/setting/CurrentVersion.dart';
 import 'package:loginscreen/View/Component/organisms/profile/setting/UserSetting.dart';
@@ -25,29 +26,11 @@ class Setting_page extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Announcement(),
-              Container(
-                height: 12,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                ),
-              ),
+              bolddivider,
               UserSetting(),
-              Container(
-                height: 12,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                ),
-              ),
+              bolddivider,
               Account(),
-              Container(
-                height: 12,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                ),
-              ),
+              bolddivider,
               CurrentVersion(),
               SizedBox(height: 200,)
             ],

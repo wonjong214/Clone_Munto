@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/BoldDiverder_Container.dart';
+import 'package:loginscreen/View/Component/atoms/Diverder_Container.dart';
 import 'package:loginscreen/View/Component/organisms/profile/score/Assesment.dart';
 import 'package:loginscreen/View/Component/organisms/profile/score/InviteFriend.dart';
 import 'package:loginscreen/View/Component/organisms/profile/score/MannerScore.dart';

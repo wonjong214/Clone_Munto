@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../../Model/meeting/filter/Enum.dart';
+import '../../../../../../../Constants/Enum.dart';
 import '../../../../../../../ViewModel//ResolutionProvider.dart';
 import '../../../../../atoms/AppBarTitle_Text.dart';
 import '../../../../../atoms/FilterBody_Text.dart';

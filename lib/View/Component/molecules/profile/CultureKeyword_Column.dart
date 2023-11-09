@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Model/meeting/filter/Enum.dart';
+import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/View/Component/atoms/InterestingGroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/InterestingKeyword_Button.dart';
 

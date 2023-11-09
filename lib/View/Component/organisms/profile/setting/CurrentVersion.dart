@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../atoms/Diverder_Container.dart';
 import '../../../atoms/SettingElemnet_Row.dart';
 import '../../../atoms/SettingGroupTitle_Text.dart';
 
@@ -28,7 +29,7 @@ class CurrentVersion extends StatelessWidget{
             ),
           ),
           SettingElement_Row(text: '서비스 이용 약관'),
-          Divider(color: Color(0xffa9a9a9), height: 0.2, thickness: 0.3,),
+          thindivider,
           SettingElement_Row(text: '개인정보 처리방침'),
         ],
       ),

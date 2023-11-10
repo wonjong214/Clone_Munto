@@ -151,7 +151,7 @@ class SocialringCalender_State
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                KeyWordTag_Container('관악산'),
+                                KeyWordTag_Container(text: '관악산',),
                                 CommonMeetingTitle_Text('같이 관악산 국기봉 정복하러 가요'),
                                 Row(
                                   children: [

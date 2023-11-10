@@ -156,7 +156,7 @@ class ProfileView extends StatelessWidget{
                       runSpacing: 10,
                       children: List.generate(10, (index) {
                         if(index < 9)
-                          return KeyWordTag_Container(taglist![index]);
+                          return KeyWordTag_Container(text: taglist![index],);
                         else
                           return ThirtyRoundedBorderContainer(
                             padding: EdgeInsets.only(left:8, right:8, top: 3, bottom: 3),

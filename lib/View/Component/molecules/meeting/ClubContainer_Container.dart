@@ -14,6 +14,7 @@ class ClubContainer extends StatelessWidget{
     return GestureDetector(
         onTap: () {print('touch');},
         child: Container(
+          margin: EdgeInsets.only(bottom: 15,),
             width: _width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
@@ -49,7 +50,7 @@ class ClubContainer extends StatelessWidget{
                       children: [
                         Row(
                           children: [
-                            KeyWordTag_Container('클럽')
+                            KeyWordTag_Container(text:'클럽',)
                           ],
                         ),
                         CommonMeetingTitle_Text('제목'),

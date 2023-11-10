@@ -21,7 +21,7 @@ class SearchKeyword_page extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        backgroundColor: background_color,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: AppBar_color,
           foregroundColor: Colors.black,

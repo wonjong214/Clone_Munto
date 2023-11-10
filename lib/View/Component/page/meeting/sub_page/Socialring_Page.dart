@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/molecules/socialring/TagScroll_ScrollView.dart';
+import 'package:loginscreen/View/Component/molecules/meeting/TagScroll_ScrollView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringCalender.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringHostView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringRecommend.dart';

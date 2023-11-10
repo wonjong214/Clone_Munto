@@ -26,6 +26,7 @@ class TasteSocialRingView extends StatelessWidget{
       child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child:Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 370,
@@ -42,6 +43,7 @@ class TasteSocialRingView extends StatelessWidget{
                           GestureDetector(
                               onTap: () {print('touch');},
                               child: Container(
+                                margin: EdgeInsets.only(bottom: 15),
                                   width: 350,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
@@ -79,9 +81,14 @@ class TasteSocialRingView extends StatelessWidget{
                                               children: [
                                                 for(int i=0; i< provider.tastesocialring[num].tag.length;i++)
                                                   if(provider.tastesocialring[num].tag[i] != '추천')
-                                                    KeyWordTag_Container(provider.tastesocialring[num].tag[i])
+                                                    KeyWordTag_Container(text: provider.tastesocialring[num].tag[i],)
                                                   else
-                                                    RecommendTag_Container(provider.tastesocialring[num].tag[i])
+                                                    KeyWordTag_Container(
+                                                      text: provider.tastesocialring[num].tag[i],
+                                                      textcolor: Color(0xffdc143c),
+                                                      backcolor: Color(0Xbbfeeaea),
+                                                      fontweight: FontWeight.bold,
+                                                    )
                                               ],
                                             ),
                                             CommonMeetingTitle_Text(provider.tastesocialring[num].title),
@@ -109,7 +116,6 @@ class TasteSocialRingView extends StatelessWidget{
                                   )
                               )
                           ),
-                          morebutton_margin
                         ],
                       ),
                     More_Button(350)
@@ -129,7 +135,6 @@ class TasteSocialRingView extends StatelessWidget{
                       Column(
                         children: [
                           ClubContainer(350),
-                          morebutton_margin
                         ],
                       ),
                     More_Button(350)
@@ -149,7 +154,6 @@ class TasteSocialRingView extends StatelessWidget{
                       Column(
                         children: [
                           ChallengeContainer(350),
-                          morebutton_margin
                         ],
                       ),
                     More_Button(350)

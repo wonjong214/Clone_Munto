@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/CircleAvatarProfile.dart';
+import 'package:loginscreen/View/Component/atoms/RoundedFollow_Button.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
@@ -94,23 +95,7 @@ class RecommendMemberView extends StatelessWidget {
                                                         ),
                                                       ),
                                                       Spacer(),
-                                                      Container(
-                                                        padding: EdgeInsets.only(
-                                                            left: 5,
-                                                            right: 5,
-                                                            top: 8,
-                                                            bottom: 8),
-                                                        decoration: BoxDecoration(
-                                                            borderRadius:
-                                                            BorderRadius.circular(15),
-                                                            color: Colors.red,
-                                                            border:
-                                                            Border.all(color: Colors.red)),
-                                                        child: Text(
-                                                          '팔로우',
-                                                          style: TextStyle(color: Colors.white),
-                                                        ),
-                                                      ),
+                                                      RoundedFollow_Button(),
                                                     ],
                                                   ),
                                               SizedBox(height: 30,),

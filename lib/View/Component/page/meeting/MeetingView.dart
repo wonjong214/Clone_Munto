@@ -52,7 +52,12 @@ class MeetingView extends StatelessWidget{
                   icon: Icon(Icons.list, size: appbariconsize,)
               ),
               SizedBox(width: 10, ),
-              Icon(Icons.search, size : appbariconsize),
+              IconButton(
+                icon: Icon(Icons.search, size : appbariconsize),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/Search_page');
+                },
+              ),
               SizedBox(width: 10),
               Icon(Icons.notifications_none, size : appbariconsize),
             ],

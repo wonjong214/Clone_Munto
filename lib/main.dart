@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/page/FeedWrite_Page.dart';
+import 'package:loginscreen/View/Component/page/Search_page.dart';
 import 'package:loginscreen/View/Component/page/create/ChooseMeetingType.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
 import 'package:loginscreen/View/Component/page/profile/ProfileEdit.dart';
@@ -54,7 +55,8 @@ class MyApp extends StatelessWidget {
                   '/score' : (context) => Score(),
                   '/profileedit' : (context) => ProfileEdit(),
                   '/FeedWrite_Page' : (context) => FeedWrite_Page(),
-                  '/SearchKeyword_page' : (context) => SearchKeyword_page()
+                  '/SearchKeyword_page' : (context) => SearchKeyword_page(),
+                  '/Search_page' : (context) => Search_page(),
                 }
             );
           }

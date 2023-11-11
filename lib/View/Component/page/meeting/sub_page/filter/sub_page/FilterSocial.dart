@@ -218,13 +218,10 @@ class _FilterSocialState extends State<FilterSocial> {
                 onChanged: (value) {
                   setState(() {
                     if(value != RangeValues(20, 50)){
-                      if(value == RangeValues(20,20))
-                        _rangeValues = RangeValues(20,25);
-                      else if(value == RangeValues(50,50))
-                        _rangeValues = RangeValues(45, 50);
+                      if((value.end.toInt() - value.start.toInt()) == 0)
+                        return;
                       else
                       _rangeValues = value;
-
                       ageSlider_Model.label = '${_rangeValues.start.round().toString()}~${_rangeValues.end.round().toString()}세';
                       ageSlider_Model.activetrack = Colors.red;
                       ageSlider_Model.thumbcolor = Colors.red;
@@ -237,7 +234,6 @@ class _FilterSocialState extends State<FilterSocial> {
                       ageSlider_Model.thumbcolor = Colors.grey.shade300;
                       ageSlider_Model.activetickhmark = Colors.grey.shade300;
                     }
-
                   });
                 },
               ),

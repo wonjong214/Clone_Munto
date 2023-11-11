@@ -29,7 +29,7 @@ class recommend_page extends StatelessWidget{
             //페이지뷰
             ChangeNotifierProvider(
               create: (context) => Exhibitions_Provider(),
-              child: ExhibitionsView(),
+              child: ExhibitionsView(height: 350,),
             ),
             //카테고리
             CategoryGrid(),

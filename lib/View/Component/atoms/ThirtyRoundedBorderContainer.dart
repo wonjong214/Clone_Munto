@@ -5,14 +5,19 @@ class ThirtyRoundedBorderContainer extends StatelessWidget{
   Color? bordercolor;
   Color? backcolor;
   Widget? widget;
+  double? width;
+  double? height;
 
 
-  ThirtyRoundedBorderContainer({required this.padding, required this.bordercolor, this.backcolor = Colors.transparent, required this.widget});
+  ThirtyRoundedBorderContainer({required this.padding, required this.bordercolor,
+    this.backcolor = Colors.transparent, required this.widget, this.width, this.height});
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
+      height: height,
       padding: padding,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),

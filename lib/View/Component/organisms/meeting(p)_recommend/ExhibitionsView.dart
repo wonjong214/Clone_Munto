@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/ViewModel/Recommend_Page/Exhibitions.dart';
+
 import 'package:provider/provider.dart';
+
+import '../../../../ViewModel/Recommend_Page/Exhibitions.dart';
 
 
 class ExhibitionsView extends StatelessWidget{
+  double? height;
+
+  ExhibitionsView({this.height});
+
   PageController controller = PageController(
       initialPage: 0,
       viewportFraction: 1
@@ -15,103 +21,38 @@ class ExhibitionsView extends StatelessWidget{
     return Stack(
       children: [
         Container(
-            height: 350,
+            height: height,
             width: double.infinity,
             margin: EdgeInsets.all(20),
             child: PageView(
               controller: controller,
               onPageChanged: (num){ provider.pagechange(num);},
               children: [
+                for(int i = 0; i< provider.exhibitions.length; i++)
                 GestureDetector(
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(provider.exhibitions[0].image),
+                              image: AssetImage(provider.exhibitions[i].image),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(20)),
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child:
                           Text(
-                              provider.exhibitions[0].title,
+                              provider.exhibitions[i].title,
                               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
                           ),
                       ),
-                      padding: EdgeInsets.only(bottom: 40),
-                    )
-                ),
-                GestureDetector(
-                  onTap: () {print('touch');},
-                  child: Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(provider.exhibitions[1].image),
-                            fit: BoxFit.cover),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                          provider.exhibitions[1].title,
-                          style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                    ),
-                    padding: EdgeInsets.only(bottom: 40),
-                  ),
-                ),
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(provider.exhibitions[2].image),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                            provider.exhibitions[2].title,
-                            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                      ),
-                      padding: EdgeInsets.only(bottom: 40),
-                    )
-                ),
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(provider.exhibitions[3].image),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(provider.exhibitions[3].title,
-                            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                      ),
-                      padding: EdgeInsets.only(bottom: 40),
-                    )
-                ),
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(provider.exhibitions[4].image),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(provider.exhibitions[4].title,
-                            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                      ),
-                      padding: EdgeInsets.only(bottom: 40),
+                      padding: EdgeInsets.only(bottom: 80),
                     )
                 ),
               ],
             )
         ),
         Positioned(
-            bottom: 50,
-            right: 50,
+            bottom: 30,
+            right: 30,
             child: Container(
               padding: EdgeInsets.only(left: 7, right: 7, top: 4, bottom: 4),
               decoration: BoxDecoration(

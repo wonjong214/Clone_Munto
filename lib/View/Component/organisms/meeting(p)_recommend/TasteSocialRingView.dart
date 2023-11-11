@@ -10,7 +10,6 @@ import '../../atoms/GroupTitle_Text.dart';
 import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
-import '../../atoms/RecommendTag_Container.dart';
 import '../../atoms/SocialRingParticipant_Text.dart';
 import '../../atoms/SocialRingSubTitle_Text.dart';
 import '../../molecules/meeting/ClubContainer_Container.dart';

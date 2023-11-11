@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/Close_Button.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchChallenge.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchClub.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchFeed.dart';
@@ -48,19 +49,7 @@ class SearchKeyword_page extends StatelessWidget {
                 borderSide: BorderSide(color: Colors.transparent),
               ),
               prefixIcon: Icon(Icons.search, size: 25, color: Colors.grey,),
-              suffixIcon: IconButton(
-                onPressed: controller.clear,
-                icon: CircleIcon(
-                  width: 15,
-                  height: 15,
-                  icon: Icon(
-                    Icons.clear,
-                    size: 15,
-                    color: Colors.white,
-                  ),
-                  backgroundcolor: Colors.grey,
-                ),
-              ),
+              suffixIcon: Close_Button(onPressed: controller.clear,),
               isDense: true,
               contentPadding: EdgeInsets.all(10),
             ),

@@ -7,8 +7,10 @@ class KeyWordTag_Container extends StatelessWidget{
   FontWeight? fontweight;
   Color? textcolor;
   Color? backcolor;
+  EdgeInsetsGeometry? padding;
 
-  KeyWordTag_Container({required this.text, this.fontweight, this.textcolor = Colors.black, this.backcolor = tag_color});
+  KeyWordTag_Container({required this.text, this.fontweight,
+    this.textcolor = Colors.black, this.backcolor = tag_color, this.padding = const EdgeInsets.only(left:10, right:10, top: 3, bottom: 3),});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class KeyWordTag_Container extends StatelessWidget{
           borderRadius: BorderRadius.circular(30),
           color: backcolor
       ),
-      padding: EdgeInsets.only(left:10, right:10, top: 3, bottom: 3),
+      padding: padding,
       child: Text(
           text,
         style: TextStyle(

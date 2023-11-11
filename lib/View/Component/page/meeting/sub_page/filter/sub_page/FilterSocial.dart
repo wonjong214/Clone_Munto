@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Model/meeting/filter/AgeSlider_Model.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/CustomThirtyRoundedRadio.dart';
 import 'package:loginscreen/View/Component/atoms/FilterBody_Text.dart';
@@ -23,12 +23,14 @@ class _FilterSocialState extends State<FilterSocial> {
   int? categorygroupvalue;
   int? typegroupvalue;
   int? korealocationgroupvalue;
+  AgeSlider_Model ageSlider_Model = new AgeSlider_Model();
+  RangeValues _rangeValues = const RangeValues(20, 50);
 
   _FilterSocialState() {
     init_locationlist();
   }
 
-  void init_locationlist(){
+  void init_locationlist() {
     /*locationlist.addAll(
       List.generate(
         KoreaLocation.values.length,
@@ -162,15 +164,17 @@ class _FilterSocialState extends State<FilterSocial> {
                   mainAxisSpacing: 1,
                   crossAxisSpacing: 1,
                   childAspectRatio: 1.8 / 1,
-                  children: List.generate(locationlist.length, (index){
+                  children: List.generate(locationlist.length, (index) {
                     return KoreaLocation_Container(
                       value: index,
                       groupvalue: korealocationgroupvalue,
                       text: locationlist[index],
                       onChanged: (value) {
                         setState(
-                              () {
+                          () {
                             korealocationgroupvalue = value;
+                            if (locationlist[index] == '서울')
+                              locationlist.insertAll(4, seoullocation_list);
                           },
                         );
                       },
@@ -178,6 +182,70 @@ class _FilterSocialState extends State<FilterSocial> {
                   }),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 35,
+            ),
+            Row(
+              children: [
+                AppBarTitle('나이'),
+                Spacer(),
+                Text(
+                  ageSlider_Model.label!,
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SliderTheme(
+              data: SliderThemeData(
+                activeTrackColor: ageSlider_Model.activetrack,
+                inactiveTrackColor: Colors.grey.shade300,
+                thumbColor: ageSlider_Model.thumbcolor,
+                activeTickMarkColor: ageSlider_Model.activetickhmark,
+                inactiveTickMarkColor: Colors.grey.shade300,
+                trackHeight: 7
+              ),
+              child: RangeSlider(
+                values: _rangeValues,
+                max: 50,
+                min: 20,
+                divisions: 6,
+                onChanged: (value) {
+                  setState(() {
+                    if(value != RangeValues(20, 50)){
+                      if(value == RangeValues(20,20))
+                        _rangeValues = RangeValues(20,25);
+                      else if(value == RangeValues(50,50))
+                        _rangeValues = RangeValues(45, 50);
+                      else
+                      _rangeValues = value;
+
+                      ageSlider_Model.label = '${_rangeValues.start.round().toString()}~${_rangeValues.end.round().toString()}세';
+                      ageSlider_Model.activetrack = Colors.red;
+                      ageSlider_Model.thumbcolor = Colors.red;
+                      ageSlider_Model.activetickhmark = Colors.white;
+                    }
+                    else{
+                      _rangeValues = value;
+                      ageSlider_Model.label = '누구나';
+                      ageSlider_Model.activetrack = Colors.grey.shade300;
+                      ageSlider_Model.thumbcolor = Colors.grey.shade300;
+                      ageSlider_Model.activetickhmark = Colors.grey.shade300;
+                    }
+
+                  });
+                },
+              ),
+            ),
+            SizedBox(height: 5,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(agelabel.length, (index) => Text(agelabel[index])),
             ),
             SizedBox(
               height: 35,

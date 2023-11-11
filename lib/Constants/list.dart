@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 
 const List<String> daylist = ['월', '화', '수', '목', '금', '토', '일'];
 
+const List<String> recommendkeyword = ['버킷리스트이벤트', '맛집', '카페', '등산', '전시', '러닝', '독서',
+'사진', '여행', '스터디', '보드게임', '맥주'];
+
+const List<String> agelabel = ['20', '25', '30', '35', '40', '45', '50+'];
+
 const List<String> taglist = ['등산', '영', '캠핑', '보드게임', '사진', '여행', '전시', '영어', '페스티벌'];
 
 const List<Widget> duration = [
@@ -32,7 +37,7 @@ const List<String> korealocation_list = ['서울', '경기', '인천',
 
 const List<String> seoullocation_list = ['서울 전체', '강남', '강동', '강북', '강서', '관악', '광진', '구로',
   '금천', '노원', '도봉', '동대문', '동작', '마포', '서대문', '서초', '성동', '성북', '송파', '양천', '영등포',
-'용산', '은평', '종로', '중구', '중랑'];
+'용산', '은평', '종로', '중구', '중랑', '', ''];
 
 const List<String> qyeonggilocation_list = ['경기 전체', '수원', '성남', '고양', '용인', '부천', '안산', '안양',
 '남양주', '화성', '의정부', '시흥', '평택', '광명', '파주', '군포', '광주', '김포', '이천', '양주', '구리', '오산',

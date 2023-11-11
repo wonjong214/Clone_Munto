@@ -9,6 +9,19 @@ enum Quota {
   const Quota(this.korean);
 }
 
+enum ExhibitionsKeyword {
+  fall("가을기획전", AssetImage('assets/icons/transport.png')),
+  friends("프렌즈기획전", AssetImage('assets/icons/high-five.png')),
+  godlife("갓생기획전", AssetImage('assets/icons/give-love.png')),
+  weekend("주말에 뭐하지?", AssetImage('assets/icons/smiling-face.png')),
+  blinddate("소개팅 기획전", AssetImage('assets/icons/heart.png'));
+
+
+  final String korean;
+  final AssetImage image;
+  const ExhibitionsKeyword(this.korean, this.image);
+}
+
 enum Tag {
   culture("등산", AssetImage('assets/images/socialring/backpacker.jpg')),
   activity("영화", AssetImage('assets/images/recommend_page/Exhibitions/jazz.jpeg')),

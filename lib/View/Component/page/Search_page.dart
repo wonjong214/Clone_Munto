@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/molecules/search/CurrentSearch.dart';
+import 'package:loginscreen/View/Component/molecules/search/CurrentSearch_Column.dart';
+import 'package:loginscreen/View/Component/molecules/search/RecommendSearch_Column.dart';
+import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/ExhibitionsView.dart';
+import 'package:provider/provider.dart';
 
+import '../../../Constants/Enum.dart';
 import '../../../Constants/colors.dart';
+import '../../../ViewModel/Recommend_Page/Exhibitions.dart';
 import '../atoms/CircleIcon_Icon.dart';
 
 class Search_page extends StatelessWidget{
@@ -44,9 +49,17 @@ class Search_page extends StatelessWidget{
 
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 20,),
-          CurrentSearch(),
+          CurrentSearch_Column(),
+          SizedBox(height: 30,),
+          RecommendSearch_Column(),
+          ChangeNotifierProvider(
+            create: (context) => Exhibitions_Provider(),
+            child: Expanded(child: ExhibitionsView()),
+          ),
+          SizedBox(height: 10,),
         ],
       )
 

@@ -4,7 +4,7 @@ import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/HotTag
 import 'package:loginscreen/ViewModel/Recommend_Page/Exhibitions.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
 import 'package:provider/provider.dart';
-import '../../../../../ViewModel/Recommend_Page/TasteSocialRing.dart';
+import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../atoms/Margin_SizedBox.dart';
 import '../../../organisms/meeting(p)_recommend/ExhibitionsView.dart';
 import '../../../organisms/meeting(p)_recommend/HotClub.dart';
@@ -40,7 +40,7 @@ class recommend_page extends StatelessWidget{
             intergroupmargin,
             //추천 스크롤 뷰
             ChangeNotifierProvider(
-              create: (context) => SocialRing_Provider(),
+              create: (context) => Meeting_Provider(),
               child: TasteSocialRingView(),
             ),
             intergroupmargin,

@@ -3,7 +3,7 @@ import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:provider/provider.dart';
-import '../../../../../ViewModel/Recommend_Page/TasteSocialRing.dart';
+import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../atoms/CommonMeetingTitle_Text.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
 import '../../atoms/GroupTitle_Text.dart';
@@ -18,7 +18,7 @@ import '../../molecules/meeting/ClubContainer_Container.dart';
 class TasteSocialRingView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SocialRing_Provider>(context);
+    var provider = Provider.of<Meeting_Provider>(context);
     return Container(
       margin: EdgeInsets.only(left:20,),
       width: double.infinity,

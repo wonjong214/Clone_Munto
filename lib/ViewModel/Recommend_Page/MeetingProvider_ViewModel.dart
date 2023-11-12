@@ -5,14 +5,19 @@ import '../../Model/meeting/Meeting_Model.dart';
 
 class Meeting_Provider extends ChangeNotifier{
   List<Meeting_ViewModel> _socialring;
+  List<Meeting_ViewModel> _club;
 
 
-  Meeting_Provider():_socialring = List.empty(growable: true){
+
+  Meeting_Provider():_socialring = List.empty(growable: true), _club = List.empty(growable: true){
     set_socialring();
+    set_club();
 
   }
 
-  List<Meeting_ViewModel> get tastesocialring => _socialring;
+  List<Meeting_ViewModel> get socialring => _socialring;
+  List<Meeting_ViewModel> get club => _club;
+
 
 
   void set_socialring(){
@@ -49,6 +54,44 @@ class Meeting_Provider extends ChangeNotifier{
     _socialring.add(Meeting_ViewModel(meeting_model: model1));
     _socialring.add(Meeting_ViewModel(meeting_model: model2));
     _socialring.add(Meeting_ViewModel(meeting_model: model3));
+  }
+
+  void set_club(){
+    Meeting_Model model1 = new Meeting_Model(
+        image: 'assets/images/recommend_page/Exhibitions/airpot.jpeg',
+        like: false,
+        tag: ['클럽'],
+        title: '제목',
+        location: '위치',
+        date: '3시간 전 대화',
+        participants: 0,
+        total: 300
+    );
+    Meeting_Model model2 = new Meeting_Model(
+        image: 'assets/images/recommend_page/Exhibitions/airpot.jpeg',
+        like: false,
+        tag: ['클럽'],
+        title: '제목',
+        location: '위치',
+        date: '3시간 전 대화',
+        participants: 0,
+        total: 300
+    );
+    Meeting_Model model3 = new Meeting_Model(
+        image: 'assets/images/recommend_page/Exhibitions/airpot.jpeg',
+        like: false,
+        tag: ['클럽'],
+        title: '제목',
+        location: '위치',
+        date: '3시간 전 대화',
+        participants: 0,
+        total: 300
+    );
+
+
+    _club.add(Meeting_ViewModel(meeting_model: model1));
+    _club.add(Meeting_ViewModel(meeting_model: model2));
+    _club.add(Meeting_ViewModel(meeting_model: model3));
   }
 
 

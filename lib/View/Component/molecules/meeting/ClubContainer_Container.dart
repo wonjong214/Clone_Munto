@@ -5,9 +5,19 @@ import '../../atoms/CommonMeetingTitle_Text.dart';
 import '../../atoms/KeyWordTag_Container.dart';
 
 class ClubContainer extends StatelessWidget{
-  double? _width;
+  double? width;
+  String image;
+  Widget icon;
+  Function()? onPressed;
+  List<String> tag;
+  String title;
+  String location;
+  String date;
+  int participants;
+  int total;
 
-  ClubContainer(this._width);
+  ClubContainer({this.width, required this.image, required this.icon, required this.onPressed, required this.tag,
+    required this.title, required this.location, required this.date, required this.participants, required this.total});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +25,7 @@ class ClubContainer extends StatelessWidget{
         onTap: () {print('touch');},
         child: Container(
           margin: EdgeInsets.only(bottom: 15,),
-            width: _width,
+            width: width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.white60
@@ -28,7 +38,7 @@ class ClubContainer extends StatelessWidget{
                   width: 100,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
+                          image: AssetImage(image),
                           fit: BoxFit.cover
                       ),
                       borderRadius: BorderRadius.circular(5)
@@ -36,9 +46,9 @@ class ClubContainer extends StatelessWidget{
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: IconButton(
-                        icon: (Icon(Icons.favorite)),
+                        icon: icon,
                         color: Colors.white,
-                        onPressed: () {}
+                        onPressed: onPressed,
                     ),
                   ),
                 ),
@@ -49,11 +59,9 @@ class ClubContainer extends StatelessWidget{
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          children: [
-                            KeyWordTag_Container(text:'클럽',)
-                          ],
+                          children: List.generate(tag.length, (index) => KeyWordTag_Container(text: tag[index])),
                         ),
-                        CommonMeetingTitle_Text('제목'),
+                        CommonMeetingTitle_Text(title),
                         Row(
                           children: [
                             Text('클럽·',
@@ -64,7 +72,7 @@ class ClubContainer extends StatelessWidget{
                             SizedBox(width: 5,),
                             SizedBox(
                                 child: Text(
-                                  '위치',
+                                  location,
                                   style: TextStyle(
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -79,7 +87,7 @@ class ClubContainer extends StatelessWidget{
                             ),
                             SizedBox(width: 5,),
                             Text(
-                              '3시간 전 대화',
+                              date,
                               style: TextStyle(
                                   color: Color(0XFF006400)
                               ),
@@ -89,7 +97,7 @@ class ClubContainer extends StatelessWidget{
                         Row(
                           children: [
                             CommonGreyIcon(Icons.people),
-                            Text('00/300'),
+                            Text('$participants/$total'),
                           ],
                         )
                       ],

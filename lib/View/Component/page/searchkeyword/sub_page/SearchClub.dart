@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import 'package:provider/provider.dart';
 
 import '../../../atoms/WhiteRoundTag_Container.dart';
 
 class SearchClub extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Meeting_Provider>(context);
     return Container(
       color: background_color,
       child: SingleChildScrollView(
@@ -75,10 +78,20 @@ class SearchClub extends StatelessWidget{
                 ],
               ),
               SizedBox(height: 20,),
-              for(int num=0; num<15; num++)
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: ClubContainer(double.infinity),
+              for(int num=0; num<provider.club.length; num++)
+                ClubContainer(
+                  width: double.infinity,
+                  image: provider.club[num].image,
+                  icon: (provider.club[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
+                  onPressed: (){
+                    provider.changelike(provider.club[num]);
+                  },
+                  tag: provider.club[num].tag,
+                  title: provider.club[num].title,
+                  location: provider.club[num].location,
+                  date: provider.club[num].date,
+                  participants: provider.club[num].participants,
+                  total: provider.club[num].total,
                 ),
             ],
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_club/ClubRecommend.dart';
+import 'package:provider/provider.dart';
+import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../atoms/Margin_SizedBox.dart';
 import '../../../organisms/meeting(p)_club/ClubIssue.dart';
 import '../../../organisms/meeting(p)_club/ClubNew.dart';
@@ -15,9 +17,15 @@ class club_page extends StatelessWidget{
         children: [
           ClubPageView(),
           SizedBox(height: 30),
-          ClubRecommend(),
+          ChangeNotifierProvider(
+            create: (context) => Meeting_Provider(),
+            child: ClubRecommend(),
+          ),
           intergroupmargin,
-          ClubNew(),
+          ChangeNotifierProvider(
+            create: (context) => Meeting_Provider(),
+            child: ClubNew(),
+          ),
           intergroupmargin,
           ClubIssue(),
           intergroupmargin,

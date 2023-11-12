@@ -49,7 +49,10 @@ class recommend_page extends StatelessWidget{
               child: ReviewView(),
             ),
             intergroupmargin,
-            HotClub(),
+            ChangeNotifierProvider(
+              create: (context) => Meeting_Provider(),
+              child: HotClub(),
+            ),
             intergroupmargin,
             RecommendChallenge(),
             intergroupmargin,

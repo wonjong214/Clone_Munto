@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +35,7 @@ class TasteSocialRingView extends StatelessWidget{
                     title_margin,
                     GroupSubTitle_Text('내 취향에 딱 맞는 원데이 모임'),
                     title_margin,
-                    for(int num=0; num<provider.tastesocialring.length; num++)
+                    for(int num=0; num<provider.socialring.length; num++)
                       Column(
                         children: [
                           GestureDetector(
@@ -56,7 +55,7 @@ class TasteSocialRingView extends StatelessWidget{
                                         width: 100,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image: AssetImage(provider.tastesocialring[num].image),
+                                                image: AssetImage(provider.socialring[num].image),
                                                 fit: BoxFit.cover
                                             ),
                                             borderRadius: BorderRadius.circular(5)
@@ -64,9 +63,9 @@ class TasteSocialRingView extends StatelessWidget{
                                         child: Align(
                                           alignment: Alignment.bottomLeft,
                                           child: IconButton(
-                                              icon: (provider.tastesocialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
+                                              icon: (provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
                                               color: Colors.white,
-                                              onPressed: () {provider.changelike(provider.tastesocialring[num]);}
+                                              onPressed: () {provider.changelike(provider.socialring[num]);}
                                           ),
                                         ),
                                       ),
@@ -78,26 +77,26 @@ class TasteSocialRingView extends StatelessWidget{
                                           children: [
                                             Row(
                                               children: [
-                                                for(int i=0; i< provider.tastesocialring[num].tag.length;i++)
-                                                  if(provider.tastesocialring[num].tag[i] != '추천')
-                                                    KeyWordTag_Container(text: provider.tastesocialring[num].tag[i],)
+                                                for(int i=0; i< provider.socialring[num].tag.length;i++)
+                                                  if(provider.socialring[num].tag[i] != '추천')
+                                                    KeyWordTag_Container(text: provider.socialring[num].tag[i],)
                                                   else
                                                     KeyWordTag_Container(
-                                                      text: provider.tastesocialring[num].tag[i],
+                                                      text: provider.socialring[num].tag[i],
                                                       textcolor: Color(0xffdc143c),
                                                       backcolor: Color(0Xbbfeeaea),
                                                       fontweight: FontWeight.bold,
                                                     )
                                               ],
                                             ),
-                                            CommonMeetingTitle_Text(provider.tastesocialring[num].title),
+                                            CommonMeetingTitle_Text(provider.socialring[num].title),
                                             Row(
                                               children: [
                                                 CommonGreyIcon(Icons.location_on),
                                                 SizedBox(width: 5,),
                                                 SizedBox(
                                                   width: 200,
-                                                  child: SocialRingSubTitle_Text(provider.tastesocialring[num].location,provider.tastesocialring[num].date),
+                                                  child: SocialRingSubTitle_Text(provider.socialring[num].location,provider.socialring[num].date),
                                                 )
                                               ],
                                             ),
@@ -105,7 +104,7 @@ class TasteSocialRingView extends StatelessWidget{
                                               children: [
                                                 CommonGreyIcon(Icons.people),
                                                 SizedBox(width: 5,),
-                                                SocialRingParticipant(provider.tastesocialring[num].participants, provider.tastesocialring[num].total),
+                                                SocialRingParticipant(provider.socialring[num].participants, provider.socialring[num].total),
                                               ],
                                             )
                                           ],
@@ -130,11 +129,20 @@ class TasteSocialRingView extends StatelessWidget{
                     title_margin,
                     GroupSubTitle_Text('지속형 모임으로 오래오래 친하게'),
                     title_margin,
-                    for(int num=0; num<3; num++)
-                      Column(
-                        children: [
-                          ClubContainer(350),
-                        ],
+                    for(int num=0; num<provider.club.length; num++)
+                      ClubContainer(
+                          width: 350,
+                          image: provider.club[num].image,
+                          icon: (provider.club[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
+                          onPressed: (){
+                            provider.changelike(provider.club[num]);
+                          },
+                          tag: provider.club[num].tag,
+                          title: provider.club[num].title,
+                          location: provider.club[num].location,
+                          date: provider.club[num].date,
+                          participants: provider.club[num].participants,
+                          total: provider.club[num].total,
                       ),
                     More_Button(350)
                   ],

@@ -5,6 +5,7 @@ import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchClu
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchFeed.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchMember.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchSocialring.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../Constants/border.dart';
@@ -76,7 +77,10 @@ class SearchKeyword_page extends StatelessWidget {
         ),
         body: TabBarView(children: [
           SearchSocialring(),
-          SearchClub(),
+          ChangeNotifierProvider(
+            create: (context) => Meeting_Provider(),
+            child: SearchClub(),
+          ),
           SearchChallenge(),
           SearchFeed(),
           SearchMember(),

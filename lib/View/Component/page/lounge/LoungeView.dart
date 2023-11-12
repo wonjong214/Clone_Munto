@@ -31,7 +31,12 @@ class LoungeView extends StatelessWidget{
                 SizedBox(width: 10, ),
                 Icon(Icons.bookmark_border_outlined, size : appbariconsize),
                 SizedBox(width: 10),
-                Icon(Icons.search_rounded, size : appbariconsize),
+                IconButton(
+                  onPressed: (){
+                    Navigator.of(context, rootNavigator: true).pushNamed('/Search_page');
+                  },
+                  icon: Icon(Icons.search_rounded, size : appbariconsize),
+                )
               ],
             ),
             bottom: PreferredSize(

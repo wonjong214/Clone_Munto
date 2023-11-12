@@ -4,7 +4,12 @@ import 'package:loginscreen/View/Component/atoms/SearchGroupTitle_Text.dart';
 import '../../../../Constants/colors.dart';
 import '../../atoms/CircleIcon_Icon.dart';
 
-class CurrentSearch_Column extends StatelessWidget {
+class CurrentSearch_Column extends StatefulWidget {
+  @override
+  State<CurrentSearch_Column> createState() => _CurrentSearch_ColumnState();
+}
+
+class _CurrentSearch_ColumnState extends State<CurrentSearch_Column> {
   List<String> currentsearch = [
     '등산',
     '영화',
@@ -30,11 +35,18 @@ class CurrentSearch_Column extends StatelessWidget {
               children: [
                 SearchGroupTitle_Text(text: '최근 검색'),
                 Spacer(),
-                Text(
-                  '지우기',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.grey,
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      currentsearch.clear();
+                    });
+                  },
+                  child: Text(
+                    '지우기',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.grey,
+                    ),
                   ),
                 )
               ],
@@ -59,25 +71,40 @@ class CurrentSearch_Column extends StatelessWidget {
                       EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
                   child: Row(
                     children: [
-                      Text(
-                        currentsearch[i],
-                        style: TextStyle(
-                          fontSize: 17,
-                          color: Colors.black,
+                      GestureDetector(
+                        onTap:(){
+                          Navigator.of(context, rootNavigator: true).pushNamed(
+                            '/SearchKeyword_page',
+                            arguments: currentsearch[i],
+                          );
+                          },
+                        child: Text(
+                          currentsearch[i],
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: 5,
                       ),
-                      CircleIcon(
-                        width: 17,
-                        height: 17,
-                        icon: Icon(
-                          Icons.clear,
-                          size: 17,
-                          color: Colors.white,
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            currentsearch.removeAt(i);
+                          });
+                        },
+                        child: CircleIcon(
+                          width: 17,
+                          height: 17,
+                          icon: Icon(
+                            Icons.clear,
+                            size: 17,
+                            color: Colors.white,
+                          ),
+                          backgroundcolor: Colors.grey,
                         ),
-                        backgroundcolor: Colors.grey,
                       )
                     ],
                   ),

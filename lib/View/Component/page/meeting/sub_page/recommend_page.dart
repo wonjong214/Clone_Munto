@@ -40,7 +40,7 @@ class recommend_page extends StatelessWidget{
             intergroupmargin,
             //추천 스크롤 뷰
             ChangeNotifierProvider(
-              create: (context) => TasteSocialRing_Provider(),
+              create: (context) => SocialRing_Provider(),
               child: TasteSocialRingView(),
             ),
             intergroupmargin,

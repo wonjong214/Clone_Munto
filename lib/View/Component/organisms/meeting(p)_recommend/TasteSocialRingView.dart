@@ -18,7 +18,7 @@ import '../../molecules/meeting/ClubContainer_Container.dart';
 class TasteSocialRingView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<TasteSocialRing_Provider>(context);
+    var provider = Provider.of<SocialRing_Provider>(context);
     return Container(
       margin: EdgeInsets.only(left:20,),
       width: double.infinity,

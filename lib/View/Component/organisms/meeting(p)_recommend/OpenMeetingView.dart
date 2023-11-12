@@ -24,28 +24,33 @@ class OpenMeetingView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 160,
-      margin: EdgeInsets.only(left: 20, right: 20),
-      child: Common_Container(
-        widget: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Spacer(flex:1),
-                  OpenMeeting_Title_Text(_title!, _color!, _titlefont!),
-                  SizedBox(height: 20,),
-                  OpenMeeting_SubTitle_Text(_subtitle!, _subtitlefont!),
-                  Spacer(flex:1),
-                ],
-              ),
-              SizedBox(width: 50,),
-              OpenMeeting_ArrowCircularContainer(_color!, _arrowsize!)
-            ],
-          )
+    return GestureDetector(
+      onTap: (){
+        Navigator.of(context, rootNavigator: true).pushNamed('/meetingtype');
+      },
+      child: Container(
+        height: 160,
+        margin: EdgeInsets.only(left: 20, right: 20),
+        child: Common_Container(
+          widget: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Spacer(flex:1),
+                    OpenMeeting_Title_Text(_title!, _color!, _titlefont!),
+                    SizedBox(height: 20,),
+                    OpenMeeting_SubTitle_Text(_subtitle!, _subtitlefont!),
+                    Spacer(flex:1),
+                  ],
+                ),
+                SizedBox(width: 50,),
+                OpenMeeting_ArrowCircularContainer(_color!, _arrowsize!)
+              ],
+            )
+        ),
       ),
     );
   }

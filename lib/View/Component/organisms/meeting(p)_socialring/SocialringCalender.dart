@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
+import 'package:loginscreen/View/Component/atoms/CalenderRadio.dart';
 import 'package:provider/provider.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../atoms/CommonMeetingTitle_Text.dart';
@@ -15,10 +16,19 @@ import '../../molecules/meeting/Socialring_Container.dart';
 
 
 
-class SocialringCalender extends StatelessWidget{
-  Map<String, int> datemap;
+class SocialringCalender extends StatefulWidget{
 
-  SocialringCalender() : datemap = new Map<String, int>() {
+
+
+  @override
+  State<SocialringCalender> createState() => _SocialringCalenderState();
+}
+
+class _SocialringCalenderState extends State<SocialringCalender> {
+  Map<String, int> datemap;
+  int? calendergroupvalue;
+
+  _SocialringCalenderState() : datemap = new Map<String, int>() {
     getdatemap();
   }
 
@@ -27,6 +37,7 @@ class SocialringCalender extends StatelessWidget{
     int lastday = DateTime.utc(now.year, now.month + 1, 0).day;
     int today = now.day;
     int weekday = now.weekday;
+    calendergroupvalue = today;
 
     for (int i = 0; i < 7; i++, today++, weekday++) {
       if (today > lastday) today = 1;
@@ -63,35 +74,16 @@ class SocialringCalender extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               for (MapEntry d in datemap.entries)
-                GestureDetector(
-                  child: Container(
-                    width: 40,
-                    height: 60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(23),
-                        color: Colors.red),
-                    child: Column(
-                      children: [
-                        Spacer(flex: 1),
-                        Text(
-                          d.key,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(flex: 1),
-                        Text(
-                          '${d.value}',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(flex: 1),
-                      ],
-                    ),
-                  ),
+                CalenderRadio(
+                    value: d.value,
+                    groupvalue: calendergroupvalue,
+                    day: d.key,
+                    date: d.value,
+                    onChanged: (value){
+                      setState(() {
+                        calendergroupvalue = value;
+                      });
+                    },
                 )
             ],
           ),

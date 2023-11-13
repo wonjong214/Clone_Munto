@@ -5,6 +5,7 @@ import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchClu
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchFeed.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchMember.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchSocialring.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 
@@ -81,7 +82,10 @@ class SearchKeyword_page extends StatelessWidget {
             create: (context) => Meeting_Provider(),
             child: SearchClub(),
           ),
-          SearchChallenge(),
+          ChangeNotifierProvider(
+            create: (context) => Challenge_Provider(),
+            child: SearchChallenge(),
+          ),
           SearchFeed(),
           SearchMember(),
         ]),

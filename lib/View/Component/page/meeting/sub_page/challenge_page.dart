@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
+import 'package:provider/provider.dart';
 import '../../../atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(P)_challenge/ChallengeHot.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(P)_challenge/ChallengePageView.dart';
@@ -17,9 +19,15 @@ class challenge_page extends StatelessWidget{
         children: [
           ChallengePageView(),
           SizedBox(height: 30,),
-          ChallengeHot(),
+          ChangeNotifierProvider(
+            create: (context) => Challenge_Provider(),
+            child: ChallengeHot(),
+          ),
           intergroupmargin,
-          ChallengeTotal(),
+          ChangeNotifierProvider(
+            create: (context) => Challenge_Provider(),
+            child: ChallengeTotal(),
+          ),
           SizedBox(height: 25,),
           OpenMeetingView(
             title: '챌린지 열기',

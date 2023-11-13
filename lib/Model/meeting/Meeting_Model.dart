@@ -9,7 +9,4 @@ class Meeting_Model{
   int total;
 
   Meeting_Model({required this.image, required this.like, required this.tag, required this.title, required this.location, required this.date, required this.participants, required this.total});
-
-
-
 }

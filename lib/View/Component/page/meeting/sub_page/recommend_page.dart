@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/CategoryGrid.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/HotTag.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Exhibitions.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
 import 'package:provider/provider.dart';
@@ -39,8 +40,15 @@ class recommend_page extends StatelessWidget{
             HotTag(),
             intergroupmargin,
             //추천 스크롤 뷰
-            ChangeNotifierProvider(
-              create: (context) => Meeting_Provider(),
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider(
+                  create: (context) => Meeting_Provider()
+                ),
+                ChangeNotifierProvider(
+                    create: (context) => Challenge_Provider()
+                ),
+                ],
               child: TasteSocialRingView(),
             ),
             intergroupmargin,
@@ -54,7 +62,10 @@ class recommend_page extends StatelessWidget{
               child: HotClub(),
             ),
             intergroupmargin,
-            RecommendChallenge(),
+            ChangeNotifierProvider(
+              create: (context) => Challenge_Provider(),
+              child: RecommendChallenge(),
+            ),
             intergroupmargin,
             RecommendMemberView(),
             intergroupmargin,

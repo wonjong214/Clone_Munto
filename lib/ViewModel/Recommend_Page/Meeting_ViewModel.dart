@@ -1,4 +1,3 @@
-
 import 'package:loginscreen/Model/meeting/Meeting_Model.dart';
 
 class Meeting_ViewModel{

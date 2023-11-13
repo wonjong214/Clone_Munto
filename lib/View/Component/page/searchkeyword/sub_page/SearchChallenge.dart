@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 
 class SearchChallenge extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    var challenge_provider = Provider.of<Challenge_Provider>(context);
     return Container(
       color: background_color,
       child: SingleChildScrollView(
@@ -43,10 +47,25 @@ class SearchChallenge extends StatelessWidget{
                 ],
               ),
               SizedBox(height: 20,),
-              for(int num=0; num<15; num++)
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: ChallengeContainer(double.infinity)
+              for (int num = 0; num < 3; num++)
+                ChallengeContainer(
+                  width: double.infinity,
+                  image: challenge_provider.challenge[num].image,
+                  icon: (challenge_provider.challenge[num].like
+                      ? Icon(Icons.favorite)
+                      : Icon(Icons.favorite_border)),
+                  onPressed: (){
+                    challenge_provider
+                        .changelike(challenge_provider.challenge[num]);
+                  },
+                  tag: challenge_provider.challenge[num].tag,
+                  title: challenge_provider.challenge[num].title,
+                  date: challenge_provider.challenge[num].date,
+                  duration: challenge_provider.challenge[num].duration,
+                  time: challenge_provider.challenge[num].time,
+                  participants:
+                  challenge_provider.challenge[num].participants,
+                  total: challenge_provider.challenge[num].total,
                 ),
             ],
           ),

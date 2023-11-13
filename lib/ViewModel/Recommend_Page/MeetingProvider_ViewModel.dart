@@ -51,9 +51,41 @@ class Meeting_Provider extends ChangeNotifier{
         participants: 4,
         total: 8
     );
+    Meeting_Model model4 = new Meeting_Model(
+        image: 'assets/images/socialring/backpacker.jpg',
+        like: false,
+        tag: ['관악산'],
+        title: '같이 관악산 국기봉 정복하러 가요',
+        location: '관악구',
+        date: '10.28(토) 오후 4:00',
+        participants: 1,
+        total: 8
+    );
+    Meeting_Model model5 = new Meeting_Model(
+        image: 'assets/images/socialring/backpacker.jpg',
+        like: false,
+        tag: ['관악산'],
+        title: '같이 관악산 국기봉 정복하러 가요',
+        location: '관악구',
+        date: '10.28(토) 오후 4:00',
+        participants: 1,
+        total: 8
+    );
+    Meeting_Model model6 = new Meeting_Model(
+        image: 'assets/images/socialring/backpacker.jpg',
+        like: false,
+        tag: ['관악산'],
+        title: '같이 관악산 국기봉 정복하러 가요',
+        location: '관악구',
+        date: '10.28(토) 오후 4:00',
+        participants: 1,
+        total: 8
+    );
     _socialring.add(Meeting_ViewModel(meeting_model: model1));
     _socialring.add(Meeting_ViewModel(meeting_model: model2));
     _socialring.add(Meeting_ViewModel(meeting_model: model3));
+    _socialring.addAll([Meeting_ViewModel(meeting_model: model4), Meeting_ViewModel(meeting_model: model5),
+      Meeting_ViewModel(meeting_model: model6)]);
   }
 
   void set_club(){

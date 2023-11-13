@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
+import 'package:provider/provider.dart';
+import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../atoms/CommonMeetingTitle_Text.dart';
 import '../../atoms/Common_Container.dart';
 import '../../atoms/GroupImage_Container.dart';
@@ -9,28 +11,14 @@ import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 import '../../atoms/SocialRingParticipant_Text.dart';
 import '../../atoms/SocialRingSubTitle_Text.dart';
+import '../../molecules/meeting/Socialring_Container.dart';
 
-class SocialringCalender extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return SocialringCalender_State();
-  }
-}
 
-class SocialringCalender_State
-    extends State<SocialringCalender> /*with SingleTickerProviderStateMixin */ {
-  /*late TabController tabController = TabController(
-    length: 7,
-    vsync: this,
-    initialIndex: 0,
 
-    /// 탭 변경 애니메이션 시간
-    animationDuration: const Duration(milliseconds: 1),
-  );*/
-
+class SocialringCalender extends StatelessWidget{
   Map<String, int> datemap;
 
-  SocialringCalender_State() : datemap = new Map<String, int>() {
+  SocialringCalender() : datemap = new Map<String, int>() {
     getdatemap();
   }
 
@@ -65,6 +53,7 @@ class SocialringCalender_State
 
   @override
   Widget build(BuildContext context) {
+    var meeting_provider = Provider.of<Meeting_Provider>(context);
     return Container(
         margin: EdgeInsets.only(right: 20, left: 20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -78,7 +67,6 @@ class SocialringCalender_State
                   child: Container(
                     width: 40,
                     height: 60,
-                    //padding: EdgeInsets.only(left: 3, right: 3, top: 8, bottom: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(23),
                         color: Colors.red),
@@ -107,97 +95,23 @@ class SocialringCalender_State
                 )
             ],
           ),
-          /*TabBar(
-            labelPadding: EdgeInsets.symmetric(horizontal: 5.0),
-            controller: tabController,
-            unselectedLabelColor: subtitle_color,
-            labelColor: Colors.white,
-            indicator: BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.rectangle,
-
-                borderRadius: BorderRadius.circular(15)),
-            tabs: [
-              for (MapEntry e in datemap.entries)
-                Tab(
-                    child: Column(
-                      children: [
-                        Text(e.key),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text('${e.value}')
-                  ],
-                )
-                )
-            ],
-          )*/
           morebutton_margin,
-          for (int i = 0; i < 3; i++)
-            Column(
-              children: [
-                Common_Container(
-                    widget: Row(
-                      children: [
-                        GroupImage(
-                            IconButton(
-                                icon: (Icon(Icons.favorite)),
-                                color: Colors.white,
-                                onPressed: () {}),
-                            'assets/images/socialring/backpacker.jpg'),
-                        SizedBox(
-                            height: 100,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                KeyWordTag_Container(text: '관악산',),
-                                CommonMeetingTitle_Text('같이 관악산 국기봉 정복하러 가요'),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_on,
-                                      size: 15,
-                                      color: subtitle_color,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    SizedBox(
-                                        child: Row(
-                                      children: [
-                                        Text(
-                                          '소셜링·',
-                                          style: TextStyle(
-                                              fontSize: 15, color: subtitle_color),
-                                        ),
-                                        SocialRingSubTitle_Text(
-                                            '관악구', '10.28(토) 오후 4:00')
-                                      ],
-                                    ))
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.people,
-                                      color: subtitle_color,
-                                      size: 15,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    SocialRingParticipant(1, 8),
-                                  ],
-                                )
-                              ],
-                            ))
-                      ],
-                )),
-                SizedBox(
-                  height: 20,
+          for(int num=0; num<3; num++)
+            GestureDetector(
+                onTap: () {print('touch');},
+                child: Socialring_Container(
+                  image: meeting_provider.socialring[num].image,
+                  icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                  onPressed: (){
+                    meeting_provider.changelike(meeting_provider.socialring[num]);
+                  },
+                  tag:  meeting_provider.socialring[num].tag,
+                  title:  meeting_provider.socialring[num].title,
+                  location:  meeting_provider.socialring[num].location,
+                  date:  meeting_provider.socialring[num].date,
+                  participants:  meeting_provider.socialring[num].participants,
+                  total:  meeting_provider.socialring[num].total,
                 )
-              ],
             ),
           More_Button(double.infinity)
         ]

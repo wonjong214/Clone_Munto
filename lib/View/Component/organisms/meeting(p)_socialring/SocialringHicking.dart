@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/Meeting_ViewModel.dart';
+import 'package:provider/provider.dart';
 import '../../../../../Constants/colors.dart';
 import '../../atoms/CommonMeetingTitle_Text.dart';
 import '../../atoms/Common_Container.dart';
@@ -8,10 +11,20 @@ import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/More_Button.dart';
 import '../../atoms/SocialRingParticipant_Text.dart';
 import '../../atoms/SocialRingSubTitle_Text.dart';
+import '../../molecules/meeting/Socialring_Container.dart';
 
 class SocialringHicking extends StatelessWidget{
+  List<Meeting_ViewModel> hickinglist;
+
+  SocialringHicking():hickinglist = List.empty(growable: true);
+
   @override
   Widget build(BuildContext context) {
+    var meeting_provider = Provider.of<Meeting_Provider>(context);
+    meeting_provider.socialring.forEach((element) {
+      if(element.tag.contains('관악산'))
+        hickinglist.add(element);
+    });
     return Stack(
       children: [
         Container(
@@ -39,63 +52,22 @@ class SocialringHicking extends StatelessWidget{
                 ),
               ),
               SizedBox(height: 50,),
-              for(int i = 0; i<3; i++)
-                Column(
-                  children: [
-                    Common_Container(
-                      widget: Row(
-                          children: [
-                            GroupImage(
-                                IconButton(
-                                    icon: (Icon(Icons.favorite)),
-                                    color: Colors.white,
-                                    onPressed: () {}
-                                ),
-                                'assets/images/socialring/backpacker.jpg'
-                            ),
-                            SizedBox(
-                                height: 100,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    KeyWordTag_Container(text: '관악산',),
-                                    CommonMeetingTitle_Text('같이 관악산 국기봉 정복하러 가요'),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '소셜링 ·',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: subtitle_color
-                                          ),
-                                        ),
-                                        SizedBox(width: 2,),
-                                        SizedBox(
-                                            child: Row(
-                                              children: [
-                                                CommonGreyIcon(Icons.location_on),
-                                                SocialRingSubTitle_Text('관악구', '10.28(토) 오후 4:00')
-                                              ],
-                                            )
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        CommonGreyIcon(Icons.people),
-                                        SizedBox(width: 5,),
-                                        SocialRingParticipant(1, 8),
-                                      ],
-                                    )
-                                  ],
-                                )
-                            )
-                          ],
-                        )
-                    ),
-                    SizedBox(height: 20,)
-                  ],
+              for(int num=0; num<3; num++)
+                GestureDetector(
+                    onTap: () {print('touch');},
+                    child: Socialring_Container(
+                      image: hickinglist[num].image,
+                      icon:  hickinglist[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                      onPressed: (){
+                        meeting_provider.changelike( hickinglist[num]);
+                      },
+                      tag:   hickinglist[num].tag,
+                      title:   hickinglist[num].title,
+                      location:   hickinglist[num].location,
+                      date:   hickinglist[num].date,
+                      participants:   hickinglist[num].participants,
+                      total:   hickinglist[num].total,
+                    )
                 ),
               More_Button(double.infinity)
             ],

@@ -5,6 +5,8 @@ import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/Socia
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringRecommend.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringReview.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/Socialring_PageView.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import 'package:provider/provider.dart';
 
 import '../../../atoms/Margin_SizedBox.dart';
 import '../../../organisms/meeting(p)_recommend/OpenMeetingView.dart';
@@ -21,15 +23,28 @@ class Socialring_Page extends StatelessWidget{
           SizedBox(height: 20,),
           TagScroll_ScrollView(),
           intergroupmargin,
-          SocialringRecommend(),
+          ChangeNotifierProvider(
+            create: (context) => Meeting_Provider(),
+            child: SocialringRecommend(),
+          ),
           intergroupmargin,
           SocialringReview(),
           intergroupmargin,
-          SocialringHicking(),
+          ChangeNotifierProvider(
+            create: (context) => Meeting_Provider(),
+            child:  SocialringHicking(),
+          ),
           intergroupmargin,
           SocialringHostView(),
           intergroupmargin,
-          SocialringCalender(),
+          MultiProvider(
+            providers: [
+              ChangeNotifierProvider(
+                  create: (context) => Meeting_Provider()
+              ),
+            ],
+            child: SocialringCalender(),
+          ),
           intergroupmargin,
           OpenMeetingView(title: '소셜링 열기', subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?')
 

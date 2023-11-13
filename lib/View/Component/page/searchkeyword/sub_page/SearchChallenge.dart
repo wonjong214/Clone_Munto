@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';

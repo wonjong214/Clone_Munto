@@ -5,9 +5,25 @@ import '../../atoms/CommonGreyIcon_Icon.dart';
 import '../../atoms/CommonMeetingTitle_Text.dart';
 
 class Socialring_Container extends StatelessWidget {
+  double? width;
+  String image;
+  Widget icon;
+  Function()? onPressed;
+  List<String> tag;
+  String title;
+  String location;
+  String date;
+  int participants;
+  int total;
+
+  Socialring_Container({this.width, required this.image, required this.icon, required this.onPressed, required this.tag,
+    required this.title, required this.location, required this.date, required this.participants, required this.total});
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
+        width: width,
         margin: EdgeInsets.only(bottom: 15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5), color: Colors.white60),
@@ -20,57 +36,65 @@ class Socialring_Container extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
-                          'assets/images/recommend_page/Exhibitions/airpot.jpeg'),
+                          image),
                       fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(5)),
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: IconButton(
-                    icon: (Icon(Icons.favorite)),
+                    icon: icon,
                     color: Colors.white,
-                    onPressed: () {}),
+                    onPressed: onPressed),
               ),
             ),
-            SizedBox(
-                height: 100,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        /*for(int i=0; i< provider.tastesocialring[num].tag.length;i++)
-                                        if(provider.tastesocialring[num].tag[i] != '추천')*/
-                        KeyWordTag_Container(text:'게임',),
-                        //else
-                        KeyWordTag_Container(text: '추천', backcolor: Color(0XbbFFC0CB), textcolor: Color(0XffDC143C),),
-                      ],
-                    ),
-                    CommonMeetingTitle_Text('제목'),
-                    Row(
-                      children: [
-                        Text('소셜링·'),
-                        CommonGreyIcon(Icons.location_on),
-                        SizedBox(
-                          width: 200,
-                          child: Text(
-                            '위치·날짜',
-                            style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
+            Expanded(
+              child: SizedBox(
+                  height: 100,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          for (int i = 0; i < tag.length; i++)
+                            if (tag[i] != '추천')
+                              KeyWordTag_Container(
+                                text: tag[i],
+                              )
+                            else
+                              KeyWordTag_Container(
+                                text: tag[i],
+                                textcolor: Color(0xffdc143c),
+                                backcolor: Color(0Xbbfeeaea),
+                                fontweight: FontWeight.bold,
+                              )
+                        ],
+                      ),
+                      CommonMeetingTitle_Text(title),
+                      Row(
+                        children: [
+                          Text('소셜링·'),
+                          CommonGreyIcon(Icons.location_on),
+                          Expanded(
+                            child: Text(
+                              '$location·$date',
+                              style: TextStyle(
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              maxLines: 1,
                             ),
-                            maxLines: 1,
-                          ),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        CommonGreyIcon(Icons.people),
-                        Text('00/total'),
-                      ],
-                    )
-                  ],
-                )),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          CommonGreyIcon(Icons.people),
+                          Text('$participants/$total'),
+                        ],
+                      )
+                    ],
+                  )),
+            ),
           ],
         ));
   }

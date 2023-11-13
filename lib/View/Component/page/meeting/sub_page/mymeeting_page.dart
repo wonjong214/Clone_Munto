@@ -13,6 +13,10 @@ class MyMeeting_Page extends StatefulWidget{
 
 class MyMeeting_Page_State extends State<MyMeeting_Page>{
   int _selectedIndex = 0;
+  bool socialselected = true;
+  bool clubseleted = false;
+  bool challengeselected = false;
+
   final screen = [
     MySocialring(),
     MyClubView(),
@@ -30,8 +34,8 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
               children: [
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.white,
+                        foregroundColor: socialselected ? Colors.white : Colors.black,
+                        backgroundColor: socialselected ? Colors.black : Colors.white,
                         splashFactory: NoSplash.splashFactory,
                         shadowColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
@@ -41,6 +45,9 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
                     onPressed: () {
                       setState(() {
                         _selectedIndex = 0;
+                        socialselected = true;
+                        clubseleted = false;
+                        challengeselected = false;
                       });
                     },
                     child: Text('소셜링')
@@ -49,8 +56,8 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         minimumSize: Size(30,36),
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.white,
+                        foregroundColor: clubseleted ? Colors.white : Colors.black,
+                        backgroundColor: clubseleted ? Colors.black : Colors.white,
                         splashFactory: NoSplash.splashFactory,
                         shadowColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
@@ -60,6 +67,9 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
                     onPressed: () {
                       setState(() {
                         _selectedIndex = 1;
+                        socialselected = false;
+                        clubseleted = true;
+                        challengeselected = false;
                       });
                     },
                     child: Text('클럽')
@@ -67,8 +77,8 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
                 SizedBox(width: 15),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.white,
+                        foregroundColor: challengeselected ? Colors.white : Colors.black,
+                        backgroundColor: challengeselected ? Colors.black : Colors.white,
                         splashFactory: NoSplash.splashFactory,
                         shadowColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
@@ -78,6 +88,9 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
                     onPressed: () {
                       setState(() {
                         _selectedIndex = 2;
+                        socialselected = false;
+                        clubseleted = false;
+                        challengeselected = true;
                       });
                     },
                     child: Text('챌린지')

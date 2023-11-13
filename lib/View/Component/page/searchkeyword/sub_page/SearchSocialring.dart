@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/WhiteRoundTag_Container.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
 class SearchSocialring extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    var meeting_provider = Provider.of<Meeting_Provider>(context);
     return Container(
       color: background_color,
       child: SingleChildScrollView(
@@ -93,10 +96,22 @@ class SearchSocialring extends StatelessWidget{
                 ],
               ),
               SizedBox(height: 20,),
-              for(int num=0; num<15; num++)
+              for(int num=0; num<3; num++)
                 GestureDetector(
                     onTap: () {print('touch');},
-                    child: Socialring_Container()
+                    child: Socialring_Container(
+                      image: meeting_provider.socialring[num].image,
+                      icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                      onPressed: (){
+                        meeting_provider.changelike(meeting_provider.socialring[num]);
+                      },
+                      tag:  meeting_provider.socialring[num].tag,
+                      title:  meeting_provider.socialring[num].title,
+                      location:  meeting_provider.socialring[num].location,
+                      date:  meeting_provider.socialring[num].date,
+                      participants:  meeting_provider.socialring[num].participants,
+                      total:  meeting_provider.socialring[num].total,
+                    )
                 ),
             ],
           ),

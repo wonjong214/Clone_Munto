@@ -6,6 +6,7 @@ import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/Socia
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringReview.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/Socialring_PageView.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 
 import '../../../atoms/Margin_SizedBox.dart';
@@ -35,7 +36,10 @@ class Socialring_Page extends StatelessWidget{
             child:  SocialringHicking(),
           ),
           intergroupmargin,
-          SocialringHostView(),
+          ChangeNotifierProvider(
+            create: (context) => SelectedHost_Provider(),
+            child: SocialringHostView(),
+          ),
           intergroupmargin,
           MultiProvider(
             providers: [

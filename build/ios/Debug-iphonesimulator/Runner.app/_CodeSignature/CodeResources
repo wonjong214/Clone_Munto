@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		tY2rsb/7Tzlj6eULbKKpzjm1gCo=
+		42OeL5BkiNNjIspA84mV+T5iRb4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		nqIVsgNPbIgnAwTigKZsxWfG0gA=
+		poXcI0pmDKSuY/VI/u9q9CXYfMc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		w5Pj/krJQ6A4THb3yrVRETB/JyM=
+		FeAdFYQi4JjmBSL62S5CZTGgPgY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		9zx7VaVpTzZnxWqB0skFj7gb9i0=
+		wGR8bbLhC68tEsq7ec/CVraybfc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -184,6 +184,22 @@
 		<data>
 		BXNckjMk4PaTDUw8pSD4h/BFURU=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/beer.jpg</key>
+		<data>
+		d6FLi0NBcpUcYHQbYuqHs02jd1c=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/colosseum.jpg</key>
+		<data>
+		BbtcTbqoP67Bn/kG+gw/QjEJLYg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/foodstreet.jpg</key>
+		<data>
+		fkGjeXOBewq4qhl0SV9+2RME5ao=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/opera.jpg</key>
+		<data>
+		k91+i8F/LhwOQI38k9ppEZxa65k=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
 		/CUoTuPQqqdexfyOT9lpJhV+2MQ=
@@ -194,7 +210,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		mindfrkkUER/y/QAF4IbGo5DGS4=
+		dR0+Q3DPk9uxt0PWctN2jN3gTuw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -377,7 +393,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LqNRnWPfz+EUyYh1DCcBdB33XFR9l5Bw7+1gEqfCNT0=
+			WhUaXszwddoQQmW3xyv3KXfoYn7chBpPufu5KA/xIxY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -391,21 +407,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4ayOuNfIvroRiSW9g/We4PJZSH0uLsTXVmm8OapKvnw=
+			wYrUo06pb07kC6+m2CjGSO/wRewANLb58PnL5JBe/fA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hr7HUbscCuCn5P5AA9TlZwTexHDJbdpmw1ev1VL0tfo=
+			MTSnm+3mcmEAtRGqqTcnnH2EL57i3msmu5ndTQZs7a0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rzJGnw07dSa8cjZVvkDqA/BPYRoBZir8EcpuZXBKum8=
+			J9hhOI5J6Fanjw4vsgk5aEuPD3SwRJDUaaXC4FosuPs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -618,6 +634,34 @@
 			bmaKViMrjyvyJnZfqXZFdxu4x+WvN8Dp4rEOJrbIbAk=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/beer.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CImu33yB61iz6RnB3M7QRKcZEEq0ftsFBErDdUso3rM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/colosseum.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uBE2xTSB2GB0PqkvpNzN9EPVRqn0Zj41hPrg1akQRNs=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/foodstreet.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OS2Kezy+KtwsGj2w0hrC5BMv3yotn0+UMzFFWVEkBUM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/socialring/opera.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5YR9w/UpqFLbbLUnW7kkyuxR2AUbIY5XACo3zvQQTW4=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<dict>
 			<key>hash2</key>
@@ -636,7 +680,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CfQNYbyHQz1VV8onr8mBiME7pV4zjdwN6vbcjctcx84=
+			DHoTMq2ytKP6PpliBAObf6qGNEAB0xid1TrxFnN63us=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

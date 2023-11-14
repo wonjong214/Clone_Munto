@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		w5Pj/krJQ6A4THb3yrVRETB/JyM=
+		FeAdFYQi4JjmBSL62S5CZTGgPgY=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		9zx7VaVpTzZnxWqB0skFj7gb9i0=
+		wGR8bbLhC68tEsq7ec/CVraybfc=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -136,6 +136,22 @@
 		<data>
 		BXNckjMk4PaTDUw8pSD4h/BFURU=
 		</data>
+		<key>flutter_assets/assets/images/socialring/beer.jpg</key>
+		<data>
+		d6FLi0NBcpUcYHQbYuqHs02jd1c=
+		</data>
+		<key>flutter_assets/assets/images/socialring/colosseum.jpg</key>
+		<data>
+		BbtcTbqoP67Bn/kG+gw/QjEJLYg=
+		</data>
+		<key>flutter_assets/assets/images/socialring/foodstreet.jpg</key>
+		<data>
+		fkGjeXOBewq4qhl0SV9+2RME5ao=
+		</data>
+		<key>flutter_assets/assets/images/socialring/opera.jpg</key>
+		<data>
+		k91+i8F/LhwOQI38k9ppEZxa65k=
+		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
 		/CUoTuPQqqdexfyOT9lpJhV+2MQ=
@@ -146,7 +162,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		mindfrkkUER/y/QAF4IbGo5DGS4=
+		dR0+Q3DPk9uxt0PWctN2jN3gTuw=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -167,14 +183,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hr7HUbscCuCn5P5AA9TlZwTexHDJbdpmw1ev1VL0tfo=
+			MTSnm+3mcmEAtRGqqTcnnH2EL57i3msmu5ndTQZs7a0=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rzJGnw07dSa8cjZVvkDqA/BPYRoBZir8EcpuZXBKum8=
+			J9hhOI5J6Fanjw4vsgk5aEuPD3SwRJDUaaXC4FosuPs=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -387,6 +403,34 @@
 			bmaKViMrjyvyJnZfqXZFdxu4x+WvN8Dp4rEOJrbIbAk=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/socialring/beer.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CImu33yB61iz6RnB3M7QRKcZEEq0ftsFBErDdUso3rM=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/socialring/colosseum.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uBE2xTSB2GB0PqkvpNzN9EPVRqn0Zj41hPrg1akQRNs=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/socialring/foodstreet.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OS2Kezy+KtwsGj2w0hrC5BMv3yotn0+UMzFFWVEkBUM=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/socialring/opera.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5YR9w/UpqFLbbLUnW7kkyuxR2AUbIY5XACo3zvQQTW4=
+			</data>
+		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<dict>
 			<key>hash2</key>
@@ -405,7 +449,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CfQNYbyHQz1VV8onr8mBiME7pV4zjdwN6vbcjctcx84=
+			DHoTMq2ytKP6PpliBAObf6qGNEAB0xid1TrxFnN63us=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

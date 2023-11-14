@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/Follow_Button.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/colors.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
@@ -6,12 +7,18 @@ import '../../atoms/GroupTitle_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 
-class SocialringHostView extends StatelessWidget{
+class SocialringHostView extends StatefulWidget{
+
+  @override
+  State<SocialringHostView> createState() => _SocialringHostViewState();
+}
+
+class _SocialringHostViewState extends State<SocialringHostView> {
+  List<bool> followselected = List.filled(3, false);
 
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
-
     return Column(
       children: [
         Container(
@@ -91,23 +98,17 @@ class SocialringHostView extends StatelessWidget{
                                                         ),
                                                       ),
                                                       Spacer(),
-                                                      Container(
-                                                        padding: EdgeInsets.only(
-                                                            left: 5,
-                                                            right: 5,
-                                                            top: 8,
-                                                            bottom: 8),
-                                                        decoration: BoxDecoration(
-                                                            borderRadius:
-                                                            BorderRadius.circular(15),
-                                                            color: Colors.red,
-                                                            border:
-                                                            Border.all(color: Colors.red)),
-                                                        child: Text(
-                                                          '팔로우',
-                                                          style: TextStyle(color: Colors.white),
-                                                        ),
-                                                      ),
+                                                      GestureDetector(
+                                                        onTap: (){
+                                                          setState(() {
+                                                            if(followselected[i] == true)
+                                                              followselected[i] = false;
+                                                            else
+                                                              followselected[i] = true;
+                                                          });
+                                                        },
+                                                          child: Follow_Button(selected: followselected[i])
+                                                      )
                                                     ],
                                                   )),
                                               Text(

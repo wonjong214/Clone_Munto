@@ -10,9 +10,23 @@ class CustomThirtyRoundedRadio extends StatefulWidget {
 
   final String label;
 
+  final EdgeInsetsGeometry padding;
+
+  final double? textsize;
+
   final void Function(int) onChanged;
 
-  const CustomThirtyRoundedRadio({Key? key, required this.value,required this.groupvalue,required this.label, required this.onChanged})
+  final Color truebordercolor;
+  final Color falsebordercolor;
+  final Color truebackcolor;
+  final Color falsebackcolor;
+  final Color truetextcolor;
+  final Color falsetextcolor;
+
+  const CustomThirtyRoundedRadio({Key? key, required this.value,required this.groupvalue,required this.label,
+    this.padding = const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,), this.textsize, required this.onChanged,
+  required this.truebordercolor, required this.falsebordercolor, required this.truebackcolor, required this.falsebackcolor,
+  required this.truetextcolor, required this.falsetextcolor})
       : super(key: key);
 
   @override
@@ -30,14 +44,14 @@ class _CustomThirtyRoundedRadioState extends State<CustomThirtyRoundedRadio> {
       child: Row(
         children: [
           ThirtyRoundedBorderContainer(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
-            bordercolor: selected ? Colors.red :Colors.grey.shade300,
-            backcolor: selected ? Colors.red : Colors.transparent,
+            padding: widget.padding,
+            bordercolor: selected ? widget.truebordercolor :widget.falsebordercolor,
+            backcolor: selected ? widget.truebackcolor : widget.falsebackcolor,
             widget: Text(
               widget.label!,
               style: TextStyle(
-                fontSize: 17,
-                color: selected ? Colors.white : Colors.black
+                fontSize: widget.textsize,
+                color: selected ? widget.truetextcolor : widget.falsetextcolor
               ),
             ),
           )

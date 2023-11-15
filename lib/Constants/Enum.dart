@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+enum LoungeAlign {
+  current("최신"),
+  popular("인기"),
+  meetingreview("모임 후기"),
+  editortype("취향에디터");
+
+  final String korean;
+  const LoungeAlign(this.korean);
+}
+
 enum Quota {
   three("3~10명"),
   eleven("11~30명"),

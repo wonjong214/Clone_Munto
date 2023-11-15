@@ -104,11 +104,18 @@ class _FilterSocialState extends State<FilterSocial> {
                   value: Day.values[index].index,
                   groupvalue: daygroupvalue,
                   label: Day.values[index].korean,
+                  textsize: 17,
                   onChanged: (value) {
                     setState(() {
                       daygroupvalue = value;
                     });
                   },
+                  truebordercolor: Colors.red,
+                  falsebordercolor: Colors.grey.shade300,
+                  truebackcolor: Colors.red,
+                  falsebackcolor: Colors.transparent,
+                  truetextcolor: Colors.white,
+                  falsetextcolor: Colors.black,
                 );
               }),
             ),

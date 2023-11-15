@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedInfinity_Container.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterClub.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterSocial.dart';
 
@@ -93,17 +93,22 @@ class _FilterModalViewState extends State<FilterModalView> {
             ),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 15),
               decoration: BoxDecoration(
                 border: Border(top: BorderSide(color: Color(0xffa9a9a9), width: 1))
               ),
-              child: Container(
-                child: ThirtyRoundedInfinity_Container(
-                  text: '적용하기',
-                  buttoncolor: Color(0xffdbdbdb),
-                  buttontextcolor: Colors.grey,
+              child: CommonBorderContainer(
+                  width: double.infinity,
+                  height: 50,
+                  backcolor: Color(0xffdbdbdb),
+                  widget: Text(
+                    '적용하기',
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ),
-              ),
             )
           ],
         ),

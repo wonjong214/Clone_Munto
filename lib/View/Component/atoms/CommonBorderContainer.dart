@@ -21,6 +21,7 @@ class CommonBorderContainer extends StatelessWidget{
       width: width,
       height: height,
       padding: padding,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(circular),
           color: backcolor,

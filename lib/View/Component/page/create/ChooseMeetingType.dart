@@ -4,8 +4,6 @@ import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/GroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/Model/create/ChooseMeetingType_Model.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedInfinity_Container.dart';
-
 import '../../../../Constants/colors.dart';
 
 class ChooseMeetingType extends StatefulWidget{
@@ -266,10 +264,21 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 ),
               ),
               Spacer(),
-              ThirtyRoundedInfinity_Container(
-                  text: '다음',
-                  buttoncolor: _buttoncolor,
-                  buttontextcolor: _buttontextcolor)
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                child: CommonBorderContainer(
+                  width: double.infinity,
+                    height: 50,
+                    backcolor: _buttoncolor,
+                    widget: Text(
+                      '다음',
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: _buttontextcolor,
+                      ),
+                    ),
+                ),
+              )
             ],
           ),
         )

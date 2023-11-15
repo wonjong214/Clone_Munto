@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/WhiteRoundTag_Container.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
@@ -19,7 +18,8 @@ class SearchSocialring extends StatelessWidget{
             children: [
               Row(
                 children: [
-                  WhiteRoundTag(
+                  CommonBorderContainer(
+                    backcolor: Colors.white,
                       widget: Image.asset(
                         'assets/icons/filter.png',
                         width: 20,
@@ -27,7 +27,9 @@ class SearchSocialring extends StatelessWidget{
                       ),
                       padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
                   ),
-                  WhiteRoundTag(
+                  SizedBox(width: 10,),
+                  CommonBorderContainer(
+                    backcolor: Colors.white,
                     widget: Text(
                       '날짜',
                       style: TextStyle(
@@ -36,8 +38,9 @@ class SearchSocialring extends StatelessWidget{
                     ),
                     padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
                   ),
-                  WhiteRoundTag(
-                    widget: Text(
+                  SizedBox(width: 10,),
+                  CommonBorderContainer(
+                    backcolor: Colors.white,                    widget: Text(
                       '지역',
                       style: TextStyle(
                         fontSize: 15,
@@ -45,8 +48,9 @@ class SearchSocialring extends StatelessWidget{
                     ),
                     padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
                   ),
-                  WhiteRoundTag(
-                    widget: Text(
+                  SizedBox(width: 10,),
+                  CommonBorderContainer(
+                    backcolor: Colors.white,                    widget: Text(
                       '나이',
                       style: TextStyle(
                         fontSize: 15,
@@ -54,8 +58,9 @@ class SearchSocialring extends StatelessWidget{
                     ),
                     padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
                   ),
-                  WhiteRoundTag(
-                    widget: Text(
+                  SizedBox(width: 10,),
+                  CommonBorderContainer(
+                    backcolor: Colors.white,                    widget: Text(
                       '정원',
                       style: TextStyle(
                         fontSize: 15,

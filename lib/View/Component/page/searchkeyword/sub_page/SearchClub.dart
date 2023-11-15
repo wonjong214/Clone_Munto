@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 
-import '../../../atoms/WhiteRoundTag_Container.dart';
 
 class SearchClub extends StatelessWidget{
   @override
@@ -19,7 +19,8 @@ class SearchClub extends StatelessWidget{
             children: [
               Row(
                 children: [
-                  WhiteRoundTag(
+                  CommonBorderContainer(
+                    backcolor: Colors.white,
                     widget: Image.asset(
                       'assets/icons/filter.png',
                       width: 20,
@@ -27,7 +28,9 @@ class SearchClub extends StatelessWidget{
                     ),
                     padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
                   ),
-                  WhiteRoundTag(
+                  SizedBox(width: 10,),
+                  CommonBorderContainer(
+                    backcolor: Colors.white,
                     widget: Text(
                       '지역',
                       style: TextStyle(
@@ -36,7 +39,9 @@ class SearchClub extends StatelessWidget{
                     ),
                     padding: EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8,),
                   ),
-                  WhiteRoundTag(
+                  SizedBox(width: 10,),
+                  CommonBorderContainer(
+                    backcolor: Colors.white,
                     widget: Text(
                       '카테고리',
                       style: TextStyle(

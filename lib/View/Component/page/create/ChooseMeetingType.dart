@@ -6,38 +6,39 @@ import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/Model/create/ChooseMeetingType_Model.dart';
 import '../../../../Constants/colors.dart';
 
-class ChooseMeetingType extends StatefulWidget{
+class ChooseMeetingType extends StatefulWidget {
   @override
   State<ChooseMeetingType> createState() => _ChooseMeetingTypeState();
 }
 
 class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
-
   ChooseMeetingType_Model? _social;
   ChooseMeetingType_Model? _club;
   ChooseMeetingType_Model? _challenge;
   Color? _buttoncolor;
   Color? _buttontextcolor;
 
-  _ChooseMeetingTypeState(){
-    _social = ChooseMeetingType_Model(Colors.white, Colors.red, Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
-    _club = ChooseMeetingType_Model(Colors.white, Colors.green.shade800, Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
-    _challenge = ChooseMeetingType_Model(Colors.white, Colors.blue, Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
+  _ChooseMeetingTypeState() {
+    _social = ChooseMeetingType_Model(Colors.white, Colors.red, Colors.white,
+        Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
+    _club = ChooseMeetingType_Model(Colors.white, Colors.green.shade800,
+        Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
+    _challenge = ChooseMeetingType_Model(Colors.white, Colors.blue,
+        Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
     _buttoncolor = Color(0xffdbdbdb);
     _buttontextcolor = Colors.grey;
   }
 
-  reset_socialringcolor(){
+  reset_socialringcolor() {
     _social!.containerbackcolor = Colors.white;
     _social!.containerbordercolor = Color(0xffa9a9a9);
     _social!.iconcolor = Colors.white;
     _social!.iconbackcolor = Colors.red;
     _social!.titletextcolor = Colors.black;
     _social!.subtextcolor = Color(0xffa9a9a9);
-
   }
 
-  set_socialringcolor(){
+  set_socialringcolor() {
     _social!.containerbackcolor = Colors.red;
     _social!.containerbordercolor = Colors.transparent;
     _social!.iconcolor = Colors.red;
@@ -46,17 +47,16 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
     _social!.subtextcolor = Colors.white;
   }
 
-  reset_clubcolor(){
+  reset_clubcolor() {
     _club!.containerbackcolor = Colors.white;
     _club!.containerbordercolor = Color(0xffa9a9a9);
     _club!.iconcolor = Colors.white;
     _club!.iconbackcolor = Colors.green.shade800;
     _club!.titletextcolor = Colors.black;
     _club!.subtextcolor = Color(0xffa9a9a9);
-
   }
 
-  set_clubcolor(){
+  set_clubcolor() {
     _club!.containerbackcolor = Colors.green.shade800;
     _club!.containerbordercolor = Colors.transparent;
     _club!.iconcolor = Colors.green.shade800;
@@ -65,17 +65,16 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
     _club!.subtextcolor = Colors.white;
   }
 
-  reset_challengecolor(){
+  reset_challengecolor() {
     _challenge!.containerbackcolor = Colors.white;
     _challenge!.containerbordercolor = Color(0xffa9a9a9);
     _challenge!.iconcolor = Colors.white;
     _challenge!.iconbackcolor = Colors.blue;
     _challenge!.titletextcolor = Colors.black;
     _challenge!.subtextcolor = Color(0xffa9a9a9);
-
   }
 
-  set_challengecolor(){
+  set_challengecolor() {
     _challenge!.containerbackcolor = Colors.blue;
     _challenge!.containerbordercolor = Colors.transparent;
     _challenge!.iconcolor = Colors.blue;
@@ -83,9 +82,6 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
     _challenge!.titletextcolor = Colors.white;
     _challenge!.subtextcolor = Colors.white;
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +99,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
               GroupTitle_Text('멤버들과 함께 어떤 활동을 하고싶나요?'),
               intergroupmargin,
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
                     set_socialringcolor();
                     reset_clubcolor();
@@ -122,14 +118,22 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       CircleIcon(
                         width: 20,
                         height: 20,
                         backgroundcolor: _social!.iconbackcolor,
-                        icon: Icon(Icons.bolt, size: 18, color: _social!.iconcolor,),
+                        icon: Icon(
+                          Icons.bolt,
+                          size: 18,
+                          color: _social!.iconcolor,
+                        ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,7 +145,9 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                               color: _social!.titletextcolor,
                             ),
                           ),
-                          SizedBox(height: 3,),
+                          SizedBox(
+                            height: 3,
+                          ),
                           Text(
                             '일회성 모임으로 번개처럼 가볍게 만나요',
                             style: TextStyle(
@@ -155,9 +161,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
                     set_clubcolor();
                     reset_socialringcolor();
@@ -176,14 +184,22 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       CircleIcon(
                         width: 20,
                         height: 20,
                         backgroundcolor: _club!.iconbackcolor,
-                        icon: Icon(Icons.star, size: 14, color: _club!.iconcolor,),
+                        icon: Icon(
+                          Icons.star,
+                          size: 14,
+                          color: _club!.iconcolor,
+                        ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -195,7 +211,9 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                               color: _club!.titletextcolor,
                             ),
                           ),
-                          SizedBox(height: 3,),
+                          SizedBox(
+                            height: 3,
+                          ),
                           Text(
                             '지속형 모임으로 계속해서 친하게 지내요',
                             style: TextStyle(
@@ -209,9 +227,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
                     set_challengecolor();
                     reset_socialringcolor();
@@ -230,14 +250,22 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       CircleIcon(
                         width: 20,
                         height: 20,
                         backgroundcolor: _challenge!.iconbackcolor,
-                        icon: Icon(Icons.local_fire_department, size: 18, color: _challenge!.iconcolor,),
+                        icon: Icon(
+                          Icons.local_fire_department,
+                          size: 18,
+                          color: _challenge!.iconcolor,
+                        ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -249,7 +277,9 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                               color: _challenge!.titletextcolor,
                             ),
                           ),
-                          SizedBox(height: 3,),
+                          SizedBox(
+                            height: 3,
+                          ),
                           Text(
                             '같은 목표를 가진 멤버들과 함께 도전해요',
                             style: TextStyle(
@@ -268,20 +298,22 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
                 child: CommonBorderContainer(
                   width: double.infinity,
-                    height: 50,
-                    backcolor: _buttoncolor,
-                    widget: Text(
+                  height: 50,
+                  backcolor: _buttoncolor,
+                  widget: Align(
+                    alignment: Alignment.center,
+                    child: Text(
                       '다음',
                       style: TextStyle(
                         fontSize: 17,
                         color: _buttontextcolor,
                       ),
                     ),
+                  ),
                 ),
               )
             ],
           ),
-        )
-    );
+        ));
   }
 }

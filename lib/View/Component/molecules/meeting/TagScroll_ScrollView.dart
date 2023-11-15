@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import '../../../../Constants/Enum.dart';
-import '../../atoms/ProfileImage_Container.dart';
-import '../../atoms/WhiteRoundTag_Container.dart';
 
 class TagScroll_ScrollView extends StatelessWidget{
   @override
@@ -23,19 +21,23 @@ class TagScroll_ScrollView extends StatelessWidget{
                     arguments: Tag.values[i].korean,
                   );
                 },
-                child: WhiteRoundTag(
-                  padding: EdgeInsets.only(left: 12, right: 12),
-                  widget: Row(
-                    children: [
-                      Text(
-                        '#${Tag.values[i].korean}',
-                        style: TextStyle(
-                          fontSize: 15,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: CommonBorderContainer(
+                    backcolor: Colors.white,
+                    padding: EdgeInsets.only(left: 12, right: 12),
+                    widget: Row(
+                      children: [
+                        Text(
+                          '#${Tag.values[i].korean}',
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                    height: 35,
                   ),
-                  height: 35,
                 ),
               ),
           ],

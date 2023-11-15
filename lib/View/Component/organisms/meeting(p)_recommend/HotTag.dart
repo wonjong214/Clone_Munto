@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
-import 'package:loginscreen/Constants/list.dart';
-import 'package:loginscreen/View/Component/atoms/CommonMeetingTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/GroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/ProfileImage_Container.dart';
-import 'package:loginscreen/View/Component/atoms/WhiteRoundTag_Container.dart';
-import 'package:loginscreen/View/Component/molecules/profile/Profile_Image.dart';
 
 class HotTag extends StatelessWidget {
   @override
@@ -34,21 +31,25 @@ class HotTag extends StatelessWidget {
                         arguments: Tag.values[i].korean,
                       );
                     },
-                    child: WhiteRoundTag(
-                      padding: EdgeInsets.only(left: 3, right: 12),
-                      widget: Row(
-                        children: [
-                          ProfileImage_Container(Tag.values[i].image),
-                          SizedBox(width: 2,),
-                          Text(
-                            '#${Tag.values[i].korean}',
-                            style: TextStyle(
-                              fontSize: 15,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: CommonBorderContainer(
+                        padding: EdgeInsets.only(left: 3, right: 12),
+                        backcolor: Colors.white,
+                        widget: Row(
+                          children: [
+                            ProfileImage_Container(Tag.values[i].image),
+                            SizedBox(width: 2,),
+                            Text(
+                              '#${Tag.values[i].korean}',
+                              style: TextStyle(
+                                fontSize: 15,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        height: 40,
                       ),
-                      height: 40,
                     ),
                   ),
                 ],

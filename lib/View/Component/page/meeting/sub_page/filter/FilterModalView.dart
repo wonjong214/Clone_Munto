@@ -5,8 +5,6 @@ import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterClub.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterSocial.dart';
 
-
-
 class FilterModalView extends StatefulWidget {
   @override
   State<FilterModalView> createState() => _FilterModalViewState();
@@ -72,7 +70,7 @@ class _FilterModalViewState extends State<FilterModalView> {
                 ),
               ),
               Text(
-                  '클럽',
+                '클럽',
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
@@ -93,15 +91,18 @@ class _FilterModalViewState extends State<FilterModalView> {
             ),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 15),
+              padding:
+                  EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 15),
               decoration: BoxDecoration(
-                border: Border(top: BorderSide(color: Color(0xffa9a9a9), width: 1))
-              ),
+                  border: Border(
+                      top: BorderSide(color: Color(0xffa9a9a9), width: 1))),
               child: CommonBorderContainer(
-                  width: double.infinity,
-                  height: 50,
-                  backcolor: Color(0xffdbdbdb),
-                  widget: Text(
+                width: double.infinity,
+                height: 50,
+                backcolor: Color(0xffdbdbdb),
+                widget: Align(
+                  alignment: Alignment.center,
+                  child: Text(
                     '적용하기',
                     style: TextStyle(
                       fontSize: 17,
@@ -109,6 +110,7 @@ class _FilterModalViewState extends State<FilterModalView> {
                     ),
                   ),
                 ),
+              ),
             )
           ],
         ),

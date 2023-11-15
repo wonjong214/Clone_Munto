@@ -7,9 +7,6 @@ import 'package:loginscreen/View/Component/organisms/profile/score/ScoreMemberRe
 import '../../../../Constants/border.dart';
 import '../../../../Constants/colors.dart';
 import '../../atoms/AppBarTitle_Text.dart';
-import '../../atoms/CircleIcon_Icon.dart';
-import '../../atoms/MoreTextGroup_Row.dart';
-import '../../atoms/ScoreGroupTitle_Text.dart';
 import '../../organisms/profile/score/Badge.dart';
 
 class Score extends StatelessWidget{

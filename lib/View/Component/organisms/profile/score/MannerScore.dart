@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/ScoreGroupTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:arc_progress_bar_new/arc_progress_bar_new.dart';
 
 class MannerScore extends StatelessWidget {
@@ -13,7 +13,7 @@ class MannerScore extends StatelessWidget {
         children: [
           Row(
             children: [
-              ScoreGroupTitle_Text(text: '매너 점수'),
+              Common_Text(text: '매너 점수'),
               SizedBox(
                 width: 2,
               ),

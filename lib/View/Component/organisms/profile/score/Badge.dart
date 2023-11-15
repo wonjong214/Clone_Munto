@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:loginscreen/View/Component/molecules/profile/CircleIconText_Column.dart';
-import '../../../atoms/CircleIcon_Icon.dart';
 import '../../../atoms/MoreTextGroup_Row.dart';
-import '../../../atoms/ScoreGroupTitle_Text.dart';
 
 class MuntoBadge extends StatelessWidget{
   @override
@@ -13,7 +12,7 @@ class MuntoBadge extends StatelessWidget{
         children: [
           Row(
             children: [
-              ScoreGroupTitle_Text(text: '배지 4개'),
+              Common_Text(text: '배지 4개'),
               Spacer(),
               MoreTextGroup_Row,
             ],

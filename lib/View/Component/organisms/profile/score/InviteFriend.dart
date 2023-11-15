@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:loginscreen/View/Component/atoms/MoreTextGroup_Row.dart';
 import 'package:loginscreen/View/Component/molecules/profile/CircleIconText_Column.dart';
-import '../../../atoms/ScoreGroupTitle_Text.dart';
 
 class InviteFriend extends StatelessWidget{
   @override
@@ -13,7 +13,7 @@ class InviteFriend extends StatelessWidget{
         children: [
           Row(
             children: [
-              ScoreGroupTitle_Text(text: '친구 초대'),
+              Common_Text(text: '친구 초대'),
               Spacer(),
               MoreTextGroup_Row,
             ],

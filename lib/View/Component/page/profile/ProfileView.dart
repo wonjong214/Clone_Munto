@@ -87,7 +87,7 @@ class ProfileView extends StatelessWidget{
                             child: Row(
                               children: [
                                 CircleIcon(
-                                  icon: Icon(Icons.question_mark, size: 10,),
+                                  icon: Icon(Icons.question_mark, size: 10, color: Colors.white,),
                                   backgroundcolor: Colors.grey,
                                   width: 12,
                                   height: 12,
@@ -126,7 +126,7 @@ class ProfileView extends StatelessWidget{
                                   ),
                                   SizedBox(width: 5,),
                                   CircleIcon(
-                                    icon: Icon(Icons.arrow_forward_ios, size: 8,),
+                                    icon: Icon(Icons.arrow_forward_ios, size: 8, color: Colors.white,),
                                     backgroundcolor: Color(0xff77e357),
                                     width: 12,
                                     height: 12,

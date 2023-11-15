@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import '../../../atoms/MoreTextGroup_Row.dart';
-import '../../../atoms/ScoreGroupTitle_Text.dart';
 
 class Assesment extends StatelessWidget{
   @override
@@ -12,7 +12,7 @@ class Assesment extends StatelessWidget{
         children: [
           Row(
             children: [
-              ScoreGroupTitle_Text(text: '만족도 평가'),
+              Common_Text(text: '만족도 평가'),
               Spacer(),
               MoreTextGroup_Row,
             ],

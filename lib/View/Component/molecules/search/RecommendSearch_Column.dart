@@ -3,7 +3,7 @@ import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/Constants/list.dart';
 import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
 import 'package:loginscreen/View/Component/atoms/SearchGroupTitle_Text.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 
 class RecommendSearch_Column extends StatelessWidget {
   @override
@@ -23,7 +23,7 @@ class RecommendSearch_Column extends StatelessWidget {
             for (int index = 0;
                 index < ExhibitionsKeyword.values.length;
                 index++)
-              ThirtyRoundedBorderContainer(
+              CommonBorderContainer(
                 padding:
                     EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
                 bordercolor: Colors.transparent,
@@ -58,7 +58,7 @@ class RecommendSearch_Column extends StatelessWidget {
           ),
           Wrap(runSpacing: 10, spacing: 10, children: [
             for (int index = 0; index < recommendkeyword.length; index++)
-              ThirtyRoundedBorderContainer(
+              CommonBorderContainer(
                 padding:
                     EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
                 bordercolor: Colors.grey,

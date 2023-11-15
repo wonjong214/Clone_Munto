@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/fontsize.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
 import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/molecules/profile/Profile_Image.dart';
 import 'package:loginscreen/View/Component/molecules/profile/TextNum_Column.dart';
 import 'package:loginscreen/View/Component/organisms/profile/Feed.dart';
@@ -158,7 +158,7 @@ class ProfileView extends StatelessWidget{
                         if(index < 9)
                           return KeyWordTag_Container(text: taglist![index],);
                         else
-                          return ThirtyRoundedBorderContainer(
+                          return CommonBorderContainer(
                             padding: EdgeInsets.only(left:8, right:8, top: 3, bottom: 3),
                             bordercolor: Colors.grey,
                             widget: Text(
@@ -179,7 +179,7 @@ class ProfileView extends StatelessWidget{
                           onTap: (){
                             Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
                           },
-                          child: ThirtyRoundedBorderContainer(
+                          child: CommonBorderContainer(
                             padding: EdgeInsets.only(left:8, right:8, top: 3, bottom: 3),
                             bordercolor: Colors.grey,
                             widget: Row(

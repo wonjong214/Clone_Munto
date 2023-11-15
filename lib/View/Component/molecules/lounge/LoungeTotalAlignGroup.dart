@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/View/Component/atoms/CustomThirtyRoundedRadio.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 
 class LoungeTotalAlignGroup extends StatefulWidget{
   @override

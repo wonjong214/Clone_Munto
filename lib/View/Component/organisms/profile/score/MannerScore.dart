@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Container.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/ScoreGroupTitle_Text.dart';
 import 'package:arc_progress_bar_new/arc_progress_bar_new.dart';
 
@@ -115,11 +115,12 @@ class MannerScore extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Common_Container(
+          CommonBorderContainer(
+            circular: 10,
             padding: EdgeInsets.symmetric(horizontal: 10),
             width: double.infinity,
             height: 60,
-            color: Colors.grey.shade100,
+            backcolor: Colors.grey.shade100,
             widget: Row(
               children: [
                 CircleIcon(

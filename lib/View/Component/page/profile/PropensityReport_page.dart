@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/AnalysisResults_Button.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Container.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/atoms/PropensityReportGroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/molecules/profile/AnalysisResultsBodyTitle_Row.dart';
@@ -37,7 +37,9 @@ class PropensityReport extends StatelessWidget{
             children: [
               PropensityReportGroupTitle_Text(text: '전체 분석 결과'),
               propensitytitle_margin,
-              Common_Container(
+              CommonBorderContainer(
+                  backcolor: Colors.white,
+                  circular: 10,
                   width: double.infinity,
                   height: 470,
                   widget : Column(

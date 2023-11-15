@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Meeting_ViewModel.dart';
 import 'package:provider/provider.dart';
-import '../../../../../Constants/colors.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
-import '../../atoms/Common_Container.dart';
-import '../../atoms/GroupImage_Container.dart';
-import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/More_Button.dart';
-import '../../atoms/SocialRingParticipant_Text.dart';
-import '../../atoms/SocialRingSubTitle_Text.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
 class SocialringHicking extends StatelessWidget{

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/ThirtyRoundedBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 
 
 class CustomThirtyRoundedRadio extends StatefulWidget {
@@ -43,7 +43,7 @@ class _CustomThirtyRoundedRadioState extends State<CustomThirtyRoundedRadio> {
       onTap: () => widget.onChanged(widget.value),
       child: Row(
         children: [
-          ThirtyRoundedBorderContainer(
+          CommonBorderContainer(
             padding: widget.padding,
             bordercolor: selected ? widget.truebordercolor :widget.falsebordercolor,
             backcolor: selected ? widget.truebackcolor : widget.falsebackcolor,

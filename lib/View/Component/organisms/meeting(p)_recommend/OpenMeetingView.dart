@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../atoms/Common_Container.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import '../../atoms/OpenMeetin_ArrowCircularContainer.dart';
 import '../../atoms/OpenMeeting_SubTitle_Text.dart';
 import '../../atoms/OpenMeeting_Title_Text.dart';
@@ -31,7 +31,9 @@ class OpenMeetingView extends StatelessWidget{
       child: Container(
         height: 160,
         margin: EdgeInsets.only(left: 20, right: 20),
-        child: Common_Container(
+        child: CommonBorderContainer(
+          circular: 10,
+          backcolor: Colors.white,
           widget: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

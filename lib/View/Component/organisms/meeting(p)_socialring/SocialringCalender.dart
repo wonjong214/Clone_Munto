@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/CalenderRadio.dart';
 import 'package:provider/provider.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
-import '../../atoms/Common_Container.dart';
-import '../../atoms/GroupImage_Container.dart';
 import '../../atoms/GroupTitle_Text.dart';
-import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
-import '../../atoms/SocialRingParticipant_Text.dart';
-import '../../atoms/SocialRingSubTitle_Text.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
 

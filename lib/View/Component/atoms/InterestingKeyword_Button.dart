@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ThirtyRoundedBorderContainer.dart';
+import 'CommonBorderContainer.dart';
 
 class InterestingKeyword_Button extends StatelessWidget{
   bool selected;
@@ -13,7 +13,7 @@ class InterestingKeyword_Button extends StatelessWidget{
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onChanged,
-      child: ThirtyRoundedBorderContainer(
+      child: CommonBorderContainer(
         padding: EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
         bordercolor: selected ? Colors.red : Colors.grey.shade300,
         backcolor: selected ? Colors.red : Colors.transparent,

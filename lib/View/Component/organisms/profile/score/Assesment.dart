@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../atoms/Common_Container.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import '../../../atoms/MoreTextGroup_Row.dart';
 import '../../../atoms/ScoreGroupTitle_Text.dart';
 
@@ -32,10 +31,11 @@ class Assesment extends StatelessWidget{
             ],
           ),
           SizedBox(height: 20),
-          Common_Container(
+          CommonBorderContainer(
+            circular: 10,
             padding: EdgeInsets.all(10),
             width: double.infinity,
-            color: Color(0xffe8f3f0),
+            backcolor: Color(0xffe8f3f0),
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -61,10 +61,11 @@ class Assesment extends StatelessWidget{
             ),
           ),
           SizedBox(height: 10,),
-          Common_Container(
+          CommonBorderContainer(
+            circular: 10,
             padding: EdgeInsets.all(10),
             width: double.infinity,
-            color: Color(0xffe8f3f0),
+            backcolor: Color(0xffe8f3f0),
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -90,10 +91,11 @@ class Assesment extends StatelessWidget{
             ),
           ),
           SizedBox(height: 10,),
-          Common_Container(
+          CommonBorderContainer(
+            circular: 10,
             padding: EdgeInsets.all(10),
             width: double.infinity,
-            color: Color(0xffe8f3f0),
+            backcolor: Color(0xffe8f3f0),
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

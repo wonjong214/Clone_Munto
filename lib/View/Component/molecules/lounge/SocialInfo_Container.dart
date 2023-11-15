@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Container.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../ViewModel//ResolutionProvider.dart';

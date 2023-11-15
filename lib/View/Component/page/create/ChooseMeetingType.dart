@@ -3,9 +3,7 @@ import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/GroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Container.dart';
 import 'package:loginscreen/Model/create/ChooseMeetingType_Model.dart';
-import 'package:loginscreen/Model/meeting/recommend/recommend_page_Model.dart';
 import 'package:loginscreen/View/Component/atoms/ThirtyRoundedInfinity_Container.dart';
 
 import '../../../../Constants/colors.dart';

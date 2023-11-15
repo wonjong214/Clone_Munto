@@ -6,6 +6,11 @@ import 'package:provider/provider.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 
 class SocialLocation_Container extends StatelessWidget {
+  String location;
+  String detaillocation;
+
+  SocialLocation_Container({required this.location, required this.detaillocation});
+
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
@@ -33,12 +38,13 @@ class SocialLocation_Container extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '주소',
+                      location,
                       style:
                           TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
                     ),
                     Text(
-                      '주소',
+                      detaillocation,
+                      maxLines: 1,
                       style: TextStyle(color: subtitle_color),
                     )
                   ],

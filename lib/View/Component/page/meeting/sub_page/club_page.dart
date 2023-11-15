@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_club/ClubRecommend.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/ClubNewsProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../atoms/Margin_SizedBox.dart';
@@ -27,7 +28,10 @@ class club_page extends StatelessWidget{
             child: ClubNew(),
           ),
           intergroupmargin,
-          ClubIssue(),
+          ChangeNotifierProvider(
+            create: (context) => ClubNews_Provider(),
+            child: ClubIssue(),
+          ),
           intergroupmargin,
           OpenMeetingView(
             title: '클럽 열기',

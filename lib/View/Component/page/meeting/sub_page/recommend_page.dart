@@ -4,6 +4,7 @@ import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/HotTag
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Exhibitions.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../atoms/Margin_SizedBox.dart';
@@ -67,7 +68,10 @@ class recommend_page extends StatelessWidget{
               child: RecommendChallenge(),
             ),
             intergroupmargin,
-            RecommendMemberView(),
+            ChangeNotifierProvider(
+              create: (context) => SelectedHost_Provider(),
+              child: RecommendMemberView(),
+            ),
             intergroupmargin,
             OpenMeetingView(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
             SizedBox(height: 80,)

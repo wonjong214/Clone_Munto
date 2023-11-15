@@ -9,8 +9,10 @@ import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.d
 import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../ViewModel/Recommend_Page/Review.dart';
 import '../../../atoms/Margin_SizedBox.dart';
 import '../../../organisms/meeting(p)_recommend/OpenMeetingView.dart';
+import '../../../organisms/meeting(p)_recommend/ReviewView.dart';
 import '../../../organisms/meeting(p)_socialring/SocialringHicking.dart';
 
 class Socialring_Page extends StatelessWidget{
@@ -29,7 +31,10 @@ class Socialring_Page extends StatelessWidget{
             child: SocialringRecommend(),
           ),
           intergroupmargin,
-          SocialringReview(),
+          ChangeNotifierProvider(
+            create: (context) => Review_Provider(),
+            child: ReviewView(),
+          ),
           intergroupmargin,
           ChangeNotifierProvider(
             create: (context) => Meeting_Provider(),

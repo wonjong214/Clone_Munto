@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/CircleAvatarProfile.dart';
-import 'package:loginscreen/View/Component/atoms/RoundedFollow_Button.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
+import '../../../../ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
+import '../../atoms/Follow_Button.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
 import '../../atoms/GroupTitle_Text.dart';
+import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 
@@ -19,6 +19,7 @@ class RecommendMemberView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
+    var selectedhost_provider = Provider.of<SelectedHost_Provider>(context);
 
     return Column(
       children: [
@@ -48,21 +49,30 @@ class RecommendMemberView extends StatelessWidget {
                                   width: width - 70,
                                   height: width - 70,
                                   child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          margin: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 30),
+                                          margin: EdgeInsets.all(10),
                                           child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Row(
+                                              Container(
+                                                  child: Row(
                                                     mainAxisSize: MainAxisSize.max,
                                                     children: [
-                                                      CircleAvatarProfile(AssetImage('assets/images/recommend_page/Exhibitions/jazz.jpeg')),
+                                                      CircleAvatar(
+                                                        radius: 40,
+                                                        backgroundImage: AssetImage(
+                                                            selectedhost_provider.selectedhost[i].profileimage),
+                                                      ),
                                                       SizedBox(
                                                         width: 10,
                                                       ),
                                                       SizedBox(
-                                                        height: 70,
+                                                        height: 80,
                                                         child: Column(
                                                           mainAxisSize: MainAxisSize.max,
                                                           mainAxisAlignment:
@@ -71,9 +81,8 @@ class RecommendMemberView extends StatelessWidget {
                                                           CrossAxisAlignment.start,
                                                           children: [
                                                             Text(
-                                                              '이름',
-                                                              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-
+                                                              selectedhost_provider.selectedhost[i].name,
+                                                              style: TextStyle(fontSize: 20),
                                                             ),
                                                             Row(
                                                               children: [
@@ -95,52 +104,41 @@ class RecommendMemberView extends StatelessWidget {
                                                         ),
                                                       ),
                                                       Spacer(),
-                                                      RoundedFollow_Button(),
+                                                      GestureDetector(
+                                                          onTap: (){
+
+                                                            selectedhost_provider.change_follow(selectedhost_provider.selectedhost[i]);
+                                                          },
+                                                          child: Follow_Button(selected: selectedhost_provider.selectedhost[i].follow)
+                                                      )
                                                     ],
-                                                  ),
-                                              SizedBox(height: 30,),
+                                                  )),
                                               Text(
-                                                '호스트 자기소개 : 그대 내게 오지 말아요 두번다시 이런 사랑하지 마요. 그댈 추억하기보다 기다리는게 부서질듯 마음이 더 아파와 다시 누군가를 만나도',
+                                                selectedhost_provider.selectedhost[i].selfintroduction,
                                                 maxLines: 2,
-                                                style: TextStyle(height: 1.5, fontSize: 15),
+                                                textAlign: TextAlign.start,
+                                                style: TextStyle(height: 1.5, fontSize: 15, ),
                                               ),
-                                              SizedBox(height: 20,),
                                               Row(
                                                 children: [
-                                                  for (int i = 0; i < 4; i++)
-                                                    Container(
-                                                      margin: EdgeInsets.only(right: 10),
-                                                      padding: EdgeInsets.only(
-                                                          left: 6,
-                                                          right: 6,
-                                                          top: 3,
-                                                          bottom: 3),
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                          BorderRadius.circular(15),
-                                                          color: tag_color),
-                                                      child: Text(
-                                                        '태그',
-                                                        style: TextStyle(fontSize: 15),
-                                                      ),
-                                                    ),
-                                                  Container(
-                                                    padding: EdgeInsets.only(
-                                                        left: 8,
-                                                        right: 8,
-                                                        top: 3,
-                                                        bottom: 3),
-                                                    decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.circular(15),
-                                                        color: Colors.white60,
-                                                        border:
-                                                        Border.all(color: Colors.grey)),
-                                                    child: Text(
-                                                      '+6',
-                                                      style: TextStyle(fontSize: 15),
-                                                    ),
-                                                  ),
+                                                  for (int num = 0; num < 4; num++)
+                                                    if(num != 3)
+                                                      GestureDetector(
+                                                          onTap: (){
+                                                            Navigator.of(context, rootNavigator: true).pushNamed(
+                                                              '/SearchKeyword_page',
+                                                              arguments: selectedhost_provider.selectedhost[i].tag[num],
+                                                            );
+                                                          },
+                                                          child: KeyWordTag_Container(text: selectedhost_provider.selectedhost[i].tag[num])
+                                                      )
+                                                    else
+                                                      KeyWordTag_Container(
+                                                        text: '+${selectedhost_provider.selectedhost[i].tag.length - 4}',
+                                                        border: Border.all(width: 1, color: Colors.grey),
+                                                        backcolor: Colors.transparent,
+                                                        textcolor: Colors.grey,
+                                                      )
                                                 ],
                                               )
                                             ],
@@ -152,7 +150,7 @@ class RecommendMemberView extends StatelessWidget {
                                           Expanded(
                                             flex: 1,
                                             child: Image.asset(
-                                              'assets/images/recommend_page/Exhibitions/nacho.jpeg',
+                                              selectedhost_provider.selectedhost[i].image[0],
                                               height: (width - 70) / 3,
                                               fit: BoxFit.cover,
                                             ),
@@ -161,7 +159,7 @@ class RecommendMemberView extends StatelessWidget {
                                               flex: 1,
                                               child: Container(
                                                 child: Image.asset(
-                                                  'assets/images/recommend_page/Exhibitions/nacho.jpeg',
+                                                  selectedhost_provider.selectedhost[i].image[1],
                                                   height: (width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),
@@ -170,7 +168,7 @@ class RecommendMemberView extends StatelessWidget {
                                               flex: 1,
                                               child: Container(
                                                 child: Image.asset(
-                                                  'assets/images/recommend_page/Exhibitions/nacho.jpeg',
+                                                  selectedhost_provider.selectedhost[i].image[2],
                                                   height: (width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),

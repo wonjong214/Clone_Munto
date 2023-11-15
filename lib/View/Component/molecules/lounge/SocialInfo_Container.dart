@@ -4,8 +4,17 @@ import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Conta
 import 'package:provider/provider.dart';
 
 import '../../../../ViewModel//ResolutionProvider.dart';
+import '../../atoms/CommonGreyIcon_Icon.dart';
 
 class SocialInfo_Container extends StatelessWidget {
+  String image;
+  String title;
+  String type;
+  String location;
+  String date;
+
+  SocialInfo_Container({required this.image, required this.title, required this.type, required this.location, required this.date});
+
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
@@ -19,7 +28,7 @@ class SocialInfo_Container extends StatelessWidget {
           widget: Row(
             children: [
               Image.asset(
-                'assets/images/recommend_page/Review/ski.jpeg',
+                image,
                 fit: BoxFit.cover,
                 width: 70,
                 height: 70,
@@ -33,14 +42,14 @@ class SocialInfo_Container extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '제목',
+                      title,
                       style:
                           TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
                     ),
                     Row(
                       children: [
                         Text(
-                          '종료',
+                          '$type·',
                           style: TextStyle(
                               color: subtitle_color,
                               fontWeight: FontWeight.w600),
@@ -48,8 +57,9 @@ class SocialInfo_Container extends StatelessWidget {
                         SizedBox(
                           width: 10,
                         ),
+                        CommonGreyIcon(Icons.location_on),
                         Text(
-                          '위치 및 장소',
+                          '$location·$date',
                           style: TextStyle(color: subtitle_color),
                         )
                       ],

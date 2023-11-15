@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Lounge_KeyWordTag_ScrollView extends StatelessWidget{
-  List<Widget> _taglist;
+import '../../atoms/LoungeKeywordTag_Container.dart';
 
-  Lounge_KeyWordTag_ScrollView(this._taglist){}
+class Lounge_KeyWordTag_ScrollView extends StatelessWidget{
+  List<String> tag;
+
+  Lounge_KeyWordTag_ScrollView(this.tag){}
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +17,8 @@ class Lounge_KeyWordTag_ScrollView extends StatelessWidget{
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            for(int i = 0; i < _taglist.length; i++)
-              _taglist[i]
+            for(int i = 0; i < tag.length; i++)
+              LoungeKeywordTag_Container(tag[i]),
           ],
         ),
       ),

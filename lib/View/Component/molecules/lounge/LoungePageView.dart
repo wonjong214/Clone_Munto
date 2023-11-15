@@ -4,6 +4,10 @@ import 'package:provider/provider.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 
 class LoungePageView extends StatefulWidget{
+  List<String> image;
+
+  LoungePageView({required this.image});
+
   @override
   State<StatefulWidget> createState() {
     return LoungePageView_State();
@@ -11,29 +15,27 @@ class LoungePageView extends StatefulWidget{
 }
 
 class LoungePageView_State extends State<LoungePageView>{
+  List<Widget> _pages;
   final PageController _pageController = PageController(initialPage: 0);
-
   int _activePage = 0;
 
-  final List<Widget> _pages = [
-    Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/recommend_page/Review/ski.jpeg'),
-              fit: BoxFit.cover)
-      ),
-    ),
-    Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/recommend_page/Review/ski.jpeg'),
-              fit: BoxFit.cover)
-      ),
-    )
-  ];
+  LoungePageView_State(): _pages = List.empty(growable: true){
+
+  }
 
   @override
   Widget build(BuildContext context) {
+    _pages = [
+      for(int i = 0; i < widget.image.length; i++ )
+        Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(widget.image[i]),
+                  fit: BoxFit.cover)
+          ),
+        )
+    ];
+
     double width = Provider.of<ResolutionProvider>(context).width_get;
     return Container(
       width: double.infinity,

@@ -6,6 +6,8 @@ import 'package:loginscreen/View/Component/atoms/AppBarTab_Tab.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 import 'package:loginscreen/View/Component/page/lounge/sub_page/Discovery_page.dart';
 import 'package:loginscreen/View/Component/page/lounge/sub_page/Total_page.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
+import 'package:provider/provider.dart';
 
 class LoungeView extends StatelessWidget{
   @override
@@ -61,8 +63,14 @@ class LoungeView extends StatelessWidget{
           ),
           body: TabBarView(
             children: [
-              Discovery_Page(),
-              Total_Page()
+              ChangeNotifierProvider(
+                create: (context) => Card_Provider(),
+                child:  Discovery_Page(),
+              ),
+              ChangeNotifierProvider(
+                create: (context) => Card_Provider(),
+                child: Total_Page(),
+              ),
             ],
           )
         )

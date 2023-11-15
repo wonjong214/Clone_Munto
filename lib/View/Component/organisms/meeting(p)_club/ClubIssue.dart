@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/ClubNewsProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 import '../../atoms/More_Button.dart';
@@ -8,6 +10,7 @@ import '../../atoms/More_Button.dart';
 class ClubIssue extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    var clubnews_provider = Provider.of<ClubNews_Provider>(context);
     double width = Provider.of<ResolutionProvider>(context).width_get;
     double margin = 50;
     double img_width = (width - margin) / 2;
@@ -44,7 +47,7 @@ class ClubIssue extends StatelessWidget{
                                     height: img_width,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
+                                            image: AssetImage(clubnews_provider.clubnews[num].image),
                                             fit: BoxFit.cover
                                         ),
                                         borderRadius: BorderRadius.circular(5)
@@ -54,12 +57,12 @@ class ClubIssue extends StatelessWidget{
                                         child: Row(
                                           children: [
                                             IconButton(
-                                                icon: (Icon(Icons.favorite)),
+                                                icon: clubnews_provider.clubnews[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                                                 color: Colors.white,
-                                                onPressed: () {}
+                                                onPressed: () {clubnews_provider.changelike(clubnews_provider.clubnews[num]);}
                                             ),
                                             Text(
-                                              '1',
+                                              '${clubnews_provider.clubnews[num].likenum}',
                                               style: TextStyle(
                                                   color: Colors.white
                                               ),
@@ -75,18 +78,20 @@ class ClubIssue extends StatelessWidget{
                                         color: Color(0XFF006400),
                                         size: 15,
                                       ),
-                                      Text(
-                                        '모임설명.....',
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        style: TextStyle(
-                                          color: Color(0XFF006400)
+                                      Expanded(
+                                        child: Text(
+                                          clubnews_provider.clubnews[num].clubexplantation,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            color: Color(0XFF006400)
+                                          ),
                                         ),
                                       )
                                     ],
                                   ),
                                   Text(
-                                    '제목',
+                                    clubnews_provider.clubnews[num].title,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
                                     textAlign: TextAlign.left,
@@ -107,7 +112,7 @@ class ClubIssue extends StatelessWidget{
                                       height: img_width,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
-                                              image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
+                                              image: AssetImage(clubnews_provider.clubnews[num + 1].image),
                                               fit: BoxFit.cover
                                           ),
                                           borderRadius: BorderRadius.circular(5)
@@ -117,12 +122,12 @@ class ClubIssue extends StatelessWidget{
                                           child: Row(
                                             children: [
                                               IconButton(
-                                                  icon: (Icon(Icons.favorite)),
+                                                  icon: clubnews_provider.clubnews[num + 1].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                                                   color: Colors.white,
-                                                  onPressed: () {}
+                                                  onPressed: () {clubnews_provider.changelike(clubnews_provider.clubnews[num + 1]);}
                                               ),
                                               Text(
-                                                '1',
+                                                '${clubnews_provider.clubnews[num + 1].likenum}',
                                                 style: TextStyle(
                                                     color: Colors.white
                                                 ),
@@ -138,18 +143,20 @@ class ClubIssue extends StatelessWidget{
                                           color: Color(0XFF006400),
                                           size: 15,
                                         ),
-                                        Text(
-                                          '모임설명.....',
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
-                                          style: TextStyle(
-                                              color: Color(0XFF006400)
+                                        Expanded(
+                                          child: Text(
+                                            clubnews_provider.clubnews[num + 1].clubexplantation,
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 1,
+                                            style: TextStyle(
+                                                color: Color(0XFF006400)
+                                            ),
                                           ),
                                         )
                                       ],
                                     ),
                                     Text(
-                                      '제목',
+                                      clubnews_provider.clubnews[num + 1].title,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 2,
                                     )
@@ -161,6 +168,7 @@ class ClubIssue extends StatelessWidget{
                     ]
                 )
             ),
+            morebutton_margin,
             More_Button(double.infinity)
           ],
         )

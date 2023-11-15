@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
+import 'package:provider/provider.dart';
 
-class LoungeListTile extends StatelessWidget{
+class LoungeListTile extends StatefulWidget{
+  String image;
+  String name;
+  String date;
 
+
+  LoungeListTile({required this.image, required this.name, required this.date});
+
+  @override
+  State<LoungeListTile> createState() => _LoungeListTileState();
+}
+
+class _LoungeListTileState extends State<LoungeListTile> {
+  bool follow = false;
   @override
   Widget build(BuildContext context) {
     return ListTile(
         leading: CircleAvatar(
-          backgroundImage: AssetImage('assets/images/recommend_page/Review/board.jpeg'),
+          backgroundImage: AssetImage(widget.image),
         ),
-        title: Text('닉네임'),
+        title: Text(widget.name),
         subtitle: Text(
-          '2일전',
+          widget.date,
           style: TextStyle(
               color: Color(0x88a9a9a9)
           ),
@@ -19,11 +33,21 @@ class LoungeListTile extends StatelessWidget{
             spacing: 20,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Text(
-                '팔로우',
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.red,
+              GestureDetector(
+                onTap: (){
+                  setState(() {
+                    if(follow == true)
+                      follow = false;
+                    else
+                      follow = true;
+                  });
+                },
+                child: Text(
+                  '팔로우',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: follow ? Colors.grey : Colors.red,
+                  ),
                 ),
               ),
               Icon(Icons.more_horiz)

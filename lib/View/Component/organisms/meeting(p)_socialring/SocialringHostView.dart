@@ -3,7 +3,6 @@ import 'package:loginscreen/View/Component/atoms/Follow_Button.dart';
 import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-import '../../../../Constants/colors.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 import '../../atoms/GroupTitle_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';

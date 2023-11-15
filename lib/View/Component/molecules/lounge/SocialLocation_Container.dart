@@ -4,6 +4,7 @@ import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Conta
 import 'package:provider/provider.dart';
 
 import '../../../../ViewModel//ResolutionProvider.dart';
+import '../../atoms/CommonBorderContainer.dart';
 
 class SocialLocation_Container extends StatelessWidget {
   String location;
@@ -15,10 +16,14 @@ class SocialLocation_Container extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
     return Container(
-      margin: EdgeInsets.only(left: 15),
+      margin: EdgeInsets.only(right: 15),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        child: TenRoundedBorderContainer(
+        child: CommonBorderContainer(
+          circular: 10,
+          bordercolor: Color(0xffa9a9a9),
+          backcolor: Colors.white,
+          borderwidth: 0.3,
           width: width - 35,
           height: 70,
           widget: Row(

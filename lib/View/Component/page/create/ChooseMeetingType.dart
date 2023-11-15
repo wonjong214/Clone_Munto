@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/GroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Container.dart';
@@ -115,7 +116,9 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                     _buttontextcolor = Colors.white;
                   });
                 },
-                child: TenRoundedBorderContainer(
+                child: CommonBorderContainer(
+                  circular: 10,
+                  borderwidth: 0.3,
                   width: double.infinity,
                   height: 80,
                   bordercolor: _social!.containerbordercolor,
@@ -167,7 +170,9 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                     _buttontextcolor = Colors.white;
                   });
                 },
-                child: TenRoundedBorderContainer(
+                child: CommonBorderContainer(
+                  circular: 10,
+                  borderwidth: 0.3,
                   width: double.infinity,
                   height: 80,
                   bordercolor: _club!.containerbordercolor,
@@ -219,7 +224,9 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                     _buttontextcolor = Colors.white;
                   });
                 },
-                child: TenRoundedBorderContainer(
+                child: CommonBorderContainer(
+                  circular: 10,
+                  borderwidth: 0.3,
                   width: double.infinity,
                   height: 80,
                   bordercolor: _challenge!.containerbordercolor,

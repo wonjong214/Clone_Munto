@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/TenRoundedBorderContainer_Container.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +23,11 @@ class SocialInfo_Container extends StatelessWidget {
       margin: EdgeInsets.only(left: 15),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        child: TenRoundedBorderContainer(
+        child: CommonBorderContainer(
+          circular: 10,
+          bordercolor: Color(0xffa9a9a9),
+          backcolor: Colors.white,
+          borderwidth: 0.3,
           width: width - 35,
           height: 70,
           widget: Row(

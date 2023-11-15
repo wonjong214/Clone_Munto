@@ -4,13 +4,14 @@ class CommonBorderContainer extends StatelessWidget{
   EdgeInsetsGeometry? padding;
   double circular;
   Color? bordercolor;
+  double borderwidth;
   Color? backcolor;
   Widget? widget;
   double? width;
   double? height;
 
 
-  CommonBorderContainer({this.padding, this.circular = 30, this.bordercolor = Colors.transparent,
+  CommonBorderContainer({this.padding, this.circular = 30, this.bordercolor = Colors.transparent, this.borderwidth =1,
     this.backcolor = Colors.transparent, required this.widget, this.width, this.height});
 
 
@@ -25,7 +26,7 @@ class CommonBorderContainer extends StatelessWidget{
           color: backcolor,
           border: Border.all(
               color: bordercolor!,
-              width: 1
+              width: borderwidth
           )
       ),
       child: widget,

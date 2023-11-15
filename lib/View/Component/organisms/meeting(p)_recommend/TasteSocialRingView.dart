@@ -4,7 +4,7 @@ import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
 import '../../atoms/GroupTitle_Text.dart';
 import '../../atoms/KeyWordTag_Container.dart';

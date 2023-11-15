@@ -3,7 +3,7 @@ import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
 
 import '../../../../Constants/colors.dart';
 import '../../atoms/CommonGreyIcon_Icon.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
+import '../../atoms/Common_Text.dart';
 
 class ChallengeContainer extends StatelessWidget {
   double? width;
@@ -67,7 +67,10 @@ class ChallengeContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   KeyWordTag_Container(text: tag),
-                  CommonMeetingTitle_Text(title),
+                  Common_Text(
+                    text: title,
+                    fontWeight: FontWeight.w600,
+                  ),
                   Row(
                     children: [
                       Text(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
 
 import '../../atoms/CommonGreyIcon_Icon.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
+import '../../atoms/Common_Text.dart';
 
 class Socialring_Container extends StatelessWidget {
   double? width;
@@ -70,8 +70,10 @@ class Socialring_Container extends StatelessWidget {
                               )
                         ],
                       ),
-                      CommonMeetingTitle_Text(title),
-                      Row(
+                      Common_Text(
+                        text: title,
+                        fontWeight: FontWeight.w600,
+                      ),                      Row(
                         children: [
                           Text('소셜링·'),
                           CommonGreyIcon(Icons.location_on),

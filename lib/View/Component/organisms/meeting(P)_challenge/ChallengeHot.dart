@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
-import 'package:loginscreen/View/Component/atoms/CommonMeetingTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';

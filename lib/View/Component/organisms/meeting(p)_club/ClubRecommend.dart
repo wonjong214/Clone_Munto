@@ -4,7 +4,7 @@ import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/More_Button.dart';
 
 class ClubRecommend extends StatelessWidget{

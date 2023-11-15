@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../../../../Constants/Enum.dart';
 import '../../../../../../../ViewModel//ResolutionProvider.dart';
 import '../../../../../atoms/AppBarTitle_Text.dart';
-import '../../../../../atoms/FilterBody_Text.dart';
 import '../../../../../atoms/KoreaLocation_Container.dart';
 import '../../../../../molecules/meeting/CustomRadioListile.dart';
 
@@ -30,9 +29,11 @@ class _FilterClubState extends State<FilterClub> {
               children: [
                 AppBarTitle('지역'),
                 Spacer(),
-                FilterBody_Text(
+                Common_Text(
                   text: '온라인',
-                  color: Color(0xffa9a9a9),
+                  textcolor: Color(0xffa9a9a9),
+                  textsize: 15,
+                  fontWeight: FontWeight.w500,
                 ),
                 SizedBox(
                   width: 10,

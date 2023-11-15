@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Model/meeting/filter/AgeSlider_Model.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/CustomThirtyRoundedRadio.dart';
-import 'package:loginscreen/View/Component/atoms/FilterBody_Text.dart';
 import 'package:loginscreen/View/Component/atoms/KoreaLocation_Container.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/CustomRadioListile.dart';
 import 'package:provider/provider.dart';
 import '../../../../../../../Constants/list.dart';
 import '../../../../../../../Constants/Enum.dart';
 import '../../../../../../../ViewModel//ResolutionProvider.dart';
+import '../../../../../atoms/Common_Text.dart';
 
 class FilterSocial extends StatefulWidget {
   @override
@@ -126,9 +126,11 @@ class _FilterSocialState extends State<FilterSocial> {
               children: [
                 AppBarTitle('지역'),
                 Spacer(),
-                FilterBody_Text(
+                Common_Text(
                   text: '온라인',
-                  color: Color(0xffa9a9a9),
+                  textcolor: Color(0xffa9a9a9),
+                  textsize: 15,
+                  fontWeight: FontWeight.w500,
                 ),
                 SizedBox(
                   width: 10,

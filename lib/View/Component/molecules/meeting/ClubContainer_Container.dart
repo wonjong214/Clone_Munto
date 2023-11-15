@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../atoms/CommonGreyIcon_Icon.dart';
-import '../../atoms/CommonMeetingTitle_Text.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/KeyWordTag_Container.dart';
 
 class ClubContainer extends StatelessWidget{
@@ -61,7 +61,10 @@ class ClubContainer extends StatelessWidget{
                         Row(
                           children: List.generate(tag.length, (index) => KeyWordTag_Container(text: tag[index])),
                         ),
-                        CommonMeetingTitle_Text(title),
+                        Common_Text(
+                          text: title,
+                          fontWeight: FontWeight.w600,
+                        ),
                         Row(
                           children: [
                             Text('클럽·',

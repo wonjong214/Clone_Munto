@@ -25,16 +25,7 @@ class More_Button extends StatelessWidget{
               ),
             ),
           )
-    ) 
-
-        /*ElevatedButton(
-            onPressed: () {print('button touch');},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white60,
-              foregroundColor: Colors.black,
-              shadowColor: Color(0)
-            ),
-            child: Text('더보기 >'))*/
+    )
     );
   }
 }

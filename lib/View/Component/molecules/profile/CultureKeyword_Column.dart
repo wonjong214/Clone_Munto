@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
-import 'package:loginscreen/View/Component/atoms/InterestingGroupTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:loginscreen/View/Component/atoms/InterestingKeyword_Button.dart';
+
+import '../../../../Constants/fontsize.dart';
 
 class CultureKeyword_Column extends StatefulWidget{
   @override
@@ -18,7 +20,11 @@ class _CultureKeyword_ColumnState extends State<CultureKeyword_Column> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InterestingGroupTitle_Text(text: Category.culture.korean),
+        Common_Text(
+          text: Category.culture.korean,
+          textsize: interesting_grouptitle_textsize,
+          fontWeight: interesting_grouptitle_fontweight,
+        ),
         SizedBox(height: 10,),
         Wrap(
           spacing: 10,

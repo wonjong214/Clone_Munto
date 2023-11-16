@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import '../../../../Constants/Enum.dart';
-import '../../atoms/InterestingGroupTitle_Text.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../atoms/InterestingKeyword_Button.dart';
 
 class HobyKeyword extends StatefulWidget{
@@ -19,7 +19,11 @@ class _HobyKeywordState extends State<HobyKeyword> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InterestingGroupTitle_Text(text: Category.hoby.korean),
+        Common_Text(
+          text: Category.hoby.korean,
+          textsize: interesting_grouptitle_textsize,
+          fontWeight: interesting_grouptitle_fontweight,
+        ),
         SizedBox(height: 10,),
         Wrap(
           spacing: 10,

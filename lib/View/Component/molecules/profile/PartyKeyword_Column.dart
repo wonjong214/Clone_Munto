@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import '../../../../Constants/Enum.dart';
-import '../../atoms/InterestingGroupTitle_Text.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../atoms/InterestingKeyword_Button.dart';
 
 class PartyKeyword_Column extends StatefulWidget{
@@ -17,7 +17,12 @@ class _PartyKeyword_ColumnState extends State<PartyKeyword_Column> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InterestingGroupTitle_Text(text: Category.party.korean),
+        Common_Text(
+          text: Category.party.korean,
+          textsize: interesting_grouptitle_textsize,
+          fontWeight: interesting_grouptitle_fontweight,
+        ),
+
         SizedBox(height: 10,),
         Wrap(
           spacing: 10,

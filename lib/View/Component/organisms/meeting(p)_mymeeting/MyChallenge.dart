@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../atoms/MyMeetingGroupBody_Text.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
+import '../../../../Constants/colors.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../atoms/MyMeetingGroupSub_Text.dart';
 import '../../atoms/MyMeetingGroupTitle_Text.dart';
 import '../../atoms/MyMeetingIcon_Icon.dart';
@@ -23,7 +25,12 @@ class MyChallenge extends StatelessWidget{
                   SizedBox(height: 15),
                   MyMeetingIcon_Icon(Icons.favorite_border),
                   SizedBox(height: 15),
-                  MyMeetingGroupBody_Text('좋아요를 누른 챌린지가 없어요'),
+                  Common_Text(
+                    text: '좋아요를 누른 챌린지가 없어요',
+                    textsize: mymeeting_groupbody_textsize,
+                    fontWeight: mymeeting_groupbody_fontweight,
+                    textcolor: mymeeting_groupbodytext_color,
+                  ),
                   SizedBox(height: 15),
                   MyMeetingGroupSub_Text('관심 있는 챌린지에 좋아요를 남기면 여기에서 확인할 수 있어요')
                 ],
@@ -39,8 +46,12 @@ class MyChallenge extends StatelessWidget{
                   SizedBox(height: 15),
                   MyMeetingIcon_Icon(Icons.stars_sharp),
                   SizedBox(height: 15),
-                  MyMeetingGroupBody_Text('대기하고 있는 챌린지가 없어요'),
-                  SizedBox(height: 15),
+                  Common_Text(
+                    text: '대기하고 있는 챌린지가 없어요',
+                    textsize: mymeeting_groupbody_textsize,
+                    fontWeight: mymeeting_groupbody_fontweight,
+                    textcolor: mymeeting_groupbodytext_color,
+                  ),                  SizedBox(height: 15),
                   MyMeetingGroupSub_Text('참여 신청한 챌린지는 여기에서 확인할 수 있어요')
                 ],
               ),
@@ -55,7 +66,12 @@ class MyChallenge extends StatelessWidget{
                   SizedBox(height: 15),
                   MyMeetingIcon_Icon(Icons.stars_sharp),
                   SizedBox(height: 15),
-                  MyMeetingGroupBody_Text('참여하고 있는 챌린지가 없어요'),
+                  Common_Text(
+                    text: '참여하고 있는 챌린지가 없어요',
+                    textsize: mymeeting_groupbody_textsize,
+                    fontWeight: mymeeting_groupbody_fontweight,
+                    textcolor: mymeeting_groupbodytext_color,
+                  ),
                   SizedBox(height: 15),
                   MyMeetingGroupSub_Text('참여 확정된 챌린지는 여기에서 확인할 수 있어요')
                 ],
@@ -71,7 +87,12 @@ class MyChallenge extends StatelessWidget{
                   SizedBox(height: 15),
                   MyMeetingIcon_Icon(Icons.add_circle_outline_sharp),
                   SizedBox(height: 15),
-                  MyMeetingGroupBody_Text('진행하는 챌린지가 없어요'),
+                  Common_Text(
+                    text: '진행하는 챌린지가 없어요',
+                    textsize: mymeeting_groupbody_textsize,
+                    fontWeight: mymeeting_groupbody_fontweight,
+                    textcolor: mymeeting_groupbodytext_color,
+                  ),
                   SizedBox(height: 15),
                   MyMeetingGroupSub_Text('내가 진행하는 챌린지는 여기에서 확인할 수 있어요')
                 ],

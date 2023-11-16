@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-
-import '../../atoms/MyMeetingGroupBody_Text.dart';
+import '../../../../Constants/fontsize.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/MyMeetingGroupTitle_Text.dart';
 import '../../atoms/MyMeetingIcon_Icon.dart';
 
@@ -27,7 +26,12 @@ class Meeting extends StatelessWidget{
                       SizedBox(height: 60),
                       MyMeetingIcon_Icon(Icons.stars_sharp),
                       SizedBox(height: 15),
-                      MyMeetingGroupBody_Text('참여 중인 클럽이 없어요'),
+                      Common_Text(
+                        text: '참여 중인 클럽이 없어요',
+                        textsize: mymeeting_groupbody_textsize,
+                        fontWeight: mymeeting_groupbody_fontweight,
+                        textcolor: mymeeting_groupbodytext_color,
+                      ),
                     ],
                   ),
                 ),
@@ -41,7 +45,12 @@ class Meeting extends StatelessWidget{
                       SizedBox(height: 15),
                       MyMeetingIcon_Icon(Icons.electric_bolt),
                       SizedBox(height: 15),
-                      MyMeetingGroupBody_Text('진행한 소셜링이 없어요'),
+                      Common_Text(
+                        text: '진행한 소셜링이 없어요',
+                        textsize: mymeeting_groupbody_textsize,
+                        fontWeight: mymeeting_groupbody_fontweight,
+                        textcolor: mymeeting_groupbodytext_color,
+                      ),
                     ],
                   ),
                 ),
@@ -55,7 +64,12 @@ class Meeting extends StatelessWidget{
                       SizedBox(height: 15),
                       MyMeetingIcon_Icon(Icons.local_fire_department),
                       SizedBox(height: 15),
-                      MyMeetingGroupBody_Text('진행한 챌린지가 없어요'),
+                      Common_Text(
+                        text: '진행한 챌린지가 없어요',
+                        textsize: mymeeting_groupbody_textsize,
+                        fontWeight: mymeeting_groupbody_fontweight,
+                        textcolor: mymeeting_groupbodytext_color,
+                      ),
                     ],
                   ),
                 ),

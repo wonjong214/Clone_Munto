@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:loginscreen/Constants/fontsize.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import '../../../../Constants/Enum.dart';
-import '../../atoms/InterestingGroupTitle_Text.dart';
 import '../../atoms/InterestingKeyword_Button.dart';
 
 class ActivityKeyword_Column extends StatefulWidget{
@@ -20,7 +20,11 @@ class _ActivityKeyword_ColumnState extends State<ActivityKeyword_Column> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InterestingGroupTitle_Text(text: Category.activity.korean),
+        Common_Text(
+          text: Category.activity.korean,
+          textsize: interesting_grouptitle_textsize,
+          fontWeight: interesting_grouptitle_fontweight,
+        ),
         SizedBox(height: 10,),
         Wrap(
           spacing: 10,

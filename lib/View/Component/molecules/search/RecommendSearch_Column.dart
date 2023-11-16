@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/Constants/list.dart';
-import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
-import 'package:loginscreen/View/Component/atoms/SearchGroupTitle_Text.dart';
+
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+
+import '../../../../Constants/fontsize.dart';
+import '../../atoms/Common_Text.dart';
 
 class RecommendSearch_Column extends StatelessWidget {
   @override
@@ -15,7 +17,11 @@ class RecommendSearch_Column extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchGroupTitle_Text(text: '추천 검색어'),
+          Common_Text(
+            text: '추천 검색어',
+            textsize: search_grouptitle_textsize,
+            fontWeight: search_grouptitle_fontweight,
+          ),
           SizedBox(
             height: 20,
           ),

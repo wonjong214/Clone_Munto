@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/SearchGroupTitle_Text.dart';
+import 'package:loginscreen/Constants/fontsize.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 
 import '../../../../Constants/colors.dart';
 import '../../atoms/CircleIcon_Icon.dart';
@@ -33,7 +34,11 @@ class _CurrentSearch_ColumnState extends State<CurrentSearch_Column> {
             padding: EdgeInsets.only(left: 15, right: 20),
             child: Row(
               children: [
-                SearchGroupTitle_Text(text: '최근 검색'),
+                Common_Text(
+                  text: '최근 검색',
+                  textsize: search_grouptitle_textsize,
+                  fontWeight: search_grouptitle_fontweight,
+                ),
                 Spacer(),
                 GestureDetector(
                   onTap: (){

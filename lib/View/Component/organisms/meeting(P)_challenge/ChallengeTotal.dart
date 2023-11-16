@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-
-import '../../atoms/Margin_SizedBox.dart';
+import '../../../../Constants/fontsize.dart';
+import '../../atoms/Common_Text.dart';
 import '../../molecules/meeting/ChallengeContainer_Container.dart';
 
 class ChallengeTotal extends StatelessWidget{
@@ -15,11 +15,10 @@ class ChallengeTotal extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '전체 챌린지',
-              style: TextStyle(
-                  fontSize: 22
-              ),
+            Common_Text(
+              text: '전체 챌린지',
+              textsize: meetingtab_grouptitle_textsize,
+              fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
             for (int num = 0; num < 3; num++)

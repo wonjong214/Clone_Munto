@@ -6,6 +6,7 @@ import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../atoms/More_Button.dart';
 
 class ChallengeHot extends StatelessWidget{
@@ -18,11 +19,10 @@ class ChallengeHot extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '인기 챌린지',
-              style: TextStyle(
-                  fontSize: 22
-              ),
+            Common_Text(
+              text: '인기 챌린지',
+              textsize: meetingtab_grouptitle_textsize,
+              fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
             for (int num = 0; num < 3; num++)

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/GroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/Model/create/ChooseMeetingType_Model.dart';
 import '../../../../Constants/colors.dart';
+import '../../../../Constants/fontsize.dart';
+import '../../atoms/Common_Text.dart';
 
 class ChooseMeetingType extends StatefulWidget {
   @override
@@ -96,7 +97,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GroupTitle_Text('멤버들과 함께 어떤 활동을 하고싶나요?'),
+              Common_Text(
+                text: '멤버들과 함께 어떤 활동을 하고싶나요?',
+                textsize: meetingtab_grouptitle_textsize,
+                fontWeight: meetingtab_grouptitle_fontweight,
+              ),
               intergroupmargin,
               GestureDetector(
                 onTap: () {

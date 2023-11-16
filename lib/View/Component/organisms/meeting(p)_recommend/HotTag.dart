@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
+import 'package:loginscreen/Constants/fontsize.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/GroupTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:loginscreen/View/Component/atoms/ProfileImage_Container.dart';
 
 class HotTag extends StatelessWidget {
@@ -12,7 +13,11 @@ class HotTag extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          GroupTitle_Text('지금 뜨는 태그'),
+          Common_Text(
+            text: '지금 뜨는 태그',
+            textsize: meetingtab_grouptitle_textsize,
+            fontWeight: meetingtab_grouptitle_fontweight,
+          ),
           SizedBox(
             height: 20,
           ),

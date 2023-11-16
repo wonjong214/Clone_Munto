@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CalenderRadio.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import '../../atoms/GroupTitle_Text.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
@@ -61,7 +62,11 @@ class _SocialringCalenderState extends State<SocialringCalender> {
     return Container(
         margin: EdgeInsets.only(right: 20, left: 20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          GroupTitle_Text('소셜링 캘린더'),
+          Common_Text(
+            text: '소셜링 캘린더',
+            textsize: meetingtab_grouptitle_textsize,
+            fontWeight: meetingtab_grouptitle_fontweight,
+          ),
           morebutton_margin,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

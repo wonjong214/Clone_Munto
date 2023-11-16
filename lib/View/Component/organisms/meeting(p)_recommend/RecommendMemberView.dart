@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/Follow_Button.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
-import '../../atoms/GroupTitle_Text.dart';
 import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
@@ -29,7 +30,11 @@ class RecommendMemberView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GroupTitle_Text('추천 멤버'),
+              Common_Text(
+                text: '추천 멤버',
+                textsize: meetingtab_grouptitle_textsize,
+                fontWeight: meetingtab_grouptitle_fontweight,
+              ),
               SizedBox(height: 10),
               GroupSubTitle_Text('팔로우하고 문토 대표 모임과 트렌드 소식 받아보기'),
               SizedBox(height: 10),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 import '../../molecules/meeting/ClubContainer_Container.dart';
@@ -16,11 +18,10 @@ class HotClub extends StatelessWidget{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '지금 핫한 클럽',
-            style: TextStyle(
-                fontSize: 22
-            ),
+          Common_Text(
+            text: '지금 핫한 클럽',
+            textsize: meetingtab_grouptitle_textsize,
+            fontWeight: meetingtab_grouptitle_fontweight,
           ),
           SizedBox(height: 8),
           Text(

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ClubNewsProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/More_Button.dart';
 
 
@@ -20,11 +22,10 @@ class ClubIssue extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '클럽 소식',
-              style: TextStyle(
-                  fontSize: 22
-              ),
+            Common_Text(
+              text: '클럽 소식',
+              textsize: meetingtab_grouptitle_textsize,
+              fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
             Container(

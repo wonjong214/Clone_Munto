@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import '../../atoms/Common_Text.dart';
 import '../../atoms/GroupSubTitle_Text.dart';
-import '../../atoms/GroupTitle_Text.dart';
-import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
-import '../../atoms/SocialRingParticipant_Text.dart';
-import '../../atoms/SocialRingSubTitle_Text.dart';
 import '../../molecules/meeting/ClubContainer_Container.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
@@ -36,7 +32,11 @@ class TasteSocialRingView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GroupTitle_Text('취향 저격 소셜링'),
+                    Common_Text(
+                      text: '취향 저격 소셜링',
+                      textsize: meetingtab_grouptitle_textsize,
+                      fontWeight: meetingtab_grouptitle_fontweight,
+                    ),
                     title_margin,
                     GroupSubTitle_Text('내 취향에 딱 맞는 원데이 모임'),
                     title_margin,
@@ -67,7 +67,11 @@ class TasteSocialRingView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GroupTitle_Text('취향 저격 클럽'),
+                    Common_Text(
+                      text: '취향 저격 클럽',
+                      textsize: meetingtab_grouptitle_textsize,
+                      fontWeight: meetingtab_grouptitle_fontweight,
+                    ),
                     title_margin,
                     GroupSubTitle_Text('지속형 모임으로 오래오래 친하게'),
                     title_margin,
@@ -98,7 +102,11 @@ class TasteSocialRingView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GroupTitle_Text('취향 저격 챌린지'),
+                    Common_Text(
+                      text: '취향 저격 챌린지',
+                      textsize: meetingtab_grouptitle_textsize,
+                      fontWeight: meetingtab_grouptitle_fontweight,
+                    ),
                     title_margin,
                     GroupSubTitle_Text('같은 목표를 위해 함께 하는 도전'),
                     title_margin,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
+import '../../atoms/Common_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/MemberReview_Text.dart';
 import '../../atoms/More_Button.dart';
@@ -19,11 +21,10 @@ class SocialringReview extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '함께한 멤버들의 후기',
-              style: TextStyle(
-                  fontSize: 22
-              ),
+            Common_Text(
+              text: '함께한 멤버들의 후기',
+              textsize: meetingtab_grouptitle_textsize,
+              fontWeight: meetingtab_grouptitle_fontweight,
             ),
             title_margin,
             Container(

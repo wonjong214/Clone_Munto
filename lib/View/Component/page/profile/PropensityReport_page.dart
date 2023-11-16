@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Constants/fontsize.dart';
 import 'package:loginscreen/View/Component/atoms/AnalysisResults_Button.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/View/Component/atoms/PropensityReportGroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/molecules/profile/AnalysisResultsBodyTitle_Row.dart';
 import '../../../../Constants/border.dart';
 import '../../../../Constants/colors.dart';
@@ -35,7 +36,10 @@ class PropensityReport extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              PropensityReportGroupTitle_Text(text: '전체 분석 결과'),
+              Common_Text(
+                text: '전체 분석 결과',
+                textsize: profiletab_propensityreport_grouptitle_textsize,
+              ),
               propensitytitle_margin,
               CommonBorderContainer(
                   backcolor: Colors.white,
@@ -118,15 +122,24 @@ class PropensityReport extends StatelessWidget{
                   )
               ),
               SizedBox(height: 40,),
-              PropensityReportGroupTitle_Text(text: '내가 보는 나'),
+              Common_Text(
+                text: '내가 보는 나',
+                textsize: profiletab_propensityreport_grouptitle_textsize,
+              ),
               propensitytitle_margin,
               PropensityInitialGroup(text: '그동안 몰랐던 나의 성향을\n테스트를 통해 알아보세요'),
               SizedBox(height: 30,),
-              PropensityReportGroupTitle_Text(text: '친구가 보는 나'),
+              Common_Text(
+                text: '친구가 보는 나',
+                textsize: profiletab_propensityreport_grouptitle_textsize,
+              ),
               propensitytitle_margin,
               PropensityInitialGroup(text: '친구가 보는 나의 성향은 어떤 모습일까요?\n친구에게 테스트를 요청해 보세요'),
               SizedBox(height: 30,),
-              PropensityReportGroupTitle_Text(text: '처음 본 멤버가 보는 나'),
+              Common_Text(
+                text: '처음 본 멤버가 보는 나',
+                textsize: profiletab_propensityreport_grouptitle_textsize,
+              ),
               propensitytitle_margin,
               PropensityInitialGroup(text: '문토에서 만난 멤버들과 함께\n나의 성향을 알아보세요'),
               SizedBox(height: 50,),

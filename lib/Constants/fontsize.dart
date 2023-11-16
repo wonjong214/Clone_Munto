@@ -26,3 +26,5 @@ const FontWeight? profiletab_edit_grouptitle_fontweight = FontWeight.w600;
 
 const double? search_grouptitle_textsize = 17;
 const FontWeight? search_grouptitle_fontweight = FontWeight.bold;
+
+const double? profiletab_propensityreport_grouptitle_textsize = 17;

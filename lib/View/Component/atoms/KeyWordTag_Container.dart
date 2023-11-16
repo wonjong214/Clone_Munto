@@ -4,6 +4,7 @@ import '../../../Constants/colors.dart';
 
 class KeyWordTag_Container extends StatelessWidget{
   String text;
+  double? textsize;
   FontWeight? fontweight;
   Color? textcolor;
   Color? backcolor;
@@ -11,7 +12,7 @@ class KeyWordTag_Container extends StatelessWidget{
   BoxBorder? border;
   double circular;
 
-  KeyWordTag_Container({required this.text, this.fontweight,
+  KeyWordTag_Container({required this.text, this.textsize = 12, this.fontweight,
     this.textcolor = Colors.black, this.backcolor = tag_color,
     this.padding = const EdgeInsets.only(left:10, right:10, top: 3, bottom: 3),
     this.border, this.circular = 30});
@@ -28,7 +29,7 @@ class KeyWordTag_Container extends StatelessWidget{
       child: Text(
           text,
         style: TextStyle(
-          fontSize: 12,
+          fontSize: textsize,
           color: textcolor,
           fontWeight: fontweight
         ),

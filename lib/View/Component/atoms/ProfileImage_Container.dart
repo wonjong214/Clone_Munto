@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
-class ProfileImage_Container extends StatelessWidget{
+class CircleBorderImage_Container extends StatelessWidget{
   AssetImage _image;
+  double? width;
+  double? height;
+  BoxBorder? border;
 
-  ProfileImage_Container(this._image);
+  CircleBorderImage_Container(this._image,{this.width, this.height, this.border});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 35.0,
-      height: 35.0,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: _image,
           fit: BoxFit.cover,
         ),
         shape: BoxShape.circle,
-        border: Border.all(
-          color: Colors.white,
-          width: 3.0,
-        ),
+        border: border,
       ),
     );
   }

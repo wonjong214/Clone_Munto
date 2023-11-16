@@ -14,7 +14,15 @@ class CommentInput_Container extends StatelessWidget{
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          ProfileImage_Container(_image),
+          CircleBorderImage_Container(
+            _image,
+            width: 35,
+            height: 35,
+            border: Border.all(
+                width: 3,
+                color: Colors.white
+            ),
+          ),
           SizedBox(width: 10,),
           Expanded(
               child: Text(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/ProfileImage_Container.dart';
 
-import '../../atoms/CircleAvatarProfile.dart';
 
 class LoungeEditorProfile extends StatelessWidget{
   AssetImage _image;
@@ -15,7 +15,11 @@ class LoungeEditorProfile extends StatelessWidget{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CircleAvatarProfile(_image),
+          CircleBorderImage_Container(
+            _image,
+            width: 70,
+            height: 70,
+          ),
           SizedBox(height: 5,),
           Text(
             _text,

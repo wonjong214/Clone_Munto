@@ -17,7 +17,15 @@ class ProfileGroup extends StatelessWidget {
       child: Stack(
         alignment: AlignmentDirectional.centerEnd,
         children: [
-          ProfileImage_Container(AssetImage('assets/images/recommend_page/Exhibitions/jazz.jpeg')),
+          CircleBorderImage_Container(
+            AssetImage('assets/images/recommend_page/Exhibitions/jazz.jpeg'),
+            width: 35,
+            height: 35,
+            border: Border.all(
+                width: 3,
+                color: Colors.white
+            ),
+          ),
           Positioned(
             right: 28,
             child: Container(

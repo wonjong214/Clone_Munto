@@ -24,4 +24,28 @@ class Card_Model{
     required this.meetingtime, required this.maplocation, required this.mapdetaillocation, required this.bodytext,
     required this.tag, required this.like, required this.likenum, required this.chatnum, required this.chatimage,
     required this.chatname, required this.chatbody});
+
+  factory Card_Model.fromJson(Map<String, dynamic> json) {
+    return Card_Model(
+      writerimage: json['writerimage'],
+      writername: json['writername'],
+      writedate: json['writedate'],
+      pageviewimage: json['pageviewimage'],
+      meetingimage: json['meetingimage'],
+      meetingtitle: json['meetingtitle'],
+      meetingtype: json['meetingtype'],
+      meetinglocation: json['meetinglocation'],
+      meetingtime: json['meetingtime'],
+      maplocation: json['maplocation'],
+      mapdetaillocation: json['mapdetaillocation'],
+      bodytext: json['bodytext'],
+      tag: json['tag'],
+      like: json['like'],
+      likenum: json['likenum'],
+      chatnum: json['chatnum'],
+      chatimage: json['chatimage'],
+      chatname: json['chatname'],
+      chatbody: json['chatbody'],
+    );
+  }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
 
 class ClubPageView extends StatelessWidget{
 
@@ -23,28 +25,39 @@ class ClubPageView extends StatelessWidget{
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
+                              image: AssetImage('assets/images/socialring/painting.jpg'),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(20)),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child:
-                        Text(
-                            '제목',
-                            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                              '문토 클럽에 대한 모든 것',
+                              style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
+                          ),
+                          SizedBox(height: 10,),
+                          KeyWordTag_Container(
+                            text: '클럽 가이드',
+                            textsize: 15,
+                            fontweight: FontWeight.w600,
+                            textcolor: Colors.white,
+                            backcolor: Colors.transparent,
+                            padding: EdgeInsets.only(left: 12, right: 12, bottom: 8, top: 8),
+                            border: Border.all(width: 1, color: Colors.white),
+                          ),
+                          SizedBox(height: 20,),
+                        ],
                       ),
-                      padding: EdgeInsets.only(bottom: 40),
-                    )
+                    ),
                 ),
               ],
             )
         ),
         Positioned(
-            bottom: 50,
-            right: 50,
+            bottom: 30,
+            right: 30,
             child: Container(
-              padding: EdgeInsets.only(left: 7, right: 7, top: 4, bottom: 4),
+              padding: EdgeInsets.only(left: 15, right: 12, top: 4, bottom: 4),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(0, 0, 0, 0.5),
                   borderRadius: BorderRadius.circular(20)
@@ -52,7 +65,8 @@ class ClubPageView extends StatelessWidget{
               child: Text(
                 '1/1+',
                 style: TextStyle(
-                    color: Colors.white
+                  fontSize: 12,
+                  color: Colors.white,
                 ),
               ),
             )

@@ -39,8 +39,8 @@ class Socialring_PageView extends StatelessWidget{
             )
         ),
         Positioned(
-            bottom: 50,
-            right: 50,
+            bottom: 30,
+            right: 30,
             child: Container(
               padding: EdgeInsets.only(left: 7, right: 7, top: 4, bottom: 4),
               decoration: BoxDecoration(

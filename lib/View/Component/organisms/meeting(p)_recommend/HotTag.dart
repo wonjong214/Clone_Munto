@@ -43,7 +43,15 @@ class HotTag extends StatelessWidget {
                         backcolor: Colors.white,
                         widget: Row(
                           children: [
-                            ProfileImage_Container(Tag.values[i].image),
+                            CircleBorderImage_Container(
+                              Tag.values[i].image,
+                              width: 35,
+                              height: 35,
+                              border: Border.all(
+                                  width: 3,
+                                  color: Colors.white
+                              ),
+                            ),
                             SizedBox(width: 2,),
                             Text(
                               '#${Tag.values[i].korean}',

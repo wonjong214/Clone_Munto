@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/TagScroll_ScrollView.dart';
+import 'package:loginscreen/View/Component/organisms/meeting(p)_recommend/ExhibitionsView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringCalender.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringHostView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringRecommend.dart';
-import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/SocialringReview.dart';
-import 'package:loginscreen/View/Component/organisms/meeting(p)_socialring/Socialring_PageView.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-
+import '../../../../../ViewModel/Recommend_Page/Exhibitions.dart';
 import '../../../../../ViewModel/Recommend_Page/Review.dart';
 import '../../../atoms/Margin_SizedBox.dart';
 import '../../../organisms/meeting(p)_recommend/OpenMeetingView.dart';
@@ -22,7 +21,10 @@ class Socialring_Page extends StatelessWidget{
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          Socialring_PageView(),
+          ChangeNotifierProvider(
+            create: (context) => Exhibitions_Provider(),
+            child: ExhibitionsView(height: 350,),
+          ),
           SizedBox(height: 20,),
           TagScroll_ScrollView(),
           intergroupmargin,

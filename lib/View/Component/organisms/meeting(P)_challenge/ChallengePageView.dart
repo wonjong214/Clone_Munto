@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../atoms/KeyWordTag_Container.dart';
+
 class ChallengePageView extends StatelessWidget{
   PageController controller = PageController(
       initialPage: 0,
@@ -22,26 +24,37 @@ class ChallengePageView extends StatelessWidget{
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('assets/images/recommend_page/Exhibitions/airpot.jpeg'),
+                              image: AssetImage('assets/images/socialring/people.jpg'),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(20)),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child:
-                        Text(
-                            '제목',
-                            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                              '문토 챌린지를 소개합니다',
+                              style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
+                          ),
+                          SizedBox(height: 10,),
+                          KeyWordTag_Container(
+                            text: '챌린지 가이드',
+                            textsize: 15,
+                            fontweight: FontWeight.w600,
+                            textcolor: Colors.white,
+                            backcolor: Colors.transparent,
+                            padding: EdgeInsets.only(left: 12, right: 12, bottom: 8, top: 8),
+                            border: Border.all(width: 1, color: Colors.white),
+                          ),
+                          SizedBox(height: 20,),
+                        ],
                       ),
-                      padding: EdgeInsets.only(bottom: 40),
                     )
                 ),
               ],
             )
         ),
         Positioned(
-            bottom: 50,
-            right: 50,
+            bottom: 30,
+            right: 30,
             child: Container(
               padding: EdgeInsets.only(left: 7, right: 7, top: 4, bottom: 4),
               decoration: BoxDecoration(

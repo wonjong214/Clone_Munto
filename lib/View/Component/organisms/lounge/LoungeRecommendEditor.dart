@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CircleAvatarProfile.dart';
 import 'package:loginscreen/View/Component/molecules/lounge/LoungeEditoProfile.dart';
 
 class LoungeRecommendEditor extends StatelessWidget{

@@ -9,18 +9,18 @@ class KeyWordTag_Container extends StatelessWidget{
   Color? backcolor;
   EdgeInsetsGeometry? padding;
   BoxBorder? border;
+  double circular;
 
   KeyWordTag_Container({required this.text, this.fontweight,
     this.textcolor = Colors.black, this.backcolor = tag_color,
     this.padding = const EdgeInsets.only(left:10, right:10, top: 3, bottom: 3),
-    this.border});
+    this.border, this.circular = 30});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(circular),
         color: backcolor,
         border: border,
       ),

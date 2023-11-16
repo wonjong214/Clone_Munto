@@ -66,7 +66,10 @@ class ChallengeContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  KeyWordTag_Container(text: tag),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: KeyWordTag_Container(text: tag),
+                  ),
                   Common_Text(
                     text: title,
                     fontWeight: FontWeight.w600,

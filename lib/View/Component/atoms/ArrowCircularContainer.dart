@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class OpenMeeting_ArrowCircularContainer extends StatelessWidget{
+class ArrowCircularContainer extends StatelessWidget{
   Color _bg_color;
   double? _size;
 
-  OpenMeeting_ArrowCircularContainer(this._bg_color, this._size);
+  ArrowCircularContainer(this._bg_color, this._size);
 
   @override
   Widget build(BuildContext context) {

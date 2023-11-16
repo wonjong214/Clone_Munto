@@ -139,14 +139,20 @@ class RecommendMemberView extends StatelessWidget {
                                                               arguments: selectedhost_provider.selectedhost[i].tag[num],
                                                             );
                                                           },
-                                                          child: KeyWordTag_Container(text: selectedhost_provider.selectedhost[i].tag[num])
+                                                          child: Padding(
+                                                            padding: const EdgeInsets.only(right: 10),
+                                                            child: KeyWordTag_Container(text: selectedhost_provider.selectedhost[i].tag[num]),
+                                                          )
                                                       )
                                                     else
-                                                      KeyWordTag_Container(
-                                                        text: '+${selectedhost_provider.selectedhost[i].tag.length - 4}',
-                                                        border: Border.all(width: 1, color: Colors.grey),
-                                                        backcolor: Colors.transparent,
-                                                        textcolor: Colors.grey,
+                                                      Padding(
+                                                        padding: const EdgeInsets.only(right: 10),
+                                                        child: KeyWordTag_Container(
+                                                          text: '+${selectedhost_provider.selectedhost[i].tag.length - 4}',
+                                                          border: Border.all(width: 1, color: Colors.grey),
+                                                          backcolor: Colors.transparent,
+                                                          textcolor: Colors.grey,
+                                                        ),
                                                       )
                                                 ],
                                               )

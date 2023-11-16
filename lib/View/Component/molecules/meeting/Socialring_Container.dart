@@ -58,15 +58,24 @@ class Socialring_Container extends StatelessWidget {
                         children: [
                           for (int i = 0; i < tag.length; i++)
                             if (tag[i] != '추천')
-                              KeyWordTag_Container(
-                                text: tag[i],
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 10),
+                                  child: KeyWordTag_Container(
+                                    text: tag[i],
+                                  ),
+                                ),
                               )
                             else
-                              KeyWordTag_Container(
-                                text: tag[i],
-                                textcolor: Color(0xffdc143c),
-                                backcolor: Color(0Xbbfeeaea),
-                                fontweight: FontWeight.bold,
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: KeyWordTag_Container(
+                                  text: tag[i],
+                                  textcolor: Color(0xffdc143c),
+                                  backcolor: Color(0Xbbfeeaea),
+                                  fontweight: FontWeight.bold,
+                                ),
                               )
                         ],
                       ),

@@ -59,7 +59,10 @@ class ClubContainer extends StatelessWidget{
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          children: List.generate(tag.length, (index) => KeyWordTag_Container(text: tag[index])),
+                          children: List.generate(tag.length, (index) => Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: KeyWordTag_Container(text: tag[index]),
+                          )),
                         ),
                         Common_Text(
                           text: title,

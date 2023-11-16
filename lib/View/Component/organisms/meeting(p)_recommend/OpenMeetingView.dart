@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
 import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import '../../atoms/OpenMeetin_ArrowCircularContainer.dart';
+import '../../atoms/ArrowCircularContainer.dart';
 
 class OpenMeetingView extends StatelessWidget{
   String? _title;
@@ -59,7 +59,7 @@ class OpenMeetingView extends StatelessWidget{
                   ],
                 ),
                 SizedBox(width: 50,),
-                OpenMeeting_ArrowCircularContainer(_color!, _arrowsize!)
+                ArrowCircularContainer(_color!, _arrowsize!)
               ],
             )
         ),

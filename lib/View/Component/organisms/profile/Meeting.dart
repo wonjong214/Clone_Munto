@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../atoms/Common_Text.dart';
-import '../../atoms/MyMeetingGroupTitle_Text.dart';
 import '../../atoms/MyMeetingIcon_Icon.dart';
 
 class Meeting extends StatelessWidget{
@@ -17,7 +16,10 @@ class Meeting extends StatelessWidget{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 25),
-                MyMeetingGroupTitle_Text('참여 중인 클럽',20),
+                Common_Text(
+                    text: '참여 중인 클럽',
+                    textsize: profilemeeting_grouptitle_textsize,
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: Column(
@@ -36,7 +38,10 @@ class Meeting extends StatelessWidget{
                   ),
                 ),
                 SizedBox(height: 100,),
-                MyMeetingGroupTitle_Text('진행한 소셜링',20),
+                Common_Text(
+                  text: '진행한 소셜링',
+                  textsize: profilemeeting_grouptitle_textsize,
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: Column(
@@ -55,7 +60,10 @@ class Meeting extends StatelessWidget{
                   ),
                 ),
                 SizedBox(height: 100,),
-                MyMeetingGroupTitle_Text('진행한 챌린지',20),
+                Common_Text(
+                  text: '진행한 챌린지',
+                  textsize: profilemeeting_grouptitle_textsize,
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: Column(

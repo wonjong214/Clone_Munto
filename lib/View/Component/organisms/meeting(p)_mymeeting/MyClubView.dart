@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../../Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../atoms/Common_Text.dart';
-import '../../atoms/MyMeetingGroupSub_Text.dart';
-import '../../atoms/MyMeetingGroupTitle_Text.dart';
 import '../../atoms/MyMeetingIcon_Icon.dart';
 
 class MyClubView extends StatelessWidget{
@@ -16,7 +14,10 @@ class MyClubView extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('좋아요',17),
+            Common_Text(
+              text: '좋아요',
+              textsize: mymeeting_grouptitle_textsize,
+            ),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -32,12 +33,19 @@ class MyClubView extends StatelessWidget{
                     textcolor: mymeeting_groupbodytext_color,
                   ),
                   SizedBox(height: 15),
-                  MyMeetingGroupSub_Text('관심 있는 클럽에 좋아요를 남기면 여기에서 확인할 수 있어요')
+                  Common_Text(
+                    text: '관심 있는 클럽에 좋아요를 남기면 여기에서 확인할 수 있어요',
+                    textsize: mymeeting_groupsub_textsize,
+                    textcolor: mymeeting_groupsubtext_color,
+                  ),
                 ],
               ),
             ),
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('대기',17),
+            Common_Text(
+              text: '대기',
+              textsize: mymeeting_grouptitle_textsize,
+            ),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -53,12 +61,19 @@ class MyClubView extends StatelessWidget{
                     textcolor: mymeeting_groupbodytext_color,
                   ),
                   SizedBox(height: 15),
-                  MyMeetingGroupSub_Text('참여 신청한 클럽은 여기에서 확인할 수 있어요')
+                  Common_Text(
+                    text: '참여 신청한 클럽은 여기에서 확인할 수 있어요',
+                    textsize: mymeeting_groupsub_textsize,
+                    textcolor: mymeeting_groupsubtext_color,
+                  ),
                 ],
               ),
             ),
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('참여',17),
+            Common_Text(
+              text: '참여',
+              textsize: mymeeting_grouptitle_textsize,
+            ),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -74,12 +89,19 @@ class MyClubView extends StatelessWidget{
                     textcolor: mymeeting_groupbodytext_color,
                   ),
                   SizedBox(height: 15),
-                  MyMeetingGroupSub_Text('참여 확정된 클럽은 여기에서 확인할 수 있어요')
+                  Common_Text(
+                    text: '참여 확정된 클럽은 여기에서 확인할 수 있어요',
+                    textsize: mymeeting_groupsub_textsize,
+                    textcolor: mymeeting_groupsubtext_color,
+                  ),
                 ],
               ),
             ),
             SizedBox(height: 30),
-            MyMeetingGroupTitle_Text('진행',17),
+            Common_Text(
+              text: '진행',
+              textsize: mymeeting_grouptitle_textsize,
+            ),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -95,7 +117,11 @@ class MyClubView extends StatelessWidget{
                     textcolor: mymeeting_groupbodytext_color,
                   ),
                   SizedBox(height: 15),
-                  MyMeetingGroupSub_Text('내가 진행하는 클럽은 여기에서 확인할 수 있어요')
+                  Common_Text(
+                    text: '내가 진행하는 클럽은 여기에서 확인할 수 있어요',
+                    textsize: mymeeting_groupsub_textsize,
+                    textcolor: mymeeting_groupsubtext_color,
+                  ),
                 ],
               ),
             ),

@@ -9,3 +9,10 @@ const FontWeight? interesting_grouptitle_fontweight = FontWeight.w600;
 
 const double? mymeeting_groupbody_textsize = 17;
 const FontWeight?  mymeeting_groupbody_fontweight = FontWeight.w500;
+
+const double? mymeeting_groupsub_textsize = 15;
+
+const double? mymeeting_grouptitle_textsize = 17;
+
+const double? profilemeeting_grouptitle_textsize = 20;
+

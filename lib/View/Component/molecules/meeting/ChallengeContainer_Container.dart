@@ -76,7 +76,7 @@ class ChallengeContainer extends StatelessWidget {
                       Text(
                         '챌린지·',
                         style: TextStyle(
-                          color: subtitle_color,
+                          color: meetingtab_groupsubtitle_color,
                         ),
                       ),
                       CommonGreyIcon(Icons.calendar_month),
@@ -91,7 +91,7 @@ class ChallengeContainer extends StatelessWidget {
                       CommonGreyIcon(Icons.check_circle),
                       Text(
                         '주 $time회',
-                        style: TextStyle(color: subtitle_color),
+                        style: TextStyle(color: meetingtab_groupsubtitle_color),
                       )
                     ],
                   ),

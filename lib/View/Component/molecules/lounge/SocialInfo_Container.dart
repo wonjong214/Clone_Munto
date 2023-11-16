@@ -55,7 +55,7 @@ class SocialInfo_Container extends StatelessWidget {
                         Text(
                           '$type·',
                           style: TextStyle(
-                              color: subtitle_color,
+                              color: meetingtab_groupsubtitle_color,
                               fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
@@ -64,7 +64,7 @@ class SocialInfo_Container extends StatelessWidget {
                         CommonGreyIcon(Icons.location_on),
                         Text(
                           '$location·$date',
-                          style: TextStyle(color: subtitle_color),
+                          style: TextStyle(color: meetingtab_groupsubtitle_color),
                         )
                       ],
                     )

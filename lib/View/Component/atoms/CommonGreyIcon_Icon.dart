@@ -9,6 +9,6 @@ class CommonGreyIcon extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Icon(_icon, size: 15, color: subtitle_color,);
+    return Icon(_icon, size: 15, color: meetingtab_groupsubtitle_color,);
   }
 }

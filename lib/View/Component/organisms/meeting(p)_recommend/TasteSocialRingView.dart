@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
+import '../../../../Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import '../../atoms/Common_Text.dart';
-import '../../atoms/GroupSubTitle_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 import '../../molecules/meeting/ClubContainer_Container.dart';
@@ -38,7 +38,11 @@ class TasteSocialRingView extends StatelessWidget {
                       fontWeight: meetingtab_grouptitle_fontweight,
                     ),
                     title_margin,
-                    GroupSubTitle_Text('내 취향에 딱 맞는 원데이 모임'),
+                    Common_Text(
+                      text: '내 취향에 딱 맞는 원데이 모임',
+                      textsize: meetingtab_groupsubtitle_textsize,
+                      textcolor: meetingtab_groupsubtitle_color,
+                    ),
                     title_margin,
                     for(int num=0; num<3; num++)
                       GestureDetector(
@@ -73,7 +77,11 @@ class TasteSocialRingView extends StatelessWidget {
                       fontWeight: meetingtab_grouptitle_fontweight,
                     ),
                     title_margin,
-                    GroupSubTitle_Text('지속형 모임으로 오래오래 친하게'),
+                    Common_Text(
+                      text: '지속형 모임으로 오래오래 친하게',
+                      textsize: meetingtab_groupsubtitle_textsize,
+                      textcolor: meetingtab_groupsubtitle_color,
+                    ),
                     title_margin,
                     for (int num = 0; num < meeting_provider.club.length; num++)
                       ClubContainer(
@@ -108,7 +116,11 @@ class TasteSocialRingView extends StatelessWidget {
                       fontWeight: meetingtab_grouptitle_fontweight,
                     ),
                     title_margin,
-                    GroupSubTitle_Text('같은 목표를 위해 함께 하는 도전'),
+                    Common_Text(
+                      text: '같은 목표를 위해 함께 하는 도전',
+                      textsize: meetingtab_groupsubtitle_textsize,
+                      textcolor: meetingtab_groupsubtitle_color,
+                    ),
                     title_margin,
                     for (int num = 0; num < 3; num++)
                       ChallengeContainer(

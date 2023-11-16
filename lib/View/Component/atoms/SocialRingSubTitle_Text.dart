@@ -16,7 +16,7 @@ class SocialRingSubTitle_Text extends StatelessWidget{
       style: TextStyle(
           overflow: TextOverflow.ellipsis,
           fontSize: 15,
-          color: subtitle_color
+          color: meetingtab_groupsubtitle_color
       ),
     );
   }

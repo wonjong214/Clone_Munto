@@ -13,7 +13,7 @@ class SocialRingParticipant extends StatelessWidget{
     return Text(
       '$participant/$total',
       style: TextStyle(
-          color: subtitle_color
+          color: meetingtab_groupsubtitle_color
       ),
     );
   }

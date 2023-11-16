@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
+import '../../../../Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import '../../atoms/Common_Text.dart';
 import '../../atoms/Follow_Button.dart';
-import '../../atoms/GroupSubTitle_Text.dart';
 import '../../atoms/KeyWordTag_Container.dart';
 import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
@@ -36,7 +36,11 @@ class RecommendMemberView extends StatelessWidget {
                 fontWeight: meetingtab_grouptitle_fontweight,
               ),
               SizedBox(height: 10),
-              GroupSubTitle_Text('팔로우하고 문토 대표 모임과 트렌드 소식 받아보기'),
+              Common_Text(
+                text: '팔로우하고 문토 대표 모임과 트렌드 소식 받아보기',
+                textsize: meetingtab_groupsubtitle_textsize,
+                textcolor: meetingtab_groupsubtitle_color,
+              ),
               SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

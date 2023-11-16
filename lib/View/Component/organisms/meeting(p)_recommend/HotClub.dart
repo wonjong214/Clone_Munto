@@ -26,7 +26,7 @@ class HotClub extends StatelessWidget{
           SizedBox(height: 8),
           Text(
             '지금 멤버들이 몰리고 있는',
-            style: TextStyle(color: subtitle_color),
+            style: TextStyle(color: meetingtab_groupsubtitle_color),
 
           ),
           SizedBox(height: 8),

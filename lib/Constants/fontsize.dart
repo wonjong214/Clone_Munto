@@ -19,3 +19,5 @@ const double? profilemeeting_grouptitle_textsize = 20;
 const double? meetingtab_grouptitle_textsize = 22;
 const FontWeight?  meetingtab_grouptitle_fontweight = FontWeight.w600;
 
+const double? meetingtab_groupsubtitle_textsize = 15;
+

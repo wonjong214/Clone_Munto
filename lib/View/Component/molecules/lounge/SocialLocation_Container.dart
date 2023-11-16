@@ -48,7 +48,7 @@ class SocialLocation_Container extends StatelessWidget {
                     Text(
                       detaillocation,
                       maxLines: 1,
-                      style: TextStyle(color: subtitle_color),
+                      style: TextStyle(color: meetingtab_groupsubtitle_color),
                     )
                   ],
                 ),

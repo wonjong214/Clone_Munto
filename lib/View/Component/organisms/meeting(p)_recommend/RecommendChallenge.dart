@@ -23,17 +23,11 @@ class RecommendChallenge extends StatelessWidget{
               textsize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
-            Text(
-              '',
-              style: TextStyle(
-                  fontSize: 22
-              ),
-            ),
             SizedBox(height: 8),
-            Text(
-              '이번 주부터 갓생 시작',
-              style: TextStyle(color: subtitle_color),
-
+            Common_Text(
+              text: '이번 주부터 갓생 시작',
+              textsize: meetingtab_groupsubtitle_textsize,
+              textcolor: meetingtab_groupsubtitle_color,
             ),
             SizedBox(height: 8),
             for (int num = 0; num < 3; num++)

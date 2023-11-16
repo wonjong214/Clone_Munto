@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/ProfileGroupTitle_Text.dart';
 import 'package:loginscreen/View/Component/molecules/profile/Profile_Image.dart';
 import 'package:loginscreen/View/Component/organisms/profile/profileedit/Interesting.dart';
 import 'package:loginscreen/View/Component/organisms/profile/profileedit/Name.dart';

@@ -5,7 +5,6 @@ import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../atoms/Common_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/MemberReview_Text.dart';
 import '../../atoms/More_Button.dart';
 
 
@@ -71,7 +70,13 @@ class ReviewView extends StatelessWidget{
                                   ),
                                 ),
                                 SizedBox(height: 10,),
-                                MemberReview_Text(provider.review[num].title),
+                                Common_Text(
+                                  text: provider.review[num].title,
+                                  maxlines: 2,
+                                  textsize: 15,
+                                  height: 1.3,
+                                  textalign: TextAlign.left,
+                                ),
                                 SizedBox(height: 10,),
                               ],
                             ),
@@ -113,7 +118,13 @@ class ReviewView extends StatelessWidget{
                                     ),
                                   ),
                                   SizedBox(height: 10),
-                                  MemberReview_Text(provider.review[num + 1].title),
+                                  Common_Text(
+                                    text: provider.review[num + 1].title,
+                                    maxlines: 2,
+                                    textsize: 15,
+                                    height: 1.3,
+                                    textalign: TextAlign.left,
+                                  ),
                                   SizedBox(height: 10),
                                 ],
                               )

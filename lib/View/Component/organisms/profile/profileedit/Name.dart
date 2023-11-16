@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
-
-import '../../../atoms/ProfileGroupTitle_Text.dart';
+import '../../../../../Constants/fontsize.dart';
+import '../../../atoms/Common_Text.dart';
 
 class Name extends StatelessWidget{
   var controller = TextEditingController();
@@ -10,7 +10,11 @@ class Name extends StatelessWidget{
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProfileGroupTitle_Text(text: '이름'),
+        Common_Text(
+          text: '이름',
+          textsize: profiletab_edit_grouptitle_textsize,
+          fontWeight: profiletab_edit_grouptitle_fontweight,
+        ),
         SizedBox(height: 10,),
         TextFormField(
           controller: controller,

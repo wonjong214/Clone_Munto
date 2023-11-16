@@ -21,3 +21,5 @@ const FontWeight?  meetingtab_grouptitle_fontweight = FontWeight.w600;
 
 const double? meetingtab_groupsubtitle_textsize = 15;
 
+const double? profiletab_edit_grouptitle_textsize = 18;
+const FontWeight? profiletab_edit_grouptitle_fontweight = FontWeight.w600;

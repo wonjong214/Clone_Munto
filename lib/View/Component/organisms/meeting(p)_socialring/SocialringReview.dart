@@ -4,7 +4,6 @@ import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 import '../../atoms/Common_Text.dart';
 import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/MemberReview_Text.dart';
 import '../../atoms/More_Button.dart';
 
 
@@ -70,7 +69,13 @@ class SocialringReview extends StatelessWidget{
                                     ),
                                   ),
                                   SizedBox(height: 10,),
-                                  MemberReview_Text('제목'),
+                                  Common_Text(
+                                    text: '제목',
+                                    maxlines: 2,
+                                    textsize: 15,
+                                    height: 1.3,
+                                    textalign: TextAlign.left,
+                                  ),
                                   SizedBox(height: 10,),
                                 ],
                               ),
@@ -112,7 +117,13 @@ class SocialringReview extends StatelessWidget{
                                       ),
                                     ),
                                     SizedBox(height: 10,),
-                                    MemberReview_Text('제목'),
+                                    Common_Text(
+                                      text: '제목',
+                                      maxlines: 2,
+                                      textsize: 15,
+                                      height: 1.3,
+                                      textalign: TextAlign.left,
+                                    ),
                                     SizedBox(height: 10,),
                                   ],
                                 )

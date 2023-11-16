@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/View/Component/molecules/profile/ActivityKeyword_Column.dart';
 import 'package:loginscreen/View/Component/molecules/profile/CultureKeyword_Column.dart';
 import 'package:loginscreen/View/Component/molecules/profile/FoodKeyword_Column.dart';
@@ -9,8 +8,8 @@ import 'package:loginscreen/View/Component/molecules/profile/InvestmentKeyword_C
 import 'package:loginscreen/View/Component/molecules/profile/LanguageKeyword_Column.dart';
 import 'package:loginscreen/View/Component/molecules/profile/PartyKeyword_Column.dart';
 import 'package:loginscreen/View/Component/molecules/profile/TravelKeyword_Column.dart';
-
-import '../../../atoms/ProfileGroupTitle_Text.dart';
+import '../../../../../Constants/fontsize.dart';
+import '../../../atoms/Common_Text.dart';
 
 class Interesting extends StatelessWidget{
   @override
@@ -18,7 +17,11 @@ class Interesting extends StatelessWidget{
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProfileGroupTitle_Text(text: '이름'),
+        Common_Text(
+          text: '관심사',
+          textsize: profiletab_edit_grouptitle_textsize,
+          fontWeight: profiletab_edit_grouptitle_fontweight,
+        ),
         SizedBox(height: 30,),
         CultureKeyword_Column(),
         SizedBox(height: 50,),

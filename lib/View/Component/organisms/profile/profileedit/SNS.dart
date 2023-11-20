@@ -55,7 +55,8 @@ class SNS extends StatelessWidget{
                     ),
                     isDense: true,
                     contentPadding: EdgeInsets.all(10),
-                    hintText: 'www.instagram.com/계정입력',
+                    prefixText: 'www.instagram.com/',
+                    hintText: '계정입력',
                     hintStyle: TextStyle(
                       fontSize: 17,
                       color: Colors.grey,
@@ -104,7 +105,8 @@ class SNS extends StatelessWidget{
                     ),
                     isDense: true,
                     contentPadding: EdgeInsets.all(10),
-                    hintText: 'www.facebook.com/계정입력',
+                    prefixText: 'www.facebook.com/',
+                    hintText: '계정입력',
                     hintStyle: TextStyle(
                       fontSize: 17,
                       color: Colors.grey,

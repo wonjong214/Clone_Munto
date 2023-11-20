@@ -14,12 +14,25 @@ class Meeting_Model{
     return Meeting_Model(
       image: json['image'],
       like: json['like'],
-      tag: json['tag'],
+      tag: (json['tag'] as List).map((e) => e as String).toList(),
       title: json['title'],
       location: json['location'],
       date: json['date'],
       participants: json['participants'],
       total: json['total'],
     );
+  }
+
+  Map<String, dynamic> toJson(){
+    return {
+      'image':image,
+      'like':like,
+      'tag':tag,
+      'title':title,
+      'location':location,
+      'date':date,
+      'participants':participants,
+      'total':total,
+    };
   }
 }

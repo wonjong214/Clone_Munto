@@ -48,4 +48,28 @@ class Card_Model{
       chatbody: json['chatbody'],
     );
   }
+
+  Map<String, dynamic> toJson(){
+    return {
+      'writerimage':writerimage,
+      'writername':writername,
+      'writedate':writedate,
+      'pageviewimage':pageviewimage,
+      'meetingimage':meetingimage,
+      'meetingtitle':meetingtitle,
+      'meetingtype':meetingtype,
+      'meetinglocation':meetinglocation,
+      'meetingtime':meetingtime,
+      'maplocation':maplocation,
+      'mapdetaillocation':mapdetaillocation,
+      'bodytext':bodytext,
+      'tag':tag,
+      'like':like,
+      'likenum':likenum,
+      'chatnum':chatnum,
+      'chatimage':chatimage,
+      'chatname':chatname,
+      'chatbody':chatbody,
+    };
+  }
 }

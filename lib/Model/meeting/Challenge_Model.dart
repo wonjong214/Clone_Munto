@@ -24,4 +24,19 @@ class Challenge_Model{
       total: json['total'],
     );
   }
+
+  Map<String, dynamic> toJson(){
+    return {
+      'image':image,
+      'like':like,
+      'tag':tag,
+      'title':title,
+      'date':date,
+      'duration':duration,
+      'time':time,
+      'participants':participants,
+      'total':total,
+    };
+
+  }
 }

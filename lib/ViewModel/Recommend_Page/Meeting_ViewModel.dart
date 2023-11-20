@@ -5,6 +5,7 @@ class Meeting_ViewModel{
 
   Meeting_ViewModel({required Meeting_Model meeting_model}):_meeting_model = meeting_model{}
 
+  Meeting_Model get meeting_model => _meeting_model;
   String get image => _meeting_model.image;
   bool get like => _meeting_model.like;
   List<String> get tag => _meeting_model.tag;

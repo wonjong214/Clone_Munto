@@ -1,5 +1,3 @@
-
-
 import '../../Model/meeting/Challenge_Model.dart';
 
 class Challenge_ViewModel{
@@ -7,6 +5,7 @@ class Challenge_ViewModel{
 
   Challenge_ViewModel({required Challenge_Model challenge_model}):_challenge_model = challenge_model{}
 
+  Challenge_Model get challenge_model => _challenge_model;
   String get image => _challenge_model.image;
   bool get like => _challenge_model.like;
   String get tag => _challenge_model.tag;

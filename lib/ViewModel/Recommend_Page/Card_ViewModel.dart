@@ -5,6 +5,7 @@ class Card_ViewModel{
 
   Card_ViewModel({required Card_Model card_model}):_card_model = card_model;
 
+  Card_Model get card_model => _card_model;
   String get writerimage => _card_model.writerimage;
   String get writername => _card_model.writername;
   String get writedate => _card_model.writedate;

@@ -1,16 +1,45 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:loginscreen/Model/meeting/lounge/Card_Model.dart';
+import 'package:loginscreen/Repository/Card_Repository.dart';
 
 import 'Card_ViewModel.dart';
 
 class Card_Provider extends ChangeNotifier{
+  late final Card_Repository _card_repository;
   List<Card_ViewModel> _card;
+  List<String> list = List.empty(growable: true);
 
   Card_Provider():_card = List.empty(growable: true){
-    set_card();
+    /*set_card();
+    _card.forEach((element) {
+      print(json.encode(element.card_model));
+      list.add(json.encode(element.card_model));
+    });*/
+    _card_repository = Card_Repository();
+    _getCardList();
   }
 
   List<Card_ViewModel> get card => _card;
+
+  void _getCardList(){
+    _card.addAll(_card_repository.getCardList());
+    notifyListeners();
+  }
+
+  void change_like(Card_ViewModel card){
+    if (card.like){
+      card.like = false;
+      card.likenum == 0 ? card.likenum = 0 : card.likenum--;
+    }
+
+    else {
+      card.like = true;
+      card.likenum++;
+    }
+    notifyListeners();
+  }
 
   void set_card(){
     Card_Model model1 = Card_Model(
@@ -82,17 +111,6 @@ class Card_Provider extends ChangeNotifier{
     _card.add(Card_ViewModel(card_model: model3));
   }
 
-  void change_like(Card_ViewModel card){
-    if (card.like){
-      card.like = false;
-      card.likenum == 0 ? card.likenum = 0 : card.likenum--;
-    }
 
-    else {
-      card.like = true;
-      card.likenum++;
-    }
-    notifyListeners();
-  }
 
 }

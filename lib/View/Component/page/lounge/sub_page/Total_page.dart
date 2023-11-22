@@ -7,11 +7,16 @@ import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
 
 class Total_Page extends StatelessWidget{
+  late final ScrollController _controller;
+
+  Total_Page(ScrollController controller){
+    _controller = controller;
+  }
   @override
   Widget build(BuildContext context) {
     var card_provider = Provider.of<Card_Provider>(context);
-
     return SingleChildScrollView(
+      controller: _controller,
       child: Column(
         children: [
           LoungeTotalAlignGroup(),

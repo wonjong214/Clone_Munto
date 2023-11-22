@@ -10,10 +10,16 @@ import '../../../organisms/meeting(p)_recommend/OpenMeetingView.dart';
 
 
 class challenge_page extends StatelessWidget{
+  late final ScrollController _controller;
+
+  challenge_page(ScrollController controller){
+    _controller = controller;
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _controller,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [

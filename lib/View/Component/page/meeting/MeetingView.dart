@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:loginscreen/Constants/border.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
@@ -13,7 +14,46 @@ import '../../../../Constants/iconsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
 import '../../atoms/AppBarTab_Tab.dart';
 
-class MeetingView extends StatelessWidget{
+class MeetingView extends StatefulWidget{
+  @override
+  State<MeetingView> createState() => _MeetingViewState();
+}
+
+class _MeetingViewState extends State<MeetingView> {
+  late ScrollController _scrollController;
+  bool _exposureAppBar = true;
+
+  void _changeExposureAppBarState() {
+    try {
+      if (_scrollController.position.userScrollDirection == ScrollDirection.reverse) {
+        if (_exposureAppBar) {
+          setState(() {
+            _exposureAppBar = false;
+          });
+        }
+      }
+      else if (_scrollController.position.userScrollDirection == ScrollDirection.forward) {
+        if (!_exposureAppBar) {
+          setState(() {
+            _exposureAppBar = true;
+          });
+        }
+      }
+    } catch (_) {}
+  }
+
+  @override
+  void initState() {
+    _scrollController = ScrollController()..addListener(_changeExposureAppBarState);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     double height = Provider.of<ResolutionProvider>(context).height_get;
@@ -21,24 +61,24 @@ class MeetingView extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(scaffoldBackgroundColor: background_color),
-      home: DefaultTabController(
-        length: 5,
-        child:Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppBar_color,
-          foregroundColor: Colors.black,
-          shadowColor: Colors.transparent,
-          shape: appbarbottom_border,
-          title: Row(
-            children: [
-              AppBarTitle('MUNTO'),
-              Spacer(),
-              IconButton(
-                  onPressed: (){
-                    showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (BuildContext context){
+      home: Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(48),
+        child: AnimatedCrossFade(
+          firstChild: AppBar(
+            backgroundColor: AppBar_color,
+            foregroundColor: Colors.black,
+            shadowColor: Colors.transparent,
+            title: Row(
+              children: [
+                AppBarTitle('MUNTO'),
+                Spacer(),
+                IconButton(
+                    onPressed: (){
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (BuildContext context){
                           return SizedBox(
                               height: height * 0.84,
                               child: ClipRRect(
@@ -47,54 +87,70 @@ class MeetingView extends StatelessWidget{
                               )
                           );
                         },
-                    );
+                      );
+                    },
+                    icon: Icon(Icons.list, size: appbariconsize,)
+                ),
+                SizedBox(width: 10, ),
+                IconButton(
+                  icon: Icon(Icons.search, size : appbariconsize),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/Search_page');
                   },
-                  icon: Icon(Icons.list, size: appbariconsize,)
+                ),
+                SizedBox(width: 10),
+                Icon(Icons.notifications_none, size : appbariconsize),
+              ],
+            ),
+          ),
+          secondChild: const SizedBox.shrink(),
+          crossFadeState: _exposureAppBar ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+          duration: const Duration(milliseconds: 200),
+        ),
+      ),
+      body: DefaultTabController(
+        length: 5,
+        child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  border: appbarbottom_border,
+                  color: AppBar_color,
+                ),
+                width: double.infinity,
+                alignment: Alignment.centerLeft,
+                child: TabBar(
+                  padding: EdgeInsets.only(left: 10, right: 15),
+                  indicatorSize: TabBarIndicatorSize.label,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  tabs: [
+                    AppBarTab_Tab('추천'),
+                    AppBarTab_Tab('소셜링'),
+                    AppBarTab_Tab('클럽'),
+                    AppBarTab_Tab('챌린지'),
+                    AppBarTab_Tab('내 모임'),
+                  ],
+                  isScrollable: true,
+                  labelPadding: EdgeInsets.symmetric(horizontal:10.0),
+                  indicatorColor: Colors.black,
+                ),
               ),
-              SizedBox(width: 10, ),
-              IconButton(
-                icon: Icon(Icons.search, size : appbariconsize),
-                onPressed: (){
-                  Navigator.pushNamed(context, '/Search_page');
-                },
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    recommend_page(_scrollController),
+                    Socialring_Page(_scrollController),
+                    club_page(_scrollController),
+                    challenge_page(_scrollController),
+                    MyMeeting_Page(_scrollController)
+                  ],
+                 ),
               ),
-              SizedBox(width: 10),
-              Icon(Icons.notifications_none, size : appbariconsize),
             ],
           ),
-          bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(kToolbarHeight),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: TabBar(
-                    padding: EdgeInsets.only(left: 10, right: 15),
-                    indicatorSize: TabBarIndicatorSize.label,
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.grey,
-                    tabs: [
-                      AppBarTab_Tab('추천'),
-                      AppBarTab_Tab('소셜링'),
-                      AppBarTab_Tab('클럽'),
-                      AppBarTab_Tab('챌린지'),
-                      AppBarTab_Tab('내 모임'),
-                      ],
-                      isScrollable: true,
-                      labelPadding: EdgeInsets.symmetric(horizontal:10.0),
-                      indicatorColor: Colors.black,
-                  ),
-               ),
-              )
-        ),
-        body: TabBarView(
-          children: [
-            recommend_page(),
-            Socialring_Page(),
-            club_page(),
-            challenge_page(),
-            MyMeeting_Page()
-          ],
-         ),
-        ),
+      ),
+
       )
     );
   }

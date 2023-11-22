@@ -5,9 +5,14 @@ import '../../../organisms/meeting(p)_mymeeting/MyChallenge.dart';
 
 
 class MyMeeting_Page extends StatefulWidget{
+  late final ScrollController _controller;
+
+  MyMeeting_Page(ScrollController controller){
+    _controller = controller;
+  }
   @override
   State<StatefulWidget> createState() {
-    return MyMeeting_Page_State();
+    return MyMeeting_Page_State(_controller);
   }
 }
 
@@ -16,15 +21,20 @@ class MyMeeting_Page_State extends State<MyMeeting_Page>{
   bool socialselected = true;
   bool clubseleted = false;
   bool challengeselected = false;
+  late final screen;
 
-  final screen = [
-    MySocialring(),
-    MyClubView(),
-    MyChallenge()
-  ];
+  MyMeeting_Page_State(ScrollController controller){
+    screen = [
+      MySocialring(controller),
+      MyClubView(controller),
+      MyChallenge(controller)
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
+
+
     return Column(
         children: [
           Container(

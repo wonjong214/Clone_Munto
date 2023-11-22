@@ -19,11 +19,16 @@ import '../../../organisms/meeting(p)_recommend/TasteSocialRingView.dart';
 
 
 class recommend_page extends StatelessWidget{
+  late final ScrollController _controller;
 
+  recommend_page(ScrollController controller){
+    _controller = controller;
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _controller,
       scrollDirection: Axis.vertical,
       child:Column(
           mainAxisSize: MainAxisSize.max,

@@ -15,9 +15,16 @@ import '../../../organisms/meeting(p)_recommend/ReviewView.dart';
 import '../../../organisms/meeting(p)_socialring/SocialringHicking.dart';
 
 class Socialring_Page extends StatelessWidget{
+  late final ScrollController _controller;
+
+  Socialring_Page(ScrollController controller){
+    _controller = controller;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _controller,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [

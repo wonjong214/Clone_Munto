@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		hu8y92eJCciSdRO9oU+LhSIBw3k=
+		6DUDYR+kTYGvnN0pNgfJUURzXcM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		KYXQR9Dp9IYp8UPxQkULJQ+SJoc=
+		JZmE6gs1OJ1CEcxPSd42yYE5XDY=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -67,10 +67,6 @@
 		<key>flutter_assets/assets/icons/transport.png</key>
 		<data>
 		9a2/4lNoAvwQVN62/3AonU0jsJg=
-		</data>
-		<key>flutter_assets/assets/images/.DS_Store</key>
-		<data>
-		MxBESlgswtVp3KhA4SlQUo5nMp0=
 		</data>
 		<key>flutter_assets/assets/images/lounge/map.png</key>
 		<data>
@@ -136,10 +132,6 @@
 		<data>
 		x07s7AaDO18hP54Eogwx8A/DnIw=
 		</data>
-		<key>flutter_assets/assets/images/socialring/.DS_Store</key>
-		<data>
-		22GfDfLPofLm3nUBCYhi8uVemmA=
-		</data>
 		<key>flutter_assets/assets/images/socialring/backpacker.jpg</key>
 		<data>
 		BXNckjMk4PaTDUw8pSD4h/BFURU=
@@ -178,7 +170,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		eb9J86VC6oCzzaC6S5RRMeo51nM=
+		SvR2JYeQyi8aiz5ERWJcUpVYIT0=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -199,14 +191,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mzK0CYsa6A5aIzvoWQj4brpeN5RTN9dzwsgBmxbdjMY=
+			VvwsDCl1g0elafTLJonvAeMCPKm69pOeqFRlvlf6q7g=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fXcDrL99HU1mWwoB4u37X19YVh4c+2HtcT+ugEQ/7LM=
+			NbJPjg+aerxGe73imdII1rD2S9lzWpfIsio10iMl+SI=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -479,7 +471,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LdrEofUrBxTKzFBc2A4SpB0mYeKh01EkNtGBwGa05jQ=
+			Zl6fn9kcZw9hb3I0VxY0Z+ULALar6gZmId304VJdE9o=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

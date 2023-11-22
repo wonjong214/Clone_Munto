@@ -5,11 +5,17 @@ import '../../atoms/Common_Text.dart';
 import '../../atoms/MyMeetingIcon_Icon.dart';
 
 class MySocialring extends StatelessWidget{
+  late final ScrollController _controller;
+
+  MySocialring(ScrollController controller){
+    _controller = controller;
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 20, right: 20),
       child: SingleChildScrollView(
+        controller: _controller,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

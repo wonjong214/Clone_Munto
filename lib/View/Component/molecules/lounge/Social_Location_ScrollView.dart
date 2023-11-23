@@ -24,6 +24,7 @@ class Social_Locaition_ScrollView extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SocialInfo_Container(image: meetingimage, title: meetingtitle, type: meetingtype, location: meetinglocation, date: meetingtime),
+            SizedBox(width: 10,),
             SocialLocation_Container(location: maplocation, detaillocation: mapdetaillocation),
           ],
         ),

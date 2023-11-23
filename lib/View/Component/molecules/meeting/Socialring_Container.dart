@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
+import 'package:loginscreen/View/Component/molecules/lounge/ProfileGroup.dart';
 
 import '../../atoms/CommonGreyIcon_Icon.dart';
 import '../../atoms/Common_Text.dart';
@@ -60,11 +61,8 @@ class Socialring_Container extends StatelessWidget {
                             if (tag[i] != '추천')
                               Padding(
                                 padding: const EdgeInsets.only(right: 10),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 10),
-                                  child: KeyWordTag_Container(
-                                    text: tag[i],
-                                  ),
+                                child: KeyWordTag_Container(
+                                  text: tag[i],
                                 ),
                               )
                             else
@@ -98,7 +96,9 @@ class Socialring_Container extends StatelessWidget {
                         ],
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          ProfileGroup(participants),
                           CommonGreyIcon(Icons.people),
                           Text('$participants/$total'),
                         ],

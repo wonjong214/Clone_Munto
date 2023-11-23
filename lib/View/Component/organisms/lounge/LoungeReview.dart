@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
+import 'package:loginscreen/View/Component/molecules/lounge/ProfileGroup.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Card_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
@@ -17,6 +18,8 @@ class LoungeReview extends StatelessWidget{
   Card_ViewModel card;
 
   LoungeReview({required this.card});
+
+
 
   String text = 'ㅋㄱㅋㅋㅋㅋ나 이거 참여하고싶어서 좋아요 눌러놨는데 일정 확인을 못했네';
 
@@ -59,6 +62,7 @@ class LoungeReview extends StatelessWidget{
                 },
               ),
               SizedBox(width: 10,),
+              ProfileGroup(card.likenum)
             ],
           ),
           SizedBox(height: 20,),

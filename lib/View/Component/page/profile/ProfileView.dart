@@ -64,20 +64,20 @@ class _ProfileViewState extends State<ProfileView> {
           ],
         ),
       ),
-      body: Stack(
+      body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: 100,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(
-                      'assets/images/recommend_page/TasteSocialRing/cherryblossoms.jpeg')),
-            ),
-          ),
-          Column(
+          Stack(
             children: [
+              Container(
+                width: double.infinity,
+                height: 100,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                          'assets/images/recommend_page/TasteSocialRing/cherryblossoms.jpeg')),
+                ),
+              ),
               Container(
                 margin: EdgeInsets.only(left: 10, right: 10),
                 child: Column(
@@ -182,7 +182,7 @@ class _ProfileViewState extends State<ProfileView> {
                       height: 20,
                     ),
                     Text(
-                      '이름',
+                      '김원종',
                       style: TextStyle(
                           fontSize: maintitle, fontWeight: FontWeight.w500),
                     ),
@@ -190,16 +190,20 @@ class _ProfileViewState extends State<ProfileView> {
                       height: 20,
                     ),
                     Text(
-                      '자기소개',
+                      '새로운 사람들과 다양한 경험을 쌓고 싶어요',
                       style: TextStyle(),
                     ),
                     SizedBox(
                       height: 30,
                     ),
                     Wrap(
-                        runSpacing: 10,
-                        children: List.generate(tagfolded ? taglist.length : 10, (index) {
-                          if (tagfolded ? (index < taglist.length - 1): (index < 9))
+                      runSpacing: 10,
+                      children: List.generate(
+                        tagfolded ? taglist.length : 10,
+                        (index) {
+                          if (tagfolded
+                              ? (index < taglist.length - 1)
+                              : (index < 9))
                             return Padding(
                               padding: const EdgeInsets.only(right: 10),
                               child: KeyWordTag_Container(
@@ -209,23 +213,25 @@ class _ProfileViewState extends State<ProfileView> {
                             );
                           else
                             return GestureDetector(
-                              onTap: (){
+                              onTap: () {
                                 setState(() {
-                                  if(tagfolded == true)
+                                  if (tagfolded == true)
                                     tagfolded = false;
                                   else
                                     tagfolded = true;
                                 });
                               },
                               child: KeyWordTag_Container(
-                                text: tagfolded ? '접기': '+${taglist.length - 9}',
+                                text:
+                                    tagfolded ? '접기' : '+${taglist.length - 9}',
                                 textcolor: Colors.grey,
-                                border: Border.all(width: 1, color: Colors.grey),
+                                border:
+                                    Border.all(width: 1, color: Colors.grey),
                                 backcolor: Colors.transparent,
                               ),
                             );
                         },
-                        ),
+                      ),
                     ),
                     SizedBox(
                       height: 30,
@@ -266,55 +272,102 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
-              DefaultTabController(
-                length: 3,
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      PreferredSize(
-                          preferredSize: Size.fromHeight(kToolbarHeight),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: TabBar(
-                              indicatorSize: TabBarIndicatorSize.tab,
-                              labelColor: Colors.black,
-                              unselectedLabelColor: Colors.grey,
-                              indicatorPadding:
-                                  EdgeInsets.only(left: 15, right: 15),
-                              indicatorColor: Colors.black,
-                              tabs: [
-                                Tab(
-                                    child: Text('피드',
-                                        style: TextStyle(fontSize: 18))),
-                                Tab(
-                                    child: Text('태그',
-                                        style: TextStyle(fontSize: 18))),
-                                Tab(
-                                    child: Text('모임',
-                                        style: TextStyle(fontSize: 18))),
-                              ],
-                            ),
-                          )),
-                      Expanded(
-                        child: TabBarView(
-                          children: [
-                            Feed(),
-                            Tag(),
-                            Meeting(),
+            ],
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          DefaultTabController(
+            length: 3,
+            child: Expanded(
+              child: Column(
+                children: [
+                  PreferredSize(
+                      preferredSize: Size.fromHeight(kToolbarHeight),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: TabBar(
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          labelColor: Colors.black,
+                          unselectedLabelColor: Colors.grey,
+                          indicatorPadding:
+                              EdgeInsets.only(left: 15, right: 15),
+                          indicatorColor: Colors.black,
+                          tabs: [
+                            Tab(
+                                child:
+                                    Text('피드', style: TextStyle(fontSize: 18))),
+                            Tab(
+                                child:
+                                    Text('태그', style: TextStyle(fontSize: 18))),
+                            Tab(
+                                child:
+                                    Text('모임', style: TextStyle(fontSize: 18))),
                           ],
                         ),
                       ),
-                    ],
                   ),
-                ),
-              )
-            ],
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        Feed(),
+                        Tag(),
+                        Meeting(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
     );
+  }
+
+}
+
+class TabBarDelegate extends SliverPersistentHeaderDelegate {
+  const TabBarDelegate();
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: Align(
+          alignment: Alignment.center,
+          child: TabBar(
+            indicatorSize: TabBarIndicatorSize.tab,
+            labelColor: Colors.black,
+            unselectedLabelColor: Colors.grey,
+            indicatorPadding:
+            EdgeInsets.only(left: 15, right: 15),
+            indicatorColor: Colors.black,
+            tabs: [
+              Tab(
+                  child:
+                  Text('피드', style: TextStyle(fontSize: 18))),
+              Tab(
+                  child:
+                  Text('태그', style: TextStyle(fontSize: 18))),
+              Tab(
+                  child:
+                  Text('모임', style: TextStyle(fontSize: 18))),
+            ],
+          ),
+        )
+    );
+  }
+
+  @override
+  double get maxExtent => 48;
+
+  @override
+  double get minExtent => 48;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }

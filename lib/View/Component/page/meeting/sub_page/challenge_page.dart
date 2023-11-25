@@ -25,15 +25,9 @@ class challenge_page extends StatelessWidget{
         children: [
           ChallengePageView(),
           SizedBox(height: 30,),
-          ChangeNotifierProvider(
-            create: (context) => Challenge_Provider(),
-            child: ChallengeHot(),
-          ),
+          ChallengeHot(),
           intergroupmargin,
-          ChangeNotifierProvider(
-            create: (context) => Challenge_Provider(),
-            child: ChallengeTotal(),
-          ),
+          ChallengeTotal(),
           SizedBox(height: 25,),
           OpenMeetingView(
             title: '챌린지 열기',

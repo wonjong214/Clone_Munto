@@ -85,10 +85,7 @@ class SearchKeyword_page extends StatelessWidget {
             create: (context) => Meeting_Provider(),
             child: SearchClub(),
           ),
-          ChangeNotifierProvider(
-            create: (context) => Challenge_Provider(),
-            child: SearchChallenge(),
-          ),
+          SearchChallenge(),
           SearchFeed(),
           SearchMember(),
         ]),

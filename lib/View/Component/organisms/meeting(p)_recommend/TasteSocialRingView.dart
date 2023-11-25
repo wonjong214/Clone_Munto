@@ -11,7 +11,32 @@ import '../../atoms/More_Button.dart';
 import '../../molecules/meeting/ClubContainer_Container.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
-class TasteSocialRingView extends StatelessWidget {
+class TasteSocialRingView extends StatefulWidget {
+  @override
+  State<TasteSocialRingView> createState() => _TasteSocialRingViewState();
+}
+
+class _TasteSocialRingViewState extends State<TasteSocialRingView> {
+  bool _isInit = true;
+  bool _isLoading = false;
+  List<ChallengeContainer> challengelist = [];
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isLoading = true;
+      });
+
+      Provider.of<Challenge_Provider>(context).fetchAndSetChallengeItems().then((_){
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
   @override
   Widget build(BuildContext context) {
     var meeting_provider = Provider.of<Meeting_Provider>(context);
@@ -122,26 +147,31 @@ class TasteSocialRingView extends StatelessWidget {
                       textcolor: meetingtab_groupsubtitle_color,
                     ),
                     title_margin,
-                    for (int num = 0; num < 3; num++)
-                      ChallengeContainer(
-                        width: double.infinity,
-                        image: challenge_provider.challenge[num].image,
-                        icon: (challenge_provider.challenge[num].like
-                            ? Icon(Icons.favorite)
-                            : Icon(Icons.favorite_border)),
-                        onPressed: (){
-                          challenge_provider
-                              .changelike(challenge_provider.challenge[num]);
-                        },
-                        tag: challenge_provider.challenge[num].tag,
-                        title: challenge_provider.challenge[num].title,
-                        date: challenge_provider.challenge[num].date,
-                        duration: challenge_provider.challenge[num].duration,
-                        time: challenge_provider.challenge[num].time,
-                        participants:
+                    _isLoading ? const Center(child: CircularProgressIndicator())
+                      : Column(
+                      children: [
+                        for (int num = 0; num < 3; num++)
+                          ChallengeContainer(
+                            width: double.infinity,
+                            image: challenge_provider.challenge[num].image,
+                            icon: (challenge_provider.challenge[num].like
+                                ? Icon(Icons.favorite)
+                                : Icon(Icons.favorite_border)),
+                            onPressed: (){
+                              challenge_provider
+                                  .changelike(challenge_provider.challenge[num]);
+                            },
+                            tag: challenge_provider.challenge[num].tag,
+                            title: challenge_provider.challenge[num].title,
+                            date: challenge_provider.challenge[num].date,
+                            duration: challenge_provider.challenge[num].duration,
+                            time: challenge_provider.challenge[num].time,
+                            participants:
                             challenge_provider.challenge[num].participants,
-                        total: challenge_provider.challenge[num].total,
-                      ),
+                            total: challenge_provider.challenge[num].total,
+                          ),
+                      ],
+                    ),
                     More_Button(350)
                   ],
                 ),

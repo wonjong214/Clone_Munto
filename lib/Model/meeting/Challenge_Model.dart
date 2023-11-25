@@ -11,6 +11,7 @@ class Challenge_Model{
 
   Challenge_Model({required this.image, required this.like, required this.tag, required this.title, required this.date, required this.duration, required this.time, required this.participants, required this.total});
 
+
   factory Challenge_Model.fromJson(Map<String, dynamic> json) {
     return Challenge_Model(
       image: json['image'],

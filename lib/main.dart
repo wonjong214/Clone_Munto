@@ -13,6 +13,7 @@ import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import 'package:provider/provider.dart';
 
 import 'View/Component/page/profile/Score.dart';
+import 'ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 
 
 
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
           providers: [
             ChangeNotifierProvider<ResolutionProvider>(create: (BuildContext context) => ResolutionProvider()),
+            ChangeNotifierProvider(
+              create: (_) => Challenge_Provider(),
+            ),
           ],
           builder: (context, child ){
             return MaterialApp(

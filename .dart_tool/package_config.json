@@ -98,6 +98,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "chopper",
+      "rootUri": "file:///Users/gim-wonjong/.pub-cache/hosted/pub.dev/chopper-7.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///Users/gim-wonjong/.pub-cache/hosted/pub.dev/clock-1.1.1",
       "packageUri": "lib/",
@@ -144,6 +150,12 @@
       "rootUri": "file:///Users/gim-wonjong/.pub-cache/hosted/pub.dev/dart_style-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "equatable",
+      "rootUri": "file:///Users/gim-wonjong/.pub-cache/hosted/pub.dev/equatable-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "fake_async",
@@ -446,7 +458,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-11-16T04:23:48.105734Z",
+  "generated": "2023-11-25T09:08:41.293925Z",
   "generator": "pub",
   "generatorVersion": "3.1.1"
 }

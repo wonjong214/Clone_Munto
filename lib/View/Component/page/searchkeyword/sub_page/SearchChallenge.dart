@@ -46,7 +46,7 @@ class SearchChallenge extends StatelessWidget{
                 ],
               ),
               SizedBox(height: 20,),
-              for (int num = 0; num < 3; num++)
+              /*for (int num = 0; num < 3; num++)
                 ChallengeContainer(
                   width: double.infinity,
                   image: challenge_provider.challenge[num].image,
@@ -65,7 +65,7 @@ class SearchChallenge extends StatelessWidget{
                   participants:
                   challenge_provider.challenge[num].participants,
                   total: challenge_provider.challenge[num].total,
-                ),
+                ),*/
             ],
           ),
         ),

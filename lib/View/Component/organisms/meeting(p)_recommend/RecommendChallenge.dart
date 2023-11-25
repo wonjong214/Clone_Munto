@@ -30,7 +30,7 @@ class RecommendChallenge extends StatelessWidget{
               textcolor: meetingtab_groupsubtitle_color,
             ),
             SizedBox(height: 8),
-            for (int num = 0; num < 3; num++)
+            /*for (int num = 0; num < 3; num++)
               ChallengeContainer(
                 width: double.infinity,
                 image: challenge_provider.challenge[num].image,
@@ -49,7 +49,7 @@ class RecommendChallenge extends StatelessWidget{
                 participants:
                 challenge_provider.challenge[num].participants,
                 total: challenge_provider.challenge[num].total,
-              ),
+              ),*/
             More_Button(double.infinity)
           ],
         )

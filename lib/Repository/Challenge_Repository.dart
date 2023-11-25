@@ -5,7 +5,7 @@ import '../ViewModel/Recommend_Page/Challenge_ViewModel.dart';
 class Challenge_Repository{
   final Challenge_DataSource _challenge_dataSource = Challenge_DataSource();
 
-  List<Challenge_ViewModel> getChallengeList() {
+  /*List<Challenge_ViewModel> getChallengeList() {
     return _challenge_dataSource.getChallengeList();
-  }
+  }*/
 }

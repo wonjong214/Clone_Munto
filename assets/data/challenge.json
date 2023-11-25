@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "like":false,
+      "tag":"챌린지",
+      "title":"제목",
+      "date":"10.22(일)",
+      "duration":" 2주 간",
+      "time":3,
+      "participants":0,
+      "total":50
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "like":false,
+      "tag":"챌린지",
+      "title":"제목",
+      "date":"10.22(일)",
+      "duration":" 2주 간",
+      "time":3,
+      "participants":0,
+      "total":50
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "like":false,
+      "tag":"챌린지",
+      "title":"제목",
+      "date":"10.22(일)",
+      "duration":" 2주 간",
+      "time":3,
+      "participants":0,
+      "total":50
+    }
+  ],
+  "status": 200,
+  "status_code": "ok",
+  "total_page": 200
+}

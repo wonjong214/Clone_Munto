@@ -51,9 +51,6 @@ class recommend_page extends StatelessWidget{
                 ChangeNotifierProvider(
                   create: (context) => Meeting_Provider()
                 ),
-                ChangeNotifierProvider(
-                    create: (context) => Challenge_Provider()
-                ),
                 ],
               child: TasteSocialRingView(),
             ),
@@ -68,10 +65,7 @@ class recommend_page extends StatelessWidget{
               child: HotClub(),
             ),
             intergroupmargin,
-            ChangeNotifierProvider(
-              create: (context) => Challenge_Provider(),
-              child: RecommendChallenge(),
-            ),
+            RecommendChallenge(),
             intergroupmargin,
             ChangeNotifierProvider(
               create: (context) => SelectedHost_Provider(),

@@ -8,7 +8,32 @@ import '../../atoms/Margin_SizedBox.dart';
 import '../../atoms/More_Button.dart';
 import '../../molecules/meeting/ChallengeContainer_Container.dart';
 
-class RecommendChallenge extends StatelessWidget{
+class RecommendChallenge extends StatefulWidget{
+  @override
+  State<RecommendChallenge> createState() => _RecommendChallengeState();
+}
+
+class _RecommendChallengeState extends State<RecommendChallenge> {
+  bool _isInit = true;
+  bool _isLoading = false;
+  List<ChallengeContainer> challengelist = [];
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isLoading = true;
+      });
+
+      Provider.of<Challenge_Provider>(context).fetchAndSetChallengeItems().then((_){
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
   @override
   Widget build(BuildContext context) {
     var challenge_provider = Provider.of<Challenge_Provider>(context);
@@ -30,26 +55,31 @@ class RecommendChallenge extends StatelessWidget{
               textcolor: meetingtab_groupsubtitle_color,
             ),
             SizedBox(height: 8),
-            /*for (int num = 0; num < 3; num++)
-              ChallengeContainer(
-                width: double.infinity,
-                image: challenge_provider.challenge[num].image,
-                icon: (challenge_provider.challenge[num].like
-                    ? Icon(Icons.favorite)
-                    : Icon(Icons.favorite_border)),
-                onPressed: (){
-                  challenge_provider
-                      .changelike(challenge_provider.challenge[num]);
-                },
-                tag: challenge_provider.challenge[num].tag,
-                title: challenge_provider.challenge[num].title,
-                date: challenge_provider.challenge[num].date,
-                duration: challenge_provider.challenge[num].duration,
-                time: challenge_provider.challenge[num].time,
-                participants:
-                challenge_provider.challenge[num].participants,
-                total: challenge_provider.challenge[num].total,
-              ),*/
+            _isLoading ? const Center(child: CircularProgressIndicator())
+                : Column(
+              children: [
+                for (int num = 0; num < 3; num++)
+                  ChallengeContainer(
+                    width: double.infinity,
+                    image: challenge_provider.challenge[num].image,
+                    icon: (challenge_provider.challenge[num].like
+                        ? Icon(Icons.favorite)
+                        : Icon(Icons.favorite_border)),
+                    onPressed: (){
+                      challenge_provider
+                          .changelike(challenge_provider.challenge[num]);
+                    },
+                    tag: challenge_provider.challenge[num].tag,
+                    title: challenge_provider.challenge[num].title,
+                    date: challenge_provider.challenge[num].date,
+                    duration: challenge_provider.challenge[num].duration,
+                    time: challenge_provider.challenge[num].time,
+                    participants:
+                    challenge_provider.challenge[num].participants,
+                    total: challenge_provider.challenge[num].total,
+                  ),
+              ],
+            ),
             More_Button(double.infinity)
           ],
         )

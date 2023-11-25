@@ -19,7 +19,6 @@ class TasteSocialRingView extends StatefulWidget {
 class _TasteSocialRingViewState extends State<TasteSocialRingView> {
   bool _isInit = true;
   bool _isLoading = false;
-  List<ChallengeContainer> challengelist = [];
 
   @override
   void didChangeDependencies() {
@@ -27,7 +26,6 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
       setState(() {
         _isLoading = true;
       });
-
       Provider.of<Challenge_Provider>(context).fetchAndSetChallengeItems().then((_){
         setState(() {
           _isLoading = false;

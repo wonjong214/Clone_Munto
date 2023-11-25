@@ -12,7 +12,6 @@ class Challenge_Provider extends ChangeNotifier{
   Future<void> fetchAndSetChallengeItems() async {
     try{
       final response = await rootBundle.loadString('assets/data/challenge.json'); //http// 통신 코드
-      print(response);
       final extractedData = json.decode(response) as Map<String, dynamic>;
       final List<Challenge_Model> loadedChallengeItem = [];
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import 'package:loginscreen/ViewModel/Recommend_Page/Meeting_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../Model/meeting/Meeting_Model.dart';
 import '../../atoms/More_Button.dart';

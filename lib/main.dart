@@ -10,6 +10,7 @@ import 'package:loginscreen/View/Component/page/searchkeyword/SearchKeyword_page
 import 'package:loginscreen/View/MainView.dart';
 import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
+import 'package:loginscreen/ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
 import 'package:provider/provider.dart';
 
 import 'View/Component/page/profile/Score.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider<ResolutionProvider>(create: (BuildContext context) => ResolutionProvider()),
             ChangeNotifierProvider(
               create: (_) => Challenge_Provider(),
+            ),
+            ChangeNotifierProvider(
+              create: (_) => Card_Provider(),
             ),
           ],
           builder: (context, child ){

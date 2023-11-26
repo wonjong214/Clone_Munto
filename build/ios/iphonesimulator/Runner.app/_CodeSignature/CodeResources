@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		utX+39cRGZa2W3801XgM7zNEZWw=
+		BdEgJlE9853h/ugiqhs67rSUBTc=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		VlQ4zqyU+He+J6V5nHvqJpIg1Vc=
+		1GAZhisVM5SFAXSfbLeNbLEvG5c=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		F8LDi6eXtDD1RfEOjzwR3YKYuE8=
+		9wrZoWYj1TABr1XtIoyTusXMxTw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		rF1MUQQWoEYWBrp2XRk9qAucRBE=
+		TBjH4P39rFkmYnNmDZ6KovCD+3o=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -71,6 +71,10 @@
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
 		ANge+ABaEI9rCCjvMuVjbRhKNTM=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/data/card.json</key>
+		<data>
+		8nAMM9WlHdLvrKWjYG9oCAkM/+I=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/data/challenge.json</key>
 		<data>
@@ -222,7 +226,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		hrS7oqzfrEskz2rJPnDFjnMYicQ=
+		ZFgOPVvuAEX2CkqX3ieX2WUBBCg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -405,7 +409,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0Omj9FSObgaFCY6mf2QD2IfM0JQSp2Qdl6neGdNorwg=
+			TaBrLWB0c50s97l4mlaWABW5CtE9JHINYAJrtw5QeOk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -419,21 +423,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			COTaF/Qp85WY/HknUSqsUuLKUoj6Ah39wqzIEUcJLdc=
+			IcQnVoqFN0SyeRDYA95JiLZe4ls0VH50jpW5HctIYo8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HkZAcEulsvG2pL/3rxb89cgT/IVRlNwNbIgAV2CGah4=
+			6/NMhBzWSVtEApOLEE3Qsvx+AowEA9jMhFUalq+tAxw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IBFXPtvr4B/axp4mGxA/QZiC+ywX08UJ0Tzdp6b5V8c=
+			819/FlG8cFkexko6Ld+C53n2tdkupTSxcD5btL0HZ4Y=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -448,6 +452,13 @@
 			<key>hash2</key>
 			<data>
 			aHmi9Wd/zUlS04roq0TD1UiFLhhZxWL/egrLVDYr71s=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/data/card.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t1xC/ztHPVTkAVz3XyZFu9gvBQ0AOdHiUuJ6R0FWa+M=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/data/challenge.json</key>
@@ -713,7 +724,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a2tw4FNvzNa5yg4mxiY7Rc2Qr8keua1QcXulFcVX7lo=
+			XJNMb46dglujyRaLFpSv2pVrTGOkuiJVQdGhv+zNTJ4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

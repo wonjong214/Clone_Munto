@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/Model/meeting/lounge/Card_Model.dart';
 import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
 import 'package:loginscreen/View/Component/molecules/lounge/ProfileGroup.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Card_ViewModel.dart';
@@ -15,9 +16,10 @@ import '../../molecules/lounge/Social_Location_ScrollView.dart';
 
 
 class LoungeReview extends StatelessWidget{
-  Card_ViewModel card;
+  Card_Model card;
+  void Function() change_like;
 
-  LoungeReview({required this.card});
+  LoungeReview({required this.card, required this.change_like});
 
 
 
@@ -25,7 +27,6 @@ class LoungeReview extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    var card_provider = Provider.of<Card_Provider>(context);
     return Container(
       width: double.infinity,
       child: Column(
@@ -58,7 +59,7 @@ class LoungeReview extends StatelessWidget{
                 likenum :card.likenum,
                 chatnum: card.chatnum,
                 onTap: (){
-                  card_provider.change_like(card);
+                  change_like;
                 },
               ),
               SizedBox(width: 10,),

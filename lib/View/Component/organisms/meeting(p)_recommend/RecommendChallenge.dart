@@ -16,7 +16,6 @@ class RecommendChallenge extends StatefulWidget{
 class _RecommendChallengeState extends State<RecommendChallenge> {
   bool _isInit = true;
   bool _isLoading = false;
-  List<ChallengeContainer> challengelist = [];
 
   @override
   void didChangeDependencies() {

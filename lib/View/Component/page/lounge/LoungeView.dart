@@ -119,14 +119,8 @@ class _LoungeViewState extends State<LoungeView> {
             Expanded(
               child: TabBarView(
                 children: [
-                  ChangeNotifierProvider(
-                    create: (context) => Card_Provider(),
-                    child:  Discovery_Page(_scrollController),
-                  ),
-                  ChangeNotifierProvider(
-                    create: (context) => Card_Provider(),
-                    child: Total_Page(_scrollController),
-                  ),
+                  Discovery_Page(_scrollController),
+                  Total_Page(_scrollController),
                 ],
               ),
             ),

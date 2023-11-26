@@ -5,7 +5,33 @@ import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
-class SearchSocialring extends StatelessWidget{
+class SearchSocialring extends StatefulWidget{
+  @override
+  State<SearchSocialring> createState() => _SearchSocialringState();
+}
+
+class _SearchSocialringState extends State<SearchSocialring> {
+  bool _isInit = true;
+  bool _issocialringLoading = false;
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _issocialringLoading = true;
+      });
+
+
+      Provider.of<Meeting_Provider>(context).fetchAndSetSocialringItems().then((_){
+        setState(() {
+          _issocialringLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     var meeting_provider = Provider.of<Meeting_Provider>(context);
@@ -101,23 +127,28 @@ class SearchSocialring extends StatelessWidget{
                 ],
               ),
               SizedBox(height: 20,),
-              for(int num=0; num<3; num++)
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: Socialring_Container(
-                      image: meeting_provider.socialring[num].image,
-                      icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
-                      onPressed: (){
-                        meeting_provider.changelike(meeting_provider.socialring[num]);
-                      },
-                      tag:  meeting_provider.socialring[num].tag,
-                      title:  meeting_provider.socialring[num].title,
-                      location:  meeting_provider.socialring[num].location,
-                      date:  meeting_provider.socialring[num].date,
-                      participants:  meeting_provider.socialring[num].participants,
-                      total:  meeting_provider.socialring[num].total,
-                    )
-                ),
+              _issocialringLoading ? const Center(child: CircularProgressIndicator())
+                  :Column(
+                children: [
+                  for(int num=0; num<3; num++)
+                    GestureDetector(
+                        onTap: () {print('touch');},
+                        child: Socialring_Container(
+                          image: meeting_provider.socialring[num].image,
+                          icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                          onPressed: (){
+                            meeting_provider.changelike(meeting_provider.socialring[num]);
+                          },
+                          tag:  meeting_provider.socialring[num].tag,
+                          title:  meeting_provider.socialring[num].title,
+                          location:  meeting_provider.socialring[num].location,
+                          date:  meeting_provider.socialring[num].date,
+                          participants:  meeting_provider.socialring[num].participants,
+                          total:  meeting_provider.socialring[num].total,
+                        )
+                    ),
+                ],
+              ),
             ],
           ),
         ),

@@ -46,24 +46,14 @@ class recommend_page extends StatelessWidget{
             HotTag(),
             intergroupmargin,
             //추천 스크롤 뷰
-            MultiProvider(
-              providers: [
-                ChangeNotifierProvider(
-                  create: (context) => Meeting_Provider()
-                ),
-                ],
-              child: TasteSocialRingView(),
-            ),
+             TasteSocialRingView(),
             intergroupmargin,
             ChangeNotifierProvider(
               create: (context) => Review_Provider(),
               child: ReviewView(),
             ),
             intergroupmargin,
-            ChangeNotifierProvider(
-              create: (context) => Meeting_Provider(),
-              child: HotClub(),
-            ),
+            HotClub(),
             intergroupmargin,
             RecommendChallenge(),
             intergroupmargin,

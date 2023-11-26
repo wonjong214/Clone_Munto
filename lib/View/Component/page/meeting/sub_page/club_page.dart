@@ -24,15 +24,9 @@ class club_page extends StatelessWidget{
         children: [
           ClubPageView(),
           SizedBox(height: 30),
-          ChangeNotifierProvider(
-            create: (context) => Meeting_Provider(),
-            child: ClubRecommend(),
-          ),
+          ClubRecommend(),
           intergroupmargin,
-          ChangeNotifierProvider(
-            create: (context) => Meeting_Provider(),
-            child: ClubNew(),
-          ),
+          ClubNew(),
           intergroupmargin,
           ChangeNotifierProvider(
             create: (context) => ClubNews_Provider(),

@@ -77,14 +77,8 @@ class SearchKeyword_page extends StatelessWidget {
               )),
         ),
         body: TabBarView(children: [
-          ChangeNotifierProvider(
-            create: (context) => Meeting_Provider(),
-            child: SearchSocialring(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => Meeting_Provider(),
-            child: SearchClub(),
-          ),
+          SearchSocialring(),
+          SearchClub(),
           SearchChallenge(),
           SearchFeed(),
           SearchMember(),

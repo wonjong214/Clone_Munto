@@ -35,34 +35,21 @@ class Socialring_Page extends StatelessWidget{
           SizedBox(height: 20,),
           TagScroll_ScrollView(),
           intergroupmargin,
-          ChangeNotifierProvider(
-            create: (context) => Meeting_Provider(),
-            child: SocialringRecommend(),
-          ),
+          SocialringRecommend(),
           intergroupmargin,
           ChangeNotifierProvider(
             create: (context) => Review_Provider(),
             child: ReviewView(),
           ),
           intergroupmargin,
-          ChangeNotifierProvider(
-            create: (context) => Meeting_Provider(),
-            child:  SocialringHicking(),
-          ),
+          SocialringHicking(),
           intergroupmargin,
           ChangeNotifierProvider(
             create: (context) => SelectedHost_Provider(),
             child: SocialringHostView(),
           ),
           intergroupmargin,
-          MultiProvider(
-            providers: [
-              ChangeNotifierProvider(
-                  create: (context) => Meeting_Provider()
-              ),
-            ],
-            child: SocialringCalender(),
-          ),
+          SocialringCalender(),
           intergroupmargin,
           OpenMeetingView(title: '소셜링 열기', subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?')
 

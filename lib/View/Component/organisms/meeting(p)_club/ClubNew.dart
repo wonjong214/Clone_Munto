@@ -7,7 +7,32 @@ import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../atoms/Common_Text.dart';
 import '../../atoms/More_Button.dart';
 
-class ClubNew extends StatelessWidget{
+class ClubNew extends StatefulWidget{
+  @override
+  State<ClubNew> createState() => _ClubNewState();
+}
+
+class _ClubNewState extends State<ClubNew> {
+  bool _isInit = true;
+  bool _isLoading = false;
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isLoading = true;
+      });
+
+      Provider.of<Meeting_Provider>(context).fetchAndSetClubItems().then((_){
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<Meeting_Provider>(context);
@@ -23,21 +48,26 @@ class ClubNew extends StatelessWidget{
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
-            for(int num=0; num<provider.club.length; num++)
-              ClubContainer(
-                width: double.infinity,
-                image: provider.club[num].image,
-                icon: (provider.club[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
-                onPressed: (){
-                  provider.changelike(provider.club[num]);
-                },
-                tag: provider.club[num].tag,
-                title: provider.club[num].title,
-                location: provider.club[num].location,
-                date: provider.club[num].date,
-                participants: provider.club[num].participants,
-                total: provider.club[num].total,
-              ),
+            _isLoading ? const Center(child: CircularProgressIndicator())
+                : Column(
+              children: [
+                for(int num=0; num<provider.club.length; num++)
+                  ClubContainer(
+                    width: double.infinity,
+                    image: provider.club[num].image,
+                    icon: (provider.club[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
+                    onPressed: (){
+                      provider.changelike(provider.club[num]);
+                    },
+                    tag: provider.club[num].tag,
+                    title: provider.club[num].title,
+                    location: provider.club[num].location,
+                    date: provider.club[num].date,
+                    participants: provider.club[num].participants,
+                    total: provider.club[num].total,
+                  ),
+              ],
+            ),
             More_Button(double.infinity)
           ],
         )

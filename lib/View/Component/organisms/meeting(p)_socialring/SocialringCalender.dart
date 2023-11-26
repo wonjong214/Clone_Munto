@@ -21,9 +21,28 @@ class SocialringCalender extends StatefulWidget{
 class _SocialringCalenderState extends State<SocialringCalender> {
   Map<String, int> datemap;
   int? calendergroupvalue;
+  bool _isInit = true;
+  bool _issocialringLoading = false;
 
   _SocialringCalenderState() : datemap = new Map<String, int>() {
     getdatemap();
+  }
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _issocialringLoading = true;
+      });
+
+
+      Provider.of<Meeting_Provider>(context).fetchAndSetSocialringItems().then((_){
+        setState(() {
+          _issocialringLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
   }
 
   void getdatemap() {
@@ -86,23 +105,28 @@ class _SocialringCalenderState extends State<SocialringCalender> {
             ],
           ),
           morebutton_margin,
-          for(int num=0; num<3; num++)
-            GestureDetector(
-                onTap: () {print('touch');},
-                child: Socialring_Container(
-                  image: meeting_provider.socialring[num].image,
-                  icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
-                  onPressed: (){
-                    meeting_provider.changelike(meeting_provider.socialring[num]);
-                  },
-                  tag:  meeting_provider.socialring[num].tag,
-                  title:  meeting_provider.socialring[num].title,
-                  location:  meeting_provider.socialring[num].location,
-                  date:  meeting_provider.socialring[num].date,
-                  participants:  meeting_provider.socialring[num].participants,
-                  total:  meeting_provider.socialring[num].total,
-                )
-            ),
+          _issocialringLoading ? const Center(child: CircularProgressIndicator())
+              :Column(
+            children: [
+              for(int num=0; num<3; num++)
+                GestureDetector(
+                    onTap: () {print('touch');},
+                    child: Socialring_Container(
+                      image: meeting_provider.socialring[num].image,
+                      icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                      onPressed: (){
+                        meeting_provider.changelike(meeting_provider.socialring[num]);
+                      },
+                      tag:  meeting_provider.socialring[num].tag,
+                      title:  meeting_provider.socialring[num].title,
+                      location:  meeting_provider.socialring[num].location,
+                      date:  meeting_provider.socialring[num].date,
+                      participants:  meeting_provider.socialring[num].participants,
+                      total:  meeting_provider.socialring[num].total,
+                    )
+                ),
+            ],
+          ),
           More_Button(double.infinity)
         ]
         )

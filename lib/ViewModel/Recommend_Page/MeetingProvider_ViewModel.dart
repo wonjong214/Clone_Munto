@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:loginscreen/Repository/Meeting_Repository.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Meeting_ViewModel.dart';
 
@@ -8,8 +9,8 @@ import '../../Model/meeting/Meeting_Model.dart';
 
 class Meeting_Provider extends ChangeNotifier{
   late final Meeting_Repository _meeting_repository;
-  List<Meeting_ViewModel> _socialring;
-  List<Meeting_ViewModel> _club;
+  List<Meeting_Model> _socialring;
+  List<Meeting_Model> _club;
 
 
 
@@ -22,137 +23,59 @@ class Meeting_Provider extends ChangeNotifier{
     // _club.forEach((element) {
     //   print(jsonEncode(element.meeting_model));
     // });
-     _meeting_repository = Meeting_Repository();
-     _getSocialringList();
-     _getClubList();
+     //_meeting_repository = Meeting_Repository();
+     //_getSocialringList();
+     //_getClubList();
   }
 
-  List<Meeting_ViewModel> get socialring => _socialring;
-  List<Meeting_ViewModel> get club => _club;
+  List<Meeting_Model> get socialring => _socialring;
+  List<Meeting_Model> get club => _club;
 
-  void _getSocialringList() {
+  /*void _getSocialringList() {
     _socialring.addAll(_meeting_repository.getSocialringList());
     notifyListeners();
-  }
+  }*/
 
-  void _getClubList() {
+  /*void _getClubList() {
     _club.addAll(_meeting_repository.getClubList());
     notifyListeners();
+  }*/
+
+  Future<void> fetchAndSetSocialringItems() async {
+    try{
+      final response = await rootBundle.loadString('assets/data/socialring.json'); //http// 통신 코드
+      final extractedData = json.decode(response) as Map<String, dynamic>;
+      final List<Meeting_Model> loadedSocialringItem = [];
+
+      extractedData['items'].forEach((socialringItemData) {
+        loadedSocialringItem.add(Meeting_Model.fromJson(socialringItemData));
+      });
+      _socialring = loadedSocialringItem;
+    }
+    catch(e){
+      print(e);
+    }
+  }
+
+  Future<void> fetchAndSetClubItems() async {
+    try{
+      final response = await rootBundle.loadString('assets/data/club.json'); //http// 통신 코드
+      final extractedData = json.decode(response) as Map<String, dynamic>;
+      final List<Meeting_Model> loadedClubItem = [];
+
+      extractedData['items'].forEach((clubItemData) {
+        loadedClubItem.add(Meeting_Model.fromJson(clubItemData));
+      });
+      _club = loadedClubItem;
+    }
+    catch(e){
+      print(e);
+    }
   }
 
 
 
-  void set_socialring(){
-    Meeting_Model model1 = new Meeting_Model(
-        image: 'assets/images/recommend_page/TasteSocialRing/cat.jpeg',
-        like: false,
-        tag: ['동물', '추천'],
-        title: '길냥이 밥 주는 밤 산책',
-        location: '경기도 안양',
-        date: '10.22(일) 오전: 10:00',
-        participants: 3,
-        total: 5
-    );
-    Meeting_Model model2 = new Meeting_Model(
-        image: 'assets/images/recommend_page/TasteSocialRing/carpenter.jpeg',
-        like: false,
-        tag: ['취미'],
-        title: '목공으로 집 만들어보기',
-        location: '서울시 금천구',
-        date: '10.21(토) 오전: 9:00',
-        participants: 2,
-        total: 8
-    );
-    Meeting_Model model3 = new Meeting_Model(
-        image: 'assets/images/recommend_page/TasteSocialRing/cherryblossoms.jpeg',
-        like: false,
-        tag: ['산책'],
-        title: '같이 벚꽃 보러가요',
-        location: '서울시 송파구',
-        date: '10.21(토) 오후: 4:00',
-        participants: 4,
-        total: 8
-    );
-    Meeting_Model model4 = new Meeting_Model(
-        image: 'assets/images/socialring/backpacker.jpg',
-        like: false,
-        tag: ['관악산'],
-        title: '같이 관악산 국기봉 정복하러 가요',
-        location: '관악구',
-        date: '10.28(토) 오후 4:00',
-        participants: 1,
-        total: 8
-    );
-    Meeting_Model model5 = new Meeting_Model(
-        image: 'assets/images/socialring/backpacker.jpg',
-        like: false,
-        tag: ['관악산'],
-        title: '같이 관악산 국기봉 정복하러 가요',
-        location: '관악구',
-        date: '10.28(토) 오후 4:00',
-        participants: 1,
-        total: 8
-    );
-    Meeting_Model model6 = new Meeting_Model(
-        image: 'assets/images/socialring/backpacker.jpg',
-        like: false,
-        tag: ['관악산'],
-        title: '같이 관악산 국기봉 정복하러 가요',
-        location: '관악구',
-        date: '10.28(토) 오후 4:00',
-        participants: 1,
-        total: 8
-    );
-    _socialring.add(Meeting_ViewModel(meeting_model: model1));
-    _socialring.add(Meeting_ViewModel(meeting_model: model2));
-    _socialring.add(Meeting_ViewModel(meeting_model: model3));
-    _socialring.addAll([Meeting_ViewModel(meeting_model: model4), Meeting_ViewModel(meeting_model: model5),
-      Meeting_ViewModel(meeting_model: model6)]);
-  }
-
-  void set_club(){
-    Meeting_Model model1 = new Meeting_Model(
-        image: 'assets/images/recommend_page/Exhibitions/airpot.jpeg',
-        like: false,
-        tag: ['클럽'],
-        title: '제목',
-        location: '위치',
-        date: '3시간 전 대화',
-        participants: 0,
-        total: 300
-    );
-    Meeting_Model model2 = new Meeting_Model(
-        image: 'assets/images/recommend_page/Exhibitions/airpot.jpeg',
-        like: false,
-        tag: ['클럽'],
-        title: '제목',
-        location: '위치',
-        date: '3시간 전 대화',
-        participants: 0,
-        total: 300
-    );
-    Meeting_Model model3 = new Meeting_Model(
-        image: 'assets/images/recommend_page/Exhibitions/airpot.jpeg',
-        like: false,
-        tag: ['클럽'],
-        title: '제목',
-        location: '위치',
-        date: '3시간 전 대화',
-        participants: 0,
-        total: 300
-    );
-
-
-    _club.add(Meeting_ViewModel(meeting_model: model1));
-    _club.add(Meeting_ViewModel(meeting_model: model2));
-    _club.add(Meeting_ViewModel(meeting_model: model3));
-  }
-
-
-
-
-
-  changelike (Meeting_ViewModel meeting){
+  changelike (Meeting_Model meeting){
     if (meeting.like)
       meeting.like = false;
     else

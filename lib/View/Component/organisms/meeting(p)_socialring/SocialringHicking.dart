@@ -2,20 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/Meeting_ViewModel.dart';
 import 'package:provider/provider.dart';
+import '../../../../Model/meeting/Meeting_Model.dart';
 import '../../atoms/More_Button.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
-class SocialringHicking extends StatelessWidget{
-  List<Meeting_ViewModel> hickinglist;
+class SocialringHicking extends StatefulWidget{
+  List<Meeting_Model> hickinglist;
 
   SocialringHicking():hickinglist = List.empty(growable: true);
+
+  @override
+  State<SocialringHicking> createState() => _SocialringHickingState();
+}
+
+class _SocialringHickingState extends State<SocialringHicking> {
+  bool _isInit = true;
+  bool _issocialringLoading = false;
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _issocialringLoading = true;
+      });
+
+
+      Provider.of<Meeting_Provider>(context).fetchAndSetSocialringItems().then((_){
+        setState(() {
+          _issocialringLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
     var meeting_provider = Provider.of<Meeting_Provider>(context);
     meeting_provider.socialring.forEach((element) {
       if(element.tag.contains('관악산'))
-        hickinglist.add(element);
+        widget.hickinglist.add(element);
     });
     return Stack(
       children: [
@@ -44,23 +71,28 @@ class SocialringHicking extends StatelessWidget{
                 ),
               ),
               SizedBox(height: 50,),
-              for(int num=0; num<3; num++)
-                GestureDetector(
-                    onTap: () {print('touch');},
-                    child: Socialring_Container(
-                      image: hickinglist[num].image,
-                      icon:  hickinglist[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
-                      onPressed: (){
-                        meeting_provider.changelike( hickinglist[num]);
-                      },
-                      tag:   hickinglist[num].tag,
-                      title:   hickinglist[num].title,
-                      location:   hickinglist[num].location,
-                      date:   hickinglist[num].date,
-                      participants:   hickinglist[num].participants,
-                      total:   hickinglist[num].total,
-                    )
-                ),
+              _issocialringLoading ? const Center(child: CircularProgressIndicator())
+                  :Column(
+                children: [
+                  for(int num=0; num<3; num++)
+                    GestureDetector(
+                        onTap: () {print('touch');},
+                        child: Socialring_Container(
+                          image: widget.hickinglist[num].image,
+                          icon:  widget.hickinglist[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                          onPressed: (){
+                            meeting_provider.changelike( widget.hickinglist[num]);
+                          },
+                          tag:   widget.hickinglist[num].tag,
+                          title:   widget.hickinglist[num].title,
+                          location:   widget.hickinglist[num].location,
+                          date:   widget.hickinglist[num].date,
+                          participants:   widget.hickinglist[num].participants,
+                          total:   widget.hickinglist[num].total,
+                        )
+                    ),
+                ],
+              ),
               More_Button(double.infinity)
             ],
           ),

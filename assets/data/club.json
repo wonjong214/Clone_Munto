@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "like":false,
+      "tag":["클럽"],
+      "title":"제목",
+      "location":"위치",
+      "date":"3시간 전 대화",
+      "participants":0,
+      "total":300
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "like":false,"tag":["클럽"],
+      "title":"제목",
+      "location":"위치",
+      "date":"3시간 전 대화",
+      "participants":0,
+      "total":300
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "like":false,"tag":["클럽"],
+      "title":"제목",
+      "location":"위치",
+      "date":"3시간 전 대화",
+      "participants":0,
+      "total":300
+    }
+  ],
+  "status": 200,
+  "status_code": "ok",
+  "total_page": 200
+}

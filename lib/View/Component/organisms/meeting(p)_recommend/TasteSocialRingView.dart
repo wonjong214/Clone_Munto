@@ -18,17 +18,35 @@ class TasteSocialRingView extends StatefulWidget {
 
 class _TasteSocialRingViewState extends State<TasteSocialRingView> {
   bool _isInit = true;
-  bool _isLoading = false;
+  bool _ischallengeLoading = false;
+  bool _issocialringLoading = false;
+  bool _isclubLoading = false;
+
 
   @override
   void didChangeDependencies() {
     if (_isInit) {
       setState(() {
-        _isLoading = true;
+        _ischallengeLoading = true;
+        _issocialringLoading = true;
+        _isclubLoading = true;
       });
+
       Provider.of<Challenge_Provider>(context).fetchAndSetChallengeItems().then((_){
         setState(() {
-          _isLoading = false;
+          _ischallengeLoading = false;
+        });
+      });
+
+      Provider.of<Meeting_Provider>(context).fetchAndSetSocialringItems().then((_){
+        setState(() {
+          _issocialringLoading = false;
+        });
+      });
+
+      Provider.of<Meeting_Provider>(context).fetchAndSetClubItems().then((_){
+        setState(() {
+          _isclubLoading = false;
         });
       });
     }
@@ -67,24 +85,29 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textcolor: meetingtab_groupsubtitle_color,
                     ),
                     title_margin,
-                    for(int num=0; num<3; num++)
-                      GestureDetector(
-                          onTap: () {print('touch');},
-                          child: Socialring_Container(
-                            width: 350,
-                            image: meeting_provider.socialring[num].image,
-                            icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
-                            onPressed: (){
-                              meeting_provider.changelike(meeting_provider.socialring[num]);
-                            },
-                            tag:  meeting_provider.socialring[num].tag,
-                            title:  meeting_provider.socialring[num].title,
-                            location:  meeting_provider.socialring[num].location,
-                            date:  meeting_provider.socialring[num].date,
-                            participants:  meeting_provider.socialring[num].participants,
-                            total:  meeting_provider.socialring[num].total,
-                          )
-                      ),
+                    _issocialringLoading ? const Center(child: CircularProgressIndicator())
+                    :Column(
+                      children: [
+                        for(int num=0; num<3; num++)
+                          GestureDetector(
+                              onTap: () {print('touch');},
+                              child: Socialring_Container(
+                                width: 350,
+                                image: meeting_provider.socialring[num].image,
+                                icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                                onPressed: (){
+                                  meeting_provider.changelike(meeting_provider.socialring[num]);
+                                },
+                                tag:  meeting_provider.socialring[num].tag,
+                                title:  meeting_provider.socialring[num].title,
+                                location:  meeting_provider.socialring[num].location,
+                                date:  meeting_provider.socialring[num].date,
+                                participants:  meeting_provider.socialring[num].participants,
+                                total:  meeting_provider.socialring[num].total,
+                              )
+                          ),
+                      ],
+                    ),
                     More_Button(350)
                   ],
                 ),
@@ -106,24 +129,29 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textcolor: meetingtab_groupsubtitle_color,
                     ),
                     title_margin,
-                    for (int num = 0; num < meeting_provider.club.length; num++)
-                      ClubContainer(
-                        width: 350,
-                        image: meeting_provider.club[num].image,
-                        icon: (meeting_provider.club[num].like
-                            ? Icon(Icons.favorite)
-                            : Icon(Icons.favorite_border)),
-                        onPressed: () {
-                          meeting_provider
-                              .changelike(meeting_provider.club[num]);
-                        },
-                        tag: meeting_provider.club[num].tag,
-                        title: meeting_provider.club[num].title,
-                        location: meeting_provider.club[num].location,
-                        date: meeting_provider.club[num].date,
-                        participants: meeting_provider.club[num].participants,
-                        total: meeting_provider.club[num].total,
-                      ),
+                    _isclubLoading ? const Center(child: CircularProgressIndicator())
+                    : Column(
+                      children: [
+                        for (int num = 0; num < meeting_provider.club.length; num++)
+                          ClubContainer(
+                            width: 350,
+                            image: meeting_provider.club[num].image,
+                            icon: (meeting_provider.club[num].like
+                                ? Icon(Icons.favorite)
+                                : Icon(Icons.favorite_border)),
+                            onPressed: () {
+                              meeting_provider
+                                  .changelike(meeting_provider.club[num]);
+                            },
+                            tag: meeting_provider.club[num].tag,
+                            title: meeting_provider.club[num].title,
+                            location: meeting_provider.club[num].location,
+                            date: meeting_provider.club[num].date,
+                            participants: meeting_provider.club[num].participants,
+                            total: meeting_provider.club[num].total,
+                          ),
+                      ],
+                    ),
                     More_Button(350)
                   ],
                 ),
@@ -145,7 +173,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textcolor: meetingtab_groupsubtitle_color,
                     ),
                     title_margin,
-                    _isLoading ? const Center(child: CircularProgressIndicator())
+                    _ischallengeLoading ? const Center(child: CircularProgressIndicator())
                       : Column(
                       children: [
                         for (int num = 0; num < 3; num++)

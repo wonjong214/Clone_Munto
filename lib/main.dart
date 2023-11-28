@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/page/FeedWrite_Page.dart';
-import 'package:loginscreen/View/Component/page/Search_page.dart';
-import 'package:loginscreen/View/Component/page/create/ChooseMeetingType.dart';
-import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
-import 'package:loginscreen/View/Component/page/profile/ProfileEdit.dart';
-import 'package:loginscreen/View/Component/page/profile/PropensityReport_page.dart';
-import 'package:loginscreen/View/Component/page/profile/Setting_page.dart';
-import 'package:loginscreen/View/Component/page/searchkeyword/SearchKeyword_page.dart';
-import 'package:loginscreen/View/MainView.dart';
-import 'package:loginscreen/View/Component/page/meeting/MeetingView.dart';
-import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
-import 'package:loginscreen/ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
-import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-
-import 'View/Component/page/profile/Score.dart';
-import 'ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
+import 'view/component/page/create/choose_meeting_type.dart';
+import 'view/component/page/feed_write_page.dart';
+import 'view/component/page/meeting/sub_page/category_view.dart';
+import 'view/component/page/profile/score.dart';
+import 'view/component/page/profile/profile_edit.dart';
+import 'view/component/page/profile/propensity_report_page.dart';
+import 'view/component/page/profile/setting_page.dart';
+import 'view/component/page/search_page.dart';
+import 'view/component/page/searchkeyword/search_keyword_page.dart';
+import 'view/main_view.dart';
+import 'view_model/Recommend_Page/card_provider_vIew_model.dart';
+import 'view_model/Recommend_Page/challenge_provider_view_model.dart';
+import 'view_model/Recommend_Page/meeting_provider_view_model.dart';
+import 'view_model/resolution_provider.dart';
 
 
 
@@ -35,13 +33,13 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider<ResolutionProvider>(create: (BuildContext context) => ResolutionProvider()),
             ChangeNotifierProvider(
-              create: (_) => Challenge_Provider(),
+              create: (_) => ChallengeProvider(),
             ),
             ChangeNotifierProvider(
-              create: (_) => Card_Provider(),
+              create: (_) => CardProvider(),
             ),
             ChangeNotifierProvider(
-              create: (_) => Meeting_Provider(),
+              create: (_) => MeetingProvider(),
             ),
           ],
           builder: (context, child ){
@@ -63,12 +61,12 @@ class MyApp extends StatelessWidget {
                   '/meetingtype' : (context) => ChooseMeetingType(),
                   '/categoryview' : (context) => CategoryView(),
                   '/propensityreport' : (context) => PropensityReport(),
-                  '/setting' : (context) => Setting_page(),
+                  '/setting' : (context) => SettingPage(),
                   '/score' : (context) => Score(),
                   '/profileedit' : (context) => ProfileEdit(),
-                  '/FeedWrite_Page' : (context) => FeedWrite_Page(),
-                  '/SearchKeyword_page' : (context) => SearchKeyword_page(),
-                  '/Search_page' : (context) => Search_page(),
+                  '/FeedWrite_Page' : (context) => FeedWritePage(),
+                  '/SearchKeyword_page' : (context) => SearchKeywordPage(),
+                  '/Search_page' : (context) => SearchPage(),
                 }
             );
           }

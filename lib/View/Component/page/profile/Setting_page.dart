@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Diverder_Container.dart';
+import 'package:loginscreen/View/Component/atoms/diverder_container.dart';
 import 'package:loginscreen/View/Component/organisms/profile/setting/Account.dart';
 import 'package:loginscreen/View/Component/organisms/profile/setting/CurrentVersion.dart';
 import 'package:loginscreen/View/Component/organisms/profile/setting/UserSetting.dart';
 import '../../../../Constants/border.dart';
 import '../../../../Constants/colors.dart';
-import '../../atoms/AppBarTitle_Text.dart';
+import '../../atoms/app_bar_title_text.dart';
 import '../../organisms/profile/setting/Announcement.dart';
 
 class Setting_page extends StatelessWidget{
@@ -26,11 +26,11 @@ class Setting_page extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Announcement(),
-              bolddivider,
+              boldDivider,
               UserSetting(),
-              bolddivider,
+              boldDivider,
               Account(),
-              bolddivider,
+              boldDivider,
               CurrentVersion(),
               SizedBox(height: 200,)
             ],

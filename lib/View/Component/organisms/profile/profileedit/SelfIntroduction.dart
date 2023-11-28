@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../Constants/fontsize.dart';
-import '../../../atoms/Common_Text.dart';
+import '../../../atoms/common_text.dart';
 
 class SelfIntroduction extends StatefulWidget{
   @override
@@ -25,9 +25,9 @@ class _SelfIntroductionState extends State<SelfIntroduction> {
       children: [
         Row(
           children: [
-            Common_Text(
+            CommonText(
               text: '자기소개',
-              textsize: profiletab_edit_grouptitle_textsize,
+              textSize: profiletab_edit_grouptitle_textsize,
               fontWeight: profiletab_edit_grouptitle_fontweight,
             ),
             Spacer(),

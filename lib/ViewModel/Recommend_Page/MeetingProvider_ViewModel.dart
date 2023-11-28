@@ -2,28 +2,28 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../Model/meeting/Meeting_Model.dart';
+import '../../Model/meeting/meeting_model.dart';
 
 class Meeting_Provider extends ChangeNotifier{
-  List<Meeting_Model> _socialring;
-  List<Meeting_Model> _club;
+  List<MeetingModel> _socialring;
+  List<MeetingModel> _club;
 
 
 
   Meeting_Provider():_socialring = List.empty(growable: true), _club = List.empty(growable: true){
   }
 
-  List<Meeting_Model> get socialring => _socialring;
-  List<Meeting_Model> get club => _club;
+  List<MeetingModel> get socialring => _socialring;
+  List<MeetingModel> get club => _club;
 
   Future<void> fetchAndSetSocialringItems() async {
     try{
       final response = await rootBundle.loadString('assets/data/socialring.json'); //http// 통신 코드
       final extractedData = json.decode(response) as Map<String, dynamic>;
-      final List<Meeting_Model> loadedSocialringItem = [];
+      final List<MeetingModel> loadedSocialringItem = [];
 
       extractedData['items'].forEach((socialringItemData) {
-        loadedSocialringItem.add(Meeting_Model.fromJson(socialringItemData));
+        loadedSocialringItem.add(MeetingModel.fromJson(socialringItemData));
       });
       _socialring = loadedSocialringItem;
     }
@@ -36,10 +36,10 @@ class Meeting_Provider extends ChangeNotifier{
     try{
       final response = await rootBundle.loadString('assets/data/club.json'); //http// 통신 코드
       final extractedData = json.decode(response) as Map<String, dynamic>;
-      final List<Meeting_Model> loadedClubItem = [];
+      final List<MeetingModel> loadedClubItem = [];
 
       extractedData['items'].forEach((clubItemData) {
-        loadedClubItem.add(Meeting_Model.fromJson(clubItemData));
+        loadedClubItem.add(MeetingModel.fromJson(clubItemData));
       });
       _club = loadedClubItem;
     }
@@ -48,7 +48,7 @@ class Meeting_Provider extends ChangeNotifier{
     }
   }
 
-  changelike (Meeting_Model meeting){
+  changelike (MeetingModel meeting){
     if (meeting.like)
       meeting.like = false;
     else

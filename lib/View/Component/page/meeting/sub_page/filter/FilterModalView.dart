@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_title_text.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterClub.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/sub_page/FilterSocial.dart';
 
@@ -99,7 +99,7 @@ class _FilterModalViewState extends State<FilterModalView> {
               child: CommonBorderContainer(
                 width: double.infinity,
                 height: 50,
-                backcolor: Color(0xffdbdbdb),
+                backColor: Color(0xffdbdbdb),
                 widget: Align(
                   alignment: Alignment.center,
                   child: Text(

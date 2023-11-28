@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
 import 'package:loginscreen/Constants/fontsize.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import 'package:loginscreen/View/Component/atoms/ProfileImage_Container.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import 'package:loginscreen/View/Component/atoms/circle_border_image_container.dart';
 
 class HotTag extends StatelessWidget {
   @override
@@ -13,9 +13,9 @@ class HotTag extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Common_Text(
+          CommonText(
             text: '지금 뜨는 태그',
-            textsize: meetingtab_grouptitle_textsize,
+            textSize: meetingtab_grouptitle_textsize,
             fontWeight: meetingtab_grouptitle_fontweight,
           ),
           SizedBox(
@@ -40,10 +40,10 @@ class HotTag extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 10),
                       child: CommonBorderContainer(
                         padding: EdgeInsets.only(left: 3, right: 12),
-                        backcolor: Colors.white,
+                        backColor: Colors.white,
                         widget: Row(
                           children: [
-                            CircleBorderImage_Container(
+                            CircleBorderImageContainer(
                               Tag.values[i].image,
                               width: 35,
                               height: 35,

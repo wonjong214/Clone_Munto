@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
-import 'package:loginscreen/View/Component/page/meeting/sub_page/CategoryView.dart';
-import '../../atoms/Category_Button.dart';
+import '../../atoms/category_button.dart';
 
 
 class CategoryGrid extends StatelessWidget{
@@ -40,7 +39,7 @@ class CategoryGrid extends StatelessWidget{
                               arguments: Category.culture.index
                             );
                             },
-                          child: Category_Button(Category.culture.icon,Category.culture.korean),
+                          child: CategoryButton(Category.culture.icon,Category.culture.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
@@ -53,7 +52,7 @@ class CategoryGrid extends StatelessWidget{
                                 arguments: Category.activity.index
                             );
                           },
-                          child: Category_Button(Category.activity.icon,Category.activity.korean),
+                          child: CategoryButton(Category.activity.icon,Category.activity.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
@@ -66,7 +65,7 @@ class CategoryGrid extends StatelessWidget{
                                 arguments: Category.food.index
                             );
                           },
-                          child: Category_Button(Category.food.icon, Category.food.korean),
+                          child: CategoryButton(Category.food.icon, Category.food.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
@@ -79,7 +78,7 @@ class CategoryGrid extends StatelessWidget{
                                 arguments: Category.hoby.index
                             );
                           },
-                          child: Category_Button(Category.hoby.icon, Category.hoby.korean),
+                          child: CategoryButton(Category.hoby.icon, Category.hoby.korean),
                         )
                     ),
                     Expanded(flex: 1, child: SizedBox()),
@@ -92,7 +91,7 @@ class CategoryGrid extends StatelessWidget{
                                 arguments: Category.party.index
                             );
                           },
-                          child: Category_Button(Category.party.icon, Category.party.korean),
+                          child: CategoryButton(Category.party.icon, Category.party.korean),
                         )
                     ),
                   ],
@@ -115,7 +114,7 @@ class CategoryGrid extends StatelessWidget{
                                   arguments: Category.travel.index
                               );
                             },
-                            child: Category_Button(Category.travel.icon, Category.travel.korean),
+                            child: CategoryButton(Category.travel.icon, Category.travel.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
@@ -128,7 +127,7 @@ class CategoryGrid extends StatelessWidget{
                                   arguments: Category.study.index
                               );
                             },
-                            child: Category_Button(Category.study.icon, Category.study.korean),
+                            child: CategoryButton(Category.study.icon, Category.study.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
@@ -141,7 +140,7 @@ class CategoryGrid extends StatelessWidget{
                                   arguments: Category.friend.index
                               );
                             },
-                            child: Category_Button(Category.friend.icon, Category.friend.korean),
+                            child: CategoryButton(Category.friend.icon, Category.friend.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
@@ -154,7 +153,7 @@ class CategoryGrid extends StatelessWidget{
                                   arguments: Category.investment.index
                               );
                             },
-                            child: Category_Button(Category.investment.icon, Category.investment.korean),
+                            child: CategoryButton(Category.investment.icon, Category.investment.korean),
                           )
                       ),
                       Expanded(flex: 1, child: SizedBox()),
@@ -167,7 +166,7 @@ class CategoryGrid extends StatelessWidget{
                                   arguments: Category.language.index
                               );
                             },
-                            child: Category_Button(Category.language.icon, Category.language.korean),
+                            child: CategoryButton(Category.language.icon, Category.language.korean),
                           )
                       ),
                     ],

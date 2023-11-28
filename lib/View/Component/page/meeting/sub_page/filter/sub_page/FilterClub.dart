@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
 import 'package:provider/provider.dart';
 import '../../../../../../../Constants/Enum.dart';
 import '../../../../../../../ViewModel//ResolutionProvider.dart';
-import '../../../../../atoms/AppBarTitle_Text.dart';
-import '../../../../../atoms/KoreaLocation_Container.dart';
-import '../../../../../molecules/meeting/CustomRadioListile.dart';
+import '../../../../../atoms/app_bar_title_text.dart';
+import '../../../../../atoms/korea_location_container.dart';
+import '../../../../../molecules/meeting/custom_radio_listile.dart';
 
 class FilterClub extends StatefulWidget{
   @override
@@ -29,10 +29,10 @@ class _FilterClubState extends State<FilterClub> {
               children: [
                 AppBarTitle('지역'),
                 Spacer(),
-                Common_Text(
+                CommonText(
                   text: '온라인',
-                  textcolor: Color(0xffa9a9a9),
-                  textsize: 15,
+                  textColor: Color(0xffa9a9a9),
+                  textSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
                 SizedBox(
@@ -79,9 +79,9 @@ class _FilterClubState extends State<FilterClub> {
                   children: List.generate(
                     KoreaLocation.values.length,
                         (index) {
-                      return KoreaLocation_Container(
+                      return KoreaLocationContainer(
                         value: KoreaLocation.values[index].index,
-                        groupvalue: korealocationgroupvalue,
+                        groupValue: korealocationgroupvalue,
                         text: KoreaLocation.values[index].korean,
                         onChanged: (value) {
                           setState(
@@ -123,7 +123,7 @@ class _FilterClubState extends State<FilterClub> {
                             alignment: Alignment.centerLeft,
                             child: CustomRadioListtile(
                               value: Category.values[num].index,
-                              groupvalue: categorygroupvalue,
+                              groupValue: categorygroupvalue,
                               label: Category.values[num].korean,
                               onChanged: (value) {
                                 setState(() {
@@ -138,7 +138,7 @@ class _FilterClubState extends State<FilterClub> {
                             alignment: Alignment.centerLeft,
                             child: CustomRadioListtile(
                               value: Category.values[num + 1].index,
-                              groupvalue: categorygroupvalue,
+                              groupValue: categorygroupvalue,
                               label: Category.values[num + 1].korean,
                               onChanged: (value) {
                                 setState(() {

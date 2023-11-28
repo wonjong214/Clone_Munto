@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Model/meeting/filter/AgeSlider_Model.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
-import 'package:loginscreen/View/Component/atoms/CustomThirtyRoundedRadio.dart';
-import 'package:loginscreen/View/Component/atoms/KoreaLocation_Container.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/CustomRadioListile.dart';
+import 'package:loginscreen/Model/meeting/filter/age_slider_model.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_title_text.dart';
+import 'package:loginscreen/View/Component/atoms/custom_thirty_rounded_radio.dart';
+import 'package:loginscreen/View/Component/atoms/korea_location_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../../../Constants/list.dart';
 import '../../../../../../../Constants/Enum.dart';
 import '../../../../../../../ViewModel//ResolutionProvider.dart';
-import '../../../../../atoms/Common_Text.dart';
+import '../../../../../atoms/common_text.dart';
+import '../../../../../molecules/meeting/custom_radio_listile.dart';
 
 class FilterSocial extends StatefulWidget {
   @override
@@ -23,7 +23,7 @@ class _FilterSocialState extends State<FilterSocial> {
   int? categorygroupvalue;
   int? typegroupvalue;
   int? korealocationgroupvalue;
-  AgeSlider_Model ageSlider_Model = new AgeSlider_Model();
+  AgeSliderModel ageSlider_Model = new AgeSliderModel();
   RangeValues _rangeValues = const RangeValues(20, 50);
 
   _FilterSocialState() {
@@ -110,12 +110,12 @@ class _FilterSocialState extends State<FilterSocial> {
                       daygroupvalue = value;
                     });
                   },
-                  truebordercolor: Colors.red,
-                  falsebordercolor: Colors.grey.shade300,
-                  truebackcolor: Colors.red,
-                  falsebackcolor: Colors.transparent,
-                  truetextcolor: Colors.white,
-                  falsetextcolor: Colors.black,
+                  trueBorderColor: Colors.red,
+                  falseBorderColor: Colors.grey.shade300,
+                  trueBackColor: Colors.red,
+                  falseBackColor: Colors.transparent,
+                  trueTextColor: Colors.white,
+                  falseTextColor: Colors.black,
                 );
               }),
             ),
@@ -126,10 +126,10 @@ class _FilterSocialState extends State<FilterSocial> {
               children: [
                 AppBarTitle('지역'),
                 Spacer(),
-                Common_Text(
+                CommonText(
                   text: '온라인',
-                  textcolor: Color(0xffa9a9a9),
-                  textsize: 15,
+                  textColor: Color(0xffa9a9a9),
+                  textSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
                 SizedBox(
@@ -174,9 +174,9 @@ class _FilterSocialState extends State<FilterSocial> {
                   crossAxisSpacing: 1,
                   childAspectRatio: 1.8 / 1,
                   children: List.generate(locationlist.length, (index) {
-                    return KoreaLocation_Container(
+                    return KoreaLocationContainer(
                       value: index,
-                      groupvalue: korealocationgroupvalue,
+                      groupValue: korealocationgroupvalue,
                       text: locationlist[index],
                       onChanged: (value) {
                         setState(
@@ -269,7 +269,7 @@ class _FilterSocialState extends State<FilterSocial> {
                         alignment: Alignment.centerLeft,
                         child: CustomRadioListtile(
                           value: Quota.three.index,
-                          groupvalue: quotagroupvalue,
+                          groupValue: quotagroupvalue,
                           label: Quota.three.korean,
                           onChanged: (value) {
                             setState(() {
@@ -284,7 +284,7 @@ class _FilterSocialState extends State<FilterSocial> {
                         alignment: Alignment.centerLeft,
                         child: CustomRadioListtile(
                           value: Quota.eleven.index,
-                          groupvalue: quotagroupvalue,
+                          groupValue: quotagroupvalue,
                           label: Quota.eleven.korean,
                           onChanged: (value) {
                             setState(() {
@@ -301,7 +301,7 @@ class _FilterSocialState extends State<FilterSocial> {
                 ),
                 CustomRadioListtile(
                   value: Quota.thirtyone.index,
-                  groupvalue: quotagroupvalue,
+                  groupValue: quotagroupvalue,
                   label: Quota.thirtyone.korean,
                   onChanged: (value) {
                     setState(() {
@@ -334,7 +334,7 @@ class _FilterSocialState extends State<FilterSocial> {
                             alignment: Alignment.centerLeft,
                             child: CustomRadioListtile(
                               value: Category.values[num].index,
-                              groupvalue: categorygroupvalue,
+                              groupValue: categorygroupvalue,
                               label: Category.values[num].korean,
                               onChanged: (value) {
                                 setState(() {
@@ -349,7 +349,7 @@ class _FilterSocialState extends State<FilterSocial> {
                             alignment: Alignment.centerLeft,
                             child: CustomRadioListtile(
                               value: Category.values[num + 1].index,
-                              groupvalue: categorygroupvalue,
+                              groupValue: categorygroupvalue,
                               label: Category.values[num + 1].korean,
                               onChanged: (value) {
                                 setState(() {
@@ -378,7 +378,7 @@ class _FilterSocialState extends State<FilterSocial> {
                     alignment: Alignment.centerLeft,
                     child: CustomRadioListtile(
                       value: Type.normal.index,
-                      groupvalue: typegroupvalue,
+                      groupValue: typegroupvalue,
                       label: Type.normal.korean,
                       onChanged: (value) {
                         setState(() {
@@ -393,7 +393,7 @@ class _FilterSocialState extends State<FilterSocial> {
                     alignment: Alignment.centerLeft,
                     child: CustomRadioListtile(
                       value: Type.club.index,
-                      groupvalue: typegroupvalue,
+                      groupValue: typegroupvalue,
                       label: Type.club.korean,
                       onChanged: (value) {
                         setState(() {

@@ -4,11 +4,11 @@ import 'package:provider/provider.dart';
 import '../../../../Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Follow_Button.dart';
-import '../../atoms/KeyWordTag_Container.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/follow_button.dart';
+import '../../atoms/keyword_tag_container.dart';
+import '../../atoms/margin_sizedbox.dart';
+import '../../atoms/more_button.dart';
 
 class RecommendMemberView extends StatelessWidget {
   List<Widget> set_tag() {
@@ -30,16 +30,16 @@ class RecommendMemberView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Common_Text(
+              CommonText(
                 text: '추천 멤버',
-                textsize: meetingtab_grouptitle_textsize,
+                textSize: meetingtab_grouptitle_textsize,
                 fontWeight: meetingtab_grouptitle_fontweight,
               ),
               SizedBox(height: 10),
-              Common_Text(
+              CommonText(
                 text: '팔로우하고 문토 대표 모임과 트렌드 소식 받아보기',
-                textsize: meetingtab_groupsubtitle_textsize,
-                textcolor: meetingtab_groupsubtitle_color,
+                textSize: meetingtab_groupsubtitle_textsize,
+                textColor: meetingtab_groupsubtitle_color,
               ),
               SizedBox(height: 10),
               SingleChildScrollView(
@@ -118,7 +118,7 @@ class RecommendMemberView extends StatelessWidget {
 
                                                             selectedhost_provider.change_follow(selectedhost_provider.selectedhost[i]);
                                                           },
-                                                          child: Follow_Button(selected: selectedhost_provider.selectedhost[i].follow)
+                                                          child: FollowButton(selected: selectedhost_provider.selectedhost[i].follow)
                                                       )
                                                     ],
                                                   )),
@@ -141,17 +141,17 @@ class RecommendMemberView extends StatelessWidget {
                                                           },
                                                           child: Padding(
                                                             padding: const EdgeInsets.only(right: 10),
-                                                            child: KeyWordTag_Container(text: selectedhost_provider.selectedhost[i].tag[num]),
+                                                            child: KeyWordTagContainer(text: selectedhost_provider.selectedhost[i].tag[num]),
                                                           )
                                                       )
                                                     else
                                                       Padding(
                                                         padding: const EdgeInsets.only(right: 10),
-                                                        child: KeyWordTag_Container(
+                                                        child: KeyWordTagContainer(
                                                           text: '+${selectedhost_provider.selectedhost[i].tag.length - 4}',
                                                           border: Border.all(width: 1, color: Colors.grey),
-                                                          backcolor: Colors.transparent,
-                                                          textcolor: Colors.grey,
+                                                          backColor: Colors.transparent,
+                                                          textColor: Colors.grey,
                                                         ),
                                                       )
                                                 ],
@@ -199,10 +199,10 @@ class RecommendMemberView extends StatelessWidget {
             ],
           ),
         ),
-        morebutton_margin,
+        moreButtonMargin,
         Container(
           margin: EdgeInsets.only(left: 20,right: 20),
-          child: More_Button(double.infinity),
+          child: MoreButton(double.infinity),
         )
       ],
     );

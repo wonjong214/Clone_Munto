@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
+import '../../../molecules/meeting/challenge_container.dart';
 
 class SearchChallenge extends StatefulWidget {
   @override

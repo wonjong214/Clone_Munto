@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/molecules/lounge/LoungeEditoProfile.dart';
+
+import '../../molecules/lounge/lounge_editor_profile.dart';
 
 class LoungeRecommendEditor extends StatelessWidget{
   Map<String, String> map ={

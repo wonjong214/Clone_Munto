@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/Model/create/ChooseMeetingType_Model.dart';
+import 'package:loginscreen/View/Component/atoms/circle_icon.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/margin_sizedbox.dart';
+import 'package:loginscreen/Model/create/choose_meeting_type_model.dart';
 import '../../../../Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
-import '../../atoms/Common_Text.dart';
+import '../../atoms/common_text.dart';
 
 class ChooseMeetingType extends StatefulWidget {
   @override
@@ -13,75 +13,75 @@ class ChooseMeetingType extends StatefulWidget {
 }
 
 class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
-  ChooseMeetingType_Model? _social;
-  ChooseMeetingType_Model? _club;
-  ChooseMeetingType_Model? _challenge;
+  ChooseMeetingTypeModel? _social;
+  ChooseMeetingTypeModel? _club;
+  ChooseMeetingTypeModel? _challenge;
   Color? _buttoncolor;
   Color? _buttontextcolor;
 
   _ChooseMeetingTypeState() {
-    _social = ChooseMeetingType_Model(Colors.white, Colors.red, Colors.white,
+    _social = ChooseMeetingTypeModel(Colors.white, Colors.red, Colors.white,
         Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
-    _club = ChooseMeetingType_Model(Colors.white, Colors.green.shade800,
+    _club = ChooseMeetingTypeModel(Colors.white, Colors.green.shade800,
         Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
-    _challenge = ChooseMeetingType_Model(Colors.white, Colors.blue,
+    _challenge = ChooseMeetingTypeModel(Colors.white, Colors.blue,
         Colors.white, Color(0xffa9a9a9), Colors.black, Color(0xffa9a9a9));
     _buttoncolor = Color(0xffdbdbdb);
     _buttontextcolor = Colors.grey;
   }
 
   reset_socialringcolor() {
-    _social!.containerbackcolor = Colors.white;
-    _social!.containerbordercolor = Color(0xffa9a9a9);
-    _social!.iconcolor = Colors.white;
-    _social!.iconbackcolor = Colors.red;
-    _social!.titletextcolor = Colors.black;
-    _social!.subtextcolor = Color(0xffa9a9a9);
+    _social!.containerBackColor = Colors.white;
+    _social!.containerBorderColor = Color(0xffa9a9a9);
+    _social!.iconColor = Colors.white;
+    _social!.iconBackColor = Colors.red;
+    _social!.titleTextColor = Colors.black;
+    _social!.subtextColor = Color(0xffa9a9a9);
   }
 
   set_socialringcolor() {
-    _social!.containerbackcolor = Colors.red;
-    _social!.containerbordercolor = Colors.transparent;
-    _social!.iconcolor = Colors.red;
-    _social!.iconbackcolor = Colors.white;
-    _social!.titletextcolor = Colors.white;
-    _social!.subtextcolor = Colors.white;
+    _social!.containerBackColor = Colors.red;
+    _social!.containerBorderColor = Colors.transparent;
+    _social!.iconColor = Colors.red;
+    _social!.iconBackColor = Colors.white;
+    _social!.titleTextColor = Colors.white;
+    _social!.subtextColor = Colors.white;
   }
 
   reset_clubcolor() {
-    _club!.containerbackcolor = Colors.white;
-    _club!.containerbordercolor = Color(0xffa9a9a9);
-    _club!.iconcolor = Colors.white;
-    _club!.iconbackcolor = Colors.green.shade800;
-    _club!.titletextcolor = Colors.black;
-    _club!.subtextcolor = Color(0xffa9a9a9);
+    _club!.containerBackColor = Colors.white;
+    _club!.containerBorderColor = Color(0xffa9a9a9);
+    _club!.iconColor = Colors.white;
+    _club!.iconBackColor = Colors.green.shade800;
+    _club!.titleTextColor = Colors.black;
+    _club!.subtextColor = Color(0xffa9a9a9);
   }
 
   set_clubcolor() {
-    _club!.containerbackcolor = Colors.green.shade800;
-    _club!.containerbordercolor = Colors.transparent;
-    _club!.iconcolor = Colors.green.shade800;
-    _club!.iconbackcolor = Colors.white;
-    _club!.titletextcolor = Colors.white;
-    _club!.subtextcolor = Colors.white;
+    _club!.containerBackColor = Colors.green.shade800;
+    _club!.containerBorderColor = Colors.transparent;
+    _club!.iconColor = Colors.green.shade800;
+    _club!.iconBackColor = Colors.white;
+    _club!.titleTextColor = Colors.white;
+    _club!.subtextColor = Colors.white;
   }
 
   reset_challengecolor() {
-    _challenge!.containerbackcolor = Colors.white;
-    _challenge!.containerbordercolor = Color(0xffa9a9a9);
-    _challenge!.iconcolor = Colors.white;
-    _challenge!.iconbackcolor = Colors.blue;
-    _challenge!.titletextcolor = Colors.black;
-    _challenge!.subtextcolor = Color(0xffa9a9a9);
+    _challenge!.containerBackColor = Colors.white;
+    _challenge!.containerBorderColor = Color(0xffa9a9a9);
+    _challenge!.iconColor = Colors.white;
+    _challenge!.iconBackColor = Colors.blue;
+    _challenge!.titleTextColor = Colors.black;
+    _challenge!.subtextColor = Color(0xffa9a9a9);
   }
 
   set_challengecolor() {
-    _challenge!.containerbackcolor = Colors.blue;
-    _challenge!.containerbordercolor = Colors.transparent;
-    _challenge!.iconcolor = Colors.blue;
-    _challenge!.iconbackcolor = Colors.white;
-    _challenge!.titletextcolor = Colors.white;
-    _challenge!.subtextcolor = Colors.white;
+    _challenge!.containerBackColor = Colors.blue;
+    _challenge!.containerBorderColor = Colors.transparent;
+    _challenge!.iconColor = Colors.blue;
+    _challenge!.iconBackColor = Colors.white;
+    _challenge!.titleTextColor = Colors.white;
+    _challenge!.subtextColor = Colors.white;
   }
 
   @override
@@ -97,12 +97,12 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Common_Text(
+              CommonText(
                 text: '멤버들과 함께 어떤 활동을 하고싶나요?',
-                textsize: meetingtab_grouptitle_textsize,
+                textSize: meetingtab_grouptitle_textsize,
                 fontWeight: meetingtab_grouptitle_fontweight,
               ),
-              intergroupmargin,
+              interGroupMargin,
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -115,11 +115,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 },
                 child: CommonBorderContainer(
                   circular: 10,
-                  borderwidth: 0.3,
+                  borderWidth: 0.3,
                   width: double.infinity,
                   height: 80,
-                  bordercolor: _social!.containerbordercolor,
-                  backcolor: _social!.containerbackcolor,
+                  borderColor: _social!.containerBorderColor,
+                  backColor: _social!.containerBackColor,
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -129,11 +129,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                       CircleIcon(
                         width: 20,
                         height: 20,
-                        backgroundcolor: _social!.iconbackcolor,
+                        backgroundColor: _social!.iconBackColor,
                         icon: Icon(
                           Icons.bolt,
                           size: 18,
-                          color: _social!.iconcolor,
+                          color: _social!.iconColor,
                         ),
                       ),
                       SizedBox(
@@ -147,7 +147,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                             '소셜링',
                             style: TextStyle(
                               fontSize: 15,
-                              color: _social!.titletextcolor,
+                              color: _social!.titleTextColor,
                             ),
                           ),
                           SizedBox(
@@ -156,7 +156,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                           Text(
                             '일회성 모임으로 번개처럼 가볍게 만나요',
                             style: TextStyle(
-                              color: _social!.subtextcolor,
+                              color: _social!.subtextColor,
                               fontSize: 15,
                             ),
                           )
@@ -181,11 +181,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 },
                 child: CommonBorderContainer(
                   circular: 10,
-                  borderwidth: 0.3,
+                  borderWidth: 0.3,
                   width: double.infinity,
                   height: 80,
-                  bordercolor: _club!.containerbordercolor,
-                  backcolor: _club!.containerbackcolor,
+                  borderColor: _club!.containerBorderColor,
+                  backColor: _club!.containerBackColor,
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -195,11 +195,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                       CircleIcon(
                         width: 20,
                         height: 20,
-                        backgroundcolor: _club!.iconbackcolor,
+                        backgroundColor: _club!.iconBackColor,
                         icon: Icon(
                           Icons.star,
                           size: 14,
-                          color: _club!.iconcolor,
+                          color: _club!.iconColor,
                         ),
                       ),
                       SizedBox(
@@ -213,7 +213,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                             '클럽',
                             style: TextStyle(
                               fontSize: 15,
-                              color: _club!.titletextcolor,
+                              color: _club!.titleTextColor,
                             ),
                           ),
                           SizedBox(
@@ -222,7 +222,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                           Text(
                             '지속형 모임으로 계속해서 친하게 지내요',
                             style: TextStyle(
-                              color: _club!.subtextcolor,
+                              color: _club!.subtextColor,
                               fontSize: 15,
                             ),
                           )
@@ -247,11 +247,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 },
                 child: CommonBorderContainer(
                   circular: 10,
-                  borderwidth: 0.3,
+                  borderWidth: 0.3,
                   width: double.infinity,
                   height: 80,
-                  bordercolor: _challenge!.containerbordercolor,
-                  backcolor: _challenge!.containerbackcolor,
+                  borderColor: _challenge!.containerBorderColor,
+                  backColor: _challenge!.containerBackColor,
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -261,11 +261,11 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                       CircleIcon(
                         width: 20,
                         height: 20,
-                        backgroundcolor: _challenge!.iconbackcolor,
+                        backgroundColor: _challenge!.iconBackColor,
                         icon: Icon(
                           Icons.local_fire_department,
                           size: 18,
-                          color: _challenge!.iconcolor,
+                          color: _challenge!.iconColor,
                         ),
                       ),
                       SizedBox(
@@ -279,7 +279,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                             '챌린지',
                             style: TextStyle(
                               fontSize: 15,
-                              color: _challenge!.titletextcolor,
+                              color: _challenge!.titleTextColor,
                             ),
                           ),
                           SizedBox(
@@ -288,7 +288,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                           Text(
                             '같은 목표를 가진 멤버들과 함께 도전해요',
                             style: TextStyle(
-                              color: _challenge!.subtextcolor,
+                              color: _challenge!.subtextColor,
                               fontSize: 15,
                             ),
                           )
@@ -304,7 +304,7 @@ class _ChooseMeetingTypeState extends State<ChooseMeetingType> {
                 child: CommonBorderContainer(
                   width: double.infinity,
                   height: 50,
-                  backcolor: _buttoncolor,
+                  backColor: _buttoncolor,
                   widget: Align(
                     alignment: Alignment.center,
                     child: Text(

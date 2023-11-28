@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:loginscreen/Constants/border.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_title_text.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/challenge_page.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/club_page.dart';
 import 'package:loginscreen/View/Component/page/meeting/sub_page/filter/FilterModalView.dart';
@@ -12,7 +12,7 @@ import 'package:loginscreen/View/Component/page/meeting/sub_page/Socialring_Page
 import 'package:provider/provider.dart';
 import '../../../../Constants/iconsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
-import '../../atoms/AppBarTab_Tab.dart';
+import '../../atoms/app_bar_tab.dart';
 
 class MeetingView extends StatefulWidget{
   @override
@@ -22,6 +22,7 @@ class MeetingView extends StatefulWidget{
 class _MeetingViewState extends State<MeetingView> {
   late ScrollController _scrollController;
   bool _exposureAppBar = true;
+
 
   void _changeExposureAppBarState() {
     try {
@@ -125,11 +126,11 @@ class _MeetingViewState extends State<MeetingView> {
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
                   tabs: [
-                    AppBarTab_Tab('추천'),
-                    AppBarTab_Tab('소셜링'),
-                    AppBarTab_Tab('클럽'),
-                    AppBarTab_Tab('챌린지'),
-                    AppBarTab_Tab('내 모임'),
+                    AppBarTab('추천'),
+                    AppBarTab('소셜링'),
+                    AppBarTab('클럽'),
+                    AppBarTab('챌린지'),
+                    AppBarTab('내 모임'),
                   ],
                   isScrollable: true,
                   labelPadding: EdgeInsets.symmetric(horizontal:10.0),

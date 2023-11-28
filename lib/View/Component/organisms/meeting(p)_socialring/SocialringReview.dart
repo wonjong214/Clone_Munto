@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/margin_sizedbox.dart';
+import '../../atoms/more_button.dart';
 
 
 
@@ -20,12 +20,12 @@ class SocialringReview extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '함께한 멤버들의 후기',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
-            title_margin,
+            titleMargin,
             Container(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,12 +69,12 @@ class SocialringReview extends StatelessWidget{
                                     ),
                                   ),
                                   SizedBox(height: 10,),
-                                  Common_Text(
+                                  CommonText(
                                     text: '제목',
-                                    maxlines: 2,
-                                    textsize: 15,
+                                    maxLines: 2,
+                                    textSize: 15,
                                     height: 1.3,
-                                    textalign: TextAlign.left,
+                                    textAlign: TextAlign.left,
                                   ),
                                   SizedBox(height: 10,),
                                 ],
@@ -117,12 +117,12 @@ class SocialringReview extends StatelessWidget{
                                       ),
                                     ),
                                     SizedBox(height: 10,),
-                                    Common_Text(
+                                    CommonText(
                                       text: '제목',
-                                      maxlines: 2,
-                                      textsize: 15,
+                                      maxLines: 2,
+                                      textSize: 15,
                                       height: 1.3,
-                                      textalign: TextAlign.left,
+                                      textAlign: TextAlign.left,
                                     ),
                                     SizedBox(height: 10,),
                                   ],
@@ -133,7 +133,7 @@ class SocialringReview extends StatelessWidget{
                     ]
                 )
             ),
-            More_Button(double.infinity)
+            MoreButton(double.infinity)
           ],
         )
     );

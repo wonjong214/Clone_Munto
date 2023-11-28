@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-import '../../../../Model/meeting/Meeting_Model.dart';
-import '../../atoms/More_Button.dart';
+import '../../../../Model/meeting/meeting_model.dart';
+import '../../atoms/more_button.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
 class SocialringHicking extends StatefulWidget{
-  List<Meeting_Model> hickinglist;
+  List<MeetingModel> hickinglist;
 
   SocialringHicking():hickinglist = List.empty(growable: true);
 
@@ -40,7 +40,7 @@ class _SocialringHickingState extends State<SocialringHicking> {
   Widget build(BuildContext context) {
     var meeting_provider = Provider.of<Meeting_Provider>(context);
     meeting_provider.socialring.forEach((element) {
-      if(element.tag.contains('관악산'))
+      if(element.tag.contains('등산'))
         widget.hickinglist.add(element);
     });
     return Stack(
@@ -76,7 +76,7 @@ class _SocialringHickingState extends State<SocialringHicking> {
                   for(int num=0; num<3; num++)
                     GestureDetector(
                         onTap: () {print('touch');},
-                        child: Socialring_Container(
+                        child: SocialringContainer(
                           image: widget.hickinglist[num].image,
                           icon:  widget.hickinglist[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                           onPressed: (){
@@ -92,7 +92,7 @@ class _SocialringHickingState extends State<SocialringHicking> {
                     ),
                 ],
               ),
-              More_Button(double.infinity)
+              MoreButton(double.infinity)
             ],
           ),
         )

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Follow_Button.dart';
-import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
+import 'package:loginscreen/View/Component/atoms/follow_button.dart';
+import 'package:loginscreen/View/Component/atoms/keyword_tag_container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel//ResolutionProvider.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/margin_sizedbox.dart';
+import '../../atoms/more_button.dart';
 
 class SocialringHostView extends StatelessWidget{
   @override
@@ -22,9 +22,9 @@ class SocialringHostView extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Common_Text(
+              CommonText(
                 text: '셀렉티드 호스트',
-                textsize: meetingtab_grouptitle_textsize,
+                textSize: meetingtab_grouptitle_textsize,
                 fontWeight: meetingtab_grouptitle_fontweight,
               ),
               SizedBox(height: 10),
@@ -104,7 +104,7 @@ class SocialringHostView extends StatelessWidget{
 
                                                           selectedhost_provider.change_follow(selectedhost_provider.selectedhost[i]);
                                                         },
-                                                          child: Follow_Button(selected: selectedhost_provider.selectedhost[i].follow)
+                                                          child: FollowButton(selected: selectedhost_provider.selectedhost[i].follow)
                                                       )
                                                     ],
                                                   )),
@@ -127,17 +127,17 @@ class SocialringHostView extends StatelessWidget{
                                                           },
                                                           child: Padding(
                                                             padding: const EdgeInsets.only(right: 10),
-                                                            child: KeyWordTag_Container(text: selectedhost_provider.selectedhost[i].tag[num]),
+                                                            child: KeyWordTagContainer(text: selectedhost_provider.selectedhost[i].tag[num]),
                                                           )
                                                       )
                                                     else
                                                       Padding(
                                                         padding: const EdgeInsets.only(right: 10),
-                                                        child: KeyWordTag_Container(
+                                                        child: KeyWordTagContainer(
                                                           text: '+${selectedhost_provider.selectedhost[i].tag.length - 4}',
                                                           border: Border.all(width: 1, color: Colors.grey),
-                                                          backcolor: Colors.transparent,
-                                                          textcolor: Colors.grey,
+                                                          backColor: Colors.transparent,
+                                                          textColor: Colors.grey,
                                                         ),
                                                       )
                                                 ],
@@ -185,10 +185,10 @@ class SocialringHostView extends StatelessWidget{
             ],
           ),
         ),
-        morebutton_margin,
+        moreButtonMargin,
         Container(
           margin: EdgeInsets.only(left: 20,right: 20),
-          child: More_Button(double.infinity),
+          child: MoreButton(double.infinity),
         )
       ],
     );

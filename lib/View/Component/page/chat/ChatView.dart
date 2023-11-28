@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/View/Component/page/chat/sub_page/GroupChat.dart';
 import 'package:loginscreen/View/Component/page/chat/sub_page/IndividualChat.dart';
-
 import '../../../../Constants/border.dart';
 import '../../../../Constants/colors.dart';
-import '../../atoms/AppBarTab_Tab.dart';
-import '../../atoms/AppBarTitle_Text.dart';
+import '../../atoms/app_bar_tab.dart';
+import '../../atoms/app_bar_title_text.dart';
 
 class ChatView extends StatelessWidget{
   @override
@@ -34,8 +33,8 @@ class ChatView extends StatelessWidget{
                       labelColor: Colors.black,
                       unselectedLabelColor: Colors.grey,
                       tabs: [
-                        AppBarTab_Tab('그룹'),
-                        AppBarTab_Tab('개인')
+                        AppBarTab('그룹'),
+                        AppBarTab('개인')
                       ],
                       labelPadding: EdgeInsets.symmetric(horizontal:10.0),
                       indicatorColor: Colors.black,

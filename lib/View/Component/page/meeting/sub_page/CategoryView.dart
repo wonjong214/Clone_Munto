@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/Enum.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_title_text.dart';
 
 import '../../../../../Constants/border.dart';
 import '../../../../../Constants/colors.dart';

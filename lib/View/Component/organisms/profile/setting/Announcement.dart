@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Diverder_Container.dart';
-import 'package:loginscreen/View/Component/atoms/SettingElemnet_Row.dart';
-import 'package:loginscreen/View/Component/atoms/SettingGroupTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/diverder_container.dart';
+import 'package:loginscreen/View/Component/atoms/setting_elemnet_row.dart';
+import 'package:loginscreen/View/Component/atoms/setting_group_title_text.dart';
 
 class Announcement extends StatelessWidget{
   @override
@@ -12,20 +12,20 @@ class Announcement extends StatelessWidget{
       ),
       child: Column(
         children: [
-          SettingGroupTitle(text: '안내'),
-          SettingElement_Row(text: '공지사항'),
-          thindivider,
-          SettingElement_Row(text: '이벤트'),
-          thindivider,
-          SettingElement_Row(text: '자주 묻는 질문'),
-          thindivider,
-          SettingElement_Row(text: '고객센터'),
-          thindivider,
-          SettingElement_Row(text: '개선 및 의견 남기기'),
-          thindivider,
-          SettingElement_Row(text: '입점 및 제휴 문의'),
-          thindivider,
-          SettingElement_Row(text: '문토 채용'),
+          SettingGroupTitleText(text: '안내'),
+          SettingElementRow(text: '공지사항'),
+          thinDivider,
+          SettingElementRow(text: '이벤트'),
+          thinDivider,
+          SettingElementRow(text: '자주 묻는 질문'),
+          thinDivider,
+          SettingElementRow(text: '고객센터'),
+          thinDivider,
+          SettingElementRow(text: '개선 및 의견 남기기'),
+          thinDivider,
+          SettingElementRow(text: '입점 및 제휴 문의'),
+          thinDivider,
+          SettingElementRow(text: '문토 채용'),
         ],
       ),
     );

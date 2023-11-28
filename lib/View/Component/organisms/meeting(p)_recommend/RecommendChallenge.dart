@@ -3,10 +3,9 @@ import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
-import '../../molecules/meeting/ChallengeContainer_Container.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/more_button.dart';
+import '../../molecules/meeting/challenge_container.dart';
 
 class RecommendChallenge extends StatefulWidget{
   @override
@@ -42,16 +41,16 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '주목할 만한 챌린지',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
-            Common_Text(
+            CommonText(
               text: '이번 주부터 갓생 시작',
-              textsize: meetingtab_groupsubtitle_textsize,
-              textcolor: meetingtab_groupsubtitle_color,
+              textSize: meetingtab_groupsubtitle_textsize,
+              textColor: meetingtab_groupsubtitle_color,
             ),
             SizedBox(height: 8),
             _isLoading ? const Center(child: CircularProgressIndicator())
@@ -79,7 +78,7 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
                   ),
               ],
             ),
-            More_Button(double.infinity)
+            MoreButton(double.infinity)
           ],
         )
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
-import '../../../atoms/Margin_SizedBox.dart';
+import '../../../atoms/margin_sizedbox.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(P)_challenge/ChallengeHot.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(P)_challenge/ChallengePageView.dart';
 import 'package:loginscreen/View/Component/organisms/meeting(P)_challenge/ChallengeTotal.dart';
@@ -26,7 +26,7 @@ class challenge_page extends StatelessWidget{
           ChallengePageView(),
           SizedBox(height: 30,),
           ChallengeHot(),
-          intergroupmargin,
+          interGroupMargin,
           ChallengeTotal(),
           SizedBox(height: 25,),
           OpenMeetingView(
@@ -35,7 +35,7 @@ class challenge_page extends StatelessWidget{
             color: Color(0xff3498d0),
             arrowsize: 20,
           ),
-          intergroupmargin
+          interGroupMargin
         ],
       ),
     );

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/CommonGreyIcon_Icon.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import 'package:loginscreen/View/Component/atoms/margin_sizedbox.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/more_button.dart';
+import '../../molecules/meeting/challenge_container.dart';
 
 class ChallengeHot extends StatefulWidget{
   @override
@@ -42,9 +40,9 @@ class _ChallengeHotState extends State<ChallengeHot> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '인기 챌린지',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
@@ -73,8 +71,8 @@ class _ChallengeHotState extends State<ChallengeHot> {
                   ),
               ],
             ),
-            morebutton_margin,
-            More_Button(double.infinity)
+            moreButtonMargin,
+            MoreButton(double.infinity)
           ],
         )
     );

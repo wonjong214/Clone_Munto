@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../ViewModel/Recommend_Page/Exhibitions.dart';
-import '../../atoms/KeyWordTag_Container.dart';
+import '../../atoms/keyword_tag_container.dart';
 
 
 class ExhibitionsView extends StatefulWidget{
@@ -77,12 +77,12 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
                               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
                           ),
                           SizedBox(height: 10,),
-                          KeyWordTag_Container(
+                          KeyWordTagContainer(
                             text: '소셜링 콘테스트',
-                            textsize: 15,
-                            fontweight: FontWeight.w600,
-                            textcolor: Colors.white,
-                            backcolor: Colors.transparent,
+                            textSize: 15,
+                            fontWeight: FontWeight.w600,
+                            textColor: Colors.white,
+                            backColor: Colors.transparent,
                             padding: EdgeInsets.only(left: 12, right: 12, bottom: 8, top: 8),
                             border: Border.all(width: 1, color: Colors.white),
                           ),

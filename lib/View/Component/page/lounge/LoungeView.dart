@@ -3,12 +3,10 @@ import 'package:flutter/rendering.dart';
 import 'package:loginscreen/Constants/border.dart';
 import 'package:loginscreen/Constants/colors.dart';
 import 'package:loginscreen/Constants/iconsize.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTab_Tab.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_tab.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_title_text.dart';
 import 'package:loginscreen/View/Component/page/lounge/sub_page/Discovery_page.dart';
 import 'package:loginscreen/View/Component/page/lounge/sub_page/Total_page.dart';
-import 'package:loginscreen/ViewModel/Recommend_Page/CardProvider_VIewModel.dart';
-import 'package:provider/provider.dart';
 
 class LoungeView extends StatefulWidget{
   @override
@@ -107,8 +105,8 @@ class _LoungeViewState extends State<LoungeView> {
                     labelColor: Colors.black,
                     unselectedLabelColor: Colors.grey,
                     tabs: [
-                      AppBarTab_Tab('발견'),
-                      AppBarTab_Tab('전체')
+                      AppBarTab('발견'),
+                      AppBarTab('전체')
                     ],
                     isScrollable: true,
                     labelPadding: EdgeInsets.symmetric(horizontal:10.0),

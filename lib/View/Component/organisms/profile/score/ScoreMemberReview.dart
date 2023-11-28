@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import '../../../atoms/MoreTextGroup_Row.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import '../../../atoms/more_text_group_row.dart';
 
 class ScoreMemberReview extends StatelessWidget{
   @override
@@ -11,7 +11,7 @@ class ScoreMemberReview extends StatelessWidget{
         children: [
           Row(
             children: [
-              Common_Text(text: '멤버들의 후기'),
+              CommonText(text: '멤버들의 후기'),
               SizedBox(width: 10,),
               Text(
                 '(나에게만 보여요)',
@@ -21,7 +21,7 @@ class ScoreMemberReview extends StatelessWidget{
                 ),
               ),
               Spacer(),
-              MoreTextGroup_Row,
+              moreTextGroupRow,
             ],
           ),
           SizedBox(height: 20),

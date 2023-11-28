@@ -7,7 +7,7 @@ import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import '../../../atoms/Margin_SizedBox.dart';
+import '../../../atoms/margin_sizedbox.dart';
 import '../../../organisms/meeting(p)_recommend/ExhibitionsView.dart';
 import '../../../organisms/meeting(p)_recommend/HotClub.dart';
 import '../../../organisms/meeting(p)_recommend/OpenMeetingView.dart';
@@ -18,7 +18,7 @@ import '../../../organisms/meeting(p)_recommend/TasteSocialRingView.dart';
 
 
 
-class recommend_page extends StatelessWidget{
+class recommend_page extends StatefulWidget{
   late final ScrollController _controller;
 
   recommend_page(ScrollController controller){
@@ -26,9 +26,24 @@ class recommend_page extends StatelessWidget{
   }
 
   @override
+  State<recommend_page> createState() => _recommend_pageState();
+}
+
+class _recommend_pageState extends State<recommend_page> with AutomaticKeepAliveClientMixin {
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      controller: _controller,
+      controller: widget._controller,
       scrollDirection: Axis.vertical,
       child:Column(
           mainAxisSize: MainAxisSize.max,
@@ -44,24 +59,24 @@ class recommend_page extends StatelessWidget{
             Divider(color: Color(0xff8e8e8e)),
             SizedBox(height: 20,),
             HotTag(),
-            intergroupmargin,
+            interGroupMargin,
             //추천 스크롤 뷰
              TasteSocialRingView(),
-            intergroupmargin,
+            interGroupMargin,
             ChangeNotifierProvider(
               create: (context) => Review_Provider(),
               child: ReviewView(),
             ),
-            intergroupmargin,
+            interGroupMargin,
             HotClub(),
-            intergroupmargin,
+            interGroupMargin,
             RecommendChallenge(),
-            intergroupmargin,
+            interGroupMargin,
             ChangeNotifierProvider(
               create: (context) => SelectedHost_Provider(),
               child: RecommendMemberView(),
             ),
-            intergroupmargin,
+            interGroupMargin,
             OpenMeetingView(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
             SizedBox(height: 80,)
           ],

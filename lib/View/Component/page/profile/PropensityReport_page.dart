@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/fontsize.dart';
-import 'package:loginscreen/View/Component/atoms/AnalysisResults_Button.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/View/Component/molecules/profile/AnalysisResultsBodyTitle_Row.dart';
+import 'package:loginscreen/View/Component/atoms/analysis_results_button.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import 'package:loginscreen/View/Component/atoms/margin_sizedbox.dart';
 import '../../../../Constants/border.dart';
 import '../../../../Constants/colors.dart';
-import '../../atoms/AppBarTitle_Text.dart';
+import '../../atoms/app_bar_title_text.dart';
+import '../../molecules/profile/analysis_result_body_title.dart';
 import '../../organisms/profile/propensity/PropensityInitialGroup.dart';
 
 class PropensityReport extends StatelessWidget{
@@ -36,13 +36,13 @@ class PropensityReport extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Common_Text(
+              CommonText(
                 text: '전체 분석 결과',
-                textsize: profiletab_propensityreport_grouptitle_textsize,
+                textSize: profiletab_propensityreport_grouptitle_textsize,
               ),
-              propensitytitle_margin,
+              propensityTitleMargin,
               CommonBorderContainer(
-                  backcolor: Colors.white,
+                  backColor: Colors.white,
                   circular: 10,
                   width: double.infinity,
                   height: 470,
@@ -61,12 +61,12 @@ class PropensityReport extends StatelessWidget{
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AnalysisResultsBodyTitle(
+                                AnalysisResultBodyTitle(
                                     color: Color(0xff8ec4b5),
                                     text: '내가 보는 나',
                                 ),
                                 Text('나도 몰랐던 내 성향을 알아봐요'),
-                                AnalysisResults_Button(color: Color(0xff1c8a6a), text: '테스트 하기')
+                                AnalysisResultsButton(color: Color(0xff1c8a6a), text: '테스트 하기')
                               ],
                             )
                           ],
@@ -84,12 +84,12 @@ class PropensityReport extends StatelessWidget{
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AnalysisResultsBodyTitle(
+                                AnalysisResultBodyTitle(
                                   color: Color(0xff9acbe8),
                                   text: '친구가 보는 나',
                                 ),
                                 Text('친구나 지인들이 보는 나에 대해 알아봐요'),
-                                AnalysisResults_Button(color: Color(0xff3498d0), text: '테스트 요청하기')
+                                AnalysisResultsButton(color: Color(0xff3498d0), text: '테스트 요청하기')
                               ],
                             )
                           ],
@@ -107,7 +107,7 @@ class PropensityReport extends StatelessWidget{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AnalysisResultsBodyTitle(
+                                AnalysisResultBodyTitle(
                                   color: Color(0xfff99b98),
                                   text: '처음 본 멤버가 보는 나',
                                 ),
@@ -122,25 +122,25 @@ class PropensityReport extends StatelessWidget{
                   )
               ),
               SizedBox(height: 40,),
-              Common_Text(
+              CommonText(
                 text: '내가 보는 나',
-                textsize: profiletab_propensityreport_grouptitle_textsize,
+                textSize: profiletab_propensityreport_grouptitle_textsize,
               ),
-              propensitytitle_margin,
+              propensityTitleMargin,
               PropensityInitialGroup(text: '그동안 몰랐던 나의 성향을\n테스트를 통해 알아보세요'),
               SizedBox(height: 30,),
-              Common_Text(
+              CommonText(
                 text: '친구가 보는 나',
-                textsize: profiletab_propensityreport_grouptitle_textsize,
+                textSize: profiletab_propensityreport_grouptitle_textsize,
               ),
-              propensitytitle_margin,
+              propensityTitleMargin,
               PropensityInitialGroup(text: '친구가 보는 나의 성향은 어떤 모습일까요?\n친구에게 테스트를 요청해 보세요'),
               SizedBox(height: 30,),
-              Common_Text(
+              CommonText(
                 text: '처음 본 멤버가 보는 나',
-                textsize: profiletab_propensityreport_grouptitle_textsize,
+                textSize: profiletab_propensityreport_grouptitle_textsize,
               ),
-              propensitytitle_margin,
+              propensityTitleMargin,
               PropensityInitialGroup(text: '문토에서 만난 멤버들과 함께\n나의 성향을 알아보세요'),
               SizedBox(height: 50,),
             ],

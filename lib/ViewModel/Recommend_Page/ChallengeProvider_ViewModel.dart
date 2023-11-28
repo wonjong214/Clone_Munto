@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
-import '../../Model/meeting/Challenge_Model.dart';
+import '../../Model/meeting/challenge_model.dart';
 
 class Challenge_Provider extends ChangeNotifier{
-  List<Challenge_Model> _challenge = [];
+  List<ChallengeModel> _challenge = [];
 
-  List<Challenge_Model> get challenge => _challenge;
+  List<ChallengeModel> get challenge => _challenge;
 
   Future<void> fetchAndSetChallengeItems() async {
     try{
       final response = await rootBundle.loadString('assets/data/challenge.json'); //http// 통신 코드
       final extractedData = json.decode(response) as Map<String, dynamic>;
-      final List<Challenge_Model> loadedChallengeItem = [];
+      final List<ChallengeModel> loadedChallengeItem = [];
 
       extractedData['items'].forEach((challengeItemData) {
-        loadedChallengeItem.add(Challenge_Model.fromJson(challengeItemData));
+        loadedChallengeItem.add(ChallengeModel.fromJson(challengeItemData));
       });
       _challenge = loadedChallengeItem;
     }
@@ -25,7 +25,7 @@ class Challenge_Provider extends ChangeNotifier{
     }
   }
 
-  changelike (Challenge_Model challenge){
+  changelike (ChallengeModel challenge){
     if (challenge.like)
       challenge.like = false;
     else

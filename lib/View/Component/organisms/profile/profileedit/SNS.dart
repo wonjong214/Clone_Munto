@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
+import 'package:loginscreen/View/Component/atoms/circle_icon.dart';
 import '../../../../../Constants/fontsize.dart';
-import '../../../atoms/Common_Text.dart';
+import '../../../atoms/common_text.dart';
 
 class SNS extends StatelessWidget{
   final TextEditingController controller = TextEditingController();
@@ -11,9 +11,9 @@ class SNS extends StatelessWidget{
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Common_Text(
+        CommonText(
           text: 'SNS',
-          textsize: profiletab_edit_grouptitle_textsize,
+          textSize: profiletab_edit_grouptitle_textsize,
           fontWeight: profiletab_edit_grouptitle_fontweight,
         ),
         SizedBox(height: 10,),

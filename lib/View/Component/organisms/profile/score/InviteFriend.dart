@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import 'package:loginscreen/View/Component/atoms/MoreTextGroup_Row.dart';
-import 'package:loginscreen/View/Component/molecules/profile/CircleIconText_Column.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import 'package:loginscreen/View/Component/atoms/more_text_group_row.dart';
+
+import '../../../molecules/profile/circle_icon_text_column.dart';
 
 class InviteFriend extends StatelessWidget{
   @override
@@ -13,27 +14,27 @@ class InviteFriend extends StatelessWidget{
         children: [
           Row(
             children: [
-              Common_Text(text: '친구 초대'),
+              CommonText(text: '친구 초대'),
               Spacer(),
-              MoreTextGroup_Row,
+              moreTextGroupRow,
             ],
           ),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CircleIconText_Column(
-                circlesize: 80,
+              CircleIconTextColumn(
+                circleSize: 80,
                 icon: Icon(Icons.mail, size: 50, color: Colors.grey.shade300,),
                 text: '친구 초대\n 1명',
               ),
-              CircleIconText_Column(
-                circlesize: 80,
+              CircleIconTextColumn(
+                circleSize: 80,
                 icon: Icon(Icons.mail, size: 50, color: Colors.grey.shade300,),
                 text: '친구 초대\n 10명',
               ),
-              CircleIconText_Column(
-                circlesize: 80,
+              CircleIconTextColumn(
+                circleSize: 80,
                 icon: Icon(Icons.mail, size: 50, color: Colors.grey.shade300,),
                 text: '친구 초대\n 100명',
               ),
@@ -46,7 +47,7 @@ class InviteFriend extends StatelessWidget{
             padding: EdgeInsets.symmetric(horizontal: 10),
             width: double.infinity,
             height: 60,
-            backcolor: Colors.grey.shade100,
+            backColor: Colors.grey.shade100,
             widget: Row(
               children: [
                 Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import '../../atoms/ArrowCircularContainer.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import '../../atoms/arrow_circular_container.dart';
 
 class OpenMeetingView extends StatelessWidget{
   String? _title;
@@ -32,7 +32,7 @@ class OpenMeetingView extends StatelessWidget{
         margin: EdgeInsets.only(left: 20, right: 20),
         child: CommonBorderContainer(
           circular: 10,
-          backcolor: Colors.white,
+          backColor: Colors.white,
           widget: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -41,18 +41,18 @@ class OpenMeetingView extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Spacer(flex:1),
-                    Common_Text(
+                    CommonText(
                         text: _title!,
-                        textsize: 22,
-                        textcolor: _color!,
+                      textSize: 22,
+                        textColor: _color!,
                         fontWeight: _titlefont!,
                     ),
                     SizedBox(height: 20,),
-                    Common_Text(
+                    CommonText(
                       text: _subtitle!,
                       fontWeight: _subtitlefont!,
-                      maxlines: 2,
-                      textsize: 16,
+                      maxLines: 2,
+                      textSize: 16,
                       height: 1.2,
                     ),
                     Spacer(flex:1),

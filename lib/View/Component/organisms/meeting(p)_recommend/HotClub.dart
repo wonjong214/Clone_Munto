@@ -3,10 +3,9 @@ import 'package:loginscreen/Constants/colors.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
-import '../../molecules/meeting/ClubContainer_Container.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/more_button.dart';
+import '../../molecules/meeting/club_container.dart';
 
 class HotClub extends StatefulWidget {
   @override
@@ -43,9 +42,9 @@ class _HotClubState extends State<HotClub> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '지금 핫한 클럽',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
@@ -77,7 +76,7 @@ class _HotClubState extends State<HotClub> {
                         ),
                     ],
                   ),
-            More_Button(double.infinity)
+            MoreButton(double.infinity)
           ],
         ));
   }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/AppBarTitle_Text.dart';
-import 'package:loginscreen/View/Component/molecules/feedwrite/AdditionalInformation_Container.dart';
-import 'package:loginscreen/View/Component/molecules/feedwrite/CategoryChoice_Container.dart';
-import 'package:loginscreen/View/Component/molecules/feedwrite/FeedContent_Column.dart';
+import 'package:loginscreen/View/Component/atoms/app_bar_title_text.dart';
+import 'package:loginscreen/View/Component/molecules/feedwrite/additional_information_container.dart';
+import 'package:loginscreen/View/Component/molecules/feedwrite/category_choice_container.dart';
+import 'package:loginscreen/View/Component/molecules/feedwrite/feed_content_column.dart';
 
 import '../../../Constants/border.dart';
 import '../../../Constants/colors.dart';
-import '../atoms/Diverder_Container.dart';
+import '../atoms/diverder_container.dart';
 
 class FeedWrite_Page extends StatelessWidget{
   @override
@@ -19,7 +19,7 @@ class FeedWrite_Page extends StatelessWidget{
         shape: appbarbottom_border,
         shadowColor: Colors.transparent,
         centerTitle: true,
-        title: AppBarTitle('피드 쓰기', fontweight: FontWeight.normal,),
+        title: AppBarTitle('피드 쓰기', fontWeight: FontWeight.normal,),
         actions: [
           Text(
             '올리기',
@@ -33,12 +33,12 @@ class FeedWrite_Page extends StatelessWidget{
       ),
       body:Column(
         children: [
-          CategoryChoice_Container(),
-          thindivider,
-          FeedContent_Column(),
-          thindivider,
-          AdditionalInformation_Container(),
-          thindivider,
+          CategoryChoiceContainer(),
+          thinDivider,
+          FeedContentColumn(),
+          thinDivider,
+          AdditionalInformationContainer(),
+          thinDivider,
 
 
 

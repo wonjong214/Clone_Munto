@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../atoms/KeyWordTag_Container.dart';
+import '../../atoms/keyword_tag_container.dart';
 
 class ChallengePageView extends StatelessWidget{
   PageController controller = PageController(
@@ -35,12 +35,12 @@ class ChallengePageView extends StatelessWidget{
                               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
                           ),
                           SizedBox(height: 10,),
-                          KeyWordTag_Container(
+                          KeyWordTagContainer(
                             text: '챌린지 가이드',
-                            textsize: 15,
-                            fontweight: FontWeight.w600,
-                            textcolor: Colors.white,
-                            backcolor: Colors.transparent,
+                            textSize: 15,
+                            fontWeight: FontWeight.w600,
+                            textColor: Colors.white,
+                            backColor: Colors.transparent,
                             padding: EdgeInsets.only(left: 12, right: 12, bottom: 8, top: 8),
                             border: Border.all(width: 1, color: Colors.white),
                           ),

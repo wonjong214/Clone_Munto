@@ -3,9 +3,9 @@ import 'package:loginscreen/ViewModel/Recommend_Page/Review.dart';
 import 'package:provider/provider.dart';
 import 'package:loginscreen/ViewModel//ResolutionProvider.dart';
 import '../../../../Constants/fontsize.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/margin_sizedbox.dart';
+import '../../atoms/more_button.dart';
 
 
 class ReviewView extends StatelessWidget{
@@ -21,12 +21,12 @@ class ReviewView extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '함께한 멤버들의 후기',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
-            title_margin,
+            titleMargin,
             Container(
               child: Column(
                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,12 +70,12 @@ class ReviewView extends StatelessWidget{
                                   ),
                                 ),
                                 SizedBox(height: 10,),
-                                Common_Text(
+                                CommonText(
                                   text: provider.review[num].title,
-                                  maxlines: 2,
-                                  textsize: 15,
+                                  maxLines: 2,
+                                  textSize: 15,
                                   height: 1.3,
-                                  textalign: TextAlign.left,
+                                  textAlign: TextAlign.left,
                                 ),
                                 SizedBox(height: 10,),
                               ],
@@ -118,12 +118,12 @@ class ReviewView extends StatelessWidget{
                                     ),
                                   ),
                                   SizedBox(height: 10),
-                                  Common_Text(
+                                  CommonText(
                                     text: provider.review[num + 1].title,
-                                    maxlines: 2,
-                                    textsize: 15,
+                                    maxLines: 2,
+                                    textSize: 15,
                                     height: 1.3,
-                                    textalign: TextAlign.left,
+                                    textAlign: TextAlign.left,
                                   ),
                                   SizedBox(height: 10),
                                 ],
@@ -135,7 +135,7 @@ class ReviewView extends StatelessWidget{
               )
           ),
           SizedBox(height: 10,),
-          More_Button(double.infinity)
+          MoreButton(double.infinity)
         ],
       )
     );

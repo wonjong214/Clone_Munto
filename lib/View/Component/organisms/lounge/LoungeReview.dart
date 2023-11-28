@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Model/meeting/lounge/Card_Model.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/View/Component/molecules/lounge/ProfileGroup.dart';
-import '../../molecules/lounge/CommentInput_Container.dart';
-import '../../molecules/lounge/Comment_Container.dart';
-import '../../molecules/lounge/LoungeIconGroup.dart';
-import '../../molecules/lounge/LoungeListTile.dart';
-import '../../molecules/lounge/LoungePageView.dart';
-import '../../molecules/lounge/LoungeReview_Text.dart';
-import '../../molecules/lounge/Lounge_KeywordTag_ScrollView.dart';
-import '../../molecules/lounge/Social_Location_ScrollView.dart';
+import 'package:loginscreen/Model/meeting/lounge/card_model.dart';
+import 'package:loginscreen/View/Component/atoms/margin_sizedbox.dart';
+import '../../molecules/lounge/comment_container.dart';
+import '../../molecules/lounge/comment_input_container.dart';
+import '../../molecules/lounge/lounge_icon_group.dart';
+import '../../molecules/lounge/lounge_keyword_tag_scrollview.dart';
+import '../../molecules/lounge/lounge_listtile.dart';
+import '../../molecules/lounge/lounge_pageview.dart';
+import '../../molecules/lounge/lounge_review_text.dart';
+import '../../molecules/lounge/profile_group.dart';
+import '../../molecules/lounge/social_location_scrollview.dart';
 
 
 class LoungeReview extends StatelessWidget{
-  Card_Model card;
+  CardModel card;
   void Function() change_like;
 
   LoungeReview({required this.card, required this.change_like});
@@ -29,46 +29,46 @@ class LoungeReview extends StatelessWidget{
       child: Column(
         children: [
           LoungeListTile(
-              image: card.writerimage,
-              name: card.writername,
-              date: card.writedate,
+              image: card.writerImage,
+              name: card.writerName,
+              date: card.writeDate,
           ),
-          LoungePageView(image: card.pageviewimage,),
+          LoungePageView(image: card.pageviewImage,),
           SizedBox(height: 10,),
-          Social_Locaition_ScrollView(
-              meetingimage: card.meetingimage,
-              meetingtitle: card.meetingtitle,
-              meetingtype: card.meetingtype,
-              meetinglocation: card.meetinglocation,
-              meetingtime: card.meetingtime,
-              maplocation: card.maplocation,
-              mapdetaillocation: card.mapdetaillocation,
+          SocialLocaitionScrollView(
+              meetingImage: card.meetingImage,
+              meetingTitle: card.meetingTitle,
+              meetingType: card.meetingType,
+              meetingLocation: card.meetingLocation,
+              meetingTime: card.meetingTime,
+              mapLocation: card.mapLocation,
+              mapDetailLocation: card.mapDetailLocation,
           ),
           SizedBox(height: 20,),
-          LoungeReview_Text(card.bodytext),
+          LoungeReviewText(card.bodyText),
           SizedBox(height: 20,),
-          Lounge_KeyWordTag_ScrollView(card.tag),
+          LoungeKeyWordTagScrollView(card.tag),
           SizedBox(height: 20,),
           Row(
             children: [
               LoungeIconGroup(
                 like: card.like,
-                likenum :card.likenum,
-                chatnum: card.chatnum,
+                likeNum :card.likeNum,
+                chatNum: card.chatNum,
                 onTap: (){
                   change_like;
                 },
               ),
               SizedBox(width: 10,),
-              ProfileGroup(card.likenum)
+              ProfileGroup(card.likeNum)
             ],
           ),
           SizedBox(height: 20,),
-          if(card.chatname != '')
-          Comment_Container(AssetImage(card.chatimage),card.chatname, card.chatbody ),
+          if(card.chatName != '')
+          CommentContainer(AssetImage(card.chatImage),card.chatName, card.chatBody ),
           SizedBox(height: 10,),
-          CommentInput_Container(AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg')),
-          intergroupmargin,
+          CommentInputContainer(AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg')),
+          interGroupMargin,
         ],
       ),
     );

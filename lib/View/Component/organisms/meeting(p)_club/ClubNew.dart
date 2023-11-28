@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Margin_SizedBox.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
+import 'package:loginscreen/View/Component/molecules/meeting/club_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/more_button.dart';
 
 class ClubNew extends StatefulWidget{
   @override
@@ -42,9 +41,9 @@ class _ClubNewState extends State<ClubNew> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '새로 열린 클럽',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),
@@ -68,7 +67,7 @@ class _ClubNewState extends State<ClubNew> {
                   ),
               ],
             ),
-            More_Button(double.infinity)
+            MoreButton(double.infinity)
           ],
         )
     );

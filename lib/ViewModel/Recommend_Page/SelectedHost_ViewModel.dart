@@ -1,14 +1,14 @@
-import 'package:loginscreen/Model/meeting/SelectedHost_Model.dart';
+import 'package:loginscreen/Model/meeting/selected_host_model.dart';
 
 class SelectedHost_ViewModel{
-  SelectedHost_Model _selectedHost_Model;
+  SelectedHostModel _selectedHost_Model;
 
-  SelectedHost_ViewModel({required SelectedHost_Model selectedHost_Model}): _selectedHost_Model = selectedHost_Model;
+  SelectedHost_ViewModel({required SelectedHostModel selectedHost_Model}): _selectedHost_Model = selectedHost_Model;
 
-  String get profileimage => _selectedHost_Model.profileimage;
+  String get profileimage => _selectedHost_Model.profileImage;
   String get name => _selectedHost_Model.name;
   bool get follow => _selectedHost_Model.follow;
-  String get selfintroduction => _selectedHost_Model.selfintroduction;
+  String get selfintroduction => _selectedHost_Model.selfIntroduction;
   List<String> get tag => _selectedHost_Model.tag;
   List<String> get image => _selectedHost_Model.image;
 

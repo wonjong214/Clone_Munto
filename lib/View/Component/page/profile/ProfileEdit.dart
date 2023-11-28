@@ -54,7 +54,7 @@ class ProfileEdit extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Profile_Image(
+                      ProfileImage(
                         image: AssetImage(
                             'assets/images/recommend_page/Exhibitions/nacho.jpeg'),
                         icon: Icon(

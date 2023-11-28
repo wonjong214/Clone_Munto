@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
-import 'package:loginscreen/View/Component/molecules/meeting/Socialring_Container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/more_button.dart';
+import '../../molecules/meeting/Socialring_Container.dart';
 
 
 
@@ -44,9 +43,9 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
         child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Common_Text(
+          CommonText(
             text: '추천 소셜링',
-            textsize: meetingtab_grouptitle_textsize,
+            textSize: meetingtab_grouptitle_textsize,
             fontWeight: meetingtab_grouptitle_fontweight,
           ),
           SizedBox(height: 10),
@@ -56,7 +55,7 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
               for(int num=0; num<3; num++)
                 GestureDetector(
                     onTap: () {print('touch');},
-                    child: Socialring_Container(
+                    child: SocialringContainer(
                       image: meeting_provider.socialring[num].image,
                       icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                       onPressed: (){
@@ -72,7 +71,7 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
                 ),
             ],
           ),
-          More_Button(double.infinity)
+          MoreButton(double.infinity)
         ],
       )
     );

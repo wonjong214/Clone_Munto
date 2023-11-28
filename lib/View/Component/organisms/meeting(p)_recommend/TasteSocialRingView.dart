@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/ChallengeContainer_Container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../../Constants/colors.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
-import '../../molecules/meeting/ClubContainer_Container.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/margin_sizedbox.dart';
+import '../../atoms/more_button.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
+import '../../molecules/meeting/challenge_container.dart';
+import '../../molecules/meeting/club_container.dart';
 
 class TasteSocialRingView extends StatefulWidget {
   @override
@@ -73,25 +73,25 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Common_Text(
+                    CommonText(
                       text: '취향 저격 소셜링',
-                      textsize: meetingtab_grouptitle_textsize,
+                      textSize: meetingtab_grouptitle_textsize,
                       fontWeight: meetingtab_grouptitle_fontweight,
                     ),
-                    title_margin,
-                    Common_Text(
+                    titleMargin,
+                    CommonText(
                       text: '내 취향에 딱 맞는 원데이 모임',
-                      textsize: meetingtab_groupsubtitle_textsize,
-                      textcolor: meetingtab_groupsubtitle_color,
+                      textSize: meetingtab_groupsubtitle_textsize,
+                      textColor: meetingtab_groupsubtitle_color,
                     ),
-                    title_margin,
+                    titleMargin,
                     _issocialringLoading ? const Center(child: CircularProgressIndicator())
                     :Column(
                       children: [
                         for(int num=0; num<3; num++)
                           GestureDetector(
                               onTap: () {print('touch');},
-                              child: Socialring_Container(
+                              child: SocialringContainer(
                                 width: 350,
                                 image: meeting_provider.socialring[num].image,
                                 icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
@@ -108,7 +108,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                           ),
                       ],
                     ),
-                    More_Button(350)
+                    MoreButton(350)
                   ],
                 ),
               ),
@@ -117,18 +117,18 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Common_Text(
+                    CommonText(
                       text: '취향 저격 클럽',
-                      textsize: meetingtab_grouptitle_textsize,
+                      textSize: meetingtab_grouptitle_textsize,
                       fontWeight: meetingtab_grouptitle_fontweight,
                     ),
-                    title_margin,
-                    Common_Text(
+                    titleMargin,
+                    CommonText(
                       text: '지속형 모임으로 오래오래 친하게',
-                      textsize: meetingtab_groupsubtitle_textsize,
-                      textcolor: meetingtab_groupsubtitle_color,
+                      textSize: meetingtab_groupsubtitle_textsize,
+                      textColor: meetingtab_groupsubtitle_color,
                     ),
-                    title_margin,
+                    titleMargin,
                     _isclubLoading ? const Center(child: CircularProgressIndicator())
                     : Column(
                       children: [
@@ -152,7 +152,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                           ),
                       ],
                     ),
-                    More_Button(350)
+                    MoreButton(350)
                   ],
                 ),
               ),
@@ -161,18 +161,18 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Common_Text(
+                    CommonText(
                       text: '취향 저격 챌린지',
-                      textsize: meetingtab_grouptitle_textsize,
+                      textSize: meetingtab_grouptitle_textsize,
                       fontWeight: meetingtab_grouptitle_fontweight,
                     ),
-                    title_margin,
-                    Common_Text(
+                    titleMargin,
+                    CommonText(
                       text: '같은 목표를 위해 함께 하는 도전',
-                      textsize: meetingtab_groupsubtitle_textsize,
-                      textcolor: meetingtab_groupsubtitle_color,
+                      textSize: meetingtab_groupsubtitle_textsize,
+                      textColor: meetingtab_groupsubtitle_color,
                     ),
-                    title_margin,
+                    titleMargin,
                     _ischallengeLoading ? const Center(child: CircularProgressIndicator())
                       : Column(
                       children: [
@@ -198,7 +198,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                           ),
                       ],
                     ),
-                    More_Button(350)
+                    MoreButton(350)
                   ],
                 ),
               ),

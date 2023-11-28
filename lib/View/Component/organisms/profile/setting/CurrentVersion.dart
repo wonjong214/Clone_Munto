@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../atoms/Diverder_Container.dart';
-import '../../../atoms/SettingElemnet_Row.dart';
-import '../../../atoms/SettingGroupTitle_Text.dart';
+import '../../../atoms/diverder_container.dart';
+import '../../../atoms/setting_elemnet_row.dart';
+import '../../../atoms/setting_group_title_text.dart';
 
 class CurrentVersion extends StatelessWidget{
   @override
@@ -17,7 +17,7 @@ class CurrentVersion extends StatelessWidget{
             padding: EdgeInsets.only(right: 15),
             child: Row(
               children: [
-                SettingGroupTitle(text: '현재 버젼'),
+                SettingGroupTitleText(text: '현재 버젼'),
                 Spacer(),
                 Text(
                   '4.10.0 (663)',
@@ -28,9 +28,9 @@ class CurrentVersion extends StatelessWidget{
               ],
             ),
           ),
-          SettingElement_Row(text: '서비스 이용 약관'),
-          thindivider,
-          SettingElement_Row(text: '개인정보 처리방침'),
+          SettingElementRow(text: '서비스 이용 약관'),
+          thinDivider,
+          SettingElementRow(text: '개인정보 처리방침'),
         ],
       ),
     );

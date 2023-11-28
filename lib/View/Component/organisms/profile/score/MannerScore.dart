@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CircleIcon_Icon.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
+import 'package:loginscreen/View/Component/atoms/circle_icon.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
 import 'package:arc_progress_bar_new/arc_progress_bar_new.dart';
 
 class MannerScore extends StatelessWidget {
@@ -13,7 +13,7 @@ class MannerScore extends StatelessWidget {
         children: [
           Row(
             children: [
-              Common_Text(text: '매너 점수'),
+              CommonText(text: '매너 점수'),
               SizedBox(
                 width: 2,
               ),
@@ -54,7 +54,7 @@ class MannerScore extends StatelessWidget {
                   height: 12,
                   icon: Icon(Icons.question_mark, size: 9, color: Colors.grey,),
                   border: Border.all(width: 1, color: Colors.grey),
-                  backgroundcolor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
                 ),
               ),
             ],
@@ -120,14 +120,14 @@ class MannerScore extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             width: double.infinity,
             height: 60,
-            backcolor: Colors.grey.shade100,
+            backColor: Colors.grey.shade100,
             widget: Row(
               children: [
                 CircleIcon(
                   width: 40,
                   height: 40,
                   icon: Icon(Icons.email, size: 30, color: Colors.white),
-                  backgroundcolor: Color(0xffdde9e6),
+                  backgroundColor: Color(0xffdde9e6),
                 ),
                 SizedBox(
                   width: 10,

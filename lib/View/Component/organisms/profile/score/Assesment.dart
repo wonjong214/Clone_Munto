@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/Common_Text.dart';
-import '../../../atoms/MoreTextGroup_Row.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/common_text.dart';
+import '../../../atoms/more_text_group_row.dart';
 
 class Assesment extends StatelessWidget{
   @override
@@ -12,9 +12,9 @@ class Assesment extends StatelessWidget{
         children: [
           Row(
             children: [
-              Common_Text(text: '만족도 평가'),
+              CommonText(text: '만족도 평가'),
               Spacer(),
-              MoreTextGroup_Row,
+              moreTextGroupRow,
             ],
           ),
           SizedBox(height: 20),
@@ -35,7 +35,7 @@ class Assesment extends StatelessWidget{
             circular: 10,
             padding: EdgeInsets.all(10),
             width: double.infinity,
-            backcolor: Color(0xffe8f3f0),
+            backColor: Color(0xffe8f3f0),
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -65,7 +65,7 @@ class Assesment extends StatelessWidget{
             circular: 10,
             padding: EdgeInsets.all(10),
             width: double.infinity,
-            backcolor: Color(0xffe8f3f0),
+            backColor: Color(0xffe8f3f0),
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -95,7 +95,7 @@ class Assesment extends StatelessWidget{
             circular: 10,
             padding: EdgeInsets.all(10),
             width: double.infinity,
-            backcolor: Color(0xffe8f3f0),
+            backColor: Color(0xffe8f3f0),
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

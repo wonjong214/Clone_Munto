@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		9wrZoWYj1TABr1XtIoyTusXMxTw=
+		qpgXzy+NfUCZdRcFH12/xkbgPuM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		TBjH4P39rFkmYnNmDZ6KovCD+3o=
+		ipxKkurwRGbKUs6XYseQkXFBlhw=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -30,7 +30,15 @@
 		</data>
 		<key>flutter_assets/assets/data/challenge.json</key>
 		<data>
-		y0zPOq53FxE86EG94dqElJy6dKs=
+		hwwEFJGVLjtYPXV7FB79CAOIWyA=
+		</data>
+		<key>flutter_assets/assets/data/club.json</key>
+		<data>
+		cgF5Zm4ESNcSKXDhRmGGBRd47Xg=
+		</data>
+		<key>flutter_assets/assets/data/socialring.json</key>
+		<data>
+		0R06b3v3ENCOj84s7i4hmpld26E=
 		</data>
 		<key>flutter_assets/assets/fonts/LINESeedKR-Bd.ttf</key>
 		<data>
@@ -178,7 +186,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		ZFgOPVvuAEX2CkqX3ieX2WUBBCg=
+		7P82oKdqQyUJ2Wjf4jN+wIo/r3o=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -199,14 +207,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6/NMhBzWSVtEApOLEE3Qsvx+AowEA9jMhFUalq+tAxw=
+			pqjsFrh9JSUt4SLVgPExu+a1zQBfQbzGSaCD6KpBf24=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			819/FlG8cFkexko6Ld+C53n2tdkupTSxcD5btL0HZ4Y=
+			xAZwg3eU0ntkoZY8pB8nDGQPIUu3MdncH+QaQn2LOhg=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -234,7 +242,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cwbg372SCYq4ZiMjL/wdfH+afF//JNOJCJwh4GfinoQ=
+			Jwh8SolDF10WQxDvT1t48zsjd76oTxxyAdPlyrch+dE=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/data/club.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9flXBTaX9Ib81KT81FUMTkUw427K66NjQa4OOBMK91Q=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/data/socialring.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Gd6C7qtqACpkJqgxgI9eg/n3Sy8o5FmbMKNGxJlMHRY=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/LINESeedKR-Bd.ttf</key>
@@ -493,7 +515,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XJNMb46dglujyRaLFpSv2pVrTGOkuiJVQdGhv+zNTJ4=
+			c33pIHVPyr7fNAPF2f2uC7jGT+8o0tT4gWy7K8DKK7U=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

@@ -1,20 +1,20 @@
-import 'package:loginscreen/Model/meeting/ClubNews_Model.dart';
+import 'package:loginscreen/Model/meeting/club_news_model.dart';
 
 class ClubNews_ViewModel{
-  ClubNews_Model _clubNews_Model;
+  ClubNewsModel _clubNews_Model;
 
-  ClubNews_ViewModel({required ClubNews_Model clubNews_Model}):_clubNews_Model = clubNews_Model;
+  ClubNews_ViewModel({required ClubNewsModel clubNews_Model}):_clubNews_Model = clubNews_Model;
 
   String get image => _clubNews_Model.image;
-  String get clubexplantation => _clubNews_Model.clubexplantation;
+  String get clubexplantation => _clubNews_Model.clubExplantation;
   String get title => _clubNews_Model.title;
   bool get like => _clubNews_Model.like;
-  int get likenum => _clubNews_Model.likenum;
+  int get likenum => _clubNews_Model.likeNum;
 
   void set like(bool like){
     _clubNews_Model.like = like;
   }
   void set likenum(int likenum){
-    _clubNews_Model.likenum = likenum;
+    _clubNews_Model.likeNum = likenum;
   }
 }

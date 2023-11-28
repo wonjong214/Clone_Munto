@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/ChallengeProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
-import '../../atoms/Common_Text.dart';
-import '../../molecules/meeting/ChallengeContainer_Container.dart';
+import '../../atoms/common_text.dart';
+import '../../molecules/meeting/challenge_container.dart';
 
 class ChallengeTotal extends StatefulWidget{
   @override
@@ -39,9 +39,9 @@ class _ChallengeTotalState extends State<ChallengeTotal> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Common_Text(
+            CommonText(
               text: '전체 챌린지',
-              textsize: meetingtab_grouptitle_textsize,
+              textSize: meetingtab_grouptitle_textsize,
               fontWeight: meetingtab_grouptitle_fontweight,
             ),
             SizedBox(height: 8),

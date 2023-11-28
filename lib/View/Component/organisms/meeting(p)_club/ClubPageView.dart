@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/atoms/KeyWordTag_Container.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
+import 'package:loginscreen/View/Component/atoms/keyword_tag_container.dart';
 
 class ClubPageView extends StatelessWidget{
 
@@ -36,12 +36,12 @@ class ClubPageView extends StatelessWidget{
                               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
                           ),
                           SizedBox(height: 10,),
-                          KeyWordTag_Container(
+                          KeyWordTagContainer(
                             text: '클럽 가이드',
-                            textsize: 15,
-                            fontweight: FontWeight.w600,
-                            textcolor: Colors.white,
-                            backcolor: Colors.transparent,
+                            textSize: 15,
+                            fontWeight: FontWeight.w600,
+                            textColor: Colors.white,
+                            backColor: Colors.transparent,
                             padding: EdgeInsets.only(left: 12, right: 12, bottom: 8, top: 8),
                             border: Border.all(width: 1, color: Colors.white),
                           ),

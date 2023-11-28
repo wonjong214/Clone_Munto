@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
-import 'package:loginscreen/View/Component/molecules/meeting/ClubContainer_Container.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
 import 'package:loginscreen/ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
+
+import '../../../molecules/meeting/club_container.dart';
 
 class SearchClub extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _SearchClubState extends State<SearchClub> {
               Row(
                 children: [
                   CommonBorderContainer(
-                    backcolor: Colors.white,
+                    backColor: Colors.white,
                     widget: Image.asset(
                       'assets/icons/filter.png',
                       width: 20,
@@ -61,7 +62,7 @@ class _SearchClubState extends State<SearchClub> {
                     width: 10,
                   ),
                   CommonBorderContainer(
-                    backcolor: Colors.white,
+                    backColor: Colors.white,
                     widget: Text(
                       '지역',
                       style: TextStyle(
@@ -79,7 +80,7 @@ class _SearchClubState extends State<SearchClub> {
                     width: 10,
                   ),
                   CommonBorderContainer(
-                    backcolor: Colors.white,
+                    backColor: Colors.white,
                     widget: Text(
                       '카테고리',
                       style: TextStyle(

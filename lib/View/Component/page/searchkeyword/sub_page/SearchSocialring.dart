@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/Constants/colors.dart';
-import 'package:loginscreen/View/Component/atoms/CommonBorderContainer.dart';
+import 'package:loginscreen/View/Component/atoms/common_border_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
@@ -45,7 +45,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
               Row(
                 children: [
                   CommonBorderContainer(
-                    backcolor: Colors.white,
+                    backColor: Colors.white,
                       widget: Image.asset(
                         'assets/icons/filter.png',
                         width: 20,
@@ -55,7 +55,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   ),
                   SizedBox(width: 10,),
                   CommonBorderContainer(
-                    backcolor: Colors.white,
+                    backColor: Colors.white,
                     widget: Text(
                       '날짜',
                       style: TextStyle(
@@ -66,7 +66,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   ),
                   SizedBox(width: 10,),
                   CommonBorderContainer(
-                    backcolor: Colors.white,                    widget: Text(
+                    backColor: Colors.white,                    widget: Text(
                       '지역',
                       style: TextStyle(
                         fontSize: 15,
@@ -76,7 +76,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   ),
                   SizedBox(width: 10,),
                   CommonBorderContainer(
-                    backcolor: Colors.white,                    widget: Text(
+                    backColor: Colors.white,                    widget: Text(
                       '나이',
                       style: TextStyle(
                         fontSize: 15,
@@ -86,7 +86,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   ),
                   SizedBox(width: 10,),
                   CommonBorderContainer(
-                    backcolor: Colors.white,                    widget: Text(
+                    backColor: Colors.white,                    widget: Text(
                       '정원',
                       style: TextStyle(
                         fontSize: 15,
@@ -133,7 +133,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   for(int num=0; num<3; num++)
                     GestureDetector(
                         onTap: () {print('touch');},
-                        child: Socialring_Container(
+                        child: SocialringContainer(
                           image: meeting_provider.socialring[num].image,
                           icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                           onPressed: (){

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/Close_Button.dart';
+import 'package:loginscreen/View/Component/atoms/custom_close_button.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchChallenge.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchClub.dart';
 import 'package:loginscreen/View/Component/page/searchkeyword/sub_page/SearchFeed.dart';
@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../Constants/border.dart';
 import '../../../../Constants/colors.dart';
-import '../../atoms/CircleIcon_Icon.dart';
+import '../../atoms/circle_icon.dart';
 
 class SearchKeyword_page extends StatelessWidget {
   TextEditingController controller = new TextEditingController();
@@ -51,7 +51,7 @@ class SearchKeyword_page extends StatelessWidget {
                 borderSide: BorderSide(color: Colors.transparent),
               ),
               prefixIcon: Icon(Icons.search, size: 25, color: Colors.grey,),
-              suffixIcon: Close_Button(onPressed: controller.clear,),
+              suffixIcon: CustomCloseButton(onPressed: controller.clear,),
               isDense: true,
               contentPadding: EdgeInsets.all(10),
             ),

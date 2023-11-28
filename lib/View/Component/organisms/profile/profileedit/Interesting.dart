@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/molecules/profile/ActivityKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/CultureKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/FoodKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/FriendKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/HobyKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/InvestmentKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/LanguageKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/PartyKeyword_Column.dart';
-import 'package:loginscreen/View/Component/molecules/profile/TravelKeyword_Column.dart';
 import '../../../../../Constants/fontsize.dart';
-import '../../../atoms/Common_Text.dart';
+import '../../../atoms/common_text.dart';
+import '../../../molecules/profile/activity_keyword_column.dart';
+import '../../../molecules/profile/culture_keyword_column.dart';
+import '../../../molecules/profile/food_keyword_column.dart';
+import '../../../molecules/profile/friend_keyword_column.dart';
+import '../../../molecules/profile/hoby_keyword_column.dart';
+import '../../../molecules/profile/investment_keyword_column.dart';
+import '../../../molecules/profile/language_keyword_column.dart';
+import '../../../molecules/profile/party_keyword_column.dart';
+import '../../../molecules/profile/travel_keyword_column.dart';
 
 class Interesting extends StatelessWidget{
   @override
@@ -17,29 +17,29 @@ class Interesting extends StatelessWidget{
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Common_Text(
+        CommonText(
           text: '관심사',
-          textsize: profiletab_edit_grouptitle_textsize,
+          textSize: profiletab_edit_grouptitle_textsize,
           fontWeight: profiletab_edit_grouptitle_fontweight,
         ),
         SizedBox(height: 30,),
-        CultureKeyword_Column(),
+        CultureKeywordColumn(),
         SizedBox(height: 50,),
-        ActivityKeyword_Column(),
+        ActivityKeywordColumn(),
         SizedBox(height: 50,),
-        FoodKeyword_Column(),
+        FoodKeywordColumn(),
         SizedBox(height: 50,),
-        HobyKeyword(),
+        HobyKeywordColumn(),
         SizedBox(height: 50,),
-        PartyKeyword_Column(),
+        PartyKeywordColumn(),
         SizedBox(height: 50,),
-        TravelKeyword_Column(),
+        TravelKeywordColumn(),
         SizedBox(height: 50,),
-        FriendKeyword_Column(),
+        FriendKeywordColumn(),
         SizedBox(height: 50,),
-        InvestmentKeyword_Column(),
+        InvestmentKeywordColumn(),
         SizedBox(height: 50,),
-        LanguageKeyword_Column(),
+        LanguageKeywordColumn(),
         SizedBox(height: 80,),
       ],
     );

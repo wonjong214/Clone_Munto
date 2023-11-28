@@ -1,8 +1,9 @@
 {
   "items": [
     {
-      "image":"assets/images/recommend_page/TasteSocialRing/cat.jpeg",
-      "like":false,"tag":["동물","추천"],
+      "image":"https://cdn.koreaeaglenews.com/news/photo/202106/27986_38810_3330.jpg",
+      "like":false,
+      "tag":["동물","추천"],
       "title":"길냥이 밥 주는 밤 산책",
       "location":"경기도 안양",
       "date":"10.22(일) 오전: 10:00",
@@ -10,8 +11,9 @@
       "total":5
     },
     {
-      "image":"assets/images/recommend_page/TasteSocialRing/carpenter.jpeg",
-      "like":false,"tag":["취미"],
+      "image":"https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/3ODc/image/yMELUx0L_Fn8W19tmWVxdNvykjM",
+      "like":false,
+      "tag":["취미"],
       "title":"목공으로 집 만들어보기",
       "location":"서울시 금천구",
       "date":"10.21(토) 오전: 9:00",
@@ -19,8 +21,9 @@
       "total":8
     },
     {
-      "image":"assets/images/recommend_page/TasteSocialRing/cherryblossoms.jpeg",
-      "like":false,"tag":["산책"],
+      "image":"https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/1k75/image/BfIxgH3oZapresMnQK2iIsguIxs.jpg",
+      "like":false,
+      "tag":["산책"],
       "title":"같이 벚꽃 보러가요",
       "location":"서울시 송파구",
       "date":"10.21(토) 오후: 4:00",
@@ -28,31 +31,34 @@
       "total":8
     },
     {
-      "image":"assets/images/socialring/backpacker.jpg",
-      "like":false,"tag":["관악산"],
+      "image":"https://health.chosun.com/site/data/img_dir/2019/04/30/2019043001641_0.jpg",
+      "like":false,
+      "tag":["등산"],
       "title":"같이 관악산 국기봉 정복하러 가요",
       "location":"관악구",
       "date":"10.28(토) 오후 4:00",
-      "participants":1,
+      "participants":2,
       "total":8
     },
     {
-      "image":"assets/images/socialring/backpacker.jpg",
-      "like":false,"tag":["관악산"],
-      "title":"같이 관악산 국기봉 정복하러 가요",
-      "location":"관악구",
-      "date":"10.28(토) 오후 4:00",
-      "participants":1,
-      "total":8
+      "image":"https://jhealthfile.joins.com/photo//2019/10/17/1341729170956.jpg",
+      "like":false,
+      "tag":["등산"],
+      "title":"12/12 한라산 쿠데타",
+      "location":"서귀포시",
+      "date":"12.12(화) 오전 9:00",
+      "participants":2,
+      "total":6
     },
     {
-      "image":"assets/images/socialring/backpacker.jpg",
-      "like":false,"tag":["관악산"],
-      "title":"같이 관악산 국기봉 정복하러 가요",
-      "location":"관악구",
-      "date":"10.28(토) 오후 4:00",
+      "image":"https://image.jtbcplus.kr/data/contents/jam_photo/202104/14/78a7bcf1-55a9-4ca0-9b97-d236c1cda976.jpg",
+      "like":false,
+      "tag":["등산"],
+      "title":"12/02 무주 덕유산에서 컵라면 먹고 곤돌라 하산",
+      "location":"수원시",
+      "date":"12.2(토) 오후 9:00",
       "participants":1,
-      "total":8
+      "total":6
     }
   ],
   "status": 200,

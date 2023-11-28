@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/View/Component/atoms/CalenderRadio.dart';
+import 'package:loginscreen/View/Component/atoms/calender_radio.dart';
 import 'package:provider/provider.dart';
 import '../../../../Constants/fontsize.dart';
 import '../../../../ViewModel/Recommend_Page/MeetingProvider_ViewModel.dart';
-import '../../atoms/Common_Text.dart';
-import '../../atoms/Margin_SizedBox.dart';
-import '../../atoms/More_Button.dart';
+import '../../atoms/common_text.dart';
+import '../../atoms/margin_sizedbox.dart';
+import '../../atoms/more_button.dart';
 import '../../molecules/meeting/Socialring_Container.dart';
 
 
@@ -81,19 +81,19 @@ class _SocialringCalenderState extends State<SocialringCalender> {
     return Container(
         margin: EdgeInsets.only(right: 20, left: 20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Common_Text(
+          CommonText(
             text: '소셜링 캘린더',
-            textsize: meetingtab_grouptitle_textsize,
+            textSize: meetingtab_grouptitle_textsize,
             fontWeight: meetingtab_grouptitle_fontweight,
           ),
-          morebutton_margin,
+          moreButtonMargin,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               for (MapEntry d in datemap.entries)
                 CalenderRadio(
                     value: d.value,
-                    groupvalue: calendergroupvalue,
+                    groupValue: calendergroupvalue,
                     day: d.key,
                     date: d.value,
                     onChanged: (value){
@@ -104,14 +104,14 @@ class _SocialringCalenderState extends State<SocialringCalender> {
                 )
             ],
           ),
-          morebutton_margin,
+          moreButtonMargin,
           _issocialringLoading ? const Center(child: CircularProgressIndicator())
               :Column(
             children: [
               for(int num=0; num<3; num++)
                 GestureDetector(
                     onTap: () {print('touch');},
-                    child: Socialring_Container(
+                    child: SocialringContainer(
                       image: meeting_provider.socialring[num].image,
                       icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                       onPressed: (){
@@ -127,7 +127,7 @@ class _SocialringCalenderState extends State<SocialringCalender> {
                 ),
             ],
           ),
-          More_Button(double.infinity)
+          MoreButton(double.infinity)
         ]
         )
     );

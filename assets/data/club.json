@@ -1,32 +1,34 @@
 {
   "items": [
     {
-      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "image":"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/jkyjodrysdnoaa5nfowc/%EC%97%A0%ED%8C%8C%EC%9D%B4%EC%96%B4%20%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%8A%B8%20%EB%B9%8C%EB%94%A9%20%EC%9E%85%EC%9E%A5%EA%B6%8C.jpg",
       "like":false,
-      "tag":["클럽"],
-      "title":"제목",
-      "location":"위치",
-      "date":"3시간 전 대화",
-      "participants":0,
-      "total":300
+      "tag":["외국어"],
+      "title":"한국이지만 영어쓰고 싶어 모임",
+      "location":"성동구",
+      "date":"방금 대화",
+      "participants":6,
+      "total":50
     },
     {
-      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
-      "like":false,"tag":["클럽"],
-      "title":"제목",
-      "location":"위치",
-      "date":"3시간 전 대화",
-      "participants":0,
-      "total":300
+      "image":"https://www.k-health.com/news/photo/202205/59315_62151_2921.jpg",
+      "like":false,
+      "tag":["또래"],
+      "title":"99~00년생들 모여라!",
+      "location":"온라인",
+      "date":"방금 대화",
+      "participants":4,
+      "total":20
     },
     {
-      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
-      "like":false,"tag":["클럽"],
-      "title":"제목",
-      "location":"위치",
-      "date":"3시간 전 대화",
-      "participants":0,
-      "total":300
+      "image":"https://mblogthumb-phinf.pstatic.net/MjAxOTA3MjNfMTA1/MDAxNTYzODExNDkzMTcz.g-9eb7quVo4PZSBqRFz5XxdU4tcPi900OXvacF9c1xcg.t0UTzPPmj2HMbGk1ZzsKL3U-WOn8LjQw9AlVnqE_Ne8g.PNG.wnstndi12/image.png?type=w800",
+      "like":false,
+      "tag":["등산"],
+      "title":"돕이 is Free!",
+      "location":"성동구",
+      "date":"방금 대화",
+      "participants":5,
+      "total":10
     }
   ],
   "status": 200,

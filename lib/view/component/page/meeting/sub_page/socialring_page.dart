@@ -27,26 +27,17 @@ class SocialringPage extends StatelessWidget{
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          ChangeNotifierProvider(
-            create: (context) => ExhibitionsProvider(),
-            child: ExhibitionsView(height: 350,),
-          ),
+          ExhibitionsView(height: 350,),
           SizedBox(height: 20,),
           TagScrollView(),
           interGroupMargin,
           SocialringRecommend(),
           interGroupMargin,
-          ChangeNotifierProvider(
-            create: (context) => ReviewProvider(),
-            child: ReviewView(),
-          ),
+          ReviewView(),
           interGroupMargin,
           SocialringHicking(),
           interGroupMargin,
-          ChangeNotifierProvider(
-            create: (context) => SelectedHost_Provider(),
-            child: SocialringHostView(),
-          ),
+          SocialringHostView(),
           interGroupMargin,
           SocialringCalender(),
           interGroupMargin,

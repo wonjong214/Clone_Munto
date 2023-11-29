@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/view_model/exhibitions_provider.dart';
+import 'package:loginscreen/view_model/review_provider_view_model.dart';
+import 'package:loginscreen/view_model/selected_host_provider_view_model.dart';
 import 'package:provider/provider.dart';
 import 'view/component/page/create/choose_meeting_type.dart';
 import 'view/component/page/feed_write_page.dart';
@@ -40,6 +43,15 @@ class MyApp extends StatelessWidget {
             ),
             ChangeNotifierProvider(
               create: (_) => MeetingProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (_) => SelectedHostProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (_) => ReviewProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (_) => ExhibitionsProvider(),
             ),
           ],
           builder: (context, child ){

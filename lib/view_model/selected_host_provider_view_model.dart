@@ -1,14 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import '../Model/meeting/selected_host_model.dart';
 
-class SelectedHost_Provider extends ChangeNotifier{
+import '../model/meeting/recommend/selected_host_model.dart';
+
+class SelectedHostProvider extends ChangeNotifier{
   List<SelectedHostModel> _selectedhost;
 
-  SelectedHost_Provider(): _selectedhost = List.empty(growable: true){
-    //setSelectedHost();
-  }
+  SelectedHostProvider(): _selectedhost = List.empty(growable: true);
 
   List<SelectedHostModel> get selectedhost => _selectedhost;
 

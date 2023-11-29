@@ -52,10 +52,7 @@ class SearchPage extends StatelessWidget{
           CurrentSearchColumn(),
           SizedBox(height: 30,),
           RecommendSearchColumn(),
-          ChangeNotifierProvider(
-            create: (context) => ExhibitionsProvider(),
-            child: Expanded(child: ExhibitionsView()),
-          ),
+           Expanded(child: ExhibitionsView()),
           SizedBox(height: 10,),
         ],
       )

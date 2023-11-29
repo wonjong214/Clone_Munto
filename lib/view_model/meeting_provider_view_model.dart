@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../Model/meeting/meeting_model.dart';
+
+import '../model/meeting/recommend/meeting_model.dart';
 
 class MeetingProvider extends ChangeNotifier{
   List<MeetingModel> _socialring;

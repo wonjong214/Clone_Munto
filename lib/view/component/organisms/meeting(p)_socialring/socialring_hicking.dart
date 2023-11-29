@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../Model/meeting/meeting_model.dart';
+import '../../../../model/meeting/recommend/meeting_model.dart';
 import '../../../../view_model/meeting_provider_view_model.dart';
 import '../../atoms/more_button.dart';
 import '../../molecules/meeting/Socialring_Container.dart';

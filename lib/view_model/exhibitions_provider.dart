@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../Model/meeting/recommend/recommend_page_Model.dart';
+
+import '../model/meeting/recommend/exhibitions_model.dart';
+
 class ExhibitionsProvider with ChangeNotifier{
   int _currentPage;
   List<Exhibitions> _exhibitions;

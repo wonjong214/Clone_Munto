@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:loginscreen/Model/meeting/club_news_model.dart';
+
+import '../model/meeting/recommend/club_news_model.dart';
 
 
 class ClubNewsProvider extends ChangeNotifier{

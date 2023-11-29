@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
-import '../Model/meeting/challenge_model.dart';
+import '../model/meeting/recommend/challenge_model.dart';
+
 
 class ChallengeProvider extends ChangeNotifier{
   List<ChallengeModel> _challenge = [];

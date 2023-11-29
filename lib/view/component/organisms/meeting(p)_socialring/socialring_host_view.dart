@@ -24,7 +24,7 @@ class _SocialringHostViewState extends State<SocialringHostView> {
       setState(() {
         _isLoading = true;
       });
-      Provider.of<SelectedHost_Provider>(context).fetchAndSelectedHostItems().then((_){
+      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
         setState(() {
           _isLoading = false;
         });
@@ -36,7 +36,7 @@ class _SocialringHostViewState extends State<SocialringHostView> {
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
-    var selectedHostProvider = Provider.of<SelectedHost_Provider>(context);
+    var selectedHostProvider = Provider.of<SelectedHostProvider>(context);
     return Column(
       children: [
         Container(

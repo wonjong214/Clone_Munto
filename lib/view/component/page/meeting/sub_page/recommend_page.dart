@@ -47,10 +47,7 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
           mainAxisSize: MainAxisSize.max,
           children: [
             //페이지뷰
-            ChangeNotifierProvider(
-              create: (context) => ExhibitionsProvider(),
-              child: ExhibitionsView(height: 350,),
-            ),
+            ExhibitionsView(height: 350,),
             //카테고리
             CategoryGrid(),
             SizedBox(height: 20,),
@@ -61,19 +58,13 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
             //추천 스크롤 뷰
             TasteSocialRingView(),
             interGroupMargin,
-            ChangeNotifierProvider(
-              create: (context) => ReviewProvider(),
-              child: ReviewView(),
-            ),
+            ReviewView(),
             interGroupMargin,
             HotClub(),
             interGroupMargin,
             RecommendChallenge(),
             interGroupMargin,
-            ChangeNotifierProvider(
-              create: (context) => SelectedHost_Provider(),
-              child: RecommendMemberView(),
-            ),
+            RecommendMemberView(),
             interGroupMargin,
             OpenMeetingView(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
             SizedBox(height: 80,)

@@ -27,7 +27,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
       setState(() {
         _isLoading = true;
       });
-      Provider.of<SelectedHost_Provider>(context).fetchAndSelectedHostItems().then((_){
+      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
         setState(() {
           _isLoading = false;
         });
@@ -39,7 +39,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
-    var selectedhostProvider = Provider.of<SelectedHost_Provider>(context);
+    var selectedhostProvider = Provider.of<SelectedHostProvider>(context);
 
     return Column(
       children: [

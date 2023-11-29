@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/view/component/atoms/follow_button.dart';
 import 'package:loginscreen/view/component/atoms/keyword_tag_container.dart';
-import 'package:loginscreen/view_model/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
 import '../../../../view_model/resolution_provider.dart';
+import '../../../../view_model/selected_host_provider_view_model.dart';
 import '../../atoms/common_text.dart';
 import '../../atoms/margin_sizedbox.dart';
 import '../../atoms/more_button.dart';

@@ -18,34 +18,6 @@ class Exhibitions{
 }
 
 
-
-class Review{
-  String _image;
-  String _title;
-  bool _like;
-  int _likenum;
-
-  Review(this._image, this._title, this._like, this._likenum);
-
-  String get image => _image;
-  String get title => _title;
-  bool get like => _like;
-  int get likenum => _likenum;
-
-  void set image(String img){
-    _image = img;
-  }
-  void set title(String title){
-    _title = title;
-  }
-  void set like(bool like){
-    _like = like;
-  }
-  void set likenum(int likenum){
-    _likenum = likenum;
-  }
-}
-
 class RecommandMember{
   String _profile;
   String _name;

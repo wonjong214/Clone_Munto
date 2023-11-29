@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/view_model/SelectedHostProvider_ViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../../view_model/exhibitions_provider.dart';
 import '../../../../../view_model/review_provider_view_model.dart';
+import '../../../../../view_model/selected_host_provider_view_model.dart';
 import '../../../atoms/margin_sizedbox.dart';
 import '../../../organisms/meeting(p)_recommend/category_grid.dart';
 import '../../../organisms/meeting(p)_recommend/exhibitions_view.dart';

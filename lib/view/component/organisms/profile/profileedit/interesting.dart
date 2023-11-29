@@ -19,8 +19,8 @@ class Interesting extends StatelessWidget{
       children: [
         CommonText(
           text: '관심사',
-          textSize: profiletab_edit_grouptitle_textsize,
-          fontWeight: profiletab_edit_grouptitle_fontweight,
+          textSize: profileTabEditGrouTitleTextSize,
+          fontWeight: profileTabEditGroupTitleFontWeight,
         ),
         SizedBox(height: 30,),
         CultureKeywordColumn(),

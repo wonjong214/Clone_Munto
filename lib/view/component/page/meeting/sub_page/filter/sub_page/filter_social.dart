@@ -31,7 +31,7 @@ class _FilterSocialState extends State<FilterSocial> {
   }
 
   void init_locationList() {
-    locationList.addAll(korealocation_list);
+    locationList.addAll(koreaLocationList);
   }
 
   @override
@@ -164,7 +164,7 @@ class _FilterSocialState extends State<FilterSocial> {
                           () {
                             koreaLocationGroupValue = value;
                             if (locationList[index] == '서울')
-                              locationList.insertAll(4, seoullocation_list);
+                              locationList.insertAll(4, seoulLocationList);
                           },
                         );
                       },
@@ -231,7 +231,7 @@ class _FilterSocialState extends State<FilterSocial> {
             SizedBox(height: 5,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(agelabel.length, (index) => Text(agelabel[index])),
+              children: List.generate(ageLabel.length, (index) => Text(ageLabel[index])),
             ),
             SizedBox(
               height: 35,

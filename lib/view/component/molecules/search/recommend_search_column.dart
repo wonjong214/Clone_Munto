@@ -17,8 +17,8 @@ class RecommendSearchColumn extends StatelessWidget {
         children: [
           CommonText(
             text: '추천 검색어',
-            textSize: search_grouptitle_textsize,
-            fontWeight: search_grouptitle_fontweight,
+            textSize: searchGroupTitleTextSize,
+            fontWeight: searchGroupTitleFontWeight,
           ),
           SizedBox(
             height: 20,
@@ -65,13 +65,13 @@ class RecommendSearchColumn extends StatelessWidget {
             height: 10,
           ),
           Wrap(runSpacing: 10, spacing: 10, children: [
-            for (int index = 0; index < recommendkeyword.length; index++)
+            for (int index = 0; index < recommendKeyword.length; index++)
               CommonBorderContainer(
                 padding:
                     EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
                 borderColor: Colors.grey,
                 widget: Text(
-                  recommendkeyword[index],
+                  recommendKeyword[index],
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 15,

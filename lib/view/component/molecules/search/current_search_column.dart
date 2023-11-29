@@ -35,8 +35,8 @@ class _CurrentSearchColumnState extends State<CurrentSearchColumn> {
               children: [
                 CommonText(
                   text: '최근 검색',
-                  textSize: search_grouptitle_textsize,
-                  fontWeight: search_grouptitle_fontweight,
+                  textSize: searchGroupTitleTextSize,
+                  fontWeight: searchGroupTitleFontWeight,
                 ),
                 Spacer(),
                 GestureDetector(

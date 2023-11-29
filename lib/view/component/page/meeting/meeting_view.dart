@@ -90,17 +90,17 @@ class _MeetingViewState extends State<MeetingView> {
                         },
                       );
                     },
-                    icon: Icon(Icons.list, size: appbariconsize,)
+                    icon: Icon(Icons.list, size: appBarIconSize,)
                 ),
                 SizedBox(width: 10, ),
                 IconButton(
-                  icon: Icon(Icons.search, size : appbariconsize),
+                  icon: Icon(Icons.search, size : appBarIconSize),
                   onPressed: (){
                     Navigator.pushNamed(context, '/Search_page');
                   },
                 ),
                 SizedBox(width: 10),
-                Icon(Icons.notifications_none, size : appbariconsize),
+                Icon(Icons.notifications_none, size : appBarIconSize),
               ],
             ),
           ),

@@ -28,13 +28,13 @@ class RecommendMemberView extends StatelessWidget {
             children: [
               CommonText(
                 text: '추천 멤버',
-                textSize: meetingtab_grouptitle_textsize,
-                fontWeight: meetingtab_grouptitle_fontweight,
+                textSize: meetingTabGroupTitleTextSize,
+                fontWeight: meetingTabGroupTitleFontWeight,
               ),
               SizedBox(height: 10),
               CommonText(
                 text: '팔로우하고 문토 대표 모임과 트렌드 소식 받아보기',
-                textSize: meetingtab_groupsubtitle_textsize,
+                textSize: meetingTabGroupSubTitleTextSize,
                 textColor: meetingTabGroupSubTitleColor,
               ),
               SizedBox(height: 10),

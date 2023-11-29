@@ -43,8 +43,8 @@ class _ClubNewState extends State<ClubNew> {
           children: [
             CommonText(
               text: '새로 열린 클럽',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
             _isLoading ? const Center(child: CircularProgressIndicator())

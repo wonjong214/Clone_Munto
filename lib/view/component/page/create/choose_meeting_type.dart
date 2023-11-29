@@ -99,8 +99,8 @@ class _chooseMeetingTypeState extends State<ChooseMeetingType> {
             children: [
               CommonText(
                 text: '멤버들과 함께 어떤 활동을 하고싶나요?',
-                textSize: meetingtab_grouptitle_textsize,
-                fontWeight: meetingtab_grouptitle_fontweight,
+                textSize: meetingTabGroupTitleTextSize,
+                fontWeight: meetingTabGroupTitleFontWeight,
               ),
               interGroupMargin,
               GestureDetector(

@@ -42,8 +42,8 @@ class _ChallengeHotState extends State<ChallengeHot> {
           children: [
             CommonText(
               text: '인기 챌린지',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
             _isLoading ? const Center(child: CircularProgressIndicator())

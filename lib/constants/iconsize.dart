@@ -1,1 +1,1 @@
-double? appbariconsize = 30;
+double? appBarIconSize = 30;

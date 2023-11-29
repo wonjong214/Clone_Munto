@@ -12,8 +12,8 @@ class Name extends StatelessWidget{
       children: [
         CommonText(
           text: '이름',
-          textSize: profiletab_edit_grouptitle_textsize,
-          fontWeight: profiletab_edit_grouptitle_fontweight,
+          textSize: profileTabEditGrouTitleTextSize,
+          fontWeight: profileTabEditGroupTitleFontWeight,
         ),
         SizedBox(height: 10,),
         TextFormField(

@@ -23,8 +23,8 @@ class ReviewView extends StatelessWidget{
           children: [
             CommonText(
               text: '함께한 멤버들의 후기',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             titleMargin,
             Container(

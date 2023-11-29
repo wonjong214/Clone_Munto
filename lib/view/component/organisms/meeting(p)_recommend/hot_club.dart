@@ -44,8 +44,8 @@ class _HotClubState extends State<HotClub> {
           children: [
             CommonText(
               text: '지금 핫한 클럽',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
             Text(

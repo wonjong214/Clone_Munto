@@ -83,8 +83,8 @@ class _SocialringCalenderState extends State<SocialringCalender> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           CommonText(
             text: '소셜링 캘린더',
-            textSize: meetingtab_grouptitle_textsize,
-            fontWeight: meetingtab_grouptitle_fontweight,
+            textSize: meetingTabGroupTitleTextSize,
+            fontWeight: meetingTabGroupTitleFontWeight,
           ),
           moreButtonMargin,
           Row(

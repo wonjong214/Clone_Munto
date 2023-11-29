@@ -13,8 +13,8 @@ class SNS extends StatelessWidget{
       children: [
         CommonText(
           text: 'SNS',
-          textSize: profiletab_edit_grouptitle_textsize,
-          fontWeight: profiletab_edit_grouptitle_fontweight,
+          textSize: profileTabEditGrouTitleTextSize,
+          fontWeight: profileTabEditGroupTitleFontWeight,
         ),
         SizedBox(height: 10,),
         Row(

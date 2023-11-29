@@ -18,7 +18,7 @@ class Meeting extends StatelessWidget{
                 SizedBox(height: 25),
                 CommonText(
                     text: '참여 중인 클럽',
-                    textSize: profilemeeting_grouptitle_textsize,
+                    textSize: profileMeetingGroupTitleTextSize,
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -31,7 +31,7 @@ class Meeting extends StatelessWidget{
                       CommonText(
                         text: '참여 중인 클럽이 없어요',
                         textSize: myMeetingGroupBodyTextSize,
-                        fontWeight: mymeeting_groupbody_fontweight,
+                        fontWeight: myMeetingGroupBodyFontWeight,
                         textColor: myMeetingGroupBodyTextColor,
                       ),
                     ],
@@ -40,7 +40,7 @@ class Meeting extends StatelessWidget{
                 SizedBox(height: 100,),
                 CommonText(
                   text: '진행한 소셜링',
-                  textSize: profilemeeting_grouptitle_textsize,
+                  textSize: profileMeetingGroupTitleTextSize,
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -53,7 +53,7 @@ class Meeting extends StatelessWidget{
                       CommonText(
                         text: '진행한 소셜링이 없어요',
                         textSize: myMeetingGroupBodyTextSize,
-                        fontWeight: mymeeting_groupbody_fontweight,
+                        fontWeight: myMeetingGroupBodyFontWeight,
                         textColor: myMeetingGroupBodyTextColor,
                       ),
                     ],
@@ -62,7 +62,7 @@ class Meeting extends StatelessWidget{
                 SizedBox(height: 100,),
                 CommonText(
                   text: '진행한 챌린지',
-                  textSize: profilemeeting_grouptitle_textsize,
+                  textSize: profileMeetingGroupTitleTextSize,
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -75,7 +75,7 @@ class Meeting extends StatelessWidget{
                       CommonText(
                         text: '진행한 챌린지가 없어요',
                         textSize: myMeetingGroupBodyTextSize,
-                        fontWeight: mymeeting_groupbody_fontweight,
+                        fontWeight: myMeetingGroupBodyFontWeight,
                         textColor: myMeetingGroupBodyTextColor,
                       ),
                     ],

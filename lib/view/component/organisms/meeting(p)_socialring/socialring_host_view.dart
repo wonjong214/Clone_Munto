@@ -24,8 +24,8 @@ class SocialringHostView extends StatelessWidget{
             children: [
               CommonText(
                 text: '셀렉티드 호스트',
-                textSize: meetingtab_grouptitle_textsize,
-                fontWeight: meetingtab_grouptitle_fontweight,
+                textSize: meetingTabGroupTitleTextSize,
+                fontWeight: meetingTabGroupTitleFontWeight,
               ),
               SizedBox(height: 10),
               SingleChildScrollView(

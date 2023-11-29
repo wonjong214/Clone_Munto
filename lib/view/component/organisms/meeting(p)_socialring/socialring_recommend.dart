@@ -45,8 +45,8 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
         children: [
           CommonText(
             text: '추천 소셜링',
-            textSize: meetingtab_grouptitle_textsize,
-            fontWeight: meetingtab_grouptitle_fontweight,
+            textSize: meetingTabGroupTitleTextSize,
+            fontWeight: meetingTabGroupTitleFontWeight,
           ),
           SizedBox(height: 10),
           _isSocialringLoading ? const Center(child: CircularProgressIndicator())

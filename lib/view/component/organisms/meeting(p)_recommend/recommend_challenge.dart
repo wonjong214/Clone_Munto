@@ -43,13 +43,13 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
           children: [
             CommonText(
               text: '주목할 만한 챌린지',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
             CommonText(
               text: '이번 주부터 갓생 시작',
-              textSize: meetingtab_groupsubtitle_textsize,
+              textSize: meetingTabGroupSubTitleTextSize,
               textColor: meetingTabGroupSubTitleColor,
             ),
             SizedBox(height: 8),

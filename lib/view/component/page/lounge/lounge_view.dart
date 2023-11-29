@@ -65,19 +65,19 @@ class _LoungeViewState extends State<LoungeView> {
                   AppBarTitle('라운지'),
                   Spacer(),
                   IconButton(
-                    icon:Icon(Icons.add_box_outlined, size: appbariconsize,),
+                    icon:Icon(Icons.add_box_outlined, size: appBarIconSize,),
                     onPressed: (){
                       Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
                     },
                   ),
                   SizedBox(width: 10, ),
-                  Icon(Icons.bookmark_border_outlined, size : appbariconsize),
+                  Icon(Icons.bookmark_border_outlined, size : appBarIconSize),
                   SizedBox(width: 10),
                   IconButton(
                     onPressed: (){
                       Navigator.of(context, rootNavigator: true).pushNamed('/Search_page');
                     },
-                    icon: Icon(Icons.search_rounded, size : appbariconsize),
+                    icon: Icon(Icons.search_rounded, size : appBarIconSize),
                   )
                 ],
               ),

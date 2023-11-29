@@ -41,8 +41,8 @@ class _ChallengeTotalState extends State<ChallengeTotal> {
           children: [
             CommonText(
               text: '전체 챌린지',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
             _isLoading ? const Center(child: CircularProgressIndicator())

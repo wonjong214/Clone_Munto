@@ -22,7 +22,7 @@ class MySocialring extends StatelessWidget{
             SizedBox(height: 30),
             CommonText(
               text: '좋아요',
-              textSize: mymeeting_grouptitle_textsize,
+              textSize: myMeetingGroupTitleTextSize,
             ),
             SizedBox(
               width: double.infinity,
@@ -35,13 +35,13 @@ class MySocialring extends StatelessWidget{
                   CommonText(
                     text: '좋아요를 누른 소셜링이 없어요',
                     textSize: myMeetingGroupBodyTextSize,
-                    fontWeight: mymeeting_groupbody_fontweight,
+                    fontWeight: myMeetingGroupBodyFontWeight,
                     textColor: myMeetingGroupBodyTextColor,
                   ),
                   SizedBox(height: 15),
                   CommonText(
                     text: '관심 있는 소셜링에 좋아요를 남기면 여기에서 확인할 수 있어요',
-                    textSize: mymeeting_groupsub_textsize,
+                    textSize: myMeetingGroupSubTextSize,
                     textColor: myMeetingGroupSubTextColor,
                   ),
                 ],
@@ -50,7 +50,7 @@ class MySocialring extends StatelessWidget{
             SizedBox(height: 30),
             CommonText(
               text: '대기',
-              textSize: mymeeting_grouptitle_textsize,
+              textSize: myMeetingGroupTitleTextSize,
             ),
             SizedBox(
               width: double.infinity,
@@ -63,13 +63,13 @@ class MySocialring extends StatelessWidget{
                   CommonText(
                     text: '대기하고 있는 소셜링이 없어요',
                     textSize: myMeetingGroupBodyTextSize,
-                    fontWeight: mymeeting_groupbody_fontweight,
+                    fontWeight: myMeetingGroupBodyFontWeight,
                     textColor: myMeetingGroupBodyTextColor,
                   ),
                   SizedBox(height: 15),
                   CommonText(
                     text: '참여 신청한 소셜링은 여기에서 확인할 수 있어요',
-                    textSize: mymeeting_groupsub_textsize,
+                    textSize: myMeetingGroupSubTextSize,
                     textColor: myMeetingGroupSubTextColor,
                   ),
                 ],
@@ -78,7 +78,7 @@ class MySocialring extends StatelessWidget{
             SizedBox(height: 30),
             CommonText(
               text: '참여',
-              textSize: mymeeting_grouptitle_textsize,
+              textSize: myMeetingGroupTitleTextSize,
             ),
             SizedBox(
               width: double.infinity,
@@ -91,13 +91,13 @@ class MySocialring extends StatelessWidget{
                   CommonText(
                     text: '참여하고 있는 소셜링이 없어요',
                     textSize: myMeetingGroupBodyTextSize,
-                    fontWeight: mymeeting_groupbody_fontweight,
+                    fontWeight: myMeetingGroupBodyFontWeight,
                     textColor: myMeetingGroupBodyTextColor,
                   ),
                   SizedBox(height: 15),
                   CommonText(
                     text: '참여 확정된 소셜링은 여기에서 확인할 수 있어요',
-                    textSize: mymeeting_groupsub_textsize,
+                    textSize: myMeetingGroupSubTextSize,
                     textColor: myMeetingGroupSubTextColor,
                   ),
                 ],
@@ -106,7 +106,7 @@ class MySocialring extends StatelessWidget{
             SizedBox(height: 30),
             CommonText(
               text: '진행',
-              textSize: mymeeting_grouptitle_textsize,
+              textSize: myMeetingGroupTitleTextSize,
             ),
             SizedBox(
               width: double.infinity,
@@ -119,13 +119,13 @@ class MySocialring extends StatelessWidget{
                   CommonText(
                     text: '진행하는 소셜링이 없어요',
                     textSize: myMeetingGroupBodyTextSize,
-                    fontWeight: mymeeting_groupbody_fontweight,
+                    fontWeight: myMeetingGroupBodyFontWeight,
                     textColor: myMeetingGroupBodyTextColor,
                   ),
                   SizedBox(height: 15),
                   CommonText(
                     text: '내가 진행하는 소셜링은 여기에서 확인할 수 있어요',
-                    textSize: mymeeting_groupsub_textsize,
+                    textSize: myMeetingGroupSubTextSize,
                     textColor: myMeetingGroupSubTextColor,
                   ),
                 ],

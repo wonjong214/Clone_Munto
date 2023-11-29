@@ -75,13 +75,13 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                   children: [
                     CommonText(
                       text: '취향 저격 소셜링',
-                      textSize: meetingtab_grouptitle_textsize,
-                      fontWeight: meetingtab_grouptitle_fontweight,
+                      textSize: meetingTabGroupTitleTextSize,
+                      fontWeight: meetingTabGroupTitleFontWeight,
                     ),
                     titleMargin,
                     CommonText(
                       text: '내 취향에 딱 맞는 원데이 모임',
-                      textSize: meetingtab_groupsubtitle_textsize,
+                      textSize: meetingTabGroupSubTitleTextSize,
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
@@ -119,13 +119,13 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                   children: [
                     CommonText(
                       text: '취향 저격 클럽',
-                      textSize: meetingtab_grouptitle_textsize,
-                      fontWeight: meetingtab_grouptitle_fontweight,
+                      textSize: meetingTabGroupTitleTextSize,
+                      fontWeight: meetingTabGroupTitleFontWeight,
                     ),
                     titleMargin,
                     CommonText(
                       text: '지속형 모임으로 오래오래 친하게',
-                      textSize: meetingtab_groupsubtitle_textsize,
+                      textSize: meetingTabGroupSubTitleTextSize,
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
@@ -163,13 +163,13 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                   children: [
                     CommonText(
                       text: '취향 저격 챌린지',
-                      textSize: meetingtab_grouptitle_textsize,
-                      fontWeight: meetingtab_grouptitle_fontweight,
+                      textSize: meetingTabGroupTitleTextSize,
+                      fontWeight: meetingTabGroupTitleFontWeight,
                     ),
                     titleMargin,
                     CommonText(
                       text: '같은 목표를 위해 함께 하는 도전',
-                      textSize: meetingtab_groupsubtitle_textsize,
+                      textSize: meetingTabGroupSubTitleTextSize,
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,

@@ -24,8 +24,8 @@ class ClubIssue extends StatelessWidget{
           children: [
             CommonText(
               text: '클럽 소식',
-              textSize: meetingtab_grouptitle_textsize,
-              fontWeight: meetingtab_grouptitle_fontweight,
+              textSize: meetingTabGroupTitleTextSize,
+              fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
             Container(

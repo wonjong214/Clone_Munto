@@ -27,8 +27,8 @@ class _SelfIntroductionState extends State<SelfIntroduction> {
           children: [
             CommonText(
               text: '자기소개',
-              textSize: profiletab_edit_grouptitle_textsize,
-              fontWeight: profiletab_edit_grouptitle_fontweight,
+              textSize: profileTabEditGrouTitleTextSize,
+              fontWeight: profileTabEditGroupTitleFontWeight,
             ),
             Spacer(),
             Row(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
-import '../../../../view_model/Recommend_Page/review_provider_view_model.dart';
+import '../../../../view_model/review_provider_view_model.dart';
 import '../../../../view_model/resolution_provider.dart';
 import '../../atoms/common_text.dart';
 import '../../atoms/margin_sizedbox.dart';

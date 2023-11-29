@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../constants/colors.dart';
-import '../../../view_model/Recommend_Page/exhibitions_provider.dart';
+import '../../../view_model/exhibitions_provider.dart';
 import '../molecules/search/current_search_column.dart';
 import '../molecules/search/recommend_search_column.dart';
 import '../organisms/meeting(p)_recommend/exhibitions_view.dart';

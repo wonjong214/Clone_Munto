@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../../view_model/Recommend_Page/card_provider_vIew_model.dart';
+import '../../../../../view_model/card_provider_vIew_model.dart';
 import '../../../organisms/lounge/lounge_review.dart';
 
 class DiscoveryPage extends StatefulWidget{

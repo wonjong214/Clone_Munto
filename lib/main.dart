@@ -10,9 +10,9 @@ import 'view/component/page/profile/setting_page.dart';
 import 'view/component/page/search_page.dart';
 import 'view/component/page/searchkeyword/search_keyword_page.dart';
 import 'view/main_view.dart';
-import 'view_model/Recommend_Page/card_provider_vIew_model.dart';
-import 'view_model/Recommend_Page/challenge_provider_view_model.dart';
-import 'view_model/Recommend_Page/meeting_provider_view_model.dart';
+import 'view_model/card_provider_vIew_model.dart';
+import 'view_model/challenge_provider_view_model.dart';
+import 'view_model/meeting_provider_view_model.dart';
 import 'view_model/resolution_provider.dart';
 
 

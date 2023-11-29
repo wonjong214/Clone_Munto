@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../../../../view_model/Recommend_Page/exhibitions_provider.dart';
+import '../../../../view_model/exhibitions_provider.dart';
 import '../../atoms/keyword_tag_container.dart';
 
 

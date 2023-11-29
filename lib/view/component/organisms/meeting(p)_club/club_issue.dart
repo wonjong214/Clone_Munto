@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/view/component/atoms/margin_sizedbox.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
-import '../../../../view_model/Recommend_Page/club_news_provider_view_model.dart';
+import '../../../../view_model/club_news_provider_view_model.dart';
 import '../../../../view_model/resolution_provider.dart';
 import '../../atoms/common_text.dart';
 import '../../atoms/more_button.dart';

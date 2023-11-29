@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/constants/colors.dart';
 import 'package:loginscreen/view/component/atoms/common_border_container.dart';
 import 'package:provider/provider.dart';
-import '../../../../../view_model/Recommend_Page/meeting_provider_view_model.dart';
+import '../../../../../view_model/meeting_provider_view_model.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
 class SearchSocialring extends StatefulWidget{

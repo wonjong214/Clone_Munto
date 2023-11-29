@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
-import '../../../../view_model/Recommend_Page/meeting_provider_view_model.dart';
+import '../../../../view_model/meeting_provider_view_model.dart';
 import '../../atoms/common_text.dart';
 import '../../atoms/more_button.dart';
 import '../../molecules/meeting/club_container.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../../view_model/Recommend_Page/club_news_provider_view_model.dart';
+import '../../../../../view_model/club_news_provider_view_model.dart';
 import '../../../atoms/margin_sizedbox.dart';
 import '../../../organisms/meeting(p)_club/club_issue.dart';
 import '../../../organisms/meeting(p)_club/club_new.dart';

@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/view_model/exhibitions_provider.dart';
-import 'package:loginscreen/view_model/review_provider_view_model.dart';
-import 'package:loginscreen/view_model/selected_host_provider_view_model.dart';
+import 'package:loginscreen/providers/challenge_summary_provider.dart';
+import 'package:loginscreen/providers/lounge_post_provider.dart';
+import 'package:loginscreen/providers/meeting_summary_provider.dart';
+import 'package:loginscreen/providers/member_review_provider.dart';
+import 'package:loginscreen/providers/resolution_provider.dart';
+import 'package:loginscreen/providers/selected_host_provider.dart';
+import 'package:loginscreen/providers/socialring_contest_poster_provider.dart';
+import 'package:loginscreen/screen/create/choose_meeting_type.dart';
+import 'package:loginscreen/screen/feed_write_page.dart';
+import 'package:loginscreen/screen/meeting/sub_page/category_view.dart';
+import 'package:loginscreen/screen/profile/profile_edit.dart';
+import 'package:loginscreen/screen/profile/propensity_report_page.dart';
+import 'package:loginscreen/screen/profile/score.dart';
+import 'package:loginscreen/screen/profile/setting_page.dart';
+import 'package:loginscreen/screen/search_page.dart';
+import 'package:loginscreen/screen/searchkeyword/search_keyword_page.dart';
 import 'package:provider/provider.dart';
-import 'view/component/page/create/choose_meeting_type.dart';
-import 'view/component/page/feed_write_page.dart';
-import 'view/component/page/meeting/sub_page/category_view.dart';
-import 'view/component/page/profile/score.dart';
-import 'view/component/page/profile/profile_edit.dart';
-import 'view/component/page/profile/propensity_report_page.dart';
-import 'view/component/page/profile/setting_page.dart';
-import 'view/component/page/search_page.dart';
-import 'view/component/page/searchkeyword/search_keyword_page.dart';
-import 'view/main_view.dart';
-import 'view_model/card_provider_vIew_model.dart';
-import 'view_model/challenge_provider_view_model.dart';
-import 'view_model/meeting_provider_view_model.dart';
-import 'view_model/resolution_provider.dart';
+import 'screen/main_view.dart';
+
 
 
 
@@ -36,22 +37,22 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider<ResolutionProvider>(create: (BuildContext context) => ResolutionProvider()),
             ChangeNotifierProvider(
-              create: (_) => ChallengeProvider(),
+              create: (_) => ChallengeSummaryProvider(),
             ),
             ChangeNotifierProvider(
-              create: (_) => CardProvider(),
+              create: (_) => LoungePostProvider(),
             ),
             ChangeNotifierProvider(
-              create: (_) => MeetingProvider(),
+              create: (_) => MeetingSummaryProvider(),
             ),
             ChangeNotifierProvider(
               create: (_) => SelectedHostProvider(),
             ),
             ChangeNotifierProvider(
-              create: (_) => ReviewProvider(),
+              create: (_) => MemberReviewProvider(),
             ),
             ChangeNotifierProvider(
-              create: (_) => ExhibitionsProvider(),
+              create: (_) => SocialringContestPosterProvider(),
             ),
           ],
           builder: (context, child ){
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
                 initialRoute: '/main',
                 routes: {
                   '/main' : (context) => MainView(),
-                  '/meetingtype' : (context) => ChooseMeetingType(),
+                  '/meetingtype' : (context) => ChooseMeetingTypeScreen(),
                   '/categoryview' : (context) => CategoryView(),
                   '/propensityreport' : (context) => PropensityReport(),
                   '/setting' : (context) => SettingPage(),

@@ -35,6 +35,8 @@ const List<String> koreaLocationList = ['서울', '경기', '인천',
   '강원', '충북', '충남', '세종', '대전', '광주', '전북', '경북',
   '대구', '제주', '전남', '경남/울산', '부산'];
 
+const Map<String, List<String>> locationMap = {'서울' : seoulLocationList,};
+
 const List<String> seoulLocationList = ['서울 전체', '강남', '강동', '강북', '강서', '관악', '광진', '구로',
   '금천', '노원', '도봉', '동대문', '동작', '마포', '서대문', '서초', '성동', '성북', '송파', '양천', '영등포',
 '용산', '은평', '종로', '중구', '중랑', '', ''];

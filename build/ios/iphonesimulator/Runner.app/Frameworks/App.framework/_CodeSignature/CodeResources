@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		GdrqlZqFl47knlIO4obbF4OiXUU=
+		MAlcX0UCBUrOEtaTanPPDt7JrPc=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		1taNSsJoDWYRLbLX8osNM/6MdkU=
+		yM0AhyxC3d58BRRT0c6xPFhSOz0=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		ANge+ABaEI9rCCjvMuVjbRhKNTM=
+		1NfCtVlt4RoIIfADPfVsrK6Flr8=
 		</data>
 		<key>flutter_assets/assets/data/card.json</key>
 		<data>
@@ -83,6 +83,10 @@
 		<key>flutter_assets/assets/icons/instagram.png</key>
 		<data>
 		n/Q+bA1DhlScS7AvNq2AXuYfxcs=
+		</data>
+		<key>flutter_assets/assets/icons/munto.png</key>
+		<data>
+		TaCGpUia+j5BAgEe+Ih9pWDt+wM=
 		</data>
 		<key>flutter_assets/assets/icons/smiling-face.png</key>
 		<data>
@@ -194,7 +198,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		WswG7gMaOo9WjousAGK0mT/Ys4k=
+		fC1kP76YwuB8oqJFsu6YZ9t0+jU=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -215,14 +219,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gTeA/7yMpMGliR6yW3G0sGMExLONV94E0x/xEg5kSCg=
+			fX6S8mnaaW5wPtt7N0xXxvv4B2mHQ/rwmic4LDvJl/w=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1qt2/13wru7kBZkbXxGmoDL+hnvl4aom4dwCSkBonX8=
+			3ah8AZ4y+/9t+h+T03f2gAzrAgDzSEHaHWPMmeiF5l0=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -236,7 +240,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aHmi9Wd/zUlS04roq0TD1UiFLhhZxWL/egrLVDYr71s=
+			dRdLSnVSrMHFXEiXBgHJzoZ9S2IZ4rL17Ax3Jc1pIWI=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/data/card.json</key>
@@ -342,6 +346,13 @@
 			<key>hash2</key>
 			<data>
 			L5FAkBIi97xWZqWufq8YuIYzpwh7+X6dJe8o6Sav7H0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/munto.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uI/peizaKJusIQRwdUDR5vptxa75aponiWUWe86ZT/0=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/smiling-face.png</key>
@@ -537,7 +548,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GqyxjGCMehwrCOMFh623ZbtHHGL5vBGMsGKyU2bIJEM=
+			vmhyJheHC9wPsclyCW9uArg2xZ/5zTt2bNrdqCb6/VQ=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

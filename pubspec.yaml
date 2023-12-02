@@ -42,6 +42,7 @@ dependencies:
   arc_progress_bar_new: ^1.0.4
   http: ^1.1.0
   chopper: ^7.0.9
+  flutter_native_splash: ^2.3.6
 
 dev_dependencies:
   flutter_test:

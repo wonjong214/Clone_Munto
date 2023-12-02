@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../widget/atoms/margin_sizedbox.dart';
 import '../../../widget/organisms/meeting/recommend/category_grid.dart';
 import '../../../widget/organisms/meeting/recommend/exhibitions_view.dart';

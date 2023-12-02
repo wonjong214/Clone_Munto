@@ -17,13 +17,17 @@ class _ChallengeTotalState extends State<ChallengeTotal> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
+      if(this.mounted){
         setState(() {
-          _isLoading = false;
+          _isLoading = true;
         });
+      }
+      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;

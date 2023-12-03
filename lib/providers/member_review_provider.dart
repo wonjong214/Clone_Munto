@@ -8,6 +8,7 @@ import '../model/meeting/recommend/member_review.dart';
 
 class MemberReviewProvider extends ChangeNotifier{
   List<MemberReview> _review;
+  //bool isInit = true;
 
   List<MemberReview> get review => _review;
 
@@ -29,7 +30,10 @@ class MemberReviewProvider extends ChangeNotifier{
       print(e);
     }
     finally{
+      //if(this.isInit)
       await Future.delayed(Duration(milliseconds: 5000));
+
+      //this.isInit = false;
     }
   }
 

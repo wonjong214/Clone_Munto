@@ -9,10 +9,11 @@ class CommonBorderContainer extends StatelessWidget{
   Widget? widget;
   double? width;
   double? height;
+  AlignmentGeometry? alignment;
 
 
   CommonBorderContainer({this.padding, this.circular = 30, this.borderColor = Colors.transparent, this.borderWidth =1,
-    this.backColor = Colors.transparent, required this.widget, this.width, this.height});
+    this.backColor = Colors.transparent, required this.widget, this.width, this.height, this.alignment});
 
 
   @override
@@ -20,6 +21,7 @@ class CommonBorderContainer extends StatelessWidget{
     return Container(
       width: width,
       height: height,
+      alignment: alignment,
       padding: padding,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(circular),

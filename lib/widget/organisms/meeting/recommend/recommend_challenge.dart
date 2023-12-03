@@ -6,6 +6,7 @@ import '../../../../model/meeting/recommend/challenge_summary.dart';
 import '../../../../providers/challenge_summary_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 import '../../../molecules/meeting/challenge_container.dart';
 
 
@@ -40,8 +41,22 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
               textColor: meetingTabGroupSubTitleColor,
             ),
             SizedBox(height: 8),
-            widget.isChallengeLoading ? const Center(child: CircularProgressIndicator())
-                : Column(
+            widget.isChallengeLoading ?
+            Column(
+              children: [
+                for (int num = 0; num < 3; num++)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: CircularprogressContainer(
+                      width: double.infinity,
+                      height: 120,
+                      backColor: Colors.white60,
+                      circular: 5,
+                    ),
+                  )
+              ],
+            ) :
+            Column(
               children: [
                 for (int num = 0; num < 3; num++)
                   ChallengeContainer(

@@ -21,15 +21,18 @@ class _SocialringHickingState extends State<SocialringHicking> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isSocialringLoading = true;
-      });
-
+      if(this.mounted){
+        setState(() {
+          _isSocialringLoading = true;
+        });
+      }
 
       Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_){
-        setState(() {
-          _isSocialringLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isSocialringLoading = false;
+          });
+        }
       });
     }
     _isInit = false;

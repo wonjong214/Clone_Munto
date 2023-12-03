@@ -10,6 +10,8 @@ import '../model/meeting/recommend/challenge_summary.dart';
 
 class ChallengeSummaryProvider extends ChangeNotifier{
   List<ChallengeSumamry> _challenge = [];
+  //bool isInit = true;
+
 
   List<ChallengeSumamry> get challenge => _challenge;
 
@@ -28,7 +30,10 @@ class ChallengeSummaryProvider extends ChangeNotifier{
       print(e);
     }
     finally {
+      //if(this.isInit)
       await Future.delayed(Duration(milliseconds: 3000));
+
+      //this.isInit = false;
     }
   }
 

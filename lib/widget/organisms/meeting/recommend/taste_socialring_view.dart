@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/model/meeting/recommend/meeting_summary.dart';
+import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/fontsize.dart';
@@ -12,7 +13,6 @@ import '../../../molecules/meeting/Socialring_Container.dart';
 import '../../../molecules/meeting/challenge_container.dart';
 import '../../../molecules/meeting/club_container.dart';
 
-
 class TasteSocialRingView extends StatefulWidget {
   List<ChallengeSumamry>? challengeSummary;
   Function challengeChangeLike;
@@ -23,12 +23,18 @@ class TasteSocialRingView extends StatefulWidget {
   List<MeetingSummary>? clubSummary;
   Function clubChangeLike;
   bool isClubLoading;
-  
-  
-  TasteSocialRingView({required this.challengeSummary,required this.challengeChangeLike, required this.isChallengeLoading,
-  required this.socialringSummary, required this.socialringChangeLike, required this.isSocialringLoading,
-  required this.clubSummary, required this.clubChangeLike, required this.isClubLoading});
-  
+
+  TasteSocialRingView(
+      {required this.challengeSummary,
+      required this.challengeChangeLike,
+      required this.isChallengeLoading,
+      required this.socialringSummary,
+      required this.socialringChangeLike,
+      required this.isSocialringLoading,
+      required this.clubSummary,
+      required this.clubChangeLike,
+      required this.isClubLoading});
+
   @override
   State<TasteSocialRingView> createState() => _TasteSocialRingViewState();
 }
@@ -63,29 +69,52 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
-                    widget.isSocialringLoading ? const Center(child: CircularProgressIndicator())
-                    :Column(
-                      children: [
-                        for(int num=0; num<3; num++)
-                          GestureDetector(
-                              onTap: () {print('touch');},
-                              child: SocialringContainer(
-                                width: 350,
-                                image:widget.socialringSummary![num].image,
-                                icon: widget.socialringSummary![num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
-                                onPressed: (){
-                                  widget.socialringChangeLike(widget.socialringSummary![num]);
-                                },
-                                tag:  widget.socialringSummary![num].tag,
-                                title:  widget.socialringSummary![num].title,
-                                location:  widget.socialringSummary![num].location,
-                                date:  widget.socialringSummary![num].date,
-                                participants:  widget.socialringSummary![num].participants,
-                                total:  widget.socialringSummary![num].total,
-                              )
+                    widget.isSocialringLoading
+                        ? Column(
+                            children: [
+                              for (int num = 0; num < 3; num++)
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: CircularprogressContainer(
+                                    width: 350,
+                                    height: 120,
+                                    backColor: Colors.white60,
+                                    circular: 5,
+                                  ),
+                                ),
+                            ],
+                          )
+                        : Column(
+                            children: [
+                              for (int num = 0; num < 3; num++)
+                                GestureDetector(
+                                    onTap: () {
+                                      print('touch');
+                                    },
+                                    child: SocialringContainer(
+                                      width: 350,
+                                      image:
+                                          widget.socialringSummary![num].image,
+                                      icon: widget.socialringSummary![num].like
+                                          ? Icon(Icons.favorite)
+                                          : Icon(Icons.favorite_border),
+                                      onPressed: () {
+                                        widget.socialringChangeLike(
+                                            widget.socialringSummary![num]);
+                                      },
+                                      tag: widget.socialringSummary![num].tag,
+                                      title:
+                                          widget.socialringSummary![num].title,
+                                      location: widget
+                                          .socialringSummary![num].location,
+                                      date: widget.socialringSummary![num].date,
+                                      participants: widget
+                                          .socialringSummary![num].participants,
+                                      total:
+                                          widget.socialringSummary![num].total,
+                                    )),
+                            ],
                           ),
-                      ],
-                    ),
                     MoreButton(350)
                   ],
                 ),
@@ -107,28 +136,44 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
-                    widget.isClubLoading ? const Center(child: CircularProgressIndicator())
-                    : Column(
-                      children: [
-                        for (int num = 0; num < 3; num++)
-                          ClubContainer(
-                            width: 350,
-                            image: widget.clubSummary![num].image,
-                            icon: (widget.clubSummary![num].like
-                                ? Icon(Icons.favorite)
-                                : Icon(Icons.favorite_border)),
-                            onPressed: () {
-                              widget.clubChangeLike(widget.clubSummary![num]);
-                            },
-                            tag: widget.clubSummary![num].tag,
-                            title: widget.clubSummary![num].title,
-                            location: widget.clubSummary![num].location,
-                            date: widget.clubSummary![num].date,
-                            participants: widget.clubSummary![num].participants,
-                            total: widget.clubSummary![num].total,
+                    widget.isClubLoading
+                        ? Column(
+                            children: [
+                              for (int num = 0; num < 3; num++)
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: CircularprogressContainer(
+                                    width: 350,
+                                    height: 120,
+                                    backColor: Colors.white60,
+                                    circular: 5,
+                                  ),
+                                ),
+                            ],
+                          )
+                        : Column(
+                            children: [
+                              for (int num = 0; num < 3; num++)
+                                ClubContainer(
+                                  width: 350,
+                                  image: widget.clubSummary![num].image,
+                                  icon: (widget.clubSummary![num].like
+                                      ? Icon(Icons.favorite)
+                                      : Icon(Icons.favorite_border)),
+                                  onPressed: () {
+                                    widget.clubChangeLike(
+                                        widget.clubSummary![num]);
+                                  },
+                                  tag: widget.clubSummary![num].tag,
+                                  title: widget.clubSummary![num].title,
+                                  location: widget.clubSummary![num].location,
+                                  date: widget.clubSummary![num].date,
+                                  participants:
+                                      widget.clubSummary![num].participants,
+                                  total: widget.clubSummary![num].total,
+                                ),
+                            ],
                           ),
-                      ],
-                    ),
                     MoreButton(350)
                   ],
                 ),
@@ -150,30 +195,46 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
-                    widget.isChallengeLoading ? const Center(child: CircularProgressIndicator())
-                      : Column(
-                      children: [
-                        for (int num = 0; num < 3; num++)
-                          ChallengeContainer(
-                            width: double.infinity,
-                            image: widget.challengeSummary![num].image,
-                            icon: (widget.challengeSummary![num].like
-                                ? Icon(Icons.favorite)
-                                : Icon(Icons.favorite_border)),
-                            onPressed: (){
-                              widget.challengeChangeLike(widget.challengeSummary![num]);
-                            },
-                            tag: widget.challengeSummary![num].tag,
-                            title: widget.challengeSummary![num].title,
-                            date: widget.challengeSummary![num].date,
-                            duration: widget.challengeSummary![num].duration,
-                            time: widget.challengeSummary![num].time,
-                            participants:
-                            widget.challengeSummary![num].participants,
-                            total: widget.challengeSummary![num].total,
+                    widget.isChallengeLoading
+                        ? Column(
+                            children: [
+                              for (int num = 0; num < 3; num++)
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: CircularprogressContainer(
+                                    width: 350,
+                                    height: 120,
+                                    backColor: Colors.white60,
+                                    circular: 5,
+                                  ),
+                                ),
+                            ],
+                          )
+                        : Column(
+                            children: [
+                              for (int num = 0; num < 3; num++)
+                                ChallengeContainer(
+                                  width: double.infinity,
+                                  image: widget.challengeSummary![num].image,
+                                  icon: (widget.challengeSummary![num].like
+                                      ? Icon(Icons.favorite)
+                                      : Icon(Icons.favorite_border)),
+                                  onPressed: () {
+                                    widget.challengeChangeLike(
+                                        widget.challengeSummary![num]);
+                                  },
+                                  tag: widget.challengeSummary![num].tag,
+                                  title: widget.challengeSummary![num].title,
+                                  date: widget.challengeSummary![num].date,
+                                  duration:
+                                      widget.challengeSummary![num].duration,
+                                  time: widget.challengeSummary![num].time,
+                                  participants: widget
+                                      .challengeSummary![num].participants,
+                                  total: widget.challengeSummary![num].total,
+                                ),
+                            ],
                           ),
-                      ],
-                    ),
                     MoreButton(350)
                   ],
                 ),

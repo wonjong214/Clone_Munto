@@ -6,6 +6,8 @@ import '../model/meeting/recommend/meeting_summary.dart';
 class MeetingSummaryProvider extends ChangeNotifier{
   List<MeetingSummary> _socialring;
   List<MeetingSummary> _club;
+  //bool isSocialringInit = true;
+  //bool isClubInit = true;
 
 
 
@@ -30,7 +32,10 @@ class MeetingSummaryProvider extends ChangeNotifier{
       print(e);
     }
     finally{
+      //if(this.isSocialringInit)
       await Future.delayed(Duration(milliseconds: 2500));
+
+      //this.isSocialringInit = false;
     }
   }
 
@@ -49,7 +54,10 @@ class MeetingSummaryProvider extends ChangeNotifier{
       print(e);
     }
     finally{
-      await Future.delayed(Duration(milliseconds: 1200));
+      //if(this.isClubInit)
+      await Future.delayed(Duration(milliseconds: 3000));
+
+      //this.isClubInit = false;
     }
   }
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:loginscreen/model/meeting/recommend/socialring_contest_poster.dart';
+import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
 import '../../../atoms/keyword_tag_container.dart';
 
 
@@ -20,7 +21,7 @@ class ExhibitionsView extends StatefulWidget{
 }
 
 class _ExhibitionsViewState extends State<ExhibitionsView> {
-  int currentPage = 0;
+  //int currentPage = 0;
   late Timer _timer;
   PageController controller = PageController(
       initialPage: 0,
@@ -30,17 +31,20 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
   void initState() {
     super.initState();
     _timer = Timer.periodic(Duration(seconds: 3), (Timer timer) {
-      if (currentPage < 4) {
-        currentPage++;
-      } else {
-        currentPage = 0;
+      if (widget.currentPage < 4) {
+        widget.currentPage++;
+      }
+      else {
+        widget.currentPage = 0;
       }
 
-      controller.animateToPage(
-        currentPage,
-        duration: Duration(milliseconds: 350),
-        curve: Curves.easeIn,
-      );
+      if(controller.hasClients){
+        controller.animateToPage(
+          widget.currentPage,
+          duration: Duration(milliseconds: 350),
+          curve: Curves.easeIn,
+        );
+      }
     });
   }
 
@@ -52,8 +56,16 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
 
   @override
   Widget build(BuildContext context) {
-    //var provider = Provider.of<SocialringContestPosterProvider>(context);
-    return widget.isSocialringContestPosterLoading ? const Center(child: CircularProgressIndicator())
+    return widget.isSocialringContestPosterLoading ?
+    Padding(
+      padding: const EdgeInsets.all(20),
+      child: CircularprogressContainer(
+        width: double.infinity,
+        height: widget.height,
+        circular: 20,
+        backColor: Colors.white60,
+      ),
+    )
     : Stack(
       children: [
         Container(
@@ -107,7 +119,7 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
                 borderRadius: BorderRadius.circular(20)
               ),
               child: Text(
-                '${currentPage}/5 +',
+                '${widget.currentPage + 1}/5 +',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.white,

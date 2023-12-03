@@ -21,13 +21,17 @@ class _SocialringHostViewState extends State<SocialringHostView> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
+      if(this.mounted){
         setState(() {
-          _isLoading = false;
+          _isLoading = true;
         });
+      }
+      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;

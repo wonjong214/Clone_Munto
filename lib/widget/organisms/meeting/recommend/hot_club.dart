@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/constants/colors.dart';
+import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
 import '../../../../model/meeting/recommend/meeting_summary.dart';
@@ -39,9 +40,22 @@ class _HotClubState extends State<HotClub> {
               style: TextStyle(color: meetingTabGroupSubTitleColor),
             ),
             SizedBox(height: 8),
-            widget.isClubLoading
-                ? const Center(child: CircularProgressIndicator())
-                : Column(
+            widget.isClubLoading ?
+            Column(
+              children: [
+                for (int num = 0; num < 3; num++)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: CircularprogressContainer(
+                    width: double.infinity,
+                    height: 120,
+                    backColor: Colors.white60,
+                    circular: 5,
+                  ),
+                )
+              ],
+            ) :
+            Column(
                     children: [
                       for (int num = 0; num < 3; num++)
                         ClubContainer(

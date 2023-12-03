@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/model/meeting/recommend/selected_host.dart';
+import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/fontsize.dart';
@@ -14,8 +15,10 @@ class RecommendMemberView extends StatefulWidget {
   List<SelectedHost>? selectedHost;
   Function selectedHostChangeFollow;
   bool isSelectedHostLoading;
+  double width;
   
-  RecommendMemberView({required this.selectedHost, required this.selectedHostChangeFollow, required this.isSelectedHostLoading});
+  RecommendMemberView({required this.selectedHost, required this.selectedHostChangeFollow,
+    required this.isSelectedHostLoading, required this.width});
 
   @override
   State<RecommendMemberView> createState() => _RecommendMemberViewState();
@@ -24,8 +27,6 @@ class RecommendMemberView extends StatefulWidget {
 class _RecommendMemberViewState extends State<RecommendMemberView> {
   @override
   Widget build(BuildContext context) {
-    double width = Provider.of<ResolutionProvider>(context).width_get;
-
     return Column(
       children: [
         Container(
@@ -50,7 +51,21 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    widget.isSelectedHostLoading ? const Center(child: CircularProgressIndicator())
+                    widget.isSelectedHostLoading ?
+                        Row(
+                          children: [
+                            for(int i = 0; i < 3; i++)
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: CircularprogressContainer(
+                                  width: widget.width - 70,
+                                  height: widget.width - 70,
+                                  circular: 20,
+                                  backColor: Colors.white60,
+                                ),
+                              )
+                          ],
+                        )
                         : Row(
                       children: [
                         for(int i = 0; i < 3; i++)
@@ -62,8 +77,8 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                       decoration: BoxDecoration(
                                         color: Colors.white60,
                                       ),
-                                      width: width - 70,
-                                      height: width - 70,
+                                      width: widget.width - 70,
+                                      height: widget.width - 70,
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,7 +187,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                 flex: 1,
                                                 child: Image.asset(
                                                   widget.selectedHost![i].image[0],
-                                                  height: (width - 70) / 3,
+                                                  height: (widget.width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -181,7 +196,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                   child: Container(
                                                     child: Image.asset(
                                                       widget.selectedHost![i].image[1],
-                                                      height: (width - 70) / 3,
+                                                      height: (widget.width - 70) / 3,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   )),
@@ -190,7 +205,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                   child: Container(
                                                     child: Image.asset(
                                                       widget.selectedHost![i].image[2],
-                                                      height: (width - 70) / 3,
+                                                      height: (widget.width - 70) / 3,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   )),

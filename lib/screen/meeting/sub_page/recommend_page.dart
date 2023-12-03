@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../providers/challenge_summary_provider.dart';
 import '../../../providers/meeting_summary_provider.dart';
 import '../../../providers/member_review_provider.dart';
+import '../../../providers/resolution_provider.dart';
 import '../../../providers/selected_host_provider.dart';
 import '../../../widget/atoms/margin_sizedbox.dart';
 import '../../../widget/organisms/meeting/recommend/category_grid.dart';
@@ -40,7 +41,7 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
 
   @override
   // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => false;
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -50,14 +51,16 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isChallengeLoading = true;
-        _isSocialringLoading = true;
-        _isClubLoading = true;
-        _isMemberReivewLoading = true;
-        _isSelectedHostLoading = true;
-        _isSocialringContestPoster = true;
-      });
+      if(this.mounted){
+        setState(() {
+          _isChallengeLoading = true;
+          _isSocialringLoading = true;
+          _isClubLoading = true;
+          _isMemberReivewLoading = true;
+          _isSelectedHostLoading = true;
+          _isSocialringContestPoster = true;
+        });
+      }
 
       Provider.of<SocialringContestPosterProvider>(context).fetchAndSetSocialringContestPosterItems().then((_){
         if(this.mounted){
@@ -114,6 +117,7 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
     var memberReviewProvider = Provider.of<MemberReviewProvider>(context);
     var selectedHostProvider = Provider.of<SelectedHostProvider>(context);
     var socialringContestPostProvider = Provider.of<SocialringContestPosterProvider>(context);
+    var resolutionProvider = Provider.of<ResolutionProvider>(context);
 
 
     return SingleChildScrollView(
@@ -154,6 +158,7 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
               memberReview: memberReviewProvider.review,
               memberReivewChangeLike: memberReviewProvider.changeLike,
               isMemberReviewLoading: _isMemberReivewLoading,
+              width: resolutionProvider.width_get,
             ),
             interGroupMargin,
             HotClub(
@@ -172,6 +177,7 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
               selectedHost: selectedHostProvider.selectedhost,
               selectedHostChangeFollow: selectedHostProvider.changeFollow,
               isSelectedHostLoading: _isSelectedHostLoading,
+              width: resolutionProvider.width_get,
             ),
             interGroupMargin,
             OpenMeetingView(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),

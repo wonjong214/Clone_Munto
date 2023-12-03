@@ -5,6 +5,7 @@ import '../model/meeting/recommend/selected_host.dart';
 
 class SelectedHostProvider extends ChangeNotifier{
   List<SelectedHost> _selectedhost;
+  //bool isInit = true;
 
   SelectedHostProvider(): _selectedhost = List.empty(growable: true);
 
@@ -25,7 +26,10 @@ class SelectedHostProvider extends ChangeNotifier{
       print(e);
     }
     finally{
+      //if(this.isInit)
       await Future.delayed(Duration(milliseconds: 5000));
+
+      //this.isInit = false;
     }
   }
 

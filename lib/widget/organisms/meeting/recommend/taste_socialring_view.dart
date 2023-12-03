@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/model/meeting/recommend/meeting_summary.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/fontsize.dart';
-import '../../../../providers/challenge_summary_provider.dart';
+import '../../../../model/meeting/recommend/challenge_summary.dart';
 import '../../../../providers/meeting_summary_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/margin_sizedbox.dart';
@@ -13,52 +14,28 @@ import '../../../molecules/meeting/club_container.dart';
 
 
 class TasteSocialRingView extends StatefulWidget {
+  List<ChallengeSumamry>? challengeSummary;
+  Function challengeChangeLike;
+  bool isChallengeLoading;
+  List<MeetingSummary>? socialringSummary;
+  Function socialringChangeLike;
+  bool isSocialringLoading;
+  List<MeetingSummary>? clubSummary;
+  Function clubChangeLike;
+  bool isClubLoading;
+  
+  
+  TasteSocialRingView({required this.challengeSummary,required this.challengeChangeLike, required this.isChallengeLoading,
+  required this.socialringSummary, required this.socialringChangeLike, required this.isSocialringLoading,
+  required this.clubSummary, required this.clubChangeLike, required this.isClubLoading});
+  
   @override
   State<TasteSocialRingView> createState() => _TasteSocialRingViewState();
 }
 
 class _TasteSocialRingViewState extends State<TasteSocialRingView> {
-  bool _isInit = true;
-  bool _isChallengeLoading = false;
-  bool _isSocialringLoading = false;
-  bool _isClubLoading = false;
-
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isChallengeLoading = true;
-        _isSocialringLoading = true;
-        _isClubLoading = true;
-      });
-
-      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
-        setState(() {
-          _isChallengeLoading = false;
-        });
-      });
-
-      Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_){
-        setState(() {
-          _isSocialringLoading = false;
-        });
-      });
-
-      Provider.of<MeetingSummaryProvider>(context).fetchAndSetClubItems().then((_){
-        setState(() {
-          _isClubLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
   @override
   Widget build(BuildContext context) {
-    var meeting_provider = Provider.of<MeetingSummaryProvider>(context);
-    var challenge_provider = Provider.of<ChallengeSummaryProvider>(context);
-
     return Container(
       margin: EdgeInsets.only(
         left: 20,
@@ -86,7 +63,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
-                    _isSocialringLoading ? const Center(child: CircularProgressIndicator())
+                    widget.isSocialringLoading ? const Center(child: CircularProgressIndicator())
                     :Column(
                       children: [
                         for(int num=0; num<3; num++)
@@ -94,17 +71,17 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                               onTap: () {print('touch');},
                               child: SocialringContainer(
                                 width: 350,
-                                image: meeting_provider.socialring[num].image,
-                                icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                                image:widget.socialringSummary![num].image,
+                                icon: widget.socialringSummary![num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                                 onPressed: (){
-                                  meeting_provider.changeLike(meeting_provider.socialring[num]);
+                                  widget.socialringChangeLike(widget.socialringSummary![num]);
                                 },
-                                tag:  meeting_provider.socialring[num].tag,
-                                title:  meeting_provider.socialring[num].title,
-                                location:  meeting_provider.socialring[num].location,
-                                date:  meeting_provider.socialring[num].date,
-                                participants:  meeting_provider.socialring[num].participants,
-                                total:  meeting_provider.socialring[num].total,
+                                tag:  widget.socialringSummary![num].tag,
+                                title:  widget.socialringSummary![num].title,
+                                location:  widget.socialringSummary![num].location,
+                                date:  widget.socialringSummary![num].date,
+                                participants:  widget.socialringSummary![num].participants,
+                                total:  widget.socialringSummary![num].total,
                               )
                           ),
                       ],
@@ -130,26 +107,25 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
-                    _isClubLoading ? const Center(child: CircularProgressIndicator())
+                    widget.isClubLoading ? const Center(child: CircularProgressIndicator())
                     : Column(
                       children: [
-                        for (int num = 0; num < meeting_provider.club.length; num++)
+                        for (int num = 0; num < 3; num++)
                           ClubContainer(
                             width: 350,
-                            image: meeting_provider.club[num].image,
-                            icon: (meeting_provider.club[num].like
+                            image: widget.clubSummary![num].image,
+                            icon: (widget.clubSummary![num].like
                                 ? Icon(Icons.favorite)
                                 : Icon(Icons.favorite_border)),
                             onPressed: () {
-                              meeting_provider
-                                  .changeLike(meeting_provider.club[num]);
+                              widget.clubChangeLike(widget.clubSummary![num]);
                             },
-                            tag: meeting_provider.club[num].tag,
-                            title: meeting_provider.club[num].title,
-                            location: meeting_provider.club[num].location,
-                            date: meeting_provider.club[num].date,
-                            participants: meeting_provider.club[num].participants,
-                            total: meeting_provider.club[num].total,
+                            tag: widget.clubSummary![num].tag,
+                            title: widget.clubSummary![num].title,
+                            location: widget.clubSummary![num].location,
+                            date: widget.clubSummary![num].date,
+                            participants: widget.clubSummary![num].participants,
+                            total: widget.clubSummary![num].total,
                           ),
                       ],
                     ),
@@ -174,28 +150,27 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                       textColor: meetingTabGroupSubTitleColor,
                     ),
                     titleMargin,
-                    _isChallengeLoading ? const Center(child: CircularProgressIndicator())
+                    widget.isChallengeLoading ? const Center(child: CircularProgressIndicator())
                       : Column(
                       children: [
                         for (int num = 0; num < 3; num++)
                           ChallengeContainer(
                             width: double.infinity,
-                            image: challenge_provider.challenge[num].image,
-                            icon: (challenge_provider.challenge[num].like
+                            image: widget.challengeSummary![num].image,
+                            icon: (widget.challengeSummary![num].like
                                 ? Icon(Icons.favorite)
                                 : Icon(Icons.favorite_border)),
                             onPressed: (){
-                              challenge_provider
-                                  .changeLike(challenge_provider.challenge[num]);
+                              widget.challengeChangeLike(widget.challengeSummary![num]);
                             },
-                            tag: challenge_provider.challenge[num].tag,
-                            title: challenge_provider.challenge[num].title,
-                            date: challenge_provider.challenge[num].date,
-                            duration: challenge_provider.challenge[num].duration,
-                            time: challenge_provider.challenge[num].time,
+                            tag: widget.challengeSummary![num].tag,
+                            title: widget.challengeSummary![num].title,
+                            date: widget.challengeSummary![num].date,
+                            duration: widget.challengeSummary![num].duration,
+                            time: widget.challengeSummary![num].time,
                             participants:
-                            challenge_provider.challenge[num].participants,
-                            total: challenge_provider.challenge[num].total,
+                            widget.challengeSummary![num].participants,
+                            total: widget.challengeSummary![num].total,
                           ),
                       ],
                     ),

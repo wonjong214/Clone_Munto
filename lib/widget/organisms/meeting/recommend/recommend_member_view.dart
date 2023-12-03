@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/model/meeting/recommend/selected_host.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/fontsize.dart';
 import '../../../../providers/resolution_provider.dart';
-import '../../../../providers/selected_host_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/follow_button.dart';
 import '../../../atoms/keyword_tag_container.dart';
@@ -11,35 +11,20 @@ import '../../../atoms/margin_sizedbox.dart';
 import '../../../atoms/more_button.dart';
 
 class RecommendMemberView extends StatefulWidget {
-
+  List<SelectedHost>? selectedHost;
+  Function selectedHostChangeFollow;
+  bool isSelectedHostLoading;
+  
+  RecommendMemberView({required this.selectedHost, required this.selectedHostChangeFollow, required this.isSelectedHostLoading});
 
   @override
   State<RecommendMemberView> createState() => _RecommendMemberViewState();
 }
 
 class _RecommendMemberViewState extends State<RecommendMemberView> {
-  bool _isInit = true;
-  bool _isLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
   @override
   Widget build(BuildContext context) {
     double width = Provider.of<ResolutionProvider>(context).width_get;
-    var selectedhostProvider = Provider.of<SelectedHostProvider>(context);
 
     return Column(
       children: [
@@ -65,7 +50,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    _isLoading ? const Center(child: CircularProgressIndicator())
+                    widget.isSelectedHostLoading ? const Center(child: CircularProgressIndicator())
                         : Row(
                       children: [
                         for(int i = 0; i < 3; i++)
@@ -97,7 +82,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                           CircleAvatar(
                                                             radius: 40,
                                                             backgroundImage: AssetImage(
-                                                                selectedhostProvider.selectedhost[i].profileImage),
+                                                                widget.selectedHost![i].profileImage),
                                                           ),
                                                           SizedBox(
                                                             width: 10,
@@ -112,7 +97,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                               CrossAxisAlignment.start,
                                                               children: [
                                                                 Text(
-                                                                  selectedhostProvider.selectedhost[i].name,
+                                                                  widget.selectedHost![i].name,
                                                                   style: TextStyle(fontSize: 20),
                                                                 ),
                                                                 Row(
@@ -137,15 +122,14 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                           Spacer(),
                                                           GestureDetector(
                                                               onTap: (){
-
-                                                                selectedhostProvider.changeFollow(selectedhostProvider.selectedhost[i]);
+                                                                widget.selectedHostChangeFollow(widget.selectedHost![i]);
                                                               },
-                                                              child: FollowButton(selected: selectedhostProvider.selectedhost[i].follow)
+                                                              child: FollowButton(selected: widget.selectedHost![i].follow)
                                                           )
                                                         ],
                                                       )),
                                                   Text(
-                                                    selectedhostProvider.selectedhost[i].selfIntroduction,
+                                                    widget.selectedHost![i].selfIntroduction,
                                                     maxLines: 2,
                                                     textAlign: TextAlign.start,
                                                     style: TextStyle(height: 1.5, fontSize: 15, ),
@@ -158,19 +142,19 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                               onTap: (){
                                                                 Navigator.of(context, rootNavigator: true).pushNamed(
                                                                   '/SearchKeyword_page',
-                                                                  arguments: selectedhostProvider.selectedhost[i].tag[num],
+                                                                  arguments: widget.selectedHost![i].tag[num],
                                                                 );
                                                               },
                                                               child: Padding(
                                                                 padding: const EdgeInsets.only(right: 10),
-                                                                child: KeyWordTagContainer(text: selectedhostProvider.selectedhost[i].tag[num]),
+                                                                child: KeyWordTagContainer(text: widget.selectedHost![i].tag[num]),
                                                               )
                                                           )
                                                         else
                                                           Padding(
                                                             padding: const EdgeInsets.only(right: 10),
                                                             child: KeyWordTagContainer(
-                                                              text: '+${selectedhostProvider.selectedhost[i].tag.length - 4}',
+                                                              text: '+${widget.selectedHost![i].tag.length - 4}',
                                                               border: Border.all(width: 1, color: Colors.grey),
                                                               backColor: Colors.transparent,
                                                               textColor: Colors.grey,
@@ -187,7 +171,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                               Expanded(
                                                 flex: 1,
                                                 child: Image.asset(
-                                                  selectedhostProvider.selectedhost[i].image[0],
+                                                  widget.selectedHost![i].image[0],
                                                   height: (width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),
@@ -196,7 +180,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                   flex: 1,
                                                   child: Container(
                                                     child: Image.asset(
-                                                      selectedhostProvider.selectedhost[i].image[1],
+                                                      widget.selectedHost![i].image[1],
                                                       height: (width - 70) / 3,
                                                       fit: BoxFit.cover,
                                                     ),
@@ -205,7 +189,7 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
                                                   flex: 1,
                                                   child: Container(
                                                     child: Image.asset(
-                                                      selectedhostProvider.selectedhost[i].image[2],
+                                                      widget.selectedHost![i].image[2],
                                                       height: (width - 70) / 3,
                                                       fit: BoxFit.cover,
                                                     ),

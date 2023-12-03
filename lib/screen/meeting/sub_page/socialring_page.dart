@@ -24,13 +24,13 @@ class SocialringPage extends StatelessWidget{
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          ExhibitionsView(height: 350,),
+          //ExhibitionsView(height: 350,),
           SizedBox(height: 20,),
           TagScrollView(),
           interGroupMargin,
           SocialringRecommend(),
           interGroupMargin,
-          ReviewView(),
+          //ReviewView(),
           interGroupMargin,
           SocialringHicking(),
           interGroupMargin,

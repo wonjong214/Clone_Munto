@@ -1,15 +1,19 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../../../providers/socialring_contest_poster_provider.dart';
+import 'package:loginscreen/model/meeting/recommend/socialring_contest_poster.dart';
 import '../../../atoms/keyword_tag_container.dart';
 
 
 
 class ExhibitionsView extends StatefulWidget{
   double? height;
+  List<SocialringContestPoster>? socialringContestPoster;
+  void Function(int num) socialringContestPosterPageChange;
+  bool isSocialringContestPosterLoading;
+  int currentPage;
 
-  ExhibitionsView({this.height});
+  ExhibitionsView({this.height, required this.socialringContestPoster, required this.socialringContestPosterPageChange,
+    required this.isSocialringContestPosterLoading, required this.currentPage});
 
   @override
   State<ExhibitionsView> createState() => _ExhibitionsViewState();
@@ -48,30 +52,31 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SocialringContestPosterProvider>(context);
-    return Stack(
+    //var provider = Provider.of<SocialringContestPosterProvider>(context);
+    return widget.isSocialringContestPosterLoading ? const Center(child: CircularProgressIndicator())
+    : Stack(
       children: [
         Container(
             height: widget.height,
             width: double.infinity,
             margin: EdgeInsets.all(20),
-            child: PageView(
+            child:  PageView(
               controller: controller,
-              onPageChanged: (num){ provider.pagechange(num);},
+              onPageChanged: (num){ widget.socialringContestPosterPageChange(num);},
               children: [
-                for(int i = 0; i< provider.exhibitions.length; i++)
+                for(int i = 0; i< widget.socialringContestPoster!.length; i++)
                 GestureDetector(
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(provider.exhibitions[i].image),
+                              image: AssetImage(widget.socialringContestPoster![i].image),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(20)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                              provider.exhibitions[i].title,
+                              widget.socialringContestPoster![i].title,
                               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
                           ),
                           SizedBox(height: 10,),
@@ -87,14 +92,6 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
                           SizedBox(height: 20,),
                         ],
                       ),
-                      /*Align(
-                        alignment: Alignment.bottomCenter,
-                        child:
-                          Text(
-                              provider.exhibitions[i].title,
-                              style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)
-                          ),
-                      ),*/
                     ),
                 ),
               ],
@@ -110,7 +107,7 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
                 borderRadius: BorderRadius.circular(20)
               ),
               child: Text(
-                '${provider.currentPage}/5 +',
+                '${currentPage}/5 +',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.white,

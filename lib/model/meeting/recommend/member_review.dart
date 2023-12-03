@@ -1,13 +1,13 @@
-class MemberReivew{
+class MemberReview{
   String image;
   String title;
   bool like;
   int likeNum;
 
-  MemberReivew({required this.image, required this.title, required this.like, required this.likeNum});
+  MemberReview({required this.image, required this.title, required this.like, required this.likeNum});
 
-  factory MemberReivew.fromJson(Map<String, dynamic> json) {
-    return MemberReivew(
+  factory MemberReview.fromJson(Map<String, dynamic> json) {
+    return MemberReview(
       image: json['image'],
       title: json['title'],
       like: json['like'],

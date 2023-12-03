@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/constants/colors.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
+import '../../../../model/meeting/recommend/challenge_summary.dart';
 import '../../../../providers/challenge_summary_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/more_button.dart';
@@ -9,33 +10,18 @@ import '../../../molecules/meeting/challenge_container.dart';
 
 
 class RecommendChallenge extends StatefulWidget{
+  List<ChallengeSumamry>? challengeSumamry;
+  void Function(ChallengeSumamry challenge) challengeChangeLike;
+  bool isChallengeLoading;
+
+  RecommendChallenge({required this.challengeSumamry, required this.challengeChangeLike, required this.isChallengeLoading});
   @override
   State<RecommendChallenge> createState() => _RecommendChallengeState();
 }
 
 class _RecommendChallengeState extends State<RecommendChallenge> {
-  bool _isInit = true;
-  bool _isLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-
-      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
   @override
   Widget build(BuildContext context) {
-    var _challengeProvider = Provider.of<ChallengeSummaryProvider>(context);
     return Container(
         width: double.infinity,
         margin: EdgeInsets.only(left: 20, right: 20),
@@ -54,28 +40,27 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
               textColor: meetingTabGroupSubTitleColor,
             ),
             SizedBox(height: 8),
-            _isLoading ? const Center(child: CircularProgressIndicator())
+            widget.isChallengeLoading ? const Center(child: CircularProgressIndicator())
                 : Column(
               children: [
                 for (int num = 0; num < 3; num++)
                   ChallengeContainer(
                     width: double.infinity,
-                    image: _challengeProvider.challenge[num].image,
-                    icon: (_challengeProvider.challenge[num].like
+                    image: widget.challengeSumamry![num].image,
+                    icon: (widget.challengeSumamry![num].like
                         ? Icon(Icons.favorite)
                         : Icon(Icons.favorite_border)),
                     onPressed: (){
-                      _challengeProvider
-                          .changeLike(_challengeProvider.challenge[num]);
+                      widget.challengeChangeLike(widget.challengeSumamry![num]);
                     },
-                    tag: _challengeProvider.challenge[num].tag,
-                    title: _challengeProvider.challenge[num].title,
-                    date: _challengeProvider.challenge[num].date,
-                    duration: _challengeProvider.challenge[num].duration,
-                    time: _challengeProvider.challenge[num].time,
+                    tag: widget.challengeSumamry![num].tag,
+                    title: widget.challengeSumamry![num].title,
+                    date: widget.challengeSumamry![num].date,
+                    duration: widget.challengeSumamry![num].duration,
+                    time: widget.challengeSumamry![num].time,
                     participants:
-                    _challengeProvider.challenge[num].participants,
-                    total: _challengeProvider.challenge[num].total,
+                    widget.challengeSumamry![num].participants,
+                    total: widget.challengeSumamry![num].total,
                   ),
               ],
             ),

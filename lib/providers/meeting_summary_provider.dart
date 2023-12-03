@@ -29,6 +29,9 @@ class MeetingSummaryProvider extends ChangeNotifier{
     catch(e){
       print(e);
     }
+    finally{
+      await Future.delayed(Duration(milliseconds: 2500));
+    }
   }
 
   Future<void> fetchAndSetClubItems() async {
@@ -44,6 +47,9 @@ class MeetingSummaryProvider extends ChangeNotifier{
     }
     catch(e){
       print(e);
+    }
+    finally{
+      await Future.delayed(Duration(milliseconds: 1200));
     }
   }
 

@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/providers/socialring_contest_poster_provider.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/challenge_summary_provider.dart';
+import '../../../providers/meeting_summary_provider.dart';
+import '../../../providers/member_review_provider.dart';
+import '../../../providers/selected_host_provider.dart';
 import '../../../widget/atoms/margin_sizedbox.dart';
 import '../../../widget/organisms/meeting/recommend/category_grid.dart';
 import '../../../widget/organisms/meeting/recommend/exhibitions_view.dart';
@@ -9,7 +15,6 @@ import '../../../widget/organisms/meeting/recommend/recommend_challenge.dart';
 import '../../../widget/organisms/meeting/recommend/recommend_member_view.dart';
 import '../../../widget/organisms/meeting/recommend/review_view.dart';
 import '../../../widget/organisms/meeting/recommend/taste_socialring_view.dart';
-
 
 
 
@@ -25,6 +30,13 @@ class RecommendPage extends StatefulWidget{
 }
 
 class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveClientMixin {
+  bool _isInit = true;
+  bool _isChallengeLoading = false;
+  bool _isSocialringLoading = false;
+  bool _isClubLoading = false;
+  bool _isMemberReivewLoading = false;
+  bool _isSelectedHostLoading = false;
+  bool _isSocialringContestPoster = false;
 
   @override
   // TODO: implement wantKeepAlive
@@ -36,7 +48,74 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
   }
 
   @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isChallengeLoading = true;
+        _isSocialringLoading = true;
+        _isClubLoading = true;
+        _isMemberReivewLoading = true;
+        _isSelectedHostLoading = true;
+        _isSocialringContestPoster = true;
+      });
+
+      Provider.of<SocialringContestPosterProvider>(context).fetchAndSetSocialringContestPosterItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isSocialringContestPoster = false;
+          });
+        }
+      });
+
+      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isChallengeLoading = false;
+          });
+        }
+      });
+
+      Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isSocialringLoading = false;
+          });
+        }
+      });
+
+      Provider.of<MeetingSummaryProvider>(context).fetchAndSetClubItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isClubLoading = false;
+          });
+        }
+      });
+
+      Provider.of<MemberReviewProvider>(context).fetchAndSetReviewItems().then((_){
+        setState(() {
+          _isMemberReivewLoading = false;
+        });
+      });
+
+      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
+        setState(() {
+          _isSelectedHostLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    var challengeProvider = Provider.of<ChallengeSummaryProvider>(context);
+    var meetingProvider = Provider.of<MeetingSummaryProvider>(context);
+    var memberReviewProvider = Provider.of<MemberReviewProvider>(context);
+    var selectedHostProvider = Provider.of<SelectedHostProvider>(context);
+    var socialringContestPostProvider = Provider.of<SocialringContestPosterProvider>(context);
+
+
     return SingleChildScrollView(
       controller: widget._controller,
       scrollDirection: Axis.vertical,
@@ -44,7 +123,13 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
           mainAxisSize: MainAxisSize.max,
           children: [
             //페이지뷰
-            ExhibitionsView(height: 350,),
+            ExhibitionsView(
+              height: 350,
+              socialringContestPoster: socialringContestPostProvider.socialringContestPoster,
+              socialringContestPosterPageChange: socialringContestPostProvider.pageChange,
+              isSocialringContestPosterLoading: _isSocialringContestPoster,
+              currentPage: socialringContestPostProvider.currentPage,
+            ),
             //카테고리
             CategoryGrid(),
             SizedBox(height: 20,),
@@ -53,15 +138,41 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
             HotTag(),
             interGroupMargin,
             //추천 스크롤 뷰
-            TasteSocialRingView(),
+            TasteSocialRingView(
+              challengeSummary: challengeProvider.challenge,
+              challengeChangeLike: challengeProvider.changeLike,
+              isChallengeLoading: _isChallengeLoading,
+              clubSummary: meetingProvider.club,
+              clubChangeLike: meetingProvider.changeLike,
+              isClubLoading: _isClubLoading,
+              socialringSummary: meetingProvider.socialring,
+              socialringChangeLike: meetingProvider.changeLike,
+              isSocialringLoading: _isSocialringLoading,
+            ),
             interGroupMargin,
-            ReviewView(),
+            ReviewView(
+              memberReview: memberReviewProvider.review,
+              memberReivewChangeLike: memberReviewProvider.changeLike,
+              isMemberReviewLoading: _isMemberReivewLoading,
+            ),
             interGroupMargin,
-            HotClub(),
+            HotClub(
+              clubSummary: meetingProvider.club,
+              clubChangeLike: meetingProvider.changeLike,
+              isClubLoading: _isClubLoading,
+            ),
             interGroupMargin,
-            RecommendChallenge(),
+            RecommendChallenge(
+              challengeSumamry: challengeProvider.challenge,
+              challengeChangeLike: challengeProvider.changeLike,
+              isChallengeLoading: _isChallengeLoading,
+            ),
             interGroupMargin,
-            RecommendMemberView(),
+            RecommendMemberView(
+              selectedHost: selectedHostProvider.selectedhost,
+              selectedHostChangeFollow: selectedHostProvider.changeFollow,
+              isSelectedHostLoading: _isSelectedHostLoading,
+            ),
             interGroupMargin,
             OpenMeetingView(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
             SizedBox(height: 80,)

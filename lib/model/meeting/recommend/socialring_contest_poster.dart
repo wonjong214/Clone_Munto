@@ -1,18 +1,15 @@
 
 class SocialringContestPoster{
-  String _image;
-  String _title;
+  String image;
+  String title;
 
-  SocialringContestPoster(this._image, this._title);
+  SocialringContestPoster({required this.image, required this.title});
 
-  String get image => _image;
-  String get title => _title;
-
-  void set image(String img){
-    _image = img;
-  }
-  void set title(String title){
-    _title = title;
+  factory SocialringContestPoster.fromJson(Map<String, dynamic> json) {
+    return SocialringContestPoster(
+      image: json['image'],
+      title: json['title'],
+    );
   }
 
 }

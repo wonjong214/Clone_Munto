@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "image":"assets/images/recommend_page/Exhibitions/airpot.jpeg",
+      "title":"최고의 선물 AIR PODS2"
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/jazz.jpeg",
+      "title":"이색데이트 추천 JAZZ BAR"
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/cd.jpeg",
+      "title":"좋아하는 가수 CD 들으면서 chilling"
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/coffee.jpeg",
+      "title":"커피 한 잔과 함께하는 일상의 여유"
+    },
+    {
+      "image":"assets/images/recommend_page/Exhibitions/nacho.jpeg",
+      "title":"페스티벌 원정대 모집"
+    }
+  ],
+  "status": 200,
+  "status_code": "ok",
+  "total_page": 200
+}

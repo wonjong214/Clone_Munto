@@ -50,7 +50,7 @@ class SearchPage extends StatelessWidget{
           CurrentSearchColumn(),
           SizedBox(height: 30,),
           RecommendSearchColumn(),
-           Expanded(child: ExhibitionsView()),
+          //Expanded(child: ExhibitionsView()),
           SizedBox(height: 10,),
         ],
       )

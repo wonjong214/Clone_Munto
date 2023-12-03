@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/model/meeting/recommend/member_review.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
 import '../../../../providers/member_review_provider.dart';
@@ -10,33 +11,19 @@ import '../../../atoms/more_button.dart';
 
 
 class ReviewView extends StatefulWidget{
+  List<MemberReview>? memberReview;
+  void Function(MemberReview memberReview) memberReivewChangeLike;
+  bool isMemberReviewLoading;
+
+  ReviewView({required this.memberReview, required this.memberReivewChangeLike, required this.isMemberReviewLoading});
+
   @override
   State<ReviewView> createState() => _ReviewViewState();
 }
 
 class _ReviewViewState extends State<ReviewView> {
-  bool _isInit = true;
-  bool _isLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<MemberReviewProvider>(context).fetchAndSetReviewItems().then((_){
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
-
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<MemberReviewProvider>(context);
     double width = Provider.of<ResolutionProvider>(context).width_get;
     double margin = 50;
     double imgWidth = (width - margin) / 2;
@@ -54,9 +41,8 @@ class _ReviewViewState extends State<ReviewView> {
             titleMargin,
             Container(
               child: Column(
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _isLoading ? const Center(child: CircularProgressIndicator())
+                    widget.isMemberReviewLoading ? const Center(child: CircularProgressIndicator())
                         : Column(
                       children: [
                         for(int num =0;num<3;num+=2)
@@ -73,7 +59,7 @@ class _ReviewViewState extends State<ReviewView> {
                                       height: imgWidth,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
-                                              image: AssetImage(provider.review[num].image),
+                                              image: AssetImage(widget.memberReview![num].image),
                                               fit: BoxFit.cover
                                           ),
                                           borderRadius: BorderRadius.circular(5)
@@ -83,12 +69,12 @@ class _ReviewViewState extends State<ReviewView> {
                                           child: Row(
                                             children: [
                                               IconButton(
-                                                  icon: (provider.review[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
+                                                  icon: (widget.memberReview![num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
                                                   color: Colors.white,
-                                                  onPressed: () {provider.changeLike(provider.review[num]);}
+                                                  onPressed: () {widget.memberReivewChangeLike(widget.memberReview![num]);}
                                               ),
                                               Text(
-                                                '${provider.review[num].likeNum}',
+                                                '${widget.memberReview![num].likeNum}',
                                                 style: TextStyle(
                                                     color: Colors.white
                                                 ),
@@ -99,7 +85,7 @@ class _ReviewViewState extends State<ReviewView> {
                                     ),
                                     SizedBox(height: 10,),
                                     CommonText(
-                                      text: provider.review[num].title,
+                                      text: widget.memberReview![num].title,
                                       maxLines: 2,
                                       textSize: 15,
                                       height: 1.3,
@@ -121,7 +107,7 @@ class _ReviewViewState extends State<ReviewView> {
                                         height: imgWidth,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image: AssetImage(provider.review[num + 1].image),
+                                                image: AssetImage(widget.memberReview![num + 1].image),
                                                 fit: BoxFit.cover
                                             ),
                                             borderRadius: BorderRadius.circular(5)
@@ -131,12 +117,12 @@ class _ReviewViewState extends State<ReviewView> {
                                             child: Row(
                                               children: [
                                                 IconButton(
-                                                    icon: (provider.review[num + 1].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
+                                                    icon: (widget.memberReview![num + 1].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
                                                     color: Colors.white,
-                                                    onPressed: () {provider.changeLike(provider.review[num + 1]);}
+                                                    onPressed: () {widget.memberReivewChangeLike(widget.memberReview![num + 1]);}
                                                 ),
                                                 Text(
-                                                  '${provider.review[num + 1].likeNum}',
+                                                  '${widget.memberReview![num + 1].likeNum}',
                                                   style: TextStyle(
                                                       color: Colors.white
                                                   ),
@@ -147,7 +133,7 @@ class _ReviewViewState extends State<ReviewView> {
                                       ),
                                       SizedBox(height: 10),
                                       CommonText(
-                                        text: provider.review[num + 1].title,
+                                        text: widget.memberReview![num + 1].title,
                                         maxLines: 2,
                                         textSize: 15,
                                         height: 1.3,

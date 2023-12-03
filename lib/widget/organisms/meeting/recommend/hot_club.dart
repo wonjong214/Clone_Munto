@@ -2,40 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:loginscreen/constants/colors.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
+import '../../../../model/meeting/recommend/meeting_summary.dart';
 import '../../../../providers/meeting_summary_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/more_button.dart';
 import '../../../molecules/meeting/club_container.dart';
 
 class HotClub extends StatefulWidget {
+  List<MeetingSummary>? clubSummary;
+  Function clubChangeLike;
+  bool isClubLoading;
+  
+  HotClub({required this.clubSummary, required this.clubChangeLike, required this.isClubLoading});
+  
   @override
   State<HotClub> createState() => _HotClubState();
 }
 
 class _HotClubState extends State<HotClub> {
-  bool _isInit = true;
-  bool _isLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-
-      Provider.of<MeetingSummaryProvider>(context).fetchAndSetClubItems().then((_) {
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
-
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<MeetingSummaryProvider>(context);
     return Container(
         width: double.infinity,
         margin: EdgeInsets.only(left: 20, right: 20),
@@ -53,26 +39,26 @@ class _HotClubState extends State<HotClub> {
               style: TextStyle(color: meetingTabGroupSubTitleColor),
             ),
             SizedBox(height: 8),
-            _isLoading
+            widget.isClubLoading
                 ? const Center(child: CircularProgressIndicator())
                 : Column(
                     children: [
-                      for (int num = 0; num < provider.club.length; num++)
+                      for (int num = 0; num < 3; num++)
                         ClubContainer(
                           width: double.infinity,
-                          image: provider.club[num].image,
-                          icon: (provider.club[num].like
+                          image: widget.clubSummary![num].image,
+                          icon: (widget.clubSummary![num].like
                               ? Icon(Icons.favorite)
                               : Icon(Icons.favorite_border)),
                           onPressed: () {
-                            provider.changeLike(provider.club[num]);
+                            widget.clubChangeLike(widget.clubSummary![num]);
                           },
-                          tag: provider.club[num].tag,
-                          title: provider.club[num].title,
-                          location: provider.club[num].location,
-                          date: provider.club[num].date,
-                          participants: provider.club[num].participants,
-                          total: provider.club[num].total,
+                          tag: widget.clubSummary![num].tag,
+                          title: widget.clubSummary![num].title,
+                          location: widget.clubSummary![num].location,
+                          date: widget.clubSummary![num].date,
+                          participants: widget.clubSummary![num].participants,
+                          total: widget.clubSummary![num].total,
                         ),
                     ],
                   ),

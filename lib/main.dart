@@ -8,6 +8,7 @@ import 'package:loginscreen/providers/selected_host_provider.dart';
 import 'package:loginscreen/providers/socialring_contest_poster_provider.dart';
 import 'package:loginscreen/screen/create/choose_meeting_type.dart';
 import 'package:loginscreen/screen/feed_write_page.dart';
+import 'package:loginscreen/screen/initialization_screen.dart';
 import 'package:loginscreen/screen/meeting/sub_page/category_view.dart';
 import 'package:loginscreen/screen/profile/profile_edit.dart';
 import 'package:loginscreen/screen/profile/propensity_report_page.dart';
@@ -80,6 +81,7 @@ class MyApp extends StatelessWidget {
                   '/FeedWrite_Page' : (context) => FeedWritePage(),
                   '/SearchKeyword_page' : (context) => SearchKeywordPage(),
                   '/Search_page' : (context) => SearchPage(),
+                  '/Initialization' : (context) => InitializationScreen()
                 }
             );
           }

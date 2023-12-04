@@ -17,6 +17,7 @@ class _ClubNewState extends State<ClubNew> {
 
   @override
   void didChangeDependencies() {
+    print('club new');
     if (_isInit) {
       setState(() {
         _isLoading = true;

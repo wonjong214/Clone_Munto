@@ -18,14 +18,19 @@ class _ClubRecommendState extends State<ClubRecommend> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
+      if(this.mounted){
+        setState(() {
+          _isLoading = true;
+        });
+      }
+
 
       Provider.of<MeetingSummaryProvider>(context).fetchAndSetClubItems().then((_){
-        setState(() {
-          _isLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;

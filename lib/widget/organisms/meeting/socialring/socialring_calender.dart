@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
+import '../../../../model/meeting/recommend/meeting_summary.dart';
 import '../../../../providers/meeting_summary_provider.dart';
 import '../../../atoms/calender_radio.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/margin_sizedbox.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
 
 
 class SocialringCalender extends StatefulWidget{
-
-
+  List<MeetingSummary>? socialringSummary;
+  Function socialringChangeLike;
+  bool isSocialringLoading;
+  
+  SocialringCalender({required this.socialringSummary, required this.socialringChangeLike,
+    required this.isSocialringLoading});
 
   @override
   State<SocialringCalender> createState() => _SocialringCalenderState();
@@ -21,31 +27,14 @@ class SocialringCalender extends StatefulWidget{
 class _SocialringCalenderState extends State<SocialringCalender> {
   Map<String, int> dateMap;
   int? calenderGroupValue;
-  bool _isInit = true;
-  bool _isSocialringLoading = false;
+  
 
-  _SocialringCalenderState() : dateMap = new Map<String, int>() {
-    getdateMap();
-  }
+  _SocialringCalenderState() : dateMap = new Map<String, int>();
+  
   @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      if(this.mounted){
-        setState(() {
-          _isSocialringLoading = true;
-        });
-      }
-
-      Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_){
-        if(this.mounted){
-          setState(() {
-            _isSocialringLoading = false;
-          });
-        }
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
+    getdateMap();
   }
 
   void getdateMap() {
@@ -80,7 +69,6 @@ class _SocialringCalenderState extends State<SocialringCalender> {
 
   @override
   Widget build(BuildContext context) {
-    var meeting_provider = Provider.of<MeetingSummaryProvider>(context);
     return Container(
         margin: EdgeInsets.only(right: 20, left: 20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -108,24 +96,38 @@ class _SocialringCalenderState extends State<SocialringCalender> {
             ],
           ),
           moreButtonMargin,
-          _isSocialringLoading ? const Center(child: CircularProgressIndicator())
-              :Column(
+          widget.isSocialringLoading ?
+          Column(
+            children: [
+              for (int num = 0; num < 3; num++)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: CircularprogressContainer(
+                    width: double.infinity,
+                    height: 120,
+                    backColor: Colors.white60,
+                    circular: 5,
+                  ),
+                ),
+            ],
+          ) :
+          Column(
             children: [
               for(int num=0; num<3; num++)
                 GestureDetector(
                     onTap: () {print('touch');},
                     child: SocialringContainer(
-                      image: meeting_provider.socialring[num].image,
-                      icon: meeting_provider.socialring[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                      image: widget.socialringSummary![num].image,
+                      icon: widget.socialringSummary![num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                       onPressed: (){
-                        meeting_provider.changeLike(meeting_provider.socialring[num]);
+                        widget.socialringChangeLike(widget.socialringSummary![num]);
                       },
-                      tag:  meeting_provider.socialring[num].tag,
-                      title:  meeting_provider.socialring[num].title,
-                      location:  meeting_provider.socialring[num].location,
-                      date:  meeting_provider.socialring[num].date,
-                      participants:  meeting_provider.socialring[num].participants,
-                      total:  meeting_provider.socialring[num].total,
+                      tag:  widget.socialringSummary![num].tag,
+                      title:  widget.socialringSummary![num].title,
+                      location:  widget.socialringSummary![num].location,
+                      date:  widget.socialringSummary![num].date,
+                      participants:  widget.socialringSummary![num].participants,
+                      total:  widget.socialringSummary![num].total,
                     )
                 ),
             ],

@@ -95,15 +95,19 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
       });
 
       Provider.of<MemberReviewProvider>(context).fetchAndSetReviewItems().then((_){
-        setState(() {
-          _isMemberReivewLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isMemberReivewLoading = false;
+          });
+        }
       });
 
       Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
-        setState(() {
-          _isSelectedHostLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isSelectedHostLoading = false;
+          });
+        }
       });
     }
     _isInit = false;
@@ -130,7 +134,6 @@ class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveCl
             ExhibitionsView(
               height: 350,
               socialringContestPoster: socialringContestPostProvider.socialringContestPoster,
-              socialringContestPosterPageChange: socialringContestPostProvider.pageChange,
               isSocialringContestPosterLoading: _isSocialringContestPoster,
               currentPage: socialringContestPostProvider.currentPage,
             ),

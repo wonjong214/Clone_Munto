@@ -1,44 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
+import '../../../../model/meeting/recommend/meeting_summary.dart';
 import '../../../../providers/meeting_summary_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
 class SocialringRecommend extends StatefulWidget {
+  List<MeetingSummary>? socialringSummary;
+  Function socialringChangeLike;
+  bool isSocialringLoading;
+
+  SocialringRecommend(
+      {required this.socialringSummary,
+      required this.socialringChangeLike,
+      required this.isSocialringLoading});
+
   @override
   State<SocialringRecommend> createState() => _SocialringRecommendState();
 }
 
 class _SocialringRecommendState extends State<SocialringRecommend> {
-  bool _isInit = true;
-  bool _isSocialringLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      if (this.mounted) {
-        setState(() {
-          _isSocialringLoading = true;
-        });
-      }
-      Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_) {
-        if (this.mounted) {
-          setState(() {
-            _isSocialringLoading = false;
-          });
-        }
-      },
-      );
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
-
   @override
   Widget build(BuildContext context) {
-    var meetingProvider = Provider.of<MeetingSummaryProvider>(context);
     return Container(
         margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
         child: Column(
@@ -50,8 +36,21 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
               fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 10),
-            _isSocialringLoading
-                ? const Center(child: CircularProgressIndicator())
+            widget.isSocialringLoading
+                ? Column(
+                    children: [
+                      for (int num = 0; num < 3; num++)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 15),
+                          child: CircularprogressContainer(
+                            width: double.infinity,
+                            height: 120,
+                            backColor: Colors.white60,
+                            circular: 5,
+                          ),
+                        ),
+                    ],
+                  )
                 : Column(
                     children: [
                       for (int num = 0; num < 3; num++)
@@ -60,22 +59,21 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
                               print('touch');
                             },
                             child: SocialringContainer(
-                              image: meetingProvider.socialring[num].image,
-                              icon: meetingProvider.socialring[num].like
+                              image: widget.socialringSummary![num].image,
+                              icon: widget.socialringSummary![num].like
                                   ? Icon(Icons.favorite)
                                   : Icon(Icons.favorite_border),
                               onPressed: () {
-                                meetingProvider.changeLike(
-                                    meetingProvider.socialring[num]);
+                                widget.socialringChangeLike(
+                                    widget.socialringSummary![num]);
                               },
-                              tag: meetingProvider.socialring[num].tag,
-                              title: meetingProvider.socialring[num].title,
-                              location:
-                                  meetingProvider.socialring[num].location,
-                              date: meetingProvider.socialring[num].date,
+                              tag: widget.socialringSummary![num].tag,
+                              title: widget.socialringSummary![num].title,
+                              location: widget.socialringSummary![num].location,
+                              date: widget.socialringSummary![num].date,
                               participants:
-                                  meetingProvider.socialring[num].participants,
-                              total: meetingProvider.socialring[num].total,
+                                  widget.socialringSummary![num].participants,
+                              total: widget.socialringSummary![num].total,
                             )),
                     ],
                   ),

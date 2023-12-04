@@ -1,46 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
-import '../../../../providers/resolution_provider.dart';
-import '../../../../providers/selected_host_provider.dart';
+import '../../../../model/meeting/recommend/selected_host.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/follow_button.dart';
 import '../../../atoms/keyword_tag_container.dart';
 import '../../../atoms/margin_sizedbox.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 
 class SocialringHostView extends StatefulWidget{
+  List<SelectedHost>? selectedHost;
+  Function selectedHostChangeFollow;
+  bool isSelectedHostLoading;
+  double width;
+  
+  SocialringHostView({required this.selectedHost, required this.selectedHostChangeFollow, required this.isSelectedHostLoading,
+  required this.width});
+  
   @override
   State<SocialringHostView> createState() => _SocialringHostViewState();
 }
 
 class _SocialringHostViewState extends State<SocialringHostView> {
-  bool _isInit = true;
-  bool _isLoading = false;
 
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      if(this.mounted){
-        setState(() {
-          _isLoading = true;
-        });
-      }
-      Provider.of<SelectedHostProvider>(context).fetchAndSelectedHostItems().then((_){
-        if(this.mounted){
-          setState(() {
-            _isLoading = false;
-          });
-        }
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
+  
   @override
   Widget build(BuildContext context) {
-    double width = Provider.of<ResolutionProvider>(context).width_get;
-    var selectedHostProvider = Provider.of<SelectedHostProvider>(context);
+    
     return Column(
       children: [
         Container(
@@ -59,8 +45,22 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    _isLoading ? const Center(child: CircularProgressIndicator())
-                        : Row(
+                    widget.isSelectedHostLoading ?
+                    Row(
+                      children: [
+                        for(int i = 0; i < 3; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: CircularprogressContainer(
+                              width: widget.width - 70,
+                              height: widget.width - 70,
+                              circular: 20,
+                              backColor: Colors.white60,
+                            ),
+                          )
+                      ],
+                    ) :
+                    Row(
                       children: [
                         for(int i = 0; i < 3; i++)
                           Container(
@@ -71,8 +71,8 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                       decoration: BoxDecoration(
                                         color: Colors.white60,
                                       ),
-                                      width: width - 70,
-                                      height: width - 70,
+                                      width: widget.width - 70,
+                                      height: widget.width - 70,
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +91,7 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                                           CircleAvatar(
                                                             radius: 40,
                                                             backgroundImage: AssetImage(
-                                                                selectedHostProvider.selectedhost[i].profileImage),
+                                                                widget.selectedHost![i].profileImage),
                                                           ),
                                                           SizedBox(
                                                             width: 10,
@@ -106,7 +106,7 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                                               CrossAxisAlignment.start,
                                                               children: [
                                                                 Text(
-                                                                  selectedHostProvider.selectedhost[i].name,
+                                                                  widget.selectedHost![i].name,
                                                                   style: TextStyle(fontSize: 20),
                                                                 ),
                                                                 Row(
@@ -132,14 +132,14 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                                           GestureDetector(
                                                               onTap: (){
 
-                                                                selectedHostProvider.changeFollow(selectedHostProvider.selectedhost[i]);
+                                                                widget.selectedHostChangeFollow(widget.selectedHost![i]);
                                                               },
-                                                              child: FollowButton(selected: selectedHostProvider.selectedhost[i].follow)
+                                                              child: FollowButton(selected: widget.selectedHost![i].follow)
                                                           )
                                                         ],
                                                       )),
                                                   Text(
-                                                    selectedHostProvider.selectedhost[i].selfIntroduction,
+                                                    widget.selectedHost![i].selfIntroduction,
                                                     maxLines: 2,
                                                     textAlign: TextAlign.start,
                                                     style: TextStyle(height: 1.5, fontSize: 15, ),
@@ -152,19 +152,19 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                                               onTap: (){
                                                                 Navigator.of(context, rootNavigator: true).pushNamed(
                                                                   '/SearchKeyword_page',
-                                                                  arguments: selectedHostProvider.selectedhost[i].tag[num],
+                                                                  arguments: widget.selectedHost![i].tag[num],
                                                                 );
                                                               },
                                                               child: Padding(
                                                                 padding: const EdgeInsets.only(right: 10),
-                                                                child: KeyWordTagContainer(text: selectedHostProvider.selectedhost[i].tag[num]),
+                                                                child: KeyWordTagContainer(text: widget.selectedHost![i].tag[num]),
                                                               )
                                                           )
                                                         else
                                                           Padding(
                                                             padding: const EdgeInsets.only(right: 10),
                                                             child: KeyWordTagContainer(
-                                                              text: '+${selectedHostProvider.selectedhost[i].tag.length - 4}',
+                                                              text: '+${widget.selectedHost![i].tag.length - 4}',
                                                               border: Border.all(width: 1, color: Colors.grey),
                                                               backColor: Colors.transparent,
                                                               textColor: Colors.grey,
@@ -181,8 +181,8 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                               Expanded(
                                                 flex: 1,
                                                 child: Image.asset(
-                                                  selectedHostProvider.selectedhost[i].image[0],
-                                                  height: (width - 70) / 3,
+                                                  widget.selectedHost![i].image[0],
+                                                  height: (widget.width - 70) / 3,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -190,8 +190,8 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                                   flex: 1,
                                                   child: Container(
                                                     child: Image.asset(
-                                                      selectedHostProvider.selectedhost[i].image[1],
-                                                      height: (width - 70) / 3,
+                                                      widget.selectedHost![i].image[1],
+                                                      height: (widget.width - 70) / 3,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   )),
@@ -199,8 +199,8 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                                                   flex: 1,
                                                   child: Container(
                                                     child: Image.asset(
-                                                      selectedHostProvider.selectedhost[i].image[2],
-                                                      height: (width - 70) / 3,
+                                                      widget.selectedHost![i].image[2],
+                                                      height: (widget.width - 70) / 3,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   )),

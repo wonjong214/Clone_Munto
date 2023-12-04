@@ -3,46 +3,27 @@ import 'package:provider/provider.dart';
 import '../../../../model/meeting/recommend/meeting_summary.dart';
 import '../../../../providers/meeting_summary_provider.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 import '../../../molecules/meeting/Socialring_Container.dart';
 
 class SocialringHicking extends StatefulWidget{
   List<MeetingSummary> hickingList;
+  List<MeetingSummary>? socialringSummary;
+  Function socialringChangeLike;
+  bool isSocialringLoading;
 
-  SocialringHicking():hickingList = List.empty(growable: true);
+  SocialringHicking({required this.socialringSummary, required this.socialringChangeLike, required this.isSocialringLoading})
+      :hickingList = List.empty(growable: true);
 
   @override
   State<SocialringHicking> createState() => _SocialringHickingState();
 }
 
 class _SocialringHickingState extends State<SocialringHicking> {
-  bool _isInit = true;
-  bool _isSocialringLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      if(this.mounted){
-        setState(() {
-          _isSocialringLoading = true;
-        });
-      }
-
-      Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_){
-        if(this.mounted){
-          setState(() {
-            _isSocialringLoading = false;
-          });
-        }
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
-    var meetingProvider = Provider.of<MeetingSummaryProvider>(context);
-    meetingProvider.socialring.forEach((element) {
+    widget.socialringSummary?.forEach((element) {
       if(element.tag.contains('등산'))
         widget.hickingList.add(element);
     });
@@ -73,8 +54,22 @@ class _SocialringHickingState extends State<SocialringHicking> {
                 ),
               ),
               SizedBox(height: 50,),
-              _isSocialringLoading ? const Center(child: CircularProgressIndicator())
-                  :Column(
+              widget.isSocialringLoading ?
+              Column(
+                children: [
+                  for (int num = 0; num < 3; num++)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 15),
+                      child: CircularprogressContainer(
+                        width: double.infinity,
+                        height: 120,
+                        backColor: Colors.white60,
+                        circular: 5,
+                      ),
+                    ),
+                ],
+              ) :
+              Column(
                 children: [
                   for(int num=0; num<3; num++)
                     GestureDetector(
@@ -83,7 +78,7 @@ class _SocialringHickingState extends State<SocialringHicking> {
                           image: widget.hickingList[num].image,
                           icon:  widget.hickingList[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                           onPressed: (){
-                            meetingProvider.changeLike( widget.hickingList[num]);
+                            widget.socialringChangeLike( widget.hickingList[num]);
                           },
                           tag:   widget.hickingList[num].tag,
                           title:   widget.hickingList[num].title,

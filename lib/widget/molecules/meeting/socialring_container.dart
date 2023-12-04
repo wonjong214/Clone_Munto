@@ -26,7 +26,7 @@ class SocialringContainer extends StatelessWidget {
         width: width,
         margin: EdgeInsets.only(bottom: 15),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5), color: Colors.white60),
+            borderRadius: BorderRadius.circular(5), color: Colors.white),
         child: Row(
           children: [
             Container(

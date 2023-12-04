@@ -25,6 +25,9 @@ class LoungePostProvider extends ChangeNotifier{
     catch(e){
       print(e);
     }
+    finally{
+      await Future.delayed(Duration(milliseconds: 2000));
+    }
   }
 
   void changeLike(LoungePost card){

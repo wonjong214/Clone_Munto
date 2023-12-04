@@ -31,7 +31,7 @@ class MemberReviewProvider extends ChangeNotifier{
     }
     finally{
       //if(this.isInit)
-      await Future.delayed(Duration(milliseconds: 5000));
+      await Future.delayed(Duration(milliseconds: 1000));
 
       //this.isInit = false;
     }

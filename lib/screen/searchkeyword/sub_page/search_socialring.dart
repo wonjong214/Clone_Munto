@@ -10,22 +10,28 @@ class SearchSocialring extends StatefulWidget{
   State<SearchSocialring> createState() => _SearchSocialringState();
 }
 
-class _SearchSocialringState extends State<SearchSocialring> {
+class _SearchSocialringState extends State<SearchSocialring> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isSocialringLoading = false;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isSocialringLoading = true;
-      });
-
+      if(this.mounted){
+        setState(() {
+          _isSocialringLoading = true;
+        });
+      }
 
       Provider.of<MeetingSummaryProvider>(context).fetchAndSetSocialringItems().then((_){
-        setState(() {
-          _isSocialringLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isSocialringLoading = false;
+          });
+        }
       });
     }
     _isInit = false;
@@ -76,7 +82,8 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   ),
                   SizedBox(width: 10,),
                   CommonBorderContainer(
-                    backColor: Colors.white,                    widget: Text(
+                    backColor: Colors.white,
+                    widget: Text(
                       '나이',
                       style: TextStyle(
                         fontSize: 15,
@@ -86,7 +93,8 @@ class _SearchSocialringState extends State<SearchSocialring> {
                   ),
                   SizedBox(width: 10,),
                   CommonBorderContainer(
-                    backColor: Colors.white,                    widget: Text(
+                    backColor: Colors.white,
+                    widget: Text(
                       '정원',
                       style: TextStyle(
                         fontSize: 15,
@@ -127,7 +135,7 @@ class _SearchSocialringState extends State<SearchSocialring> {
                 ],
               ),
               SizedBox(height: 20,),
-              _isSocialringLoading ? const Center(child: CircularProgressIndicator())
+              _isSocialringLoading ? const Center(child: CircularProgressIndicator(color: Colors.grey,))
                   :Column(
                 children: [
                   for(int num=0; num<3; num++)

@@ -22,11 +22,13 @@ class ClubPage extends StatefulWidget{
   State<ClubPage> createState() => _ClubPageState();
 }
 
-class _ClubPageState extends State<ClubPage> {
+class _ClubPageState extends State<ClubPage> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isClubLoading = false;
   bool _isClubNewsLoading = false;
 
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void didChangeDependencies() {

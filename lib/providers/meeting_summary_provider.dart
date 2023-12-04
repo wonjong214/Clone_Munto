@@ -33,7 +33,7 @@ class MeetingSummaryProvider extends ChangeNotifier{
     }
     finally{
       //if(this.isSocialringInit)
-      await Future.delayed(Duration(milliseconds: 2500));
+      await Future.delayed(Duration(milliseconds: 1600));
 
       //this.isSocialringInit = false;
     }

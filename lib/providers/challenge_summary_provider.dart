@@ -31,7 +31,7 @@ class ChallengeSummaryProvider extends ChangeNotifier{
     }
     finally {
       //if(this.isInit)
-      await Future.delayed(Duration(milliseconds: 3000));
+      await Future.delayed(Duration(milliseconds: 800));
 
       //this.isInit = false;
     }

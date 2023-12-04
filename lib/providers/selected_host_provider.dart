@@ -27,7 +27,7 @@ class SelectedHostProvider extends ChangeNotifier{
     }
     finally{
       //if(this.isInit)
-      await Future.delayed(Duration(milliseconds: 5000));
+      await Future.delayed(Duration(milliseconds: 2500));
 
       //this.isInit = false;
     }

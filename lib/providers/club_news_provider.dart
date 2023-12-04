@@ -15,7 +15,6 @@ class ClubNewsProvider extends ChangeNotifier{
   Future<void> fetchAndSetClubNewsItems() async {
     try{
       final response = await rootBundle.loadString('assets/data/club_news.json'); //http// 통신 코드
-      print(response);
       final extractedData = json.decode(response) as Map<String, dynamic>;
       final List<ClubNews> loadedClubNewsItem = [];
 
@@ -29,7 +28,7 @@ class ClubNewsProvider extends ChangeNotifier{
     }
     finally {
       //if(this.isInit)
-      await Future.delayed(Duration(milliseconds: 5000));
+      await Future.delayed(Duration(milliseconds: 1600));
       //this.isInit = false;
     }
   }

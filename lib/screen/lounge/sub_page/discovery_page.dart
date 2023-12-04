@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/lounge_post_provider.dart';
 import '../../../widget/organisms/lounge/lounge_review.dart';
@@ -15,21 +16,28 @@ class DiscoveryPage extends StatefulWidget{
   State<DiscoveryPage> createState() => _DiscoveryPageState();
 }
 
-class _DiscoveryPageState extends State<DiscoveryPage> {
+class _DiscoveryPageState extends State<DiscoveryPage> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isLoading = false;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
+      if(this.mounted){
+        setState(() {
+          _isLoading = true;
+        });
+      }
 
       Provider.of<LoungePostProvider>(context).fetchAndSetCardItems().then((_){
-        setState(() {
-          _isLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;
@@ -38,19 +46,20 @@ class _DiscoveryPageState extends State<DiscoveryPage> {
   @override
   Widget build(BuildContext context) {
     var cardProvider = Provider.of<LoungePostProvider>(context);
-    return SingleChildScrollView(
+    return _isLoading ?
+    CircularprogressContainer(
+      circular: 0,
+    ) :
+    SingleChildScrollView(
       controller: widget._controller,
       child: Column(
         children: [
-          _isLoading ? const Center(child: CircularProgressIndicator())
-              : Column(
-            children: [
-              for(int i =0; i< cardProvider.card.length; i++)
-                LoungeReview(card: cardProvider.card[i],changeLike: (){cardProvider.changeLike(cardProvider.card[i]);},)
-            ],
-          ),
+          for(int i =0; i< cardProvider.card.length; i++)
+            LoungeReview(card: cardProvider.card[i],changeLike: (){cardProvider.changeLike(cardProvider.card[i]);},)
         ],
       ),
     );
   }
+
+
 }

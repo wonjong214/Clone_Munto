@@ -11,21 +11,28 @@ class SearchClub extends StatefulWidget {
   State<SearchClub> createState() => _SearchClubState();
 }
 
-class _SearchClubState extends State<SearchClub> {
+class _SearchClubState extends State<SearchClub> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isLoading = false;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
+      if(this.mounted){
+        setState(() {
+          _isLoading = true;
+        });
+      }
 
       Provider.of<MeetingSummaryProvider>(context).fetchAndSetClubItems().then((_) {
-        setState(() {
-          _isLoading = false;
-        });
+        if(this.mounted){
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;
@@ -139,7 +146,7 @@ class _SearchClubState extends State<SearchClub> {
                 height: 20,
               ),
               _isLoading
-                  ? const Center(child: CircularProgressIndicator())
+                  ? const Center(child: CircularProgressIndicator(color: Colors.grey,))
                   : Column(
                       children: [
                         for (int num = 0; num < provider.club.length; num++)
@@ -167,4 +174,6 @@ class _SearchClubState extends State<SearchClub> {
       ),
     );
   }
+
+
 }

@@ -9,23 +9,29 @@ class SearchChallenge extends StatefulWidget {
   State<SearchChallenge> createState() => _SearchChallengeState();
 }
 
-class _SearchChallengeState extends State<SearchChallenge> {
+class _SearchChallengeState extends State<SearchChallenge> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isLoading = false;
 
   @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
+  @override
   void didChangeDependencies() {
     if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<ChallengeSummaryProvider>(context)
-          .fetchAndSetChallengeItems()
-          .then((_) {
+      if(this.mounted){
         setState(() {
-          _isLoading = false;
+          _isLoading = true;
         });
-        print('in!!!!!!');
+      }
+
+      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_) {
+        if(this.mounted){
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;
@@ -82,7 +88,7 @@ class _SearchChallengeState extends State<SearchChallenge> {
                 height: 20,
               ),
               _isLoading
-                  ? const Center(child: CircularProgressIndicator())
+                  ? const Center(child: CircularProgressIndicator(color: Colors.grey,))
                   : Column(
                       children: [
                         for (int num = 0; num < 3; num++)

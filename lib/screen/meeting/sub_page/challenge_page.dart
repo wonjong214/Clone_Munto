@@ -21,9 +21,12 @@ class ChallengePage extends StatefulWidget{
   State<ChallengePage> createState() => _ChallengePageState();
 }
 
-class _ChallengePageState extends State<ChallengePage> {
+class _ChallengePageState extends State<ChallengePage> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isChallengeLoading = false;
+
+  @override
+  bool get wantKeepAlive =>true;
 
   @override
   void didChangeDependencies() {

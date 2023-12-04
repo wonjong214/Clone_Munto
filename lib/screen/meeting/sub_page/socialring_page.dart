@@ -26,14 +26,15 @@ class SocialringPage extends StatefulWidget {
   State<SocialringPage> createState() => _SocialringPageState();
 }
 
-class _SocialringPageState extends State<SocialringPage> {
+class _SocialringPageState extends State<SocialringPage> with AutomaticKeepAliveClientMixin{
   bool _isInit = true;
   bool _isSocialringContestPoster = false;
   bool _isSocialringLoading = false;
   bool _isMemberReivewLoading = false;
   bool _isSelectedHostLoading = false;
 
-
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void didChangeDependencies() {

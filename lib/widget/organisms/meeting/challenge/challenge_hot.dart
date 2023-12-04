@@ -1,44 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
+import '../../../../model/meeting/recommend/challenge_summary.dart';
 import '../../../../providers/challenge_summary_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/margin_sizedbox.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 import '../../../molecules/meeting/challenge_container.dart';
 
 class ChallengeHot extends StatefulWidget{
+  List<ChallengeSumamry>? challengeSumamry;
+  Function challengeChangeLike;
+  bool isChallengeLoading;
+  
+  ChallengeHot({required this.challengeSumamry, required this.challengeChangeLike, required this.isChallengeLoading});
+  
   @override
   State<ChallengeHot> createState() => _ChallengeHotState();
 }
 
 class _ChallengeHotState extends State<ChallengeHot> {
-  bool _isInit = true;
-  bool _isLoading = false;
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      if(this.mounted){
-        setState(() {
-          _isLoading = true;
-        });
-      }
-
-      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
-        if(this.mounted){
-          setState(() {
-            _isLoading = false;
-          });
-        }
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
   @override
   Widget build(BuildContext context) {
-    var challengeProvider = Provider.of<ChallengeSummaryProvider>(context);
     return Container(
         width: double.infinity,
         margin: EdgeInsets.only(left: 20, right: 20,bottom: 20),
@@ -51,28 +35,41 @@ class _ChallengeHotState extends State<ChallengeHot> {
               fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
-            _isLoading ? const Center(child: CircularProgressIndicator())
-                : Column(
+            widget.isChallengeLoading ?
+            Column(
+              children: [
+                for (int num = 0; num < 3; num++)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: CircularprogressContainer(
+                      width: double.infinity,
+                      height: 120,
+                      backColor: Colors.white60,
+                      circular: 5,
+                    ),
+                  )
+              ],
+            ) :
+            Column(
               children: [
                 for (int num = 0; num < 3; num++)
                   ChallengeContainer(
                     width: double.infinity,
-                    image: challengeProvider.challenge[num].image,
-                    icon: (challengeProvider.challenge[num].like
+                    image: widget.challengeSumamry![num].image,
+                    icon: (widget.challengeSumamry![num].like
                         ? Icon(Icons.favorite)
                         : Icon(Icons.favorite_border)),
                     onPressed: (){
-                      challengeProvider
-                          .changeLike(challengeProvider.challenge[num]);
+                      widget.challengeChangeLike(widget.challengeSumamry![num]);
                     },
-                    tag: challengeProvider.challenge[num].tag,
-                    title: challengeProvider.challenge[num].title,
-                    date: challengeProvider.challenge[num].date,
-                    duration: challengeProvider.challenge[num].duration,
-                    time: challengeProvider.challenge[num].time,
+                    tag: widget.challengeSumamry![num].tag,
+                    title: widget.challengeSumamry![num].title,
+                    date: widget.challengeSumamry![num].date,
+                    duration: widget.challengeSumamry![num].duration,
+                    time: widget.challengeSumamry![num].time,
                     participants:
-                    challengeProvider.challenge[num].participants,
-                    total: challengeProvider.challenge[num].total,
+                    widget.challengeSumamry![num].participants,
+                    total: widget.challengeSumamry![num].total,
                   ),
               ],
             ),

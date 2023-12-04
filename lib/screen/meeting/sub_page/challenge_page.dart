@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/challenge_summary_provider.dart';
 import '../../../widget/atoms/margin_sizedbox.dart';
 import '../../../widget/organisms/meeting/challenge/challenge_hot.dart';
 import '../../../widget/organisms/meeting/challenge/challenge_pageview.dart';
@@ -8,7 +10,7 @@ import '../../../widget/organisms/meeting/recommend/open_meeting_view.dart';
 
 
 
-class ChallengePage extends StatelessWidget{
+class ChallengePage extends StatefulWidget{
   late final ScrollController _controller;
 
   ChallengePage(ScrollController controller){
@@ -16,17 +18,54 @@ class ChallengePage extends StatelessWidget{
   }
 
   @override
+  State<ChallengePage> createState() => _ChallengePageState();
+}
+
+class _ChallengePageState extends State<ChallengePage> {
+  bool _isInit = true;
+  bool _isChallengeLoading = false;
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      if(this.mounted){
+        setState(() {
+          _isChallengeLoading = true;
+        });
+      }
+
+      Provider.of<ChallengeSummaryProvider>(context).fetchAndSetChallengeItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isChallengeLoading = false;
+          });
+        }
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+  @override
   Widget build(BuildContext context) {
+    var challengeProvider = Provider.of<ChallengeSummaryProvider>(context);
     return SingleChildScrollView(
-      controller: _controller,
+      controller: widget._controller,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           ChallengePageView(),
           SizedBox(height: 30,),
-          ChallengeHot(),
+          ChallengeHot(
+            challengeSumamry: challengeProvider.challenge,
+            challengeChangeLike: challengeProvider.changeLike,
+            isChallengeLoading: _isChallengeLoading,
+          ),
           interGroupMargin,
-          ChallengeTotal(),
+          ChallengeTotal(
+            challengeSumamry: challengeProvider.challenge,
+            challengeChangeLike: challengeProvider.changeLike,
+            isChallengeLoading: _isChallengeLoading,
+          ),
           SizedBox(height: 25,),
           OpenMeetingView(
             title: '챌린지 열기',

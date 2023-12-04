@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../providers/challenge_summary_provider.dart';
 import '../../../providers/club_news_provider.dart';
+import '../../../providers/meeting_summary_provider.dart';
+import '../../../providers/resolution_provider.dart';
 import '../../../widget/atoms/margin_sizedbox.dart';
 import '../../../widget/organisms/meeting/club/club_issue.dart';
 import '../../../widget/organisms/meeting/club/club_new.dart';
@@ -9,28 +12,83 @@ import '../../../widget/organisms/meeting/club/club_recommend.dart';
 import '../../../widget/organisms/meeting/recommend/open_meeting_view.dart';
 
 
-class ClubPage extends StatelessWidget{
+class ClubPage extends StatefulWidget{
   late final ScrollController _controller;
-
   ClubPage(ScrollController controller){
     _controller = controller;
   }
+
+  @override
+  State<ClubPage> createState() => _ClubPageState();
+}
+
+class _ClubPageState extends State<ClubPage> {
+  bool _isInit = true;
+  bool _isClubLoading = false;
+  bool _isClubNewsLoading = false;
+
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      if (this.mounted) {
+        setState(() {
+          _isClubLoading = true;
+          _isClubNewsLoading = true;
+        });
+      }
+
+      Provider.of<MeetingSummaryProvider>(context).fetchAndSetClubItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isClubLoading = false;
+          });
+        }
+      });
+
+      Provider.of<ClubNewsProvider>(context).fetchAndSetClubNewsItems().then((_){
+        if(this.mounted){
+          setState(() {
+            _isClubNewsLoading = false;
+          });
+        }
+      });
+
+      _isInit = false;
+      super.didChangeDependencies();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    var meetingProvider = Provider.of<MeetingSummaryProvider>(context);
+    var clubNewsProvider = Provider.of<ClubNewsProvider>(context);
+    var resolutionProvider = Provider.of<ResolutionProvider>(context);
+
     return SingleChildScrollView(
-      controller: _controller,
+      controller: widget._controller,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           ClubPageView(),
           SizedBox(height: 30),
-          ClubRecommend(),
+          ClubRecommend(
+            clubSummary: meetingProvider.club,
+            clubChangeLike: meetingProvider.changeLike,
+            isClubLoading: _isClubLoading,
+          ),
           interGroupMargin,
-          ClubNew(),
+          ClubNew(
+            clubSummary: meetingProvider.club,
+            clubChangeLike: meetingProvider.changeLike,
+            isClubLoading: _isClubLoading,
+          ),
           interGroupMargin,
-          ChangeNotifierProvider(
-            create: (context) => ClubNewsProvider(),
-            child: ClubIssue(),
+          ClubIssue(
+            clubNews: clubNewsProvider.clubnews,
+            clubNewsChangeLike: clubNewsProvider.changeLike,
+            isClubNewsLoading: _isClubNewsLoading,
+            width: resolutionProvider.width_get,
           ),
           interGroupMargin,
           OpenMeetingView(

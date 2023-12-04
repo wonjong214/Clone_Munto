@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/providers/challenge_summary_provider.dart';
+import 'package:loginscreen/providers/club_news_provider.dart';
 import 'package:loginscreen/providers/lounge_post_provider.dart';
 import 'package:loginscreen/providers/meeting_summary_provider.dart';
 import 'package:loginscreen/providers/member_review_provider.dart';
@@ -54,6 +55,9 @@ class MyApp extends StatelessWidget {
             ),
             ChangeNotifierProvider(
               create: (_) => SocialringContestPosterProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (_) => ClubNewsProvider(),
             ),
           ],
           builder: (context, child ){

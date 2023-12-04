@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
+import '../../../../model/meeting/recommend/club_news.dart';
 import '../../../../providers/club_news_provider.dart';
 import '../../../../providers/resolution_provider.dart';
 import '../../../atoms/common_text.dart';
 import '../../../atoms/margin_sizedbox.dart';
 import '../../../atoms/more_button.dart';
+import '../../../molecules/circularprogress_container.dart';
 
 
 
-class ClubIssue extends StatelessWidget{
+class ClubIssue extends StatefulWidget{
+  List<ClubNews>? clubNews;
+  Function clubNewsChangeLike;
+  bool isClubNewsLoading;
+  double width;
+  
+  ClubIssue({required this.clubNews, required this.clubNewsChangeLike, required this.isClubNewsLoading, required this.width});
+  
+  @override
+  State<ClubIssue> createState() => _ClubIssueState();
+}
+
+class _ClubIssueState extends State<ClubIssue> {
   @override
   Widget build(BuildContext context) {
-    var clubnewsProvider = Provider.of<ClubNewsProvider>(context);
-    double width = Provider.of<ResolutionProvider>(context).width_get;
     double margin = 50;
-    double imgWidth = (width - margin) / 2;
+    double imgWidth = (widget.width - margin) / 2;
 
     return Container(
         margin: EdgeInsets.only(left: 20, right: 20,bottom: 20),
@@ -28,6 +40,13 @@ class ClubIssue extends StatelessWidget{
               fontWeight: meetingTabGroupTitleFontWeight,
             ),
             SizedBox(height: 8),
+            widget.isClubNewsLoading ?
+            CircularprogressContainer(
+              width: double.infinity,
+              height: (imgWidth + 60)*2 + 10,
+              backColor: Colors.white60,
+              circular: 5,
+            ) :
             Container(
                 height: (imgWidth + 60)*2 + 10,
                 child: Column(
@@ -48,7 +67,7 @@ class ClubIssue extends StatelessWidget{
                                     height: imgWidth,
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage(clubnewsProvider.clubnews[num].image),
+                                            image: AssetImage(widget.clubNews![num].image),
                                             fit: BoxFit.cover
                                         ),
                                         borderRadius: BorderRadius.circular(5)
@@ -58,12 +77,12 @@ class ClubIssue extends StatelessWidget{
                                         child: Row(
                                           children: [
                                             IconButton(
-                                                icon: clubnewsProvider.clubnews[num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                                                icon: widget.clubNews![num].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                                                 color: Colors.white,
-                                                onPressed: () {clubnewsProvider.changelike(clubnewsProvider.clubnews[num]);}
+                                                onPressed: () {widget.clubNewsChangeLike(widget.clubNews![num]);}
                                             ),
                                             Text(
-                                              '${clubnewsProvider.clubnews[num].likeNum}',
+                                              '${widget.clubNews![num].likeNum}',
                                               style: TextStyle(
                                                   color: Colors.white
                                               ),
@@ -81,7 +100,7 @@ class ClubIssue extends StatelessWidget{
                                       ),
                                       Expanded(
                                         child: Text(
-                                          clubnewsProvider.clubnews[num].clubExplantation,
+                                          widget.clubNews![num].clubExplantation,
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                           style: TextStyle(
@@ -92,7 +111,7 @@ class ClubIssue extends StatelessWidget{
                                     ],
                                   ),
                                   Text(
-                                    clubnewsProvider.clubnews[num].title,
+                                    widget.clubNews![num].title,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
                                     textAlign: TextAlign.left,
@@ -113,7 +132,7 @@ class ClubIssue extends StatelessWidget{
                                       height: imgWidth,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
-                                              image: AssetImage(clubnewsProvider.clubnews[num + 1].image),
+                                              image: AssetImage(widget.clubNews![num + 1].image),
                                               fit: BoxFit.cover
                                           ),
                                           borderRadius: BorderRadius.circular(5)
@@ -123,12 +142,12 @@ class ClubIssue extends StatelessWidget{
                                           child: Row(
                                             children: [
                                               IconButton(
-                                                  icon: clubnewsProvider.clubnews[num + 1].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+                                                  icon: widget.clubNews![num + 1].like ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
                                                   color: Colors.white,
-                                                  onPressed: () {clubnewsProvider.changelike(clubnewsProvider.clubnews[num + 1]);}
+                                                  onPressed: () {widget.clubNewsChangeLike(widget.clubNews![num + 1]);}
                                               ),
                                               Text(
-                                                '${clubnewsProvider.clubnews[num + 1].likeNum}',
+                                                '${widget.clubNews![num + 1].likeNum}',
                                                 style: TextStyle(
                                                     color: Colors.white
                                                 ),
@@ -146,7 +165,7 @@ class ClubIssue extends StatelessWidget{
                                         ),
                                         Expanded(
                                           child: Text(
-                                            clubnewsProvider.clubnews[num + 1].clubExplantation,
+                                            widget.clubNews![num + 1].clubExplantation,
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 1,
                                             style: TextStyle(
@@ -157,7 +176,7 @@ class ClubIssue extends StatelessWidget{
                                       ],
                                     ),
                                     Text(
-                                      clubnewsProvider.clubnews[num + 1].title,
+                                      widget.clubNews![num + 1].title,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 2,
                                     )

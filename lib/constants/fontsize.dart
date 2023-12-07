@@ -26,4 +26,4 @@ const FontWeight? profileTabEditGroupTitleFontWeight = FontWeight.w600;
 const double? searchGroupTitleTextSize = 17;
 const FontWeight? searchGroupTitleFontWeight = FontWeight.bold;
 
-const double? profileTabPropensityReportGroupTitleTextSize = 17;
+const double? profileTabPropensityReportScreenGroupTitleTextSize = 17;

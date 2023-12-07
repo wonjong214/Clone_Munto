@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginscreen/widget/atoms/sns_prefix_text.dart';
 import '../../../../../constants/fontsize.dart';
 import '../../../atoms/circle_icon.dart';
 import '../../../atoms/common_text.dart';
@@ -55,7 +56,8 @@ class SNS extends StatelessWidget{
                     ),
                     isDense: true,
                     contentPadding: EdgeInsets.all(10),
-                    prefixText: 'www.instagram.com/',
+                    prefixIcon: SNSPrefixText('www.instagram.com/'),
+                    //prefixText: 'www.instagram.com/',
                     hintText: '계정입력',
                     hintStyle: TextStyle(
                       fontSize: 17,
@@ -105,7 +107,7 @@ class SNS extends StatelessWidget{
                     ),
                     isDense: true,
                     contentPadding: EdgeInsets.all(10),
-                    prefixText: 'www.facebook.com/',
+                    prefixIcon: SNSPrefixText('www.facebook.com/'),
                     hintText: '계정입력',
                     hintStyle: TextStyle(
                       fontSize: 17,

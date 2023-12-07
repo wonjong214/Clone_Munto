@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../atoms/keyword_tag_container.dart';
 
-class ClubPageView extends StatelessWidget{
+class ClubScreenView extends StatelessWidget{
 
   PageController controller = PageController(
   initialPage: 0,

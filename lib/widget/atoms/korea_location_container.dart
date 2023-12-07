@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../screen/meeting/sub_page/filter/sub_page/filter_club.dart';
-import '../../../screen/meeting/sub_page/filter/sub_page/filter_social.dart';
+import '../../screen/meeting/sub_page/filter/sub_page/filter_club_screen.dart';
+import '../../screen/meeting/sub_page/filter/sub_page/filter_social_screen.dart';
 
 class KoreaLocationContainer extends StatefulWidget{
 
@@ -25,8 +25,8 @@ class _KoreaLocation_ContainerState extends State<KoreaLocationContainer> {
   @override
   Widget build(BuildContext context) {
     bool selected = (widget.value == widget.groupValue);
-    var socialParent = context.findAncestorStateOfType<FilterSocialState>();
-    var clubParent = context.findAncestorStateOfType<FilterClubState>();
+    var socialParent = context.findAncestorStateOfType<FilterSocialScreenState>();
+    var clubParent = context.findAncestorStateOfType<FilterClubScreenState>();
 
     return GestureDetector(
       onTap: ()=> widget.onChanged(widget.value),

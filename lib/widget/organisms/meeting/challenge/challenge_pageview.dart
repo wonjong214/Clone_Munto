@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../atoms/keyword_tag_container.dart';
 
-class ChallengePageView extends StatelessWidget{
+class ChallengeScreenView extends StatelessWidget{
   PageController controller = PageController(
       initialPage: 0,
       viewportFraction: 1

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SocialringPageView extends StatelessWidget{
+class SocialringScreenView extends StatelessWidget{
   PageController controller = PageController(
       initialPage: 0,
       viewportFraction: 1

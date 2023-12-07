@@ -46,8 +46,12 @@ class SocialInfoContainer extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17,
+                        overflow: TextOverflow.ellipsis
+                      ),
                     ),
                     Row(
                       children: [
@@ -57,13 +61,19 @@ class SocialInfoContainer extends StatelessWidget {
                               color: meetingTabGroupSubTitleColor,
                               fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        /*SizedBox(
                           width: 10,
-                        ),
+                        ),*/
                         CommonGreyIcon(Icons.location_on),
-                        Text(
-                          '$location·$date',
-                          style: TextStyle(color: meetingTabGroupSubTitleColor),
+                        Expanded(
+                          child: Text(
+                            '$location·$date',
+                            maxLines: 1,
+                            style: TextStyle(
+                                color: meetingTabGroupSubTitleColor,
+                                overflow: TextOverflow.ellipsis
+                            ),
+                          ),
                         )
                       ],
                     )

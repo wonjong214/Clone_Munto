@@ -7,18 +7,18 @@ import 'package:loginscreen/providers/member_review_provider.dart';
 import 'package:loginscreen/providers/resolution_provider.dart';
 import 'package:loginscreen/providers/selected_host_provider.dart';
 import 'package:loginscreen/providers/socialring_contest_poster_provider.dart';
-import 'package:loginscreen/screen/create/choose_meeting_type.dart';
-import 'package:loginscreen/screen/feed_write_page.dart';
+import 'package:loginscreen/screen/create/choose_meeting_type_screen.dart';
+import 'package:loginscreen/screen/feed_write_screen.dart';
 import 'package:loginscreen/screen/initialization_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/category_view.dart';
-import 'package:loginscreen/screen/profile/profile_edit.dart';
-import 'package:loginscreen/screen/profile/propensity_report_page.dart';
-import 'package:loginscreen/screen/profile/score.dart';
-import 'package:loginscreen/screen/profile/setting_page.dart';
-import 'package:loginscreen/screen/search_page.dart';
-import 'package:loginscreen/screen/searchkeyword/search_keyword_page.dart';
+import 'package:loginscreen/screen/main_screen.dart';
+import 'package:loginscreen/screen/meeting/sub_page/category_screen.dart';
+import 'package:loginscreen/screen/profile/profile_edit_screen.dart';
+import 'package:loginscreen/screen/profile/propensity_report_screen.dart';
+import 'package:loginscreen/screen/profile/score_screen.dart';
+import 'package:loginscreen/screen/profile/setting_screen.dart';
+import 'package:loginscreen/screen/search_screen.dart';
+import 'package:loginscreen/screen/searchkeyword/search_keyword_screen.dart';
 import 'package:provider/provider.dart';
-import 'screen/main_view.dart';
 
 
 
@@ -75,16 +75,16 @@ class MyApp extends StatelessWidget {
                 ),
                 initialRoute: '/main',
                 routes: {
-                  '/main' : (context) => MainView(),
+                  '/main' : (context) => MainScreen(),
                   '/meetingtype' : (context) => ChooseMeetingTypeScreen(),
-                  '/categoryview' : (context) => CategoryView(),
-                  '/propensityreport' : (context) => PropensityReport(),
-                  '/setting' : (context) => SettingPage(),
-                  '/score' : (context) => Score(),
-                  '/profileedit' : (context) => ProfileEdit(),
-                  '/FeedWrite_Page' : (context) => FeedWritePage(),
-                  '/SearchKeyword_page' : (context) => SearchKeywordPage(),
-                  '/Search_page' : (context) => SearchPage(),
+                  '/categoryview' : (context) => CategoryScreen(),
+                  '/propensityreport' : (context) => PropensityReportScreen(),
+                  '/setting' : (context) => SettingScreen(),
+                  '/score' : (context) => ScoreScreen(),
+                  '/profileedit' : (context) => ProfileEditScreen(),
+                  '/FeedWrite_Page' : (context) => FeedWriteScreen(),
+                  '/SearchKeyword_page' : (context) => SearchKeywordScreen(),
+                  '/Search_page' : (context) => SearchScreen(),
                   '/Initialization' : (context) => InitializationScreen()
                 }
             );

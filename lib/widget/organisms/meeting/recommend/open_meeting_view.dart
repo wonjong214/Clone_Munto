@@ -3,7 +3,7 @@ import '../../../atoms/arrow_circular_container.dart';
 import '../../../atoms/common_border_container.dart';
 import '../../../atoms/common_text.dart';
 
-class OpenMeetingView extends StatelessWidget{
+class OpenMeetingScreen extends StatelessWidget{
   String? _title;
   String? subTitle;
   Color? _color;
@@ -11,7 +11,7 @@ class OpenMeetingView extends StatelessWidget{
   FontWeight? subTitleFont;
   double? _arrowSize;
 
-  OpenMeetingView({String? title = '', String? subtitle = '', Color? color = Colors.red, FontWeight? titlefont = FontWeight.w500,
+  OpenMeetingScreen({String? title = '', String? subtitle = '', Color? color = Colors.red, FontWeight? titlefont = FontWeight.w500,
   FontWeight? subtitlefont = FontWeight.w500, double? arrowsize = 25}){
     this._title = title;
     this.subTitle = subtitle;

@@ -32,7 +32,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> with AutomaticKeepAli
         });
       }
 
-      Provider.of<LoungePostProvider>(context).fetchAndSetCardItems().then((_){
+      Provider.of<LoungePostProvider>(context).fetchAndSetLoungePostItems().then((_){
         if(this.mounted){
           setState(() {
             _isLoading = false;
@@ -45,7 +45,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> with AutomaticKeepAli
   }
   @override
   Widget build(BuildContext context) {
-    var cardProvider = Provider.of<LoungePostProvider>(context);
+    var loungePostProvider = Provider.of<LoungePostProvider>(context);
     return _isLoading ?
     CircularprogressContainer(
       circular: 0,
@@ -54,8 +54,8 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> with AutomaticKeepAli
       controller: widget._controller,
       child: Column(
         children: [
-          for(int i =0; i< cardProvider.card.length; i++)
-            LoungeReview(card: cardProvider.card[i],changeLike: (){cardProvider.changeLike(cardProvider.card[i]);},)
+          for(int i =0; i< loungePostProvider.loungePost.length; i++)
+            LoungeReview(loungePost: loungePostProvider.loungePost[i],changeLike: loungePostProvider.changeLike,)
         ],
       ),
     );

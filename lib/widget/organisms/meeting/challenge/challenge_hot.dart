@@ -10,7 +10,7 @@ import '../../../molecules/circularprogress_container.dart';
 import '../../../molecules/meeting/challenge_container.dart';
 
 class ChallengeHot extends StatefulWidget{
-  List<ChallengeSumamry>? challengeSumamry;
+  List<ChallengeSummary>? challengeSumamry;
   Function challengeChangeLike;
   bool isChallengeLoading;
   

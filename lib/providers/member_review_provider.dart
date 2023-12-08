@@ -42,7 +42,6 @@ class MemberReviewProvider extends ChangeNotifier{
       rev.like = false;
       rev.likeNum == 0 ? rev.likeNum = 0 : rev.likeNum--;
     }
-
     else {
         rev.like = true;
         rev.likeNum++;

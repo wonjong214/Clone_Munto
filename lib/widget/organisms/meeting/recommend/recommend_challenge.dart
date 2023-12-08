@@ -11,8 +11,8 @@ import '../../../molecules/meeting/challenge_container.dart';
 
 
 class RecommendChallenge extends StatefulWidget{
-  List<ChallengeSumamry>? challengeSumamry;
-  void Function(ChallengeSumamry challenge) challengeChangeLike;
+  List<ChallengeSummary>? challengeSumamry;
+  void Function(ChallengeSummary challenge) challengeChangeLike;
   bool isChallengeLoading;
 
   RecommendChallenge({required this.challengeSumamry, required this.challengeChangeLike, required this.isChallengeLoading});

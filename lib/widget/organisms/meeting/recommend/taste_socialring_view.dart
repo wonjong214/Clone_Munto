@@ -14,7 +14,7 @@ import '../../../molecules/meeting/challenge_container.dart';
 import '../../../molecules/meeting/club_container.dart';
 
 class TasteSocialRingView extends StatefulWidget {
-  List<ChallengeSumamry>? challengeSummary;
+  List<ChallengeSummary>? challengeSummary;
   Function challengeChangeLike;
   bool isChallengeLoading;
   List<MeetingSummary>? socialringSummary;

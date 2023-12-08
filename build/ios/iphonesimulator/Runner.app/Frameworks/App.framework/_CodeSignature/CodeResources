@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		LMXbVrxq2zW0vRAG5FMvfIhUxzA=
+		CE430jjytmpwgvRB2Ik6QvZ1LI8=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		+bOL1Qqs5vhX8tMg+eJ+l/FSYZE=
+		1Mu/1hKH/pFNTxlqbjMVLrl9gTU=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -24,13 +24,9 @@
 		<data>
 		1NfCtVlt4RoIIfADPfVsrK6Flr8=
 		</data>
-		<key>flutter_assets/assets/data/card.json</key>
-		<data>
-		8nAMM9WlHdLvrKWjYG9oCAkM/+I=
-		</data>
 		<key>flutter_assets/assets/data/challenge.json</key>
 		<data>
-		hwwEFJGVLjtYPXV7FB79CAOIWyA=
+		nnCePosb9v34JIUvPfteD2KHatE=
 		</data>
 		<key>flutter_assets/assets/data/club.json</key>
 		<data>
@@ -39,6 +35,10 @@
 		<key>flutter_assets/assets/data/club_news.json</key>
 		<data>
 		qD8GpK6ZvS7MCsDC9mWvTWooImU=
+		</data>
+		<key>flutter_assets/assets/data/lounge_post.json</key>
+		<data>
+		8nAMM9WlHdLvrKWjYG9oCAkM/+I=
 		</data>
 		<key>flutter_assets/assets/data/review.json</key>
 		<data>
@@ -55,6 +55,14 @@
 		<key>flutter_assets/assets/data/socialring_contest_poster.json</key>
 		<data>
 		FKacm4JmrNb+eNPFAxh1xDapUnc=
+		</data>
+		<key>flutter_assets/assets/data/test_challenge.json</key>
+		<data>
+		M3Ncwl0kpRkOW7mbeHE87ycQYVs=
+		</data>
+		<key>flutter_assets/assets/data/test_clubnews.json</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
 		<key>flutter_assets/assets/fonts/LINESeedKR-Bd.ttf</key>
 		<data>
@@ -206,7 +214,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		8Fi2+PJr21lDkipH6QHsUoSEDb8=
+		Wy5Lch9Cdxz4BRhSHEeK3cyxh5o=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -227,14 +235,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S06dmHRgM+Vkc88tH1fxJ5JgL8CvVdZSRJ0tC41UoMw=
+			v8DEpMh4YCxhwVxdUmeFg1/ls1aL21QVVJeAq6on+SU=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yLusEY1nAL7o5QtFFDrHUB66K0etWD6+4efdIMmSupo=
+			4sQW+tiEdqwbTOHwm/L8TWwwg+TVND+eFaWluGdn1XA=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -251,18 +259,11 @@
 			dRdLSnVSrMHFXEiXBgHJzoZ9S2IZ4rL17Ax3Jc1pIWI=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/data/card.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			t1xC/ztHPVTkAVz3XyZFu9gvBQ0AOdHiUuJ6R0FWa+M=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/data/challenge.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jwh8SolDF10WQxDvT1t48zsjd76oTxxyAdPlyrch+dE=
+			vBbpzbLDe3OMkTs9qiQBaMBCKGHSe4cfGyvZhKLWdo4=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/data/club.json</key>
@@ -277,6 +278,13 @@
 			<key>hash2</key>
 			<data>
 			+zWh+lLdzAH/zONDAPn+1nWQB/7yevHsX7J2kX6XAkU=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/data/lounge_post.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t1xC/ztHPVTkAVz3XyZFu9gvBQ0AOdHiUuJ6R0FWa+M=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/data/review.json</key>
@@ -305,6 +313,20 @@
 			<key>hash2</key>
 			<data>
 			toXDBydnq79AWtpFAyw8drdUtf3LBoPAq1EI+XRSykk=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/data/test_challenge.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZseuQWhF2IL9TPfGkBORKDVwtcJjhuCcXM5pWqvhqvo=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/data/test_clubnews.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/LINESeedKR-Bd.ttf</key>
@@ -570,7 +592,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3kgDnvcguEc5IG5mUcaISDuSxQj+XaMfjg/G+xx31mg=
+			ijqUbhmThG2BLKrmA0vXFfU65eYbzz/beI36JBPMTDQ=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

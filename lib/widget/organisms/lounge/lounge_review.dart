@@ -12,14 +12,17 @@ import '../../molecules/lounge/profile_group.dart';
 import '../../molecules/lounge/social_location_scrollview.dart';
 
 
-class LoungeReview extends StatelessWidget{
-  LoungePost card;
-  void Function() changeLike;
+class LoungeReview extends StatefulWidget{
+  LoungePost loungePost;
+  Function changeLike;
 
-  LoungeReview({required this.card, required this.changeLike});
+  LoungeReview({required this.loungePost, required this.changeLike});
 
+  @override
+  State<LoungeReview> createState() => _LoungeReviewState();
+}
 
-
+class _LoungeReviewState extends State<LoungeReview> {
   String text = 'ㅋㄱㅋㅋㅋㅋ나 이거 참여하고싶어서 좋아요 눌러놨는데 일정 확인을 못했네';
 
   @override
@@ -29,43 +32,43 @@ class LoungeReview extends StatelessWidget{
       child: Column(
         children: [
           LoungeListTile(
-              image: card.writerImage,
-              name: card.writerName,
-              date: card.writeDate,
+              image: widget.loungePost.writerImage,
+              name: widget.loungePost.writerName,
+              date: widget.loungePost.writeDate,
           ),
-          LoungePageView(image: card.pageviewImage,),
+          LoungePageView(image: widget.loungePost.pageviewImage,),
           SizedBox(height: 10,),
           SocialLocaitionScrollView(
-              meetingImage: card.meetingImage,
-              meetingTitle: card.meetingTitle,
-              meetingType: card.meetingType,
-              meetingLocation: card.meetingLocation,
-              meetingTime: card.meetingTime,
-              mapLocation: card.mapLocation,
-              mapDetailLocation: card.mapDetailLocation,
+              meetingImage: widget.loungePost.meetingImage,
+              meetingTitle: widget.loungePost.meetingTitle,
+              meetingType: widget.loungePost.meetingType,
+              meetingLocation: widget.loungePost.meetingLocation,
+              meetingTime: widget.loungePost.meetingTime,
+              mapLocation: widget.loungePost.mapLocation,
+              mapDetailLocation: widget.loungePost.mapDetailLocation,
           ),
           SizedBox(height: 20,),
-          LoungeReviewText(card.bodyText),
+          LoungeReviewText(widget.loungePost.bodyText),
           SizedBox(height: 20,),
-          LoungeKeyWordTagScrollView(card.tag),
+          LoungeKeyWordTagScrollView(widget.loungePost.tag),
           SizedBox(height: 20,),
           Row(
             children: [
               LoungeIconGroup(
-                like: card.like,
-                likeNum :card.likeNum,
-                chatNum: card.chatNum,
+                like: widget.loungePost.like,
+                likeNum :widget.loungePost.likeNum,
+                chatNum: widget.loungePost.chatNum,
                 onTap: (){
-                  changeLike;
+                  widget.changeLike(widget.loungePost);
                 },
               ),
               SizedBox(width: 10,),
-              ProfileGroup(card.likeNum)
+              ProfileGroup(widget.loungePost.likeNum)
             ],
           ),
           SizedBox(height: 20,),
-          if(card.chatName != '')
-          CommentContainer(AssetImage(card.chatImage),card.chatName, card.chatBody ),
+          if(widget.loungePost.chatName != '')
+          CommentContainer(AssetImage(widget.loungePost.chatImage),widget.loungePost.chatName, widget.loungePost.chatBody ),
           SizedBox(height: 10,),
           CommentInputContainer(AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg')),
           interGroupMargin,

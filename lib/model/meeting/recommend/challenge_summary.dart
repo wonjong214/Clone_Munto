@@ -1,4 +1,6 @@
-class ChallengeSumamry{
+import 'package:equatable/equatable.dart';
+
+class ChallengeSummary{
   String image;
   bool like;
   String tag;
@@ -9,11 +11,11 @@ class ChallengeSumamry{
   int participants;
   int total;
 
-  ChallengeSumamry({required this.image, required this.like, required this.tag, required this.title, required this.date, required this.duration, required this.time, required this.participants, required this.total});
+  ChallengeSummary({required this.image, required this.like, required this.tag, required this.title, required this.date, required this.duration, required this.time, required this.participants, required this.total});
 
 
-  factory ChallengeSumamry.fromJson(Map<String, dynamic> json) {
-    return ChallengeSumamry(
+  factory ChallengeSummary.fromJson(Map<String, dynamic> json) {
+    return ChallengeSummary(
       image: json['image'],
       like: json['like'],
       tag: json['tag'],
@@ -26,18 +28,5 @@ class ChallengeSumamry{
     );
   }
 
-  Map<String, dynamic> toJson(){
-    return {
-      'image':image,
-      'like':like,
-      'tag':tag,
-      'title':title,
-      'date':date,
-      'duration':duration,
-      'time':time,
-      'participants':participants,
-      'total':total,
-    };
 
-  }
 }

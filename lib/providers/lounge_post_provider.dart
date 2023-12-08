@@ -5,22 +5,22 @@ import '../model/meeting/lounge/lounge_post.dart';
 
 
 class LoungePostProvider extends ChangeNotifier{
-  List<LoungePost> _card;
+  List<LoungePost> _loungePost;
 
-  LoungePostProvider():_card = List.empty(growable: true){
+  LoungePostProvider():_loungePost = List.empty(growable: true){
   }
 
-  List<LoungePost> get card => _card;
+  List<LoungePost> get loungePost => _loungePost;
 
-  Future<void> fetchAndSetCardItems() async {
+  Future<void> fetchAndSetLoungePostItems() async {
     try{
-      final response = await rootBundle.loadString('assets/data/card.json'); //http// 통신 코드
+      final response = await rootBundle.loadString('assets/data/lounge_post.json'); //http// 통신 코드
       final extractedData = json.decode(response) as Map<String, dynamic>;
       final List<LoungePost> loadedLoungePostItem = [];
       extractedData['items'].forEach((challengeItemData) {
         loadedLoungePostItem.add(LoungePost.fromJson(challengeItemData));
       });
-      _card = loadedLoungePostItem;
+      _loungePost = loadedLoungePostItem;
     }
     catch(e){
       print(e);
@@ -30,14 +30,14 @@ class LoungePostProvider extends ChangeNotifier{
     }
   }
 
-  void changeLike(LoungePost card){
-    if (card.like){
-      card.like = false;
-      card.likeNum == 0 ? card.likeNum = 0 : card.likeNum--;
+  void changeLike(LoungePost loungePost){
+    if (loungePost.like){
+      loungePost.like = false;
+      loungePost.likeNum == 0 ? loungePost.likeNum = 0 : loungePost.likeNum--;
     }
     else {
-      card.like = true;
-      card.likeNum++;
+      loungePost.like = true;
+      loungePost.likeNum++;
     }
     notifyListeners();
   }

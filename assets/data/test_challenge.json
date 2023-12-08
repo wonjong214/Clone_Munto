@@ -1,0 +1,12 @@
+{
+  "image": "testImage",
+  "like": false,
+  "tag": "testTag",
+  "title": "testTitle",
+  "date": "testDate",
+  "duration": "testDuration",
+  "time": 0,
+  "participants": 0,
+  "total": 0
+}
+

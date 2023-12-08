@@ -3,6 +3,7 @@ import 'package:loginscreen/constants/fontsize.dart';
 import 'package:loginscreen/widget/organisms/profile/Feed.dart';
 import 'package:loginscreen/widget/organisms/profile/Meeting.dart';
 import 'package:loginscreen/widget/organisms/profile/Tag.dart';
+import 'package:loginscreen/widget/organisms/profile/my_keyword.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/border.dart';
 import '../../../../constants/colors.dart';
@@ -15,10 +16,10 @@ import '../../widget/molecules/profile/text_num_column.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<ProfileScreen> createState() => ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class ProfileScreenState extends State<ProfileScreen> {
   List<String> tagList = [
     '카페',
     '칵테일',
@@ -116,35 +117,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     Navigator.of(context, rootNavigator: true)
                                         .pushNamed('/propensityreport');
                                   },
-                                  child: Container(
-                                      padding: EdgeInsets.only(
-                                          left: 10, right: 10, top: 5, bottom: 5),
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(30),
-                                          color: tagColor),
-                                      child: Row(
-                                        children: [
-                                          CircleIcon(
-                                            icon: Icon(
-                                              Icons.question_mark,
-                                              size: 10,
-                                              color: Colors.white,
-                                            ),
-                                            backgroundColor: Colors.grey,
-                                            width: 12,
-                                            height: 12,
+                                  child: CommonBorderContainer(
+                                    padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+                                    backColor: tagColor,
+                                    widget: Row(
+                                      children: [
+                                        CircleIcon(
+                                          icon: Icon(
+                                            Icons.question_mark,
+                                            size: 10,
+                                            color: Colors.white,
                                           ),
-                                          SizedBox(
-                                            width: 5,
+                                          backgroundColor: Colors.grey,
+                                          width: 12,
+                                          height: 12,
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          '나의 성향 배지',
+                                          style: TextStyle(
+                                              color: Colors.grey.shade600,
+                                              fontSize: 14,
                                           ),
-                                          Text(
-                                            '나의 성향 배지',
-                                            style: TextStyle(
-                                                color: Colors.grey.shade600,
-                                                fontSize: 14),
-                                          )
-                                        ],
-                                      )),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                                 SizedBox(
                                   width: 10,
@@ -154,34 +154,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     Navigator.of(context, rootNavigator: true)
                                         .pushNamed('/score');
                                   },
-                                  child: Container(
-                                      padding: EdgeInsets.only(
-                                          left: 10, right: 10, top: 5, bottom: 5),
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(30),
-                                          color: Color(0xffebfbe6)),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            '36.9',
-                                            style: TextStyle(
-                                                color: Color(0xff77e357), fontSize: 14),
+                                  child: CommonBorderContainer(
+                                    padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+                                    backColor: Color(0xffebfbe6),
+                                    widget: Row(
+                                      children: [
+                                        Text(
+                                          '36.9',
+                                          style: TextStyle(
+                                              color: Color(0xff77e357), fontSize: 14),
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        CircleIcon(
+                                          icon: Icon(
+                                            Icons.arrow_forward_ios,
+                                            size: 8,
+                                            color: Colors.white,
                                           ),
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          CircleIcon(
-                                            icon: Icon(
-                                              Icons.arrow_forward_ios,
-                                              size: 8,
-                                              color: Colors.white,
-                                            ),
-                                            backgroundColor: Color(0xff77e357),
-                                            width: 12,
-                                            height: 12,
-                                          ),
-                                        ],
-                                      )),
+                                          backgroundColor: Color(0xff77e357),
+                                          width: 12,
+                                          height: 12,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -203,42 +201,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(
                               height: 30,
                             ),
-                            Wrap(
-                              runSpacing: 10,
-                              children: List.generate(
-                                tagFolded ? tagList.length : 10,
-                                    (index) {
-                                  if (tagFolded
-                                      ? (index < tagList.length - 1)
-                                      : (index < 9))
-                                    return Padding(
-                                      padding: const EdgeInsets.only(right: 10),
-                                      child: KeyWordTagContainer(
-                                        border: Border.all(width: 1, color: tagColor),
-                                        text: tagList[index],
-                                      ),
-                                    );
-                                  else
-                                    return GestureDetector(
-                                      onTap: () {
-                                        setState(() {
-                                          if (tagFolded == true)
-                                            tagFolded = false;
-                                          else
-                                            tagFolded = true;
-                                        });
-                                      },
-                                      child: KeyWordTagContainer(
-                                        text:
-                                        tagFolded ? '접기' : '+${tagList.length - 9}',
-                                        textColor: Colors.grey,
-                                        border:
-                                        Border.all(width: 1, color: Colors.grey),
-                                        backColor: Colors.transparent,
-                                      ),
-                                    );
-                                },
-                              ),
+                            MyKeyword(
+                                tagList: tagList,
+                                tagFolded: tagFolded,
                             ),
                             SizedBox(
                               height: 30,

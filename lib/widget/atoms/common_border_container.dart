@@ -12,7 +12,7 @@ class CommonBorderContainer extends StatelessWidget{
   AlignmentGeometry? alignment;
 
 
-  CommonBorderContainer({this.padding, this.circular = 30, this.borderColor = Colors.transparent, this.borderWidth =1,
+  CommonBorderContainer({this.padding, this.circular = 30, this.borderColor = Colors.transparent, this.borderWidth =0,
     this.backColor = Colors.transparent, required this.widget, this.width, this.height, this.alignment});
 
 

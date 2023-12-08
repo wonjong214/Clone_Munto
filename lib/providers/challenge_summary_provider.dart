@@ -9,20 +9,20 @@ import '../model/meeting/recommend/challenge_summary.dart';
 
 
 class ChallengeSummaryProvider extends ChangeNotifier{
-  List<ChallengeSumamry> _challenge = [];
+  List<ChallengeSummary> _challenge = [];
   //bool isInit = true;
 
 
-  List<ChallengeSumamry> get challenge => _challenge;
+  List<ChallengeSummary> get challenge => _challenge;
 
   Future<void> fetchAndSetChallengeItems() async {
     try{
       final response = await rootBundle.loadString('assets/data/challenge.json'); //http// 통신 코드
       final extractedData = json.decode(response) as Map<String, dynamic>;
-      final List<ChallengeSumamry> loadedChallengeItem = [];
+      final List<ChallengeSummary> loadedChallengeItem = [];
 
       extractedData['items'].forEach((challengeItemData) {
-        loadedChallengeItem.add(ChallengeSumamry.fromJson(challengeItemData));
+        loadedChallengeItem.add(ChallengeSummary.fromJson(challengeItemData));
       });
       _challenge = loadedChallengeItem;
     }
@@ -37,7 +37,7 @@ class ChallengeSummaryProvider extends ChangeNotifier{
     }
   }
 
-  changeLike (ChallengeSumamry challenge){
+  changeLike (ChallengeSummary challenge){
     if (challenge.like)
       challenge.like = false;
     else

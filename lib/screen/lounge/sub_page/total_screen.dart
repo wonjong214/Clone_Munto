@@ -34,7 +34,7 @@ class _TotalScreenState extends State<TotalScreen> with AutomaticKeepAliveClient
         });
       }
 
-      Provider.of<LoungePostProvider>(context).fetchAndSetCardItems().then((_){
+      Provider.of<LoungePostProvider>(context).fetchAndSetLoungePostItems().then((_){
         if(this.mounted){
           setState(() {
             _isLoading = false;
@@ -47,7 +47,7 @@ class _TotalScreenState extends State<TotalScreen> with AutomaticKeepAliveClient
   }
   @override
   Widget build(BuildContext context) {
-    var cardProvider = Provider.of<LoungePostProvider>(context);
+    var loungePostProvider = Provider.of<LoungePostProvider>(context);
     return _isLoading ?
     CircularprogressContainer(circular: 0) :
     SingleChildScrollView(
@@ -56,13 +56,13 @@ class _TotalScreenState extends State<TotalScreen> with AutomaticKeepAliveClient
         children: [
           LoungeTotalAlignGroup(),
           SizedBox(height: 20,),
-          LoungeReview(card: cardProvider.card[0], changeLike: (){cardProvider.changeLike(cardProvider.card[0]);},),
-          LoungeReview(card: cardProvider.card[1], changeLike: (){cardProvider.changeLike(cardProvider.card[1]);},),
+          LoungeReview(loungePost: loungePostProvider.loungePost[0], changeLike: (){loungePostProvider.changeLike(loungePostProvider.loungePost[0]);},),
+          LoungeReview(loungePost: loungePostProvider.loungePost[1], changeLike: (){loungePostProvider.changeLike(loungePostProvider.loungePost[1]);},),
           SizedBox(height: 30,),
           LoungeRecommendEditor(),
           SizedBox(height: 30,),
-          for(int i = 2; i < cardProvider.card.length; i++)
-            LoungeReview(card: cardProvider.card[i],changeLike: (){cardProvider.changeLike(cardProvider.card[2]);},)
+          for(int i = 2; i < loungePostProvider.loungePost.length; i++)
+            LoungeReview(loungePost: loungePostProvider.loungePost[i],changeLike: (){loungePostProvider.changeLike(loungePostProvider.loungePost[2]);},)
         ],
       ),
     );

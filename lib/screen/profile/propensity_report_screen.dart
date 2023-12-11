@@ -66,7 +66,7 @@ class PropensityReportScreen extends StatelessWidget{
                                     color: Color(0xff8ec4b5),
                                     text: '내가 보는 나',
                                 ),
-                                Text('나도 몰랐던 내 성향을 알아봐요'),
+                                Text('나도 몰랐던 내 성향을 알아봐요', style: TextStyle(fontSize: 13, overflow: TextOverflow.ellipsis),),
                                 AnalysisResultsButton(color: Color(0xff1c8a6a), text: '테스트 하기')
                               ],
                             )
@@ -89,7 +89,7 @@ class PropensityReportScreen extends StatelessWidget{
                                   color: Color(0xff9acbe8),
                                   text: '친구가 보는 나',
                                 ),
-                                Text('친구나 지인들이 보는 나에 대해 알아봐요'),
+                                Text('친구나 지인들이 보는 나에 대해 알아봐요', style: TextStyle(fontSize: 13, overflow: TextOverflow.ellipsis),),
                                 AnalysisResultsButton(color: Color(0xff3498d0), text: '테스트 요청하기')
                               ],
                             )
@@ -113,7 +113,7 @@ class PropensityReportScreen extends StatelessWidget{
                                   text: '처음 본 멤버가 보는 나',
                                 ),
                                 SizedBox(height: 10,),
-                                Text('문토 멤버가 보는 나에 대해 알아봐요'),
+                                Text('문토 멤버가 보는 나에 대해 알아봐요',style: TextStyle(fontSize: 13, overflow: TextOverflow.ellipsis),),
                               ],
                             )
                           ],

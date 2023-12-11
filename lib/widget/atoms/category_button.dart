@@ -20,9 +20,11 @@ class CategoryButton extends StatelessWidget{
           Icon(icon),
           Text(
             title,
+            maxLines: 1,
             style: TextStyle(
               fontSize: 14,
-              color: Color(0xff212121)
+              color: Color(0xff212121),
+              overflow: TextOverflow.ellipsis
             ),
           )
         ],

@@ -20,11 +20,6 @@ import '../../../widget/organisms/meeting/recommend/taste_socialring_view.dart';
 
 
 class RecommendScreen extends StatefulWidget{
-  late final ScrollController _controller;
-
-  RecommendScreen(ScrollController controller){
-    _controller = controller;
-  }
 
   @override
   State<RecommendScreen> createState() => _RecommendScreenState();
@@ -124,69 +119,71 @@ class _RecommendScreenState extends State<RecommendScreen> with AutomaticKeepAli
     var resolutionProvider = Provider.of<ResolutionProvider>(context);
 
 
-    return SingleChildScrollView(
-      controller: widget._controller,
-      scrollDirection: Axis.vertical,
-      child:Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            //페이지뷰
-            ExhibitionsView(
-              height: 350,
-              socialringContestPoster: socialringContestPostProvider.socialringContestPoster,
-              isSocialringContestPosterLoading: _isSocialringContestPoster,
-              currentPage: socialringContestPostProvider.currentPage,
-            ),
-            //카테고리
-            CategoryGrid(),
-            SizedBox(height: 20,),
-            Divider(color: Color(0xff8e8e8e)),
-            SizedBox(height: 20,),
-            HotTag(),
-            interGroupMargin,
-            //추천 스크롤 뷰
-            TasteSocialRingView(
-              challengeSummary: challengeProvider.challenge,
-              challengeChangeLike: challengeProvider.changeLike,
-              isChallengeLoading: _isChallengeLoading,
-              clubSummary: meetingProvider.club,
-              clubChangeLike: meetingProvider.changeLike,
-              isClubLoading: _isClubLoading,
-              socialringSummary: meetingProvider.socialring,
-              socialringChangeLike: meetingProvider.changeLike,
-              isSocialringLoading: _isSocialringLoading,
-            ),
-            interGroupMargin,
-            ReviewView(
-              memberReview: memberReviewProvider.review,
-              memberReivewChangeLike: memberReviewProvider.changeLike,
-              isMemberReviewLoading: _isMemberReivewLoading,
-              width: resolutionProvider.width_get,
-            ),
-            interGroupMargin,
-            HotClub(
-              clubSummary: meetingProvider.club,
-              clubChangeLike: meetingProvider.changeLike,
-              isClubLoading: _isClubLoading,
-            ),
-            interGroupMargin,
-            RecommendChallenge(
-              challengeSumamry: challengeProvider.challenge,
-              challengeChangeLike: challengeProvider.changeLike,
-              isChallengeLoading: _isChallengeLoading,
-            ),
-            interGroupMargin,
-            RecommendMemberView(
-              selectedHost: selectedHostProvider.selectedhost,
-              selectedHostChangeFollow: selectedHostProvider.changeFollow,
-              isSelectedHostLoading: _isSelectedHostLoading,
-              width: resolutionProvider.width_get,
-            ),
-            interGroupMargin,
-            OpenMeetingScreen(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
-            SizedBox(height: 80,)
-          ],
-        )
+    return Padding(
+      padding: const EdgeInsets.only(top: 48),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child:Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              //페이지뷰
+              ExhibitionsView(
+                height: 350,
+                socialringContestPoster: socialringContestPostProvider.socialringContestPoster,
+                isSocialringContestPosterLoading: _isSocialringContestPoster,
+                currentPage: socialringContestPostProvider.currentPage,
+              ),
+              //카테고리
+              CategoryGrid(),
+              SizedBox(height: 20,),
+              Divider(color: Color(0xff8e8e8e)),
+              SizedBox(height: 20,),
+              HotTag(),
+              interGroupMargin,
+              //추천 스크롤 뷰
+              TasteSocialRingView(
+                challengeSummary: challengeProvider.challenge,
+                challengeChangeLike: challengeProvider.changeLike,
+                isChallengeLoading: _isChallengeLoading,
+                clubSummary: meetingProvider.club,
+                clubChangeLike: meetingProvider.changeLike,
+                isClubLoading: _isClubLoading,
+                socialringSummary: meetingProvider.socialring,
+                socialringChangeLike: meetingProvider.changeLike,
+                isSocialringLoading: _isSocialringLoading,
+              ),
+              interGroupMargin,
+              ReviewView(
+                memberReview: memberReviewProvider.review,
+                memberReivewChangeLike: memberReviewProvider.changeLike,
+                isMemberReviewLoading: _isMemberReivewLoading,
+                width: resolutionProvider.width_get,
+              ),
+              interGroupMargin,
+              HotClub(
+                clubSummary: meetingProvider.club,
+                clubChangeLike: meetingProvider.changeLike,
+                isClubLoading: _isClubLoading,
+              ),
+              interGroupMargin,
+              RecommendChallenge(
+                challengeSumamry: challengeProvider.challenge,
+                challengeChangeLike: challengeProvider.changeLike,
+                isChallengeLoading: _isChallengeLoading,
+              ),
+              interGroupMargin,
+              RecommendMemberView(
+                selectedHost: selectedHostProvider.selectedhost,
+                selectedHostChangeFollow: selectedHostProvider.changeFollow,
+                isSelectedHostLoading: _isSelectedHostLoading,
+                width: resolutionProvider.width_get,
+              ),
+              interGroupMargin,
+              OpenMeetingScreen(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
+              SizedBox(height: 80,)
+            ],
+          )
+      ),
     );
   }
 }

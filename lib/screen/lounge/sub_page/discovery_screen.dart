@@ -6,12 +6,6 @@ import '../../../widget/organisms/lounge/lounge_review.dart';
 
 
 class DiscoveryScreen extends StatefulWidget{
-  late final ScrollController _controller;
-
-  DiscoveryScreen(ScrollController controller){
-    _controller = controller;
-  }
-
   @override
   State<DiscoveryScreen> createState() => _DiscoveryScreenState();
 }
@@ -51,7 +45,6 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> with AutomaticKeepAli
       circular: 0,
     ) :
     SingleChildScrollView(
-      controller: widget._controller,
       child: Column(
         children: [
           for(int i =0; i< loungePostProvider.loungePost.length; i++)

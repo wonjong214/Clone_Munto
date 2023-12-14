@@ -5,18 +5,13 @@ import '../../../atoms/common_text.dart';
 import '../../../atoms/my_meeting_icon.dart';
 
 class MyChallenge extends StatelessWidget{
-  late final ScrollController _controller;
 
-  MyChallenge(ScrollController controller){
-    _controller = controller;
-  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 20, right: 20),
       child: SingleChildScrollView(
-        controller: _controller,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

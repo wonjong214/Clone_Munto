@@ -8,12 +8,6 @@ import '../../../widget/organisms/lounge/lounge_review.dart';
 
 
 class TotalScreen extends StatefulWidget{
-  late final ScrollController _controller;
-
-  TotalScreen(ScrollController controller){
-    _controller = controller;
-  }
-
   @override
   State<TotalScreen> createState() => _TotalScreenState();
 }
@@ -51,7 +45,6 @@ class _TotalScreenState extends State<TotalScreen> with AutomaticKeepAliveClient
     return _isLoading ?
     CircularprogressContainer(circular: 0) :
     SingleChildScrollView(
-      controller: widget._controller,
       child: Column(
         children: [
           LoungeTotalAlignGroup(),

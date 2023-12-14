@@ -13,11 +13,6 @@ import '../../../widget/organisms/meeting/recommend/open_meeting_view.dart';
 
 
 class ClubScreen extends StatefulWidget{
-  late final ScrollController _controller;
-  ClubScreen(ScrollController controller){
-    _controller = controller;
-  }
-
   @override
   State<ClubScreen> createState() => _ClubScreenState();
 }
@@ -67,41 +62,43 @@ class _ClubScreenState extends State<ClubScreen> with AutomaticKeepAliveClientMi
     var clubNewsProvider = Provider.of<ClubNewsProvider>(context);
     var resolutionProvider = Provider.of<ResolutionProvider>(context);
 
-    return SingleChildScrollView(
-      controller: widget._controller,
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          ClubScreenView(),
-          SizedBox(height: 30),
-          ClubRecommend(
-            clubSummary: meetingProvider.club,
-            clubChangeLike: meetingProvider.changeLike,
-            isClubLoading: _isClubLoading,
-          ),
-          interGroupMargin,
-          ClubNew(
-            clubSummary: meetingProvider.club,
-            clubChangeLike: meetingProvider.changeLike,
-            isClubLoading: _isClubLoading,
-          ),
-          interGroupMargin,
-          ClubIssue(
-            clubNews: clubNewsProvider.clubnews,
-            clubNewsChangeLike: clubNewsProvider.changeLike,
-            isClubNewsLoading: _isClubNewsLoading,
-            width: resolutionProvider.width_get,
-          ),
-          interGroupMargin,
-          OpenMeetingScreen(
-            title: '클럽 열기',
-            subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n활발한 커뮤니티를 만들어볼까요?',
-            color: Color(0xff1c8a6a),
-            arrowsize: 20,
-            titlefont: FontWeight.w600,
-          ),
-          interGroupMargin
-        ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 48),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            ClubScreenView(),
+            SizedBox(height: 30),
+            ClubRecommend(
+              clubSummary: meetingProvider.club,
+              clubChangeLike: meetingProvider.changeLike,
+              isClubLoading: _isClubLoading,
+            ),
+            interGroupMargin,
+            ClubNew(
+              clubSummary: meetingProvider.club,
+              clubChangeLike: meetingProvider.changeLike,
+              isClubLoading: _isClubLoading,
+            ),
+            interGroupMargin,
+            ClubIssue(
+              clubNews: clubNewsProvider.clubnews,
+              clubNewsChangeLike: clubNewsProvider.changeLike,
+              isClubNewsLoading: _isClubNewsLoading,
+              width: resolutionProvider.width_get,
+            ),
+            interGroupMargin,
+            OpenMeetingScreen(
+              title: '클럽 열기',
+              subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n활발한 커뮤니티를 만들어볼까요?',
+              color: Color(0xff1c8a6a),
+              arrowsize: 20,
+              titlefont: FontWeight.w600,
+            ),
+            interGroupMargin
+          ],
+        ),
       ),
     );
   }

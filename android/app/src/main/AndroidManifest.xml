@@ -2,7 +2,7 @@
     <application
         android:label="Clone_Munto"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/munto_text_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"

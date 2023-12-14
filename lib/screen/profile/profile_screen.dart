@@ -11,7 +11,6 @@ import '../../providers/resolution_provider.dart';
 import '../../widget/molecules/profile/Profile_Image.dart';
 import '../../widget/atoms/circle_icon.dart';
 import '../../widget/atoms/common_border_container.dart';
-import '../../widget/atoms/keyword_tag_container.dart';
 import '../../widget/molecules/profile/text_num_column.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -251,7 +250,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                 SliverOverlapAbsorber(
                   handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                   sliver: SliverPersistentHeader(
-                    delegate: TabBarDelegate(),
+                    delegate: ProfileTabBarDelegate(),
                     pinned: true,
                   ),
                 )
@@ -276,8 +275,8 @@ class ProfileScreenState extends State<ProfileScreen> {
 
 }
 
-class TabBarDelegate extends SliverPersistentHeaderDelegate {
-  const TabBarDelegate();
+class ProfileTabBarDelegate extends SliverPersistentHeaderDelegate {
+  const ProfileTabBarDelegate();
 
   @override
   Widget build(

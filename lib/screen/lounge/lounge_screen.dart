@@ -51,80 +51,104 @@ class _LoungeScreenState extends State<LoungeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfffefefe),
-      appBar:
-      PreferredSize(
-        preferredSize: const Size.fromHeight(48),
-        child: SafeArea(
-          child: AnimatedCrossFade(
-            firstChild: AppBar(
-              backgroundColor: AppBar_color,
-              foregroundColor: Colors.black,
-              title: Row(
-                children: [
-                  AppBarTitle('라운지'),
-                  Spacer(),
-                  IconButton(
-                    icon:Icon(Icons.add_box_outlined, size: appBarIconSize,),
-                    onPressed: (){
-                      Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
-                    },
+      body: SafeArea(
+        child: DefaultTabController(
+          length: 2,
+          child: NestedScrollView(
+            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+              return[
+                SliverToBoxAdapter(
+                  child: Container(
+                    color: AppBar_color,
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        AppBarTitle('라운지'),
+                        Spacer(),
+                        IconButton(
+                          icon:Icon(Icons.add_box_outlined, size: appBarIconSize,),
+                          onPressed: (){
+                            Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
+                          },
+                        ),
+                        SizedBox(width: 10, ),
+                        Icon(Icons.bookmark_border_outlined, size : appBarIconSize),
+                        SizedBox(width: 10),
+                        IconButton(
+                          onPressed: (){
+                            Navigator.of(context, rootNavigator: true).pushNamed('/Search_page');
+                          },
+                          icon: Icon(Icons.search_rounded, size : appBarIconSize),
+                        )
+                      ],
+                    ),
                   ),
-                  SizedBox(width: 10, ),
-                  Icon(Icons.bookmark_border_outlined, size : appBarIconSize),
-                  SizedBox(width: 10),
-                  IconButton(
-                    onPressed: (){
-                      Navigator.of(context, rootNavigator: true).pushNamed('/Search_page');
-                    },
-                    icon: Icon(Icons.search_rounded, size : appBarIconSize),
-                  )
-                ],
-              ),
-            ),
-            secondChild: const SizedBox.shrink(),
-            crossFadeState: _exposureAppBar ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            duration: const Duration(milliseconds: 200),
-          ),
-        ),
-      ),
-      body: DefaultTabController(
-        length: 2,
-        child: Column(
-          children: [
-            Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: appBarBottomBorder,
-                  color: AppBar_color,
                 ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: TabBar(
-                    padding: EdgeInsets.only(left: 10),
-                    indicatorSize: TabBarIndicatorSize.label,
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.grey,
-                    tabs: [
-                      AppBarTab('발견'),
-                      AppBarTab('전체')
-                    ],
-                    isScrollable: true,
-                    labelPadding: EdgeInsets.symmetric(horizontal:10.0),
-                    indicatorColor: Colors.black,
+
+                SliverOverlapAbsorber(
+                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                  sliver: SliverPersistentHeader(
+                    delegate: LoungeTabBarDelegate(),
+                    pinned: true,
                   ),
                 )
+              ];
+            },
+            body: TabBarView(
+              children: [
+                DiscoveryScreen(),
+                TotalScreen(),
+              ],
             ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  DiscoveryScreen(_scrollController),
-                  TotalScreen(_scrollController),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       )
     );
+  }
+}
+
+class LoungeTabBarDelegate extends SliverPersistentHeaderDelegate {
+  const LoungeTabBarDelegate();
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return PreferredSize(
+      preferredSize: Size.fromHeight(kToolbarHeight),
+      child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: appBarBottomBorder,
+            color: AppBar_color,
+          ),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: TabBar(
+              padding: EdgeInsets.only(left: 10),
+              indicatorSize: TabBarIndicatorSize.label,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+              tabs: [
+                AppBarTab('발견'),
+                AppBarTab('전체')
+              ],
+              isScrollable: true,
+              labelPadding: EdgeInsets.symmetric(horizontal:10.0),
+              indicatorColor: Colors.black,
+            ),
+          )
+      ),
+    );
+  }
+
+  @override
+  double get maxExtent => 48;
+
+  @override
+  double get minExtent => 48;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }

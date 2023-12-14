@@ -6,14 +6,11 @@ import '../../../widget/organisms/meeting/mymeeting/my_socialring.dart';
 
 
 class MyMeetingScreen extends StatefulWidget{
-  late final ScrollController _controller;
 
-  MyMeetingScreen(ScrollController controller){
-    _controller = controller;
-  }
+
   @override
   State<StatefulWidget> createState() {
-    return MyMeetingScreenState(_controller);
+    return MyMeetingScreenState();
   }
 }
 
@@ -24,22 +21,21 @@ class MyMeetingScreenState extends State<MyMeetingScreen>{
   bool challengeselected = false;
   late final screen;
 
-  MyMeetingScreenState(ScrollController controller){
+  MyMeetingScreenState(){
     screen = [
-      MySocialring(controller),
-      MyClubView(controller),
-      MyChallenge(controller)
+      MySocialring(),
+      MyClubView(),
+      MyChallenge()
     ];
   }
 
   @override
   Widget build(BuildContext context) {
 
-
     return Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top: 10, left: 30),
+            margin: EdgeInsets.only(top: 60, left: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

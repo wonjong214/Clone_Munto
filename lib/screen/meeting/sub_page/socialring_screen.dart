@@ -16,12 +16,6 @@ import '../../../widget/organisms/meeting/socialring/socialring_host_view.dart';
 import '../../../widget/organisms/meeting/socialring/socialring_recommend.dart';
 
 class SocialringScreen extends StatefulWidget {
-  late final ScrollController _controller;
-
-  SocialringScreen(ScrollController controller) {
-    _controller = controller;
-  }
-
   @override
   State<SocialringScreen> createState() => _SocialringScreenState();
 }
@@ -95,58 +89,60 @@ class _SocialringScreenState extends State<SocialringScreen> with AutomaticKeepA
     var selectedHostProvider = Provider.of<SelectedHostProvider>(context);
     var resolutionProvider = Provider.of<ResolutionProvider>(context);
 
-    return SingleChildScrollView(
-      controller: widget._controller,
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          ExhibitionsView(
-            height: 350,
-            socialringContestPoster: socialringContestPostProvider.socialringContestPoster,
-            isSocialringContestPosterLoading: _isSocialringContestPoster,
-            currentPage: socialringContestPostProvider.currentPage,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          TagScrollView(),
-          interGroupMargin,
-          SocialringRecommend(
-            socialringSummary: meetingProvider.socialring,
-            socialringChangeLike: meetingProvider.changeLike,
-            isSocialringLoading: _isSocialringLoading,
-          ),
-          interGroupMargin,
-          ReviewView(
-            memberReview: memberReviewProvider.review,
-            memberReivewChangeLike: memberReviewProvider.changeLike,
-            isMemberReviewLoading: _isMemberReivewLoading,
-            width: resolutionProvider.width_get,
-          ),
-          interGroupMargin,
-          SocialringHicking(
-            socialringSummary: meetingProvider.socialring,
-            socialringChangeLike: meetingProvider.changeLike,
-            isSocialringLoading: _isSocialringLoading,
-          ),
-          interGroupMargin,
-          SocialringHostView(
-            selectedHost: selectedHostProvider.selectedhost,
-            selectedHostChangeFollow: selectedHostProvider.changeFollow,
-            isSelectedHostLoading: _isSelectedHostLoading,
-            width: resolutionProvider.width_get,
-          ),
-          interGroupMargin,
-          SocialringCalender(
-            socialringSummary: meetingProvider.socialring,
-            socialringChangeLike: meetingProvider.changeLike,
-            isSocialringLoading: _isSocialringLoading,
-          ),
-          interGroupMargin,
-          OpenMeetingScreen(
-              title: '소셜링 열기',
-              subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?')
-        ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 48),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            ExhibitionsView(
+              height: 350,
+              socialringContestPoster: socialringContestPostProvider.socialringContestPoster,
+              isSocialringContestPosterLoading: _isSocialringContestPoster,
+              currentPage: socialringContestPostProvider.currentPage,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TagScrollView(),
+            interGroupMargin,
+            SocialringRecommend(
+              socialringSummary: meetingProvider.socialring,
+              socialringChangeLike: meetingProvider.changeLike,
+              isSocialringLoading: _isSocialringLoading,
+            ),
+            interGroupMargin,
+            ReviewView(
+              memberReview: memberReviewProvider.review,
+              memberReivewChangeLike: memberReviewProvider.changeLike,
+              isMemberReviewLoading: _isMemberReivewLoading,
+              width: resolutionProvider.width_get,
+            ),
+            interGroupMargin,
+            SocialringHicking(
+              socialringSummary: meetingProvider.socialring,
+              socialringChangeLike: meetingProvider.changeLike,
+              isSocialringLoading: _isSocialringLoading,
+            ),
+            interGroupMargin,
+            SocialringHostView(
+              selectedHost: selectedHostProvider.selectedhost,
+              selectedHostChangeFollow: selectedHostProvider.changeFollow,
+              isSelectedHostLoading: _isSelectedHostLoading,
+              width: resolutionProvider.width_get,
+            ),
+            interGroupMargin,
+            SocialringCalender(
+              socialringSummary: meetingProvider.socialring,
+              socialringChangeLike: meetingProvider.changeLike,
+              isSocialringLoading: _isSocialringLoading,
+            ),
+            interGroupMargin,
+            OpenMeetingScreen(
+                title: '소셜링 열기',
+                subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?')
+          ],
+        ),
       ),
     );
   }

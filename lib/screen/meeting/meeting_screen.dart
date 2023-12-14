@@ -21,38 +21,14 @@ class MeetingScreen extends StatefulWidget{
 }
 
 class _MeetingScreenState extends State<MeetingScreen> {
-  late ScrollController _scrollController;
-  bool _exposureAppBar = true;
-
-
-  void _changeExposureAppBarState() {
-    try {
-      if (_scrollController.position.userScrollDirection == ScrollDirection.reverse) {
-        if (_exposureAppBar) {
-          setState(() {
-            _exposureAppBar = false;
-          });
-        }
-      }
-      else if (_scrollController.position.userScrollDirection == ScrollDirection.forward) {
-        if (!_exposureAppBar) {
-          setState(() {
-            _exposureAppBar = true;
-          });
-        }
-      }
-    } catch (_) {}
-  }
 
   @override
   void initState() {
-    _scrollController = ScrollController()..addListener(_changeExposureAppBarState);
     super.initState();
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
     super.dispose();
   }
   
@@ -64,96 +40,122 @@ class _MeetingScreenState extends State<MeetingScreen> {
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(scaffoldBackgroundColor: backGroundColor),
       home: Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(48),
-        child: AnimatedCrossFade(
-          firstChild: AppBar(
-            backgroundColor: AppBar_color,
-            foregroundColor: Colors.black,
-            shadowColor: Colors.transparent,
-            title: Row(
+      body: SafeArea(
+        child: DefaultTabController(
+          length: 5,
+          child: NestedScrollView(
+            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+              return[
+                SliverToBoxAdapter(
+                  child: Container(
+                    color: AppBar_color,
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        AppBarTitle('MUNTO'),
+                        Spacer(),
+                        IconButton(
+                            onPressed: (){
+                              showModalBottomSheet(
+                                isScrollControlled: true,
+                                context: context,
+                                builder: (BuildContext context){
+                                  return SizedBox(
+                                      height: height * 0.84,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                                        child: FilterModalScreen(),
+                                      )
+                                  );
+                                },
+                              );
+                            },
+                            icon: Icon(Icons.list, size: appBarIconSize,)
+                        ),
+                        SizedBox(width: 10, ),
+                        IconButton(
+                          icon: Icon(Icons.search, size : appBarIconSize),
+                          onPressed: (){
+                            Navigator.pushNamed(context, '/Search_page');
+                          },
+                        ),
+                        SizedBox(width: 10),
+                        Icon(Icons.notifications_none, size : appBarIconSize),
+                      ],
+                    ),
+                  ),
+                ),
+                
+                SliverOverlapAbsorber(
+                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                  sliver: SliverPersistentHeader(
+                    delegate: MeetingTabBarDelegate(),
+                    pinned: true,
+                  ),
+                )
+              ];
+            },
+            body: TabBarView(
               children: [
-                AppBarTitle('MUNTO'),
-                Spacer(),
-                IconButton(
-                    onPressed: (){
-                      showModalBottomSheet(
-                        isScrollControlled: true,
-                        context: context,
-                        builder: (BuildContext context){
-                          return SizedBox(
-                              height: height * 0.84,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-                                child: FilterModalScreen(),
-                              )
-                          );
-                        },
-                      );
-                    },
-                    icon: Icon(Icons.list, size: appBarIconSize,)
-                ),
-                SizedBox(width: 10, ),
-                IconButton(
-                  icon: Icon(Icons.search, size : appBarIconSize),
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/Search_page');
-                  },
-                ),
-                SizedBox(width: 10),
-                Icon(Icons.notifications_none, size : appBarIconSize),
+                RecommendScreen(),
+                SocialringScreen(),
+                ClubScreen(),
+                ChallengeScreen(),
+                MyMeetingScreen()
               ],
             ),
-          ),
-          secondChild: const SizedBox.shrink(),
-          crossFadeState: _exposureAppBar ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-          duration: const Duration(milliseconds: 200),
+          )
         ),
-      ),
-      body: DefaultTabController(
-        length: 5,
-        child: Column(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  border: appBarBottomBorder,
-                  color: AppBar_color,
-                ),
-                width: double.infinity,
-                alignment: Alignment.centerLeft,
-                child: TabBar(
-                  padding: EdgeInsets.only(left: 10, right: 15),
-                  indicatorSize: TabBarIndicatorSize.label,
-                  labelColor: Colors.black,
-                  unselectedLabelColor: Colors.grey,
-                  tabs: [
-                    AppBarTab('추천'),
-                    AppBarTab('소셜링'),
-                    AppBarTab('클럽'),
-                    AppBarTab('챌린지'),
-                    AppBarTab('내 모임'),
-                  ],
-                  isScrollable: true,
-                  labelPadding: EdgeInsets.symmetric(horizontal:10.0),
-                  indicatorColor: Colors.black,
-                ),
-              ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    RecommendScreen(_scrollController),
-                    SocialringScreen(_scrollController),
-                    ClubScreen(_scrollController),
-                    ChallengeScreen(_scrollController),
-                    MyMeetingScreen(_scrollController)
-                  ],
-                 ),
-              ),
-            ],
-          ),
       ),
 
       )
     );
+  }
+}
+
+class MeetingTabBarDelegate extends SliverPersistentHeaderDelegate {
+  const MeetingTabBarDelegate();
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: Container(
+          decoration: BoxDecoration(
+            border: appBarBottomBorder,
+            color: AppBar_color,
+          ),
+          width: double.infinity,
+          alignment: Alignment.centerLeft,
+          child: TabBar(
+            padding: EdgeInsets.only(left: 10),
+            indicatorSize: TabBarIndicatorSize.label,
+            labelColor: Colors.black,
+            unselectedLabelColor: Colors.grey,
+            tabs: [
+              AppBarTab('추천'),
+              AppBarTab('소셜링'),
+              AppBarTab('클럽'),
+              AppBarTab('챌린지'),
+              AppBarTab('내 모임'),
+            ],
+            isScrollable: true,
+            labelPadding: EdgeInsets.symmetric(horizontal:10.0),
+            indicatorColor: Colors.black,
+          ),
+        ),
+    );
+  }
+
+  @override
+  double get maxExtent => 48;
+
+  @override
+  double get minExtent => 48;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }

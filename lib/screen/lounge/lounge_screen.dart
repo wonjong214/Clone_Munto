@@ -94,11 +94,14 @@ class _LoungeScreenState extends State<LoungeScreen> {
                 )
               ];
             },
-            body: TabBarView(
-              children: [
-                DiscoveryScreen(),
-                TotalScreen(),
-              ],
+            body: Padding(
+              padding: const EdgeInsets.only(top: 48),
+              child: TabBarView(
+                children: [
+                  DiscoveryScreen(),
+                  TotalScreen(),
+                ],
+              ),
             ),
           ),
         ),

@@ -76,7 +76,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
                         IconButton(
                           icon: Icon(Icons.search, size : appBarIconSize),
                           onPressed: (){
-                            Navigator.pushNamed(context, '/Search_page');
+                            Navigator.of(context, rootNavigator: true)
+                                .pushNamed('/Search_page');
                           },
                         ),
                         SizedBox(width: 10),

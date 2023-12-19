@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/colors.dart';
-import 'package:loginscreen/screen/meeting/sub_page/filter/sub_page/filter_club_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/filter/sub_page/filter_social_screen.dart';
+import 'package:Clone_Munto/constants/colors.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/filter/sub_page/filter_club_screen.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/filter/sub_page/filter_social_screen.dart';
 import '../../../../widget/atoms/app_bar_title_text.dart';
 import '../../../../widget/atoms/common_border_container.dart';
 

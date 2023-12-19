@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/colors.dart';
+import 'package:Clone_Munto/constants/colors.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/challenge_summary_provider.dart';
 import '../../../widget/molecules/meeting/challenge_container.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/widget/organisms/profile/score/Assesment.dart';
+import 'package:Clone_Munto/widget/organisms/profile/score/Assesment.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/border.dart';
 import '../../widget/atoms/app_bar_title_text.dart';

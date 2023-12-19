@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/widget/atoms/sns_prefix_text.dart';
+import 'package:Clone_Munto/widget/atoms/sns_prefix_text.dart';
 import '../../../../../constants/fontsize.dart';
 import '../../../atoms/circle_icon.dart';
 import '../../../atoms/common_text.dart';

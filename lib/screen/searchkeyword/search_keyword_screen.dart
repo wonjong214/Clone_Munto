@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/screen/searchkeyword/sub_page/search_challenge_screen.dart';
-import 'package:loginscreen/screen/searchkeyword/sub_page/search_club_screen.dart';
-import 'package:loginscreen/screen/searchkeyword/sub_page/search_feed_screen.dart';
-import 'package:loginscreen/screen/searchkeyword/sub_page/search_member_screen.dart';
-import 'package:loginscreen/screen/searchkeyword/sub_page/search_socialring_screen.dart';
+import 'package:Clone_Munto/screen/searchkeyword/sub_page/search_challenge_screen.dart';
+import 'package:Clone_Munto/screen/searchkeyword/sub_page/search_club_screen.dart';
+import 'package:Clone_Munto/screen/searchkeyword/sub_page/search_feed_screen.dart';
+import 'package:Clone_Munto/screen/searchkeyword/sub_page/search_member_screen.dart';
+import 'package:Clone_Munto/screen/searchkeyword/sub_page/search_socialring_screen.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/border.dart';
 import '../../widget/atoms/custom_close_button.dart';

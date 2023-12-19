@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/colors.dart';
-import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
+import 'package:Clone_Munto/constants/colors.dart';
+import 'package:Clone_Munto/widget/molecules/circularprogress_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../../constants/fontsize.dart';
 import '../../../../model/meeting/recommend/meeting_summary.dart';

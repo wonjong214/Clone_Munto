@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:loginscreen/constants/colors.dart';
-import 'package:loginscreen/screen/meeting/sub_page/challenge_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/club_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/filter/filter_modal_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/my_meeting_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/recommend_screen.dart';
-import 'package:loginscreen/screen/meeting/sub_page/socialring_screen.dart';
+import 'package:Clone_Munto/constants/colors.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/challenge_screen.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/club_screen.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/filter/filter_modal_screen.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/my_meeting_screen.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/recommend_screen.dart';
+import 'package:Clone_Munto/screen/meeting/sub_page/socialring_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/iconsize.dart';
 import '../../../../constants/border.dart';
@@ -59,13 +59,14 @@ class _MeetingScreenState extends State<MeetingScreen> {
                               showModalBottomSheet(
                                 isScrollControlled: true,
                                 context: context,
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                                ),
                                 builder: (BuildContext context){
                                   return SizedBox(
-                                      height: height * 0.84,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-                                        child: FilterModalScreen(),
-                                      )
+                                      height: (height * 0.74),
+                                      child: FilterModalScreen()
                                   );
                                 },
                               );

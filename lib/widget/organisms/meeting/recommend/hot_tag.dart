@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/Enum.dart';
-import 'package:loginscreen/constants/fontsize.dart';
+import 'package:Clone_Munto/constants/Enum.dart';
+import 'package:Clone_Munto/constants/fontsize.dart';
 
 import '../../../atoms/circle_border_image_container.dart';
 import '../../../atoms/common_border_container.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:loginscreen/model/meeting/recommend/challenge_summary.dart';
+import 'package:Clone_Munto/model/meeting/recommend/challenge_summary.dart';
 
 void main(){
   final List<ChallengeSummary>  challengeList = [

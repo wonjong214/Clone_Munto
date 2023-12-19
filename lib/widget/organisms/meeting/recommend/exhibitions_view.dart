@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:loginscreen/model/meeting/recommend/socialring_contest_poster.dart';
-import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
+import 'package:Clone_Munto/model/meeting/recommend/socialring_contest_poster.dart';
+import 'package:Clone_Munto/widget/molecules/circularprogress_container.dart';
 import '../../../atoms/keyword_tag_container.dart';
 
 class ExhibitionsView extends StatefulWidget {

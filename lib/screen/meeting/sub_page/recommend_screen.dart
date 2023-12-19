@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/providers/socialring_contest_poster_provider.dart';
+import 'package:Clone_Munto/providers/socialring_contest_poster_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../providers/challenge_summary_provider.dart';
 import '../../../providers/meeting_summary_provider.dart';

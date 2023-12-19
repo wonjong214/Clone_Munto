@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/fontsize.dart';
+import 'package:Clone_Munto/constants/fontsize.dart';
 import '../../../../constants/colors.dart';
 import '../../atoms/circle_icon.dart';
 import '../../atoms/common_text.dart';

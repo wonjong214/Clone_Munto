@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/fontsize.dart';
+import 'package:Clone_Munto/constants/fontsize.dart';
 import '../../../../constants/Enum.dart';
 import '../../atoms/common_text.dart';
 import '../../atoms/interesting_keyword_button.dart';

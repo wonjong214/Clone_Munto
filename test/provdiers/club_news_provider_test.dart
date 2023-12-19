@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:loginscreen/model/meeting/recommend/club_news.dart';
+import 'package:Clone_Munto/model/meeting/recommend/club_news.dart';
 
 void main(){
   List<ClubNews> clubNewsList = [

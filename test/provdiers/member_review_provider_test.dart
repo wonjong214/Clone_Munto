@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:loginscreen/model/meeting/recommend/member_review.dart';
+import 'package:Clone_Munto/model/meeting/recommend/member_review.dart';
 
 void main(){
   List<MemberReview> memberReviewList = [

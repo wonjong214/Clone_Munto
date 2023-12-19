@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/widget/molecules/lounge/social_info_container.dart';
-import 'package:loginscreen/widget/molecules/lounge/social_location_container.dart';
+import 'package:Clone_Munto/widget/molecules/lounge/social_info_container.dart';
+import 'package:Clone_Munto/widget/molecules/lounge/social_location_container.dart';
 
 class SocialLocaitionScrollView extends StatelessWidget{
   String meetingImage;

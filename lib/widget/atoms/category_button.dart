@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/colors.dart';
+import 'package:Clone_Munto/constants/colors.dart';
 
 class CategoryButton extends StatelessWidget{
   IconData icon;

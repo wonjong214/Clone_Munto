@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/fontsize.dart';
+import 'package:Clone_Munto/constants/fontsize.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/border.dart';
 import '../../widget/atoms/analysis_results_button.dart';

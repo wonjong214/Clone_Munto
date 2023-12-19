@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/fontsize.dart';
-import 'package:loginscreen/widget/organisms/profile/Feed.dart';
-import 'package:loginscreen/widget/organisms/profile/Meeting.dart';
-import 'package:loginscreen/widget/organisms/profile/Tag.dart';
-import 'package:loginscreen/widget/organisms/profile/my_keyword.dart';
+import 'package:Clone_Munto/constants/fontsize.dart';
+import 'package:Clone_Munto/widget/organisms/profile/Feed.dart';
+import 'package:Clone_Munto/widget/organisms/profile/Meeting.dart';
+import 'package:Clone_Munto/widget/organisms/profile/Tag.dart';
+import 'package:Clone_Munto/widget/organisms/profile/my_keyword.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/border.dart';
 import '../../../../constants/colors.dart';

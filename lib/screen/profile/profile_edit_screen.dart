@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/widget/organisms/profile/profileedit/Interesting.dart';
-import 'package:loginscreen/widget/organisms/profile/profileedit/Name.dart';
-import 'package:loginscreen/widget/organisms/profile/profileedit/SNS.dart';
+import 'package:Clone_Munto/widget/organisms/profile/profileedit/Interesting.dart';
+import 'package:Clone_Munto/widget/organisms/profile/profileedit/Name.dart';
+import 'package:Clone_Munto/widget/organisms/profile/profileedit/SNS.dart';
 import '../../../../constants/border.dart';
 import '../../../../constants/colors.dart';
 import '../../widget/molecules/profile/Profile_Image.dart';

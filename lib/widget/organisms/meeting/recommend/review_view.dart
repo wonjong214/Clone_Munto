@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/model/meeting/recommend/member_review.dart';
-import 'package:loginscreen/widget/molecules/circularprogress_container.dart';
+import 'package:Clone_Munto/model/meeting/recommend/member_review.dart';
+import 'package:Clone_Munto/widget/molecules/circularprogress_container.dart';
 import 'package:provider/provider.dart';
 import '../../../../constants/fontsize.dart';
 import '../../../../providers/member_review_provider.dart';

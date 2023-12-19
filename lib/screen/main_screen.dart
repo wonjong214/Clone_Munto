@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/constants/colors.dart';
-import 'package:loginscreen/screen/profile/profile_screen.dart';
+import 'package:Clone_Munto/constants/colors.dart';
+import 'package:Clone_Munto/screen/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/resolution_provider.dart';
 import 'lounge/lounge_screen.dart';

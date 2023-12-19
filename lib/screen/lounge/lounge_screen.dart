@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:loginscreen/constants/colors.dart';
-import 'package:loginscreen/constants/iconsize.dart';
-import 'package:loginscreen/screen/lounge/sub_page/discovery_screen.dart';
-import 'package:loginscreen/screen/lounge/sub_page/total_screen.dart';
+import 'package:Clone_Munto/constants/colors.dart';
+import 'package:Clone_Munto/constants/iconsize.dart';
+import 'package:Clone_Munto/screen/lounge/sub_page/discovery_screen.dart';
+import 'package:Clone_Munto/screen/lounge/sub_page/total_screen.dart';
 import '../../../../constants/border.dart';
 import '../../widget/atoms/app_bar_tab.dart';
 import '../../widget/atoms/app_bar_title_text.dart';

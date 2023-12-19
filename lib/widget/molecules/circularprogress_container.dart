@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loginscreen/widget/atoms/common_border_container.dart';
+import 'package:Clone_Munto/widget/atoms/common_border_container.dart';
 
 class CircularprogressContainer extends StatelessWidget{
   double? width;

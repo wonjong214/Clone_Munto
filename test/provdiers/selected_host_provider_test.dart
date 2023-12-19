@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:loginscreen/model/meeting/recommend/selected_host.dart';
+import 'package:Clone_Munto/model/meeting/recommend/selected_host.dart';
 
 void main(){
   List<SelectedHost> selectedHostList = [

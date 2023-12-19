@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:loginscreen/model/meeting/recommend/meeting_summary.dart';
+import 'package:Clone_Munto/model/meeting/recommend/meeting_summary.dart';
 
 void main(){
   List<MeetingSummary> clubList = [

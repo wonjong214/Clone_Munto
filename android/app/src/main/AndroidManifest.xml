@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.Clone_Munto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.Clone_Munto.demo">
     <application
         android:label="Clone_Munto"
         android:name="${applicationName}"

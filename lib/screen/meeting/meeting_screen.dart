@@ -81,8 +81,8 @@ class _MeetingScreenState extends State<MeetingScreen> {
                                 .pushNamed('/Search_page');
                           },
                         ),
-                        SizedBox(width: 10),
-                        Icon(Icons.notifications_none, size : appBarIconSize),
+                        /*SizedBox(width: 10),
+                        Icon(Icons.notifications_none, size : appBarIconSize),*/
                       ],
                     ),
                   ),

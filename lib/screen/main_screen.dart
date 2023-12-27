@@ -20,17 +20,18 @@ class MainScreenState extends State<MainScreen>{
   final List<Widget> _widgetOptions = <Widget>[
     MeetingScreen(),
     LoungeScreen(),
-    ProfileScreen(),
+    //ProfileScreen(),
     ProfileScreen(),
   ];
 
   void _onItemTapped(int index) { // 탭을 클릭했을떄 지정한 페이지로 이동
     setState(() {
-      if(index == 2){
+      /*if(index == 2){리
         Navigator.pushNamed(context, '/meetingtype');
       }
       else
-        _selectedIndex = index;
+        _selectedIndex = index;*/
+      _selectedIndex = index;
     });
   }
 
@@ -66,13 +67,13 @@ class MainScreenState extends State<MainScreen>{
               activeIcon: Icon(Icons.sticky_note_2),
               label: '라운지',
             ),
-            BottomNavigationBarItem(
+            /*BottomNavigationBarItem(
                 icon: Align(
                   alignment: Alignment.bottomCenter,
                   child: Icon(Icons.add_circle_outline_sharp, size:40,),
                 ),
                 label: ''
-            ),
+            ),*/
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outlined),
               activeIcon: Icon(Icons.person),

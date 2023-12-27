@@ -65,12 +65,12 @@ class _ChallengeScreenState extends State<ChallengeScreen> with AutomaticKeepAli
               isChallengeLoading: _isChallengeLoading,
             ),
             SizedBox(height: 25,),
-            OpenMeetingScreen(
+            /*OpenMeetingScreen(
               title: '챌린지 열기',
               subtitle: '더 나은 변화를 위해 같은 목표를 가진\n멤버들과 함께 도전해볼까요?',
               color: Color(0xff3498d0),
               arrowsize: 20,
-            ),
+            ),*/
             interGroupMargin
           ],
         ),

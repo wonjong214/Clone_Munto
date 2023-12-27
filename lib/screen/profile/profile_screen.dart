@@ -49,11 +49,11 @@ class ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: AppBar_color,
         foregroundColor: Colors.black,
         shape: appBarBottomBorder,
-        actions: [
-          /*SizedBox(child: Icon(Icons.ios_share)),
+        /*actions: [
+          SizedBox(child: Icon(Icons.ios_share)),
           SizedBox(
             width: 15,
-          ),*/
+          ),
           IconButton(
           onPressed: () {
             Navigator.of(context, rootNavigator: true)
@@ -61,7 +61,7 @@ class ProfileScreenState extends State<ProfileScreen> {
           },
           icon: Icon(Icons.settings_outlined),
         ),
-        ],
+        ],*/
       ),
       body: SafeArea(
         child: DefaultTabController(

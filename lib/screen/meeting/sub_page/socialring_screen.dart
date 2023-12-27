@@ -138,9 +138,9 @@ class _SocialringScreenState extends State<SocialringScreen> with AutomaticKeepA
               isSocialringLoading: _isSocialringLoading,
             ),
             interGroupMargin,
-            OpenMeetingScreen(
+            /*OpenMeetingScreen(
                 title: '소셜링 열기',
-                subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?')
+                subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?')*/
           ],
         ),
       ),

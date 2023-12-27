@@ -134,7 +134,7 @@ class _RecommendScreenState extends State<RecommendScreen> with AutomaticKeepAli
                 currentPage: socialringContestPostProvider.currentPage,
               ),
               //카테고리
-              CategoryGrid(),
+              //CategoryGrid(),
               SizedBox(height: 20,),
               Divider(color: Color(0xff8e8e8e)),
               SizedBox(height: 20,),
@@ -179,7 +179,7 @@ class _RecommendScreenState extends State<RecommendScreen> with AutomaticKeepAli
                 width: resolutionProvider.width_get,
               ),
               interGroupMargin,
-              OpenMeetingScreen(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
+              //OpenMeetingScreen(title: '모임 열기',subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n만날 기회 직접 만들어볼까요?'),
               SizedBox(height: 80,)
             ],
           )

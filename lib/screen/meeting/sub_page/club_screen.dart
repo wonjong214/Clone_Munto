@@ -89,13 +89,13 @@ class _ClubScreenState extends State<ClubScreen> with AutomaticKeepAliveClientMi
               width: resolutionProvider.width_get,
             ),
             interGroupMargin,
-            OpenMeetingScreen(
+            /*OpenMeetingScreen(
               title: '클럽 열기',
               subtitle: '나와 꼭 맞는 취향을 가진 사람들과\n활발한 커뮤니티를 만들어볼까요?',
               color: Color(0xff1c8a6a),
               arrowsize: 20,
               titlefont: FontWeight.w600,
-            ),
+            ),*/
             interGroupMargin
           ],
         ),

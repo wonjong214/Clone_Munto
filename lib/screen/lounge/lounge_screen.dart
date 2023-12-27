@@ -71,8 +71,8 @@ class _LoungeScreenState extends State<LoungeScreen> {
                             Navigator.of(context, rootNavigator: true).pushNamed('/FeedWrite_Page');
                           },
                         ),
-                        SizedBox(width: 10, ),
-                        Icon(Icons.bookmark_border_outlined, size : appBarIconSize),
+                        //SizedBox(width: 10, ),
+                        //Icon(Icons.bookmark_border_outlined, size : appBarIconSize),
                         SizedBox(width: 10),
                         IconButton(
                           onPressed: (){

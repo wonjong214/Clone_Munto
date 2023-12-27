@@ -32,7 +32,7 @@ class LoungeIconGroup extends StatelessWidget{
           },),
           Text('$chatNum'),
           SizedBox(width: 10,),
-          Icon(Icons.bookmark_border,size: 30,)
+          //Icon(Icons.bookmark_border,size: 30,)
         ],
       )
     );

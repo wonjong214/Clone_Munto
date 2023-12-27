@@ -1,3 +1,4 @@
+import 'package:Clone_Munto/screen/lounge/sub_page/coment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:Clone_Munto/providers/challenge_summary_provider.dart';
 import 'package:Clone_Munto/providers/club_news_provider.dart';
@@ -86,7 +87,9 @@ class MyApp extends StatelessWidget {
                   '/FeedWrite_Page' : (context) => FeedWriteScreen(),
                   '/SearchKeyword_page' : (context) => SearchKeywordScreen(),
                   '/Search_page' : (context) => SearchScreen(),
-                  '/Initialization' : (context) => InitializationScreen()
+                  '/Initialization' : (context) => InitializationScreen(),
+                  '/comment' : (context) => CommentScreen()
+
                 }
             );
           }

@@ -41,14 +41,14 @@ class _LoungeListTileState extends State<LoungeListTile> {
                   });
                 },
                 child: Text(
-                  '팔로우',
+                  follow ? '팔로우' : '팔로잉',
                   style: TextStyle(
                     fontSize: 15,
                     color: follow ? Colors.grey : Colors.red,
                   ),
                 ),
               ),
-              Icon(Icons.more_horiz)
+              /*Icon(Icons.more_horiz)*/
             ]
         )
     );

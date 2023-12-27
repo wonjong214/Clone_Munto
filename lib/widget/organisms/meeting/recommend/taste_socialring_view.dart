@@ -115,7 +115,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                                     )),
                             ],
                           ),
-                    MoreButton(350)
+                    /*MoreButton(350)*/
                   ],
                 ),
               ),
@@ -174,7 +174,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                                 ),
                             ],
                           ),
-                    MoreButton(350)
+                    /*MoreButton(350)*/
                   ],
                 ),
               ),
@@ -235,7 +235,7 @@ class _TasteSocialRingViewState extends State<TasteSocialRingView> {
                                 ),
                             ],
                           ),
-                    MoreButton(350)
+                    /*MoreButton(350)*/
                   ],
                 ),
               ),

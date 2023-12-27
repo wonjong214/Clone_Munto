@@ -79,7 +79,7 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
                   ),
               ],
             ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         )
     );

@@ -132,7 +132,7 @@ class _SocialringCalenderState extends State<SocialringCalender> {
                 ),
             ],
           ),
-          MoreButton(double.infinity)
+          /*MoreButton(double.infinity)*/
         ]
         )
     );

@@ -68,7 +68,7 @@ class _ClubNewState extends State<ClubNew> {
                   ),
               ],
             ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         )
     );

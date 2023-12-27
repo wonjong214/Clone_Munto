@@ -179,7 +179,7 @@ class _ReviewViewState extends State<ReviewView> {
             SizedBox(
               height: 10,
             ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         ));
   }

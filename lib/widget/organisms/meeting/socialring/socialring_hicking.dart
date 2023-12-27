@@ -90,7 +90,7 @@ class _SocialringHickingState extends State<SocialringHicking> {
                     ),
                 ],
               ),
-              MoreButton(double.infinity)
+              /*MoreButton(double.infinity)*/
             ],
           ),
         )

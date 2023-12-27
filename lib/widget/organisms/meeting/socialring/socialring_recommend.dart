@@ -77,7 +77,7 @@ class _SocialringRecommendState extends State<SocialringRecommend> {
                             )),
                     ],
                   ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         ));
   }

@@ -133,7 +133,7 @@ class SocialringReview extends StatelessWidget{
                     ]
                 )
             ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         )
     );

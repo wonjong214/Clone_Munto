@@ -23,7 +23,6 @@ class LoungeReview extends StatefulWidget{
 }
 
 class _LoungeReviewState extends State<LoungeReview> {
-  String text = 'ㅋㄱㅋㅋㅋㅋ나 이거 참여하고싶어서 좋아요 눌러놨는데 일정 확인을 못했네';
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +56,8 @@ class _LoungeReviewState extends State<LoungeReview> {
               LoungeIconGroup(
                 like: widget.loungePost.like,
                 likeNum :widget.loungePost.likeNum,
-                chatNum: widget.loungePost.chatNum,
+                chatNum: widget.loungePost.chatList?.length ?? 0,
+                loungePost: widget.loungePost,
                 onTap: (){
                   widget.changeLike(widget.loungePost);
                 },
@@ -67,8 +67,8 @@ class _LoungeReviewState extends State<LoungeReview> {
             ],
           ),
           SizedBox(height: 20,),
-          if(widget.loungePost.chatName != '')
-          CommentContainer(AssetImage(widget.loungePost.chatImage),widget.loungePost.chatName, widget.loungePost.chatBody ),
+          if(widget.loungePost.chatList != null)
+          CommentContainer(AssetImage(widget.loungePost.chatList![0].chatImage),widget.loungePost.chatList![0].chatName, widget.loungePost.chatList![0].chatBody),
           SizedBox(height: 10,),
           CommentInputContainer(AssetImage('assets/images/recommend_page/Exhibitions/nacho.jpeg')),
           interGroupMargin,

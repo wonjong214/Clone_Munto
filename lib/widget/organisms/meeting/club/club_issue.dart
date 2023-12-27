@@ -189,7 +189,7 @@ class _ClubIssueState extends State<ClubIssue> {
                 )
             ),
             moreButtonMargin,
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         )
     );

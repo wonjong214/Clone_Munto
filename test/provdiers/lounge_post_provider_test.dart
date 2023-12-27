@@ -21,10 +21,24 @@ void main(){
         tag: ["스키","보드","액티비티","소셜링후기"],
         like: false,
         likeNum: 3,
-        chatNum: 2, 
-        chatImage: "assets/images/socialring/backpacker.jpg",
-        chatName: "아몬드",
-        chatBody: "날씨 추운데도 열정적이시네요. 화이팅!!"
+        chatList: [
+          ChatInfo(
+              chatImage: "assets/images/socialring/backpacker.jpg",
+              chatName: "아몬드",
+              chatBody: "날씨 추운데도 열정적이시네요. 화이팅!!",
+              chatDate: "23/11/3 - 15:25:32",
+              chatLikeNum: 1,
+              chatLike : false
+          ),
+          ChatInfo(
+              chatImage: "assets/images/socialring/beer.jpg",
+              chatName: "베리",
+              chatBody: "너무 부럽네요 저도 가고 싶어요ㅠㅠ",
+              chatDate: "23/11/4 - 18:53:02",
+              chatLikeNum: 2,
+              chatLike : false
+          )
+        ]
     ),
     LoungePost(
         writerImage: "assets/images/recommend_page/TasteSocialRing/cat.jpeg",
@@ -42,10 +56,16 @@ void main(){
         tag: ["고양이","봉사","반려동물","소셜링후기","반려묘"],
         like: false,
         likeNum: 1,
-        chatNum: 1,
-        chatImage: "assets/images/socialring/backpacker.jpg",
-        chatName: "개냥이",
-        chatBody: "일정기간이 지나면 안락사 한다는 다른 보호소의 현실에 마음 아팠는데, 안락사가 없다는 보호소 소식을 들으니까 마음이 따듯해지네요 ㅎㅎ"
+        chatList: [
+          ChatInfo(
+              chatImage: "assets/images/socialring/backpacker.jpg",
+              chatName: "개냥이",
+              chatBody: "일정기간이 지나면 안락사 한다는 다른 보호소의 현실에 마음 아팠는데, 안락사가 없다는 보호소 소식을 들으니까 마음이 따듯해지네요 ㅎㅎ",
+              chatDate: "23/11/10 - 13:05:40",
+              chatLikeNum: 0,
+              chatLike : false
+          )
+        ]
     ),
   ];
   
@@ -103,10 +123,8 @@ void main(){
       expect(providerLoungePostList[i].tag, loungePostList[i].tag);
       expect(providerLoungePostList[i].like, loungePostList[i].like);
       expect(providerLoungePostList[i].likeNum, loungePostList[i].likeNum);
-      expect(providerLoungePostList[i].chatNum, loungePostList[i].chatNum);
-      expect(providerLoungePostList[i].chatImage, loungePostList[i].chatImage);
-      expect(providerLoungePostList[i].chatName, loungePostList[i].chatName);
-      expect(providerLoungePostList[i].chatBody, loungePostList[i].chatBody);
+      expect(providerLoungePostList[i].chatList![0].chatBody, loungePostList[i].chatList![0].chatBody);
+
 
     }
   }

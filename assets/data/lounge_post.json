@@ -17,9 +17,24 @@
       "like":false,
       "likenum":3,
       "chatnum":2,
-      "chatimage":"assets/images/socialring/backpacker.jpg",
-      "chatname":"아몬드",
-      "chatbody":"날씨 추운데도 열정적이시네요. 화이팅!!"
+      "chatlist":[
+        {
+          "chatimage":"assets/images/socialring/backpacker.jpg",
+          "chatname":"아몬드",
+          "chatbody":"날씨 추운데도 열정적이시네요. 화이팅!!",
+          "chatdate":"2023-11-03 15:25:32",
+          "chatlikenum":1,
+          "chatlike": false
+        },
+        {
+          "chatimage":"assets/images/socialring/beer.jpg",
+          "chatname":"베리",
+          "chatbody":"너무 부럽네요 저도 가고 싶어요ㅠㅠ",
+          "chatdate":"2023-11-04 18:53:02",
+          "chatlikenum":2,
+          "chatlike": false
+        }
+      ]
     },
     {
       "writerimage":"assets/images/recommend_page/TasteSocialRing/cat.jpeg",
@@ -38,9 +53,16 @@
       "like":false,
       "likenum":1,
       "chatnum":1,
-      "chatimage":"assets/images/socialring/backpacker.jpg",
-      "chatname":"개냥이",
-      "chatbody":"일정기간이 지나면 안락사 한다는 다른 보호소의 현실에 마음 아팠는데, 안락사가 없다는 보호소 소식을 들으니까 마음이 따듯해지네요 ㅎㅎ"
+      "chatlist":[
+        {
+          "chatimage":"assets/images/socialring/backpacker.jpg",
+          "chatname":"개냥이",
+          "chatbody":"일정기간이 지나면 안락사 한다는 다른 보호소의 현실에 마음 아팠는데, 안락사가 없다는 보호소 소식을 들으니까 마음이 따듯해지네요 ㅎㅎ",
+          "chatdate":"2023-11-10 13:05:40",
+          "chatlikenum":0,
+          "chatlike": false
+        }
+      ]
     },
     {
       "writerimage":"assets/images/recommend_page/Review/burger.jpeg",
@@ -59,9 +81,7 @@
       "like":false,
       "likenum":7,
       "chatnum":0,
-      "chatimage":"",
-      "chatname":"",
-      "chatbody":""
+      "chatlist":null
     }
   ],
   "status": 200,

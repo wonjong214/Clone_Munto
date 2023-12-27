@@ -223,10 +223,10 @@ class _RecommendMemberViewState extends State<RecommendMemberView> {
           ),
         ),
         moreButtonMargin,
-        Container(
-          margin: EdgeInsets.only(left: 20,right: 20),
+        /*Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: MoreButton(double.infinity),
-        )
+        )*/
       ],
     );
   }

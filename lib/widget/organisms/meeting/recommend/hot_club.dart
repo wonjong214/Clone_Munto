@@ -76,7 +76,7 @@ class _HotClubState extends State<HotClub> {
                         ),
                     ],
                   ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         ));
   }

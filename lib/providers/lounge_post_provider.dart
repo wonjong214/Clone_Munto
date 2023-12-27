@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import '../model/meeting/lounge/lounge_post.dart';
 
 
@@ -39,6 +40,40 @@ class LoungePostProvider extends ChangeNotifier{
       loungePost.like = true;
       loungePost.likeNum++;
     }
+    notifyListeners();
+  }
+
+  void changeChatLike(ChatInfo chatInfo){
+    if (chatInfo.chatLike){
+      chatInfo.chatLike = false;
+      chatInfo.chatLikeNum == 0 ? chatInfo.chatLikeNum = 0 : chatInfo.chatLikeNum--;
+    }
+    else {
+      chatInfo.chatLike = true;
+      chatInfo.chatLikeNum++;
+    }
+    notifyListeners();
+  }
+
+  void addChatList(String text, LoungePost post){
+    ChatInfo newChat = ChatInfo(
+        chatImage: 'assets/images/recommend_page/Exhibitions/nacho.jpeg',
+        chatName: '김원종',
+        chatBody: text,
+        chatDate: DateFormat("yyyy-MM-dd HH:mm:ss").format(DateTime.now()),
+        chatLikeNum: 0,
+        chatLike: false
+    );
+
+    _loungePost.forEach((element) {
+      if(element.writerName == post.writerName && element.writeDate == post.writeDate){
+        if(element.chatList != null)
+          element.chatList?.add(newChat);
+        else
+          element.chatList = [newChat];
+      }
+
+    });
     notifyListeners();
   }
 }

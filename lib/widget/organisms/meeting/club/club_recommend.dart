@@ -67,7 +67,7 @@ class _ClubRecommendState extends State<ClubRecommend> {
                   ),
               ],
             ),
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         )
     );

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../../model/meeting/lounge/lounge_post.dart';
+
 
 class LoungeIconGroup extends StatelessWidget{
   bool like;
   int likeNum;
   int chatNum;
+  LoungePost loungePost;
   void Function() onTap;
 
-  LoungeIconGroup({required this.like, required this.likeNum, required this.chatNum, required this.onTap});
+  LoungeIconGroup({required this.like, required this.likeNum, required this.chatNum, required this.loungePost, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,12 @@ class LoungeIconGroup extends StatelessWidget{
           ),
           Text('$likeNum'),
           SizedBox(width: 10,),
-          Icon(Icons.mode_comment_outlined,size: 30,),
+          IconButton(
+            icon : Icon(Icons.mode_comment_outlined, size: 30,),
+            onPressed: (){
+              Navigator.of(context, rootNavigator: true)
+                  .pushNamed('/comment',arguments: loungePost);
+          },),
           Text('$chatNum'),
           SizedBox(width: 10,),
           Icon(Icons.bookmark_border,size: 30,)

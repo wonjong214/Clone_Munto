@@ -49,22 +49,19 @@ class ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: AppBar_color,
         foregroundColor: Colors.black,
         shape: appBarBottomBorder,
-        title: Row(
-          children: [
-            Spacer(),
-            SizedBox(child: Icon(Icons.ios_share)),
-            SizedBox(
-              width: 15,
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.of(context, rootNavigator: true)
-                    .pushNamed('/setting');
-              },
-              icon: Icon(Icons.settings_outlined),
-            ),
-          ],
+        actions: [
+          /*SizedBox(child: Icon(Icons.ios_share)),
+          SizedBox(
+            width: 15,
+          ),*/
+          IconButton(
+          onPressed: () {
+            Navigator.of(context, rootNavigator: true)
+                .pushNamed('/setting');
+          },
+          icon: Icon(Icons.settings_outlined),
         ),
+        ],
       ),
       body: SafeArea(
         child: DefaultTabController(

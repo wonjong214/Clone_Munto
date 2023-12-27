@@ -74,7 +74,7 @@ class _ChallengeHotState extends State<ChallengeHot> {
               ],
             ),
             moreButtonMargin,
-            MoreButton(double.infinity)
+            /*MoreButton(double.infinity)*/
           ],
         )
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CommonBorderContainer extends StatelessWidget{
   EdgeInsetsGeometry? padding;
-  double circular;
+  BorderRadiusGeometry? borderRadius;
   Color? borderColor;
   double borderWidth;
   Color? backColor;
@@ -12,7 +12,7 @@ class CommonBorderContainer extends StatelessWidget{
   AlignmentGeometry? alignment;
 
 
-  CommonBorderContainer({this.padding, this.circular = 30, this.borderColor = Colors.transparent, this.borderWidth =0,
+  CommonBorderContainer({this.padding, this.borderRadius, this.borderColor = Colors.transparent, this.borderWidth =0,
     this.backColor = Colors.transparent, required this.widget, this.width, this.height, this.alignment});
 
 
@@ -24,7 +24,7 @@ class CommonBorderContainer extends StatelessWidget{
       alignment: alignment,
       padding: padding,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(circular),
+          borderRadius: borderRadius,
           color: backColor,
           border: Border.all(
               color: borderColor!,

@@ -116,7 +116,7 @@ class MannerScore extends StatelessWidget {
             height: 20,
           ),
           CommonBorderContainer(
-            circular: 10,
+            borderRadius: BorderRadius.circular(10),
             padding: EdgeInsets.symmetric(horizontal: 10),
             width: double.infinity,
             height: 60,

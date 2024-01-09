@@ -41,6 +41,7 @@ class HotTag extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 10),
                       child: CommonBorderContainer(
+                        borderRadius: BorderRadius.circular(30),
                         padding: EdgeInsets.only(left: 3, right: 12),
                         backColor: Colors.white,
                         widget: Row(

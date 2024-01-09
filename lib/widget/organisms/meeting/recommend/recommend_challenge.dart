@@ -51,7 +51,7 @@ class _RecommendChallengeState extends State<RecommendChallenge> {
                       width: double.infinity,
                       height: 120,
                       backColor: Colors.white60,
-                      circular: 5,
+                      borderRadius: BorderRadius.circular(5),
                     ),
                   )
               ],

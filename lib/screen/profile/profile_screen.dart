@@ -49,7 +49,8 @@ class ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: AppBar_color,
         foregroundColor: Colors.black,
         shape: appBarBottomBorder,
-        /*actions: [
+        automaticallyImplyLeading: false,
+        actions: [
           SizedBox(child: Icon(Icons.ios_share)),
           SizedBox(
             width: 15,
@@ -61,7 +62,7 @@ class ProfileScreenState extends State<ProfileScreen> {
           },
           icon: Icon(Icons.settings_outlined),
         ),
-        ],*/
+        ],
       ),
       body: SafeArea(
         child: DefaultTabController(
@@ -114,6 +115,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                                         .pushNamed('/propensityreport');
                                   },
                                   child: CommonBorderContainer(
+                                    borderRadius: BorderRadius.circular(30),
                                     padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
                                     backColor: tagColor,
                                     widget: Row(
@@ -151,6 +153,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                                         .pushNamed('/score');
                                   },
                                   child: CommonBorderContainer(
+                                    borderRadius: BorderRadius.circular(30),
                                     padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
                                     backColor: Color(0xffebfbe6),
                                     widget: Row(
@@ -214,6 +217,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                                         .pushNamed('/FeedWrite_Page');
                                   },
                                   child: CommonBorderContainer(
+                                    borderRadius: BorderRadius.circular(30),
                                     padding: EdgeInsets.only(
                                         left: 8, right: 8, top: 3, bottom: 3),
                                     borderColor: Colors.grey,

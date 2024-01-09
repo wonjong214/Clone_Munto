@@ -49,7 +49,7 @@ class _ReviewViewState extends State<ReviewView> {
                     width: double.infinity,
                     height: (imgWidth + 110) * 2,
                     backColor: Colors.white60,
-                    circular: 5,
+                    borderRadius: BorderRadius.circular(5),
                   )
                   : Column(
                       children: [

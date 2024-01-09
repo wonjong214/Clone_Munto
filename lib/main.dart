@@ -1,4 +1,7 @@
+import 'package:Clone_Munto/firebase_options.dart';
+import 'package:Clone_Munto/screen/login_screen.dart';
 import 'package:Clone_Munto/screen/lounge/sub_page/coment_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:Clone_Munto/providers/challenge_summary_provider.dart';
 import 'package:Clone_Munto/providers/club_news_provider.dart';
@@ -21,14 +24,13 @@ import 'package:Clone_Munto/screen/search_screen.dart';
 import 'package:Clone_Munto/screen/searchkeyword/search_keyword_screen.dart';
 import 'package:provider/provider.dart';
 
-
-
-
-
-void main() {
-    runApp( MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -38,63 +40,59 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-          providers: [
-            ChangeNotifierProvider<ResolutionProvider>(create: (BuildContext context) => ResolutionProvider()),
-            ChangeNotifierProvider(
-              create: (_) => ChallengeSummaryProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => LoungePostProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => MeetingSummaryProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => SelectedHostProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => MemberReviewProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => SocialringContestPosterProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => ClubNewsProvider(),
-            ),
-          ],
-          builder: (context, child ){
-            return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                title: 'Flutter Demo',
-                theme: ThemeData(
+        providers: [
+          ChangeNotifierProvider<ResolutionProvider>(
+              create: (BuildContext context) => ResolutionProvider()),
+          ChangeNotifierProvider(
+            create: (_) => ChallengeSummaryProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => LoungePostProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => MeetingSummaryProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => SelectedHostProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => MemberReviewProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => SocialringContestPosterProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => ClubNewsProvider(),
+          ),
+        ],
+        builder: (context, child) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Flutter Demo',
+              theme: ThemeData(
                   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                  //bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.yellow),
                   useMaterial3: true,
                   elevatedButtonTheme: ElevatedButtonThemeData(
-                    style: ButtonStyle(
-                      splashFactory:NoSplash.splashFactory
-                    )
-                  )
-                ),
-                initialRoute: '/main',
-                routes: {
-                  '/main' : (context) => MainScreen(),
-                  '/meetingtype' : (context) => ChooseMeetingTypeScreen(),
-                  '/categoryview' : (context) => CategoryScreen(),
-                  '/propensityreport' : (context) => PropensityReportScreen(),
-                  '/setting' : (context) => SettingScreen(),
-                  '/score' : (context) => ScoreScreen(),
-                  '/profileedit' : (context) => ProfileEditScreen(),
-                  '/FeedWrite_Page' : (context) => FeedWriteScreen(),
-                  '/SearchKeyword_page' : (context) => SearchKeywordScreen(),
-                  '/Search_page' : (context) => SearchScreen(),
-                  '/Initialization' : (context) => InitializationScreen(),
-                  '/comment' : (context) => CommentScreen()
-
-                }
-            );
-          }
-        );
+                      style: ButtonStyle(splashFactory: NoSplash.splashFactory),
+                  ),
+              ),
+              initialRoute: '/login',
+              routes: {
+                '/login': (context) => LoginScreen(),
+                '/main': (context) => MainScreen(),
+                '/meetingtype': (context) => ChooseMeetingTypeScreen(),
+                '/categoryview': (context) => CategoryScreen(),
+                '/propensityreport': (context) => PropensityReportScreen(),
+                '/setting': (context) => SettingScreen(),
+                '/score': (context) => ScoreScreen(),
+                '/profileedit': (context) => ProfileEditScreen(),
+                '/FeedWrite_Page': (context) => FeedWriteScreen(),
+                '/SearchKeyword_page': (context) => SearchKeywordScreen(),
+                '/Search_page': (context) => SearchScreen(),
+                '/Initialization': (context) => InitializationScreen(),
+                '/comment': (context) => CommentScreen()
+              });
+        });
   }
 }
-
-

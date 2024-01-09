@@ -69,7 +69,7 @@ class _ExhibitionsViewState extends State<ExhibitionsView> {
             child: CircularprogressContainer(
               width: double.infinity,
               height: widget.height,
-              circular: 20,
+              borderRadius: BorderRadius.circular(20),
               backColor: Colors.white60,
             ),
           )

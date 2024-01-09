@@ -1,9 +1,9 @@
+import 'package:Clone_Munto/screen/meeting/sub_page/filter/filter_modal_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:Clone_Munto/constants/colors.dart';
 import 'package:Clone_Munto/screen/meeting/sub_page/challenge_screen.dart';
 import 'package:Clone_Munto/screen/meeting/sub_page/club_screen.dart';
-import 'package:Clone_Munto/screen/meeting/sub_page/filter/filter_modal_screen.dart';
 import 'package:Clone_Munto/screen/meeting/sub_page/my_meeting_screen.dart';
 import 'package:Clone_Munto/screen/meeting/sub_page/recommend_screen.dart';
 import 'package:Clone_Munto/screen/meeting/sub_page/socialring_screen.dart';
@@ -54,7 +54,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
                       children: [
                         AppBarTitle('MUNTO'),
                         Spacer(),
-                        IconButton(
+                        /*IconButton(
                             onPressed: (){
                               showModalBottomSheet(
                                 isScrollControlled: true,
@@ -72,7 +72,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
                               );
                             },
                             icon: Icon(Icons.list, size: appBarIconSize,)
-                        ),
+                        ),*/
                         SizedBox(width: 10, ),
                         IconButton(
                           icon: Icon(Icons.search, size : appBarIconSize),

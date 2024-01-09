@@ -5,15 +5,15 @@ import 'package:Clone_Munto/widget/atoms/common_border_container.dart';
 class CircularprogressContainer extends StatelessWidget{
   double? width;
   double? height;
-  double circular;
+  BorderRadiusGeometry? borderRadius;
   Color? backColor;
-  CircularprogressContainer({this.width, this.height, required this.circular, this.backColor});
+  CircularprogressContainer({this.width, this.height, required this.borderRadius, this.backColor});
   @override
   Widget build(BuildContext context) {
     return CommonBorderContainer(
       width: width,
       height: height,
-      circular: circular,
+      borderRadius: borderRadius,
       alignment: Alignment.center,
       backColor: backColor,
       widget: const CircularProgressIndicator(color: Colors.grey,),

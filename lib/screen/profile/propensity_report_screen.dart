@@ -44,7 +44,7 @@ class PropensityReportScreen extends StatelessWidget{
               propensityTitleMargin,
               CommonBorderContainer(
                   backColor: Colors.white,
-                  circular: 10,
+                  borderRadius: BorderRadius.circular(10),
                   width: double.infinity,
                   height: 470,
                   widget : Column(

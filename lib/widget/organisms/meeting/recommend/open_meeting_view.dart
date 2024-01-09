@@ -31,8 +31,8 @@ class OpenMeetingScreen extends StatelessWidget{
         height: 160,
         margin: EdgeInsets.only(left: 20, right: 20),
         child: CommonBorderContainer(
-          circular: 10,
-          backColor: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            backColor: Colors.white,
           widget: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

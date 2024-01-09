@@ -43,7 +43,8 @@ class _TotalScreenState extends State<TotalScreen> with AutomaticKeepAliveClient
   Widget build(BuildContext context) {
     var loungePostProvider = Provider.of<LoungePostProvider>(context);
     return _isLoading ?
-    CircularprogressContainer(circular: 0) :
+    CircularprogressContainer(borderRadius: BorderRadius.circular(0),
+    ) :
     SingleChildScrollView(
       child: Column(
         children: [

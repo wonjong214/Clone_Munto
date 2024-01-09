@@ -18,7 +18,7 @@ class SocialLocationContainer extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: CommonBorderContainer(
-          circular: 10,
+          borderRadius: BorderRadius.circular(10),
           borderColor: Color(0xffa9a9a9),
           backColor: Colors.white,
           borderWidth: 0.3,

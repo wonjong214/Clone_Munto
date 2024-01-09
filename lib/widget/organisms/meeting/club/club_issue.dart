@@ -45,7 +45,7 @@ class _ClubIssueState extends State<ClubIssue> {
               width: double.infinity,
               height: (imgWidth + 60)*2 + 10,
               backColor: Colors.white60,
-              circular: 5,
+              borderRadius: BorderRadius.circular(5),
             ) :
             Container(
                 height: (imgWidth + 60)*2 + 10,

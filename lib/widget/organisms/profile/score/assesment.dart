@@ -32,7 +32,7 @@ class Assesment extends StatelessWidget{
           ),
           SizedBox(height: 20),
           CommonBorderContainer(
-            circular: 10,
+            borderRadius: BorderRadius.circular(10),
             padding: EdgeInsets.all(10),
             width: double.infinity,
             backColor: Color(0xffe8f3f0),
@@ -62,7 +62,7 @@ class Assesment extends StatelessWidget{
           ),
           SizedBox(height: 10,),
           CommonBorderContainer(
-            circular: 10,
+            borderRadius: BorderRadius.circular(10),
             padding: EdgeInsets.all(10),
             width: double.infinity,
             backColor: Color(0xffe8f3f0),
@@ -92,7 +92,7 @@ class Assesment extends StatelessWidget{
           ),
           SizedBox(height: 10,),
           CommonBorderContainer(
-            circular: 10,
+            borderRadius: BorderRadius.circular(10),
             padding: EdgeInsets.all(10),
             width: double.infinity,
             backColor: Color(0xffe8f3f0),

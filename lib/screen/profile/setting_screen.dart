@@ -26,13 +26,13 @@ class SettingScreen extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Announcement(),
+              /*Announcement(),
               boldDivider,
               UserSetting(),
-              boldDivider,
+              boldDivider,*/
               Account(),
-              boldDivider,
-              CurrentVersion(),
+              /*boldDivider,
+              CurrentVersion(),*/
               SizedBox(height: 200,)
             ],
           ),

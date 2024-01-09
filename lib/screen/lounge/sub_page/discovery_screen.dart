@@ -42,7 +42,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> with AutomaticKeepAli
     var loungePostProvider = Provider.of<LoungePostProvider>(context);
     return _isLoading ?
     CircularprogressContainer(
-      circular: 0,
+      borderRadius: BorderRadius.circular(0),
     ) :
     SingleChildScrollView(
       child: Column(

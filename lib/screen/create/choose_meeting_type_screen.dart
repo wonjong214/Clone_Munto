@@ -114,7 +114,7 @@ class _chooseMeetingTypeState extends State<ChooseMeetingTypeScreen> {
                   });
                 },
                 child: CommonBorderContainer(
-                  circular: 10,
+                  borderRadius: BorderRadius.circular(10),
                   borderWidth: 0.3,
                   width: double.infinity,
                   height: 80,
@@ -180,7 +180,7 @@ class _chooseMeetingTypeState extends State<ChooseMeetingTypeScreen> {
                   });
                 },
                 child: CommonBorderContainer(
-                  circular: 10,
+                  borderRadius: BorderRadius.circular(10),
                   borderWidth: 0.3,
                   width: double.infinity,
                   height: 80,
@@ -246,7 +246,7 @@ class _chooseMeetingTypeState extends State<ChooseMeetingTypeScreen> {
                   });
                 },
                 child: CommonBorderContainer(
-                  circular: 10,
+                  borderRadius: BorderRadius.circular(10),
                   borderWidth: 0.3,
                   width: double.infinity,
                   height: 80,

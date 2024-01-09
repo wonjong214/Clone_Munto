@@ -54,7 +54,7 @@ class _SocialringHostViewState extends State<SocialringHostView> {
                             child: CircularprogressContainer(
                               width: widget.width - 70,
                               height: widget.width - 70,
-                              circular: 20,
+                              borderRadius: BorderRadius.circular(20),
                               backColor: Colors.white60,
                             ),
                           )
